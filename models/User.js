@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     staffnumber: {
-        type:Number,
+        type:String,
         required:true
     },
     email:{

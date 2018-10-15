@@ -6,6 +6,8 @@ export const loginUser = (UserData) => (dispatch) => {
         //axios request to check if user is valid user and password
         // if valid then we need to dispatch to user reducer current user details
         // if not valid need to dispatch error to error reducer
+
+        console.log("here we go", UserData)
         axios.post('/api/users/login', UserData)
             .then(response =>  {
                   const { token } = res.data;
@@ -24,7 +26,7 @@ export const loginUser = (UserData) => (dispatch) => {
             .catch((err) => {
                 dispatch({
                     type:GET_ERRORS,
-                    payload:err
+                    payload:err.response.data
                 })
             });
         

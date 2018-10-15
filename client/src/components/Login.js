@@ -8,7 +8,7 @@ class Login extends Component {
 constructor(){
     super();
     this.state = {
-        email:"",
+        staffnumber:"",
         password:"",
         errors: {}
     };
@@ -16,13 +16,13 @@ constructor(){
 
   componentDidMount(){
     if(this.props.auth.isAuthenticated){
-      this.props.history.push('/dashboard')
+      this.props.history.push('/home')
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.auth.isAuthenticated) {
-      this.props.history.push('/user/dashboard');
+      this.props.history.push('/home');
     }
 
     if(nextProps.errors){
@@ -41,7 +41,7 @@ constructor(){
     e.preventDefault();
 
     const UserData = {
-      email: this.state.email,
+      staffnumber: this.state.staffnumber,
       password: this.state.password
     };
   
@@ -58,13 +58,13 @@ constructor(){
                   <div className="signin_wrapper">
 
                 <form onSubmit={this.onSubmit}>
-                <h1>LOGIN WITH YOUR DETAILS</h1>
+                <h1>ADMIN USER - LOGIN</h1>
                 <TextFieldGroup 
-                    type="email"
-                    placeholder="Email Address"
-                    name="email"
-                    error={errors.email}
-                    value={this.state.email}
+                    type="text"
+                    placeholder="Staff Number"
+                    name="staffnumber"
+                    error={errors.staffnumber}
+                    value={this.state.staffnumber}
                     onChange={this.onChange}
                   />
                      <TextFieldGroup 

@@ -58,20 +58,20 @@ router.post('/register', (req, res) => {
 //users/login - that returns the jwt token
 
 router.post('/login', (req, res) => {
-
+            console.log("inside", req.body)
     const { errors, isValid } = validateLoginInput(req.body);
      if (!isValid) {
         return res.status(400).json(errors);
        
     }
 
-    const email = req.body.email;
+    const staffnumber = req.body.staffnumber;
     const password = req.body.password;
 
-    User.findOne({email})
+    User.findOne({staffnumber})
         .then((user) => {
             if(!user) {
-                errors.email = "User not found"
+                errors.staffnumber = "User not found"
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password)
@@ -108,13 +108,12 @@ router.post('/login', (req, res) => {
 
 router.get('/current', passport.authenticate('jwt', {session:false}), (req, res) => {
     res.json({   id:req.user.id,
+                 staffnumber:req.user.staffnumber,
                  name:req.user.name,
                  lastname:req.user.lastname,
                  email:req.user.email,
                  isAdmin:req.user.role === 0 ? false : true,
-                 isAuth: true,
-                 cart: req.user.cart,
-                 history: req.user.history
+                 isAuth: true
 
     });
 });
