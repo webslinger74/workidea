@@ -47,8 +47,8 @@ class Header extends Component {
                     public:false
                 },
                 {
-                    name:'Login',
-                    linkTo:'/register_login',
+                    name:'Admin',
+                    linkTo:'/login',
                     public:true
                 },
                 {
