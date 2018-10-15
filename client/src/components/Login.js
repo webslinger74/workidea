@@ -58,7 +58,7 @@ constructor(){
                   <div className="signin_wrapper">
 
                 <form onSubmit={this.onSubmit}>
-                <h1>ADMIN USER - LOGIN</h1>
+                <h1>ADMIN USER -- LOGIN</h1>
                 <TextFieldGroup 
                     type="text"
                     placeholder="Staff Number"
