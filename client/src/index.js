@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes';
-import '../public/resources/css/styles.css';
+import '../public/resources/css/styles.css';  //THIS IS THE CSS LOCAL FILE!!!!!!!!!!!
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import { combineReducers, compose} from 'redux';
 //import authReducer from '../src/reducers/authReducer';
-// import errorsReducer from '../src/reducers/errorsReducer';
-//  import userReducer from '../src/reducers/user_reducer';
-//  import productReducer from '../src/reducers/product_reducer';
+import errorsReducer from '../src/reducers/errorsReducer';
+import userReducer from '../src/reducers/user_reducer';
 
 
 const initialState = {};
 const rootReducers = combineReducers({
-    //    auth: userReducer,
-      //  errors: errorsReducer,
-     //   products: productReducer
+          auth: userReducer,
+          errors: errorsReducer
 })
 
 const middleware = [thunk];
