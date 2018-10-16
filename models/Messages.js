@@ -7,9 +7,9 @@ const MessageSchema = new Schema({
         type:String,
         required:true,
         unique: 1,
-        maxlength:2000
+        maxlength:200
     },
-    description: {
+    message: {
         required: true,
         type:String,
         maxlength:10000
@@ -20,7 +20,7 @@ const MessageSchema = new Schema({
     },
     author:{
         required: true,
-        type: Boolean
+        type: String
     },
     images:{
         type:Array,

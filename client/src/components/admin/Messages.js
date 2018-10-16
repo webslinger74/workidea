@@ -6,6 +6,7 @@ import SelectListGroup from '../../Inputs/SelectListGroup';
 import MyButton from '../../Inputs/Button';
 import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
+import { addMessage } from '../../actions/messageActions';
 
 const Bool = [
     {
@@ -25,6 +26,8 @@ class Messages extends Component {
                 title:'',
                 message:'',
                 errors: {},
+                publish:false,
+                author:'',
                 formSuccess: false,
                 images: []
               };
@@ -47,6 +50,12 @@ class Messages extends Component {
                         this.state[key] = false;
                     }
                     if( key === "title" ){
+                        this.state[key] = this.state[key].toString();
+                    }
+                    if( key === "message" ){
+                        this.state[key] = this.state[key].toString();
+                    }
+                    if( key === "author" ){
                         this.state[key] = this.state[key].toString();
                     }
 
@@ -79,7 +88,7 @@ class Messages extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-     //   this.props.addProduct(newState);
+        this.props.addMessage(newState);
 
         }
 
@@ -170,21 +179,17 @@ class Messages extends Component {
                                              options={this.props.woods}
                                              placeholder="Type of Wood"
                                         
-                                        
-                                        />: null}
-                                        
-                                   <div className="form_devider"></div>
+                                        />: null}  
 
-                                     <SelectListGroup 
+                             <TextFieldGroup 
                                  type="text"
-                                 placeholder="Shipping"
-                                 name="shipping"
-                                 error={errors.shipping}
-                                 value={this.state.shipping}
+                                 placeholder="Author"
+                                 name="author"
+                                 error={errors.author}
+                                 value={this.state.author}
                                  onChange={this.onChange}
-                                 options={Bool}
-                            />
-                            <div className="form_devider"></div>
+                            />  
+
                             <SelectListGroup
                                  type="text"
                                  placeholder="Publish"
@@ -222,6 +227,7 @@ class Messages extends Component {
     }
 }
 const actions = {
+    addMessage
 }
 
 const mapStateToProps = (state) => ({

@@ -18,15 +18,7 @@ module.exports = merge(common, {
                 target:"http://localhost:5000", 
                 secure:"false" 
              },
-            "/api/productsBrands/**" :{
-                target:"http://localhost:5000",
-                secure:"false"
-            },
-            "/api/productsWoods/**" : {
-                target:"http://localhost:5000",
-                secure:"false"
-            },
-            "/api/productsGuitars/**" : {
+            "/api/messages/**" :{
                 target:"http://localhost:5000",
                 secure:"false"
             }
