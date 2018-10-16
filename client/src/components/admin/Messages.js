@@ -5,6 +5,7 @@ import TextAreaFieldGroup from '../../Inputs/TextAreaFieldGroup';
 import SelectListGroup from '../../Inputs/SelectListGroup';
 import MyButton from '../../Inputs/Button';
 import FileUpload from './FileUpload';
+import UserLayout from './UserLayout';
 
 const Bool = [
     {
@@ -129,7 +130,7 @@ class Messages extends Component {
     render() { 
         const {errors} = this.state;
         return (
-            
+            <UserLayout>
             <div className="container">
                 <h1>Create Message</h1>
                 <form onSubmit={(event) => this.onSubmit(event)}>
@@ -214,7 +215,7 @@ class Messages extends Component {
                 </form>
             </div>
 
-
+                                </UserLayout>
            
           );
     }

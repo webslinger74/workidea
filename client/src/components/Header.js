@@ -16,7 +16,7 @@ class Header extends Component {
                 },
                 {
                     name:'Messages',
-                    linkTo:'/messages',
+                    linkTo:'/messageboard',
                     public: true
                 },
                 {
@@ -32,6 +32,16 @@ class Header extends Component {
                 {
                     name:'Site Performance',
                     linkTo:'/sitePerformance',
+                    public: true
+                },
+                {
+                    name:'Manager',
+                    linkTo:'/manager',
+                    public: true
+                },
+                {
+                    name:'Feedback',
+                    linkTo:'/feedback',
                     public: true
                 }
             ],

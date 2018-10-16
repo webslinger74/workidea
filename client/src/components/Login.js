@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { loginUser } from '../actions/userActions';
 import TextFieldGroup from '../Inputs/TextFieldGroup';
+import UserLayout from './admin/UserLayout';
 
 class Login extends Component {
 constructor(){
@@ -53,7 +54,7 @@ constructor(){
         const {errors} = this.state;
 
         return (
-          <div className="page_wrapper">
+          <UserLayout>
           <div className="container">
                   <div className="signin_wrapper">
 
@@ -82,11 +83,11 @@ constructor(){
                         </div>
                     :null}
                   
-                  <input type="submit" className="btn btn-info btn-block mt-4" />
+                  <input type="submit" value="Login" />
                 </form>
             </div>
 </div>
-</div>
+                        </UserLayout>
           )
     }
 }
