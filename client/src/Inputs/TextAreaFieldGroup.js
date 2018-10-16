@@ -8,6 +8,8 @@ const TextAreaFieldGroup = ({
     error,
     info,
     onChange,
+    heightBox,
+    widthBox
     
 }) => {
     return (
@@ -24,6 +26,7 @@ const TextAreaFieldGroup = ({
           value={value}
           error={error}
           onChange={onChange}
+          style={{height:heightBox}}
           />
           {info && <small className="form-text text-muted">{info}</small>}
             {error && (

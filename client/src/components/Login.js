@@ -55,7 +55,7 @@ constructor(){
 
         return (
           <UserLayout>
-          <div className="container">
+          <div>
                   <div className="signin_wrapper">
 
                 <form onSubmit={this.onSubmit}>

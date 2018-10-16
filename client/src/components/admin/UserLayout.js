@@ -33,7 +33,7 @@ class UserLayout extends Component {
             <div className="links">
             <Link to="/login">Login</Link>
             <Link to="/messages">Create Message</Link>
-            <Link to="/login">Update Area</Link>
+            <Link to="/userdashboard">User Dashboard</Link>
             </div>
             {console.log(isAdd, "recs")}
             {isAdd && isAdd.isAdmin ? 

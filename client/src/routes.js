@@ -12,6 +12,7 @@ import Login from './components/Login';
 import MessageBoard from './components/MessageBoard';
 import Feedback from './components/Feedback';
 import Manager from './components/Manager';
+import UserDashboard from './components/admin/UserDashboard';
 
 const Routes = () => {
     
@@ -21,6 +22,7 @@ const Routes = () => {
             <Switch>
 
                 <Route path="/"  exact component={Home}/>
+                <Route path="/userdashboard"  exact component={UserDashboard}/>
                 <Route path="/messages"  exact component={Messages}/>
                 <Route path="/siteperformance"  exact component={SitePerformance}/>
                 <Route path="/sports"  exact component={Sports}/>

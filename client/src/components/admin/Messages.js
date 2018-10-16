@@ -131,7 +131,7 @@ class Messages extends Component {
         const {errors} = this.state;
         return (
             <UserLayout>
-            <div className="container">
+            <div>
                 <h1>Create Message</h1>
                 <form onSubmit={(event) => this.onSubmit(event)}>
                 
@@ -157,6 +157,7 @@ class Messages extends Component {
                                  error={errors.message}
                                  value={this.state.message}
                                  onChange={this.onChange}
+                                 heightBox={'250px'}
                             />
 
                 <div className="form_devider"></div>
