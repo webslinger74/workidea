@@ -24,6 +24,10 @@
             }
 
          romanCalc(int){
+
+            if(int === 0){
+                return console.log("Roman numerals do not have a value for Zero or 0")
+            }
             if(int >=4000 || int <0){
                 return console.log("Can only calculate between 0 and 3999");
             }
@@ -49,13 +53,32 @@
 }
    
 const BBCexample = new NumToRoman();
+BBCexample.romanCalc(-20);
+BBCexample.romanCalc(0);
+BBCexample.romanCalc(5);
+BBCexample.romanCalc(95);
+BBCexample.romanCalc(325);
+BBCexample.romanCalc(679);
 BBCexample.romanCalc(3999);
-console.log(BBCexample.singles);
+BBCexample.romanCalc(4000);
 
 
+/*IDEAS BEFORE TURNING A PC ON //////////////////////
 
+1 need to input an integer to a function
+2 will check that value against the options of Roman Numerals
+3 if get a match will need to store this and then add numbers together
+4 convert input to a string to loop through then put values into an array
+5 create an array of objects for the roman numerals
+6 decided to put into thousands, hundreds, tens, and units and match with key:value pairs
+
+*/
    
-   /*
+
+// first attempt to get this working using a function and an array of objects.
+// with console.logs to check variable's were being passed as expected.
+
+/*
    const RomanObjectUnits =[  
       {
         1:"I",
