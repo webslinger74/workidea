@@ -1,3 +1,61 @@
+   class NumToRoman {
+
+        constructor(){
+            const singles = this.createRomanStructure("I","V","X");
+            const tens = this.createRomanStructure("X","L","C");
+            const hundreds = this.createRomanStructure("C","D","M");
+            const thousands = this.createRomanStructure("M","M","M");
+       
+            this.RomanObjectUnits = [singles, tens, hundreds, thousands]
+        }
+            createRomanStructure(a,b,c){
+                return {
+                    1:a,
+                    2:a + a,
+                    3:a + a + a,
+                    4:a + b,
+                    5:b,
+                    6:b + a,
+                    7:b + a + a,
+                    8:b + a + a + a,
+                    9:a + c
+                }
+               
+            }
+
+         romanCalc(int){
+            if(int >=4000 || int <0){
+                return console.log("Can only calculate between 0 and 3999");
+            }
+             const str = int.toString();
+             const romArr = [];
+                 for(let i=0; i<str.length; i++){
+                     romArr.push(str[i])
+                 };
+                 const arrLength = romArr.length;
+     
+                 let totalString = "";
+                 let j=0;
+                 for(let i=arrLength; i>0; i--){
+                     for(let key in this.RomanObjectUnits[i-1]){
+                         if (key === romArr[j]){
+                             totalString = totalString + this.RomanObjectUnits[i-1][key];
+                         }
+                     }
+                     j++
+                 }
+                 console.log(`Number input:${int} = RomanNumeral of this = ${totalString}`);
+             }
+}
+   
+const BBCexample = new NumToRoman();
+BBCexample.romanCalc(3999);
+console.log(BBCexample.singles);
+
+
+
+   
+   /*
    const RomanObjectUnits =[  
       {
         1:"I",
@@ -49,9 +107,9 @@
        if(int >=4000 || int <0){
            return console.log("Can only calculate between 0 and 3999");
        }
-       if(int !== typeof int || int === null || int || undefined){
-           return console.log("Entered value must be an integer between 0 and 3999");
-       }
+       
+      
+       
      //   get the integer and split into array
         const str = int.toString();
         const romArr = [];
@@ -76,11 +134,10 @@
                 }
                 j++
             }
-            console.log(totalString, "this is totalstring")
             console.log(`Number input:${int} = RomanNumeral of this = ${totalString}`);
         }
 
 
-        romanCalc("hello");
-        
+        romanCalc(2999);
+*/        
    
