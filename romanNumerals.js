@@ -46,6 +46,12 @@
 
     
    romanCalc = (int) => {
+       if(int >=4000 || int <0){
+           return console.log("Can only calculate between 0 and 3999");
+       }
+       if(int !== typeof int || int === null || int || undefined){
+           return console.log("Entered value must be an integer between 0 and 3999");
+       }
      //   get the integer and split into array
         const str = int.toString();
         const romArr = [];
@@ -71,10 +77,10 @@
                 j++
             }
             console.log(totalString, "this is totalstring")
-          
+            console.log(`Number input:${int} = RomanNumeral of this = ${totalString}`);
         }
 
 
-        romanCalc(5);
+        romanCalc("hello");
         
    
