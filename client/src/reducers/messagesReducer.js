@@ -1,4 +1,4 @@
-import { ADD_MESSAGE
+import { ADD_MESSAGE, GET_MESSAGES
    } from '../types/types';
 
 
@@ -13,6 +13,12 @@ switch(action.type){
        ...state,
        message:action.payload
    }
+   case GET_MESSAGES:
+   return {
+       ...state,
+       allMessages:action.payload
+    }
+   
    default:
        return state;
 }

@@ -35,5 +35,15 @@ router.post('/message', (req, res) => {
                 })
 })
 
+router.get('/messages', (req,res) => {
+    Message.find()
+        .then(mess => {
+            console.log(mess)
+            return res.json(mess);
+        })
+        .catch(err => res.json(err))
+})
+
+
 
 module.exports = router;
