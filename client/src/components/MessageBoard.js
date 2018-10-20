@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getMessages } from '../actions/messageActions';
 import { connect } from 'react-redux';
+import MyEditor from '../utils/draft';
+import 'draft-js/dist/Draft.css';
 
 class MessageBoard extends Component {
     constructor(props) {
@@ -27,7 +29,7 @@ class MessageBoard extends Component {
                            <h5> {mess.message} </h5>
                            <h3> {mess.author} </h3>
                           <h4>  {mess.createdAt} </h4>
-                  
+                  <MyEditor/>
                         </div>
                     ))
         )
