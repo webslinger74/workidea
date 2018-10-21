@@ -7,7 +7,7 @@ import MyButton from '../../Inputs/Button';
 import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import { addMessage } from '../../actions/messageActions';
-
+import MyComponent from '../../utils/editor';
 const Bool = [
     {
         "name":"YES",
@@ -160,6 +160,8 @@ class Messages extends Component {
                                  onChange={this.onChange}
                             />
 
+
+                 <MyComponent />
                  <TextAreaFieldGroup 
                                  placeholder="Message"
                                  name="message"
@@ -168,6 +170,8 @@ class Messages extends Component {
                                  onChange={this.onChange}
                                  heightBox={'250px'}
                             />
+
+                
 
                 <div className="form_devider"></div>
                                {this.props.woods ?

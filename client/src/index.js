@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes';
+import 'react-quill/dist/quill.snow.css';
 import '../public/resources/css/styles.css';  //THIS IS THE CSS LOCAL FILE!!!!!!!!!!!
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
