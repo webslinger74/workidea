@@ -3,7 +3,7 @@ import { getMessages } from '../actions/messageActions';
 import { connect } from 'react-redux';
 import MyComponent from '../utils/editor';
 
-class MessageBoard extends Component {
+export class MessageBoard extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
@@ -38,7 +38,7 @@ class MessageBoard extends Component {
             <div className="">
                 MessageBoard
                 {showMessages()}
-    <MyComponent />
+                 <MyComponent />
 
             </div>
           );
