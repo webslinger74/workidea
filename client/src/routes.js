@@ -10,9 +10,11 @@ import Sports from './components/Sports';
 import Achievements from './components/Achievments';
 import Login from './components/Login';
 import MessageBoard from './components/MessageBoard';
-import Feedback from './components/Feedback';
-import Manager from './components/Manager';
+//import Feedback from './components/Feedback';
+//import Manager from './components/Manager';
 import UserDashboard from './components/admin/UserDashboard';
+import AsyncFeedback from './components/AsyncFeedback';
+import AsyncManager from './components/AsyncManager';
 
 const Routes = () => {
     
@@ -29,8 +31,10 @@ const Routes = () => {
                 <Route path="/achievements"  exact component={Achievements}/>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
-                <Route path="/manager" exact component={Manager}/>
-                <Route path="/feedback" exact component={Feedback}/>
+                <Route path="/manager" exact component={AsyncManager}/>
+
+                <Route path="/feedback" exact component={AsyncFeedback}/>
+
             </Switch>
             </Layout>
 
