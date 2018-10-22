@@ -5,7 +5,7 @@ import { loginUser } from '../actions/userActions';
 import TextFieldGroup from '../Inputs/TextFieldGroup';
 import UserLayout from './admin/UserLayout';
 
-class Login extends Component {
+export class Login extends Component {
 constructor(){
     super();
     this.state = {

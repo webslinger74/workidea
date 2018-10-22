@@ -8,4 +8,7 @@ const getMessages = jest.fn();
 
 it('should render the MessageBoard component', () => {
     expect(shallow(<MessageBoard getMessages={getMessages} messages={allmessages} />)).toMatchSnapshot();
-})
+    expect(getMessages).toHaveBeenCalledTimes(1);
+    expect(getMessages).toHaveBeenCalledWith();
+});
+
