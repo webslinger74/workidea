@@ -9,6 +9,20 @@ export class MessageBoard extends Component {
         this.state = {  }
     }
 
+    showMessages = (messages) => (
+        messages && messages.map(mess => (
+             <div className="ste" key={mess._id}>
+           
+                <h3> {mess.title} </h3>
+                <h5> {mess.message} </h5>
+                <h3> {mess.author} </h3>
+               <h4>  {mess.createdAt} </h4>
+      
+             </div>
+         ))
+      
+)
+
 
     componentDidMount(){
         this.props.getMessages();
@@ -18,27 +32,13 @@ export class MessageBoard extends Component {
 
 
     render() { 
-        const { messages } =  this.props;
-
-        const showMessages = (messsages) => (
-                   messages && messages.map(mess => (
-                        <div className="" key={mess._id}>
-                      
-                           <h3> {mess.title} </h3>
-                           <h5> {mess.message} </h5>
-                           <h3> {mess.author} </h3>
-                          <h4>  {mess.createdAt} </h4>
-                 
-                        </div>
-                    ))
-                 
-        )
+        const {messages}  =  this.props;
 
         return (
             <div className="">
                 MessageBoard
-                {showMessages()}
-                 <MyComponent />
+                {this.showMessages(messages)}
+            
 
             </div>
           );
@@ -54,5 +54,4 @@ const mapStateToProps = (state) => ({
     messages: state.messages.allMessages
 })
 
- 
 export default connect(mapStateToProps, actions)(MessageBoard);

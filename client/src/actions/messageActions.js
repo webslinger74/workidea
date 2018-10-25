@@ -2,7 +2,6 @@ import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES } from '../types/types';
 import axios from 'axios';
 
 export const addMessage = (message) => (dispatch) => {
-    console.log(message, "this is the message at the action");
     axios.post('/api/messages/message', message)
         .then(response => {
             console.log(response, "this is the response from axios in action")

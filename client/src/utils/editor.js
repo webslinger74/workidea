@@ -20,7 +20,7 @@ class MyComponent extends React.Component {
   render() {
    
     return (
-      <ReactQuill value={this.props.value}
+      <ReactQuill value={this.state.text}
                   onChange={this.handleChange}
                   theme="snow"
                   modules={MyComponent.modules}

@@ -20,13 +20,22 @@ ShallowWrapper {
     messages={
       Array [
         Object {
-          "1": "message 1",
+          "_id": 1,
+          "createdAt": 123,
+          "message": "message 1",
+          "title": "mess 1",
         },
         Object {
-          "2": "message 2",
+          "_id": 2,
+          "createdAt": 123,
+          "message": "message 2",
+          "title": "mess 2",
         },
         Object {
-          "3": "message3",
+          "_id": 3,
+          "createdAt": 123,
+          "message": "message 3",
+          "title": "mess 3",
         },
       ]
     }
@@ -48,14 +57,16 @@ ShallowWrapper {
         "MessageBoard",
         Array [
           <div
-            className=""
+            className="ste"
           >
             <h3>
                
+              mess 1
                
             </h3>
             <h5>
                
+              message 1
                
             </h5>
             <h3>
@@ -64,18 +75,21 @@ ShallowWrapper {
             </h3>
             <h4>
                 
+              123
                
             </h4>
           </div>,
           <div
-            className=""
+            className="ste"
           >
             <h3>
                
+              mess 2
                
             </h3>
             <h5>
                
+              message 2
                
             </h5>
             <h3>
@@ -84,18 +98,21 @@ ShallowWrapper {
             </h3>
             <h4>
                 
+              123
                
             </h4>
           </div>,
           <div
-            className=""
+            className="ste"
           >
             <h3>
                
+              mess 3
                
             </h3>
             <h5>
                
+              message 3
                
             </h5>
             <h3>
@@ -104,6 +121,7 @@ ShallowWrapper {
             </h3>
             <h4>
                 
+              123
                
             </h4>
           </div>,
@@ -117,16 +135,18 @@ ShallowWrapper {
       "MessageBoard",
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "1",
         "nodeType": "host",
         "props": Object {
           "children": Array [
             <h3>
                
+              mess 1
                
             </h3>,
             <h5>
                
+              message 1
                
             </h5>,
             <h3>
@@ -135,10 +155,11 @@ ShallowWrapper {
             </h3>,
             <h4>
                 
+              123
                
             </h4>,
           ],
-          "className": "",
+          "className": "ste",
         },
         "ref": null,
         "rendered": Array [
@@ -149,14 +170,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "mess 1",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "mess 1",
               " ",
             ],
             "type": "h3",
@@ -168,14 +189,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "message 1",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "message 1",
               " ",
             ],
             "type": "h5",
@@ -206,14 +227,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               "  ",
-              undefined,
+              123,
               " ",
             ],
             "type": "h4",
@@ -223,16 +244,18 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "2",
         "nodeType": "host",
         "props": Object {
           "children": Array [
             <h3>
                
+              mess 2
                
             </h3>,
             <h5>
                
+              message 2
                
             </h5>,
             <h3>
@@ -241,10 +264,11 @@ ShallowWrapper {
             </h3>,
             <h4>
                 
+              123
                
             </h4>,
           ],
-          "className": "",
+          "className": "ste",
         },
         "ref": null,
         "rendered": Array [
@@ -255,14 +279,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "mess 2",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "mess 2",
               " ",
             ],
             "type": "h3",
@@ -274,14 +298,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "message 2",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "message 2",
               " ",
             ],
             "type": "h5",
@@ -312,14 +336,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               "  ",
-              undefined,
+              123,
               " ",
             ],
             "type": "h4",
@@ -329,16 +353,18 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "3",
         "nodeType": "host",
         "props": Object {
           "children": Array [
             <h3>
                
+              mess 3
                
             </h3>,
             <h5>
                
+              message 3
                
             </h5>,
             <h3>
@@ -347,10 +373,11 @@ ShallowWrapper {
             </h3>,
             <h4>
                 
+              123
                
             </h4>,
           ],
-          "className": "",
+          "className": "ste",
         },
         "ref": null,
         "rendered": Array [
@@ -361,14 +388,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "mess 3",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "mess 3",
               " ",
             ],
             "type": "h3",
@@ -380,14 +407,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 " ",
-                undefined,
+                "message 3",
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               " ",
-              undefined,
+              "message 3",
               " ",
             ],
             "type": "h5",
@@ -418,14 +445,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
             },
             "ref": null,
             "rendered": Array [
               "  ",
-              undefined,
+              123,
               " ",
             ],
             "type": "h4",
@@ -455,14 +482,16 @@ ShallowWrapper {
           "MessageBoard",
           Array [
             <div
-              className=""
+              className="ste"
             >
               <h3>
                  
+                mess 1
                  
               </h3>
               <h5>
                  
+                message 1
                  
               </h5>
               <h3>
@@ -471,18 +500,21 @@ ShallowWrapper {
               </h3>
               <h4>
                   
+                123
                  
               </h4>
             </div>,
             <div
-              className=""
+              className="ste"
             >
               <h3>
                  
+                mess 2
                  
               </h3>
               <h5>
                  
+                message 2
                  
               </h5>
               <h3>
@@ -491,18 +523,21 @@ ShallowWrapper {
               </h3>
               <h4>
                   
+                123
                  
               </h4>
             </div>,
             <div
-              className=""
+              className="ste"
             >
               <h3>
                  
+                mess 3
                  
               </h3>
               <h5>
                  
+                message 3
                  
               </h5>
               <h3>
@@ -511,6 +546,7 @@ ShallowWrapper {
               </h3>
               <h4>
                   
+                123
                  
               </h4>
             </div>,
@@ -524,16 +560,18 @@ ShallowWrapper {
         "MessageBoard",
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "1",
           "nodeType": "host",
           "props": Object {
             "children": Array [
               <h3>
                  
+                mess 1
                  
               </h3>,
               <h5>
                  
+                message 1
                  
               </h5>,
               <h3>
@@ -542,10 +580,11 @@ ShallowWrapper {
               </h3>,
               <h4>
                   
+                123
                  
               </h4>,
             ],
-            "className": "",
+            "className": "ste",
           },
           "ref": null,
           "rendered": Array [
@@ -556,14 +595,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "mess 1",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "mess 1",
                 " ",
               ],
               "type": "h3",
@@ -575,14 +614,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "message 1",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "message 1",
                 " ",
               ],
               "type": "h5",
@@ -613,14 +652,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   "  ",
-                  undefined,
+                  123,
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
               "type": "h4",
@@ -630,16 +669,18 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "2",
           "nodeType": "host",
           "props": Object {
             "children": Array [
               <h3>
                  
+                mess 2
                  
               </h3>,
               <h5>
                  
+                message 2
                  
               </h5>,
               <h3>
@@ -648,10 +689,11 @@ ShallowWrapper {
               </h3>,
               <h4>
                   
+                123
                  
               </h4>,
             ],
-            "className": "",
+            "className": "ste",
           },
           "ref": null,
           "rendered": Array [
@@ -662,14 +704,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "mess 2",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "mess 2",
                 " ",
               ],
               "type": "h3",
@@ -681,14 +723,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "message 2",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "message 2",
                 " ",
               ],
               "type": "h5",
@@ -719,14 +761,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   "  ",
-                  undefined,
+                  123,
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
               "type": "h4",
@@ -736,16 +778,18 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "3",
           "nodeType": "host",
           "props": Object {
             "children": Array [
               <h3>
                  
+                mess 3
                  
               </h3>,
               <h5>
                  
+                message 3
                  
               </h5>,
               <h3>
@@ -754,10 +798,11 @@ ShallowWrapper {
               </h3>,
               <h4>
                   
+                123
                  
               </h4>,
             ],
-            "className": "",
+            "className": "ste",
           },
           "ref": null,
           "rendered": Array [
@@ -768,14 +813,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "mess 3",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "mess 3",
                 " ",
               ],
               "type": "h3",
@@ -787,14 +832,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   " ",
-                  undefined,
+                  "message 3",
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 " ",
-                undefined,
+                "message 3",
                 " ",
               ],
               "type": "h5",
@@ -825,14 +870,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   "  ",
-                  undefined,
+                  123,
                   " ",
                 ],
               },
               "ref": null,
               "rendered": Array [
                 "  ",
-                undefined,
+                123,
                 " ",
               ],
               "type": "h4",

@@ -162,6 +162,11 @@ class Messages extends Component {
 
 
                  <MyComponent />
+
+
+
+
+                 
                  <TextAreaFieldGroup 
                                  placeholder="Message"
                                  name="message"
