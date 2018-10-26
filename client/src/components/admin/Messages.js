@@ -33,6 +33,12 @@ class Messages extends Component {
               };
              
             }
+
+            getStateValue = (editorState) => {
+                this.setState({message:editorState})
+                console.log(this.state);
+            }
+
             onChange = (e) => {
               this.setState({ [e.target.name]: e.target.value });
             }
@@ -161,22 +167,12 @@ class Messages extends Component {
                             />
 
 
-                 <MyComponent />
+                 <MyComponent 
+                 getStateValue={this.getStateValue}
 
-
-
-
-                 
-                 <TextAreaFieldGroup 
-                                 placeholder="Message"
-                                 name="message"
-                                 error={errors.message}
-                                 value={this.state.message}
-                                 onChange={this.onChange}
-                                 heightBox={'250px'}
-                            />
-
-                
+                 />
+              
+                              
 
                 <div className="form_devider"></div>
                                {this.props.woods ?

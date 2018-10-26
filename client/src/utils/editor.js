@@ -15,17 +15,22 @@ class MyComponent extends React.Component {
  
   handleChange = (value) => {
     this.setState({ text: value })
+    this.props.getStateValue(this.state.text)
   }
  
   render() {
-   
+      
     return (
+      <div>
+       
+        <div className="label_inputs">Message</div>
       <ReactQuill value={this.state.text}
                   onChange={this.handleChange}
                   theme="snow"
                   modules={MyComponent.modules}
                   formats={MyComponent.formats}
                    />
+           </div>
     )
   }
 }
