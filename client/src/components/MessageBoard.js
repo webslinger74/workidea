@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { getMessages } from '../actions/messageActions';
 import { connect } from 'react-redux';
-import MyComponent from '../utils/editor';
+import ReactHtmlParser from 'react-html-parser';
+import { Link } from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export class MessageBoard extends Component {
     constructor(props) {
@@ -9,16 +11,28 @@ export class MessageBoard extends Component {
         this.state = {  }
     }
 
+
+    convertStringMessageToHtml = (string) => {
+            const html = string;
+            return <div>{ReactHtmlParser(html)}</div>
+    }
+
     showMessages = (messages) => (
         messages && messages.map(mess => (
-             <div className="ste" key={mess._id}>
+             <div className="indMessage" key={mess._id}>
            
-                <h3> {mess.title} </h3>
-                <h5> {mess.message} </h5>
-                <h3> {mess.author} </h3>
-               <h4>  {mess.createdAt} </h4>
-      
+                <h3 className="waterTitle"> {mess.title} </h3>
+
+
+           {mess.message ? 
+                this.convertStringMessageToHtml(mess.message):
+                null}                    
+                
+                <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
+        
+        
              </div>
+              
          ))
       
 )
@@ -35,15 +49,39 @@ export class MessageBoard extends Component {
         const {messages}  =  this.props;
 
         return (
-            <div className="">
-                MessageBoard
+
+           
+            <div className="user_container">
+            <div className="user_left_nav">
+            <div className="hello">
+            <h2>Find Messages by:</h2>
+            <div className="links">
+            <Link to="/">Latest</Link>
+            <Link to="/">Most Popular</Link>
+            <Link to="/">Select by Date</Link>
+                
+            </div>
+          
+             </div>
+             </div>
+            <div className="user_right">
+                     {this.props.children}
+        
+                     <div className="centred">MessageBoard</div>
+
+
                 {this.showMessages(messages)}
             
 
+            
             </div>
-          );
+            
+               
+              </div>
+          )
     }
 }
+          
 
 
 const actions = {

@@ -25,7 +25,6 @@ class UserLayout extends Component {
             const { auth, isAdd } = this.props;
 
         return (
-            <div className="container">
             <div className="user_container">
             <div className="user_left_nav">
             
@@ -51,8 +50,7 @@ class UserLayout extends Component {
             
             </div>
             
-            </div>    
-            </div>       
+            </div>          
           );
     }
 }
