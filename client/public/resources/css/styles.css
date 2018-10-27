@@ -920,14 +920,20 @@ footer .business_nfo .nfo {
     width: 90%;
     border-bottom: 2px solid rgba(92, 86, 86, 0.541);
     background-color:rgba(204, 198, 198, 0.061);
+    transition:2s;
 
+}
+.indMessage:hover {
+    background-color:rgba(211, 203, 203, 0.192);
+    
+    
 }
 .hello {
     height:700px;
     width:100%;
 }
 .waterTitle {
-    color:rgba(0, 0, 0, 0.061);
+    color:rgba(129, 124, 124, 0.013);
     text-align:left;
 
 }

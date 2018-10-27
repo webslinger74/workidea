@@ -57,7 +57,7 @@ export class MessageBoard extends Component {
             <h2>Find Messages by:</h2>
             <div className="links">
             <Link to="/">Latest</Link>
-            <Link to="/">Most Popular</Link>
+            <Link to="/">Select by Sender</Link>
             <Link to="/">Select by Date</Link>
                 
             </div>
