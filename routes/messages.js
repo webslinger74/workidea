@@ -46,6 +46,24 @@ router.get('/messages', (req,res) => {
         .catch(err => res.json(err))
 })
 
+router.post('/messagesByDate', (req,res) => {
+    let slicedTime = req.body.searchdate;
+
+    const startSearch = new Date(parseInt(slicedTime.slice(0,4)), parseInt(slicedTime.slice(5,7))-1, parseInt(slicedTime.slice(8,10)));
+    const endSearch = new Date(parseInt(slicedTime.slice(0,4)), parseInt(slicedTime.slice(5,7))-1, parseInt(slicedTime.slice(8,10))+1);
+  
+      Message.find({"createdAt": {"$gte": startSearch, "$lt": endSearch}})
+    .limit(10)
+    .sort({ createdAt: -1 })
+    .then(mess => {
+        if(mess.length === 0){
+            return res.json([{nomessage:"there are no messages"}])
+        }
+            return res.json(mess);
+        })
+        .catch(err => res.json(err))
+})
+
 
 
 module.exports = router;

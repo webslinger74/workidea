@@ -933,7 +933,10 @@ footer .business_nfo .nfo {
     width:100%;
 }
 .waterTitle {
-    color:rgba(129, 124, 124, 0.013);
+    color:rgba(129, 124, 124, 0.123);
     text-align:left;
 
+}
+.messageBoardDate {
+    color:rgba(0, 0, 0, 0.315);
 }

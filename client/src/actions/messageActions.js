@@ -36,5 +36,30 @@ export const getMessages = () => (dispatch) => {
             })
         })
 }
+export const getMessagesByDate = (date) => (dispatch) => {
+
+    console.log(date)
+    let dateToSend = date;
+    console.log(dateToSend)
+ //   let dateToSendString = dateToSend.format();
+    let dateToSendString = dateToSend
+    console.log(dateToSendString, "this is the date in actions")
+    console.log(typeof(dateToSendString), "this is the date in actions")
+    axios.post('/api/messages/messagesByDate', {searchdate:dateToSendString})
+       
+        .then(response => {
+            console.log(response, "is this all the messages???")
+            dispatch({
+                type:GET_MESSAGES,
+                payload:response.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
 
 

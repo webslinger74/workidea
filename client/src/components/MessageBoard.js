@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import { getMessages } from '../actions/messageActions';
+import { getMessages, getMessagesByDate } from '../actions/messageActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 export class MessageBoard extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+            startDate: moment(),
+            selectedDate:moment()
+          }
+    }
+
+    handleChange = (date) => {
+        console.log(date, "the date")
+        this.setState({
+          
+            startDate: date,
+            selectedDate:date
+        }, () => {
+            console.log(this.state.startDate, "startdate")
+            this.props.getMessagesByDate(this.state.selectedDate)
+        })  
     }
 
 
@@ -18,7 +37,7 @@ export class MessageBoard extends Component {
     }
 
     showMessages = (messages) => (
-        messages && messages.map(mess => (
+       messages && messages.map(mess => (
              <div className="indMessage" key={mess._id}>
            
                 <h3 className="waterTitle"> {mess.title} </h3>
@@ -37,8 +56,7 @@ export class MessageBoard extends Component {
       
 )
 
-
-    componentDidMount(){
+           componentDidMount(){
         this.props.getMessages();
     }
 
@@ -56,9 +74,14 @@ export class MessageBoard extends Component {
             <div className="hello">
             <h2>Find Messages by:</h2>
             <div className="links">
-            <Link to="/">Latest</Link>
-            <Link to="/">Select by Sender</Link>
-            <Link to="/">Select by Date</Link>
+            <div onClick={this.props.getMessages}>Latest</div>
+            <div>Select by Sender</div>
+            <div onClick={() => this.props.getMessagesByDate(this.state.selectedDate)}>Select By Date</div>
+            <DatePicker
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+                placeholderText="Click to select a date" 
+            />
                 
             </div>
           
@@ -67,7 +90,9 @@ export class MessageBoard extends Component {
             <div className="user_right">
                      {this.props.children}
         
-                     <div className="centred">MessageBoard</div>
+                     <div className="centred">MessageBoard - 
+                    <span className="messageBoardDate">{this.state.selectedDate.toString().slice(0,16)}</span>
+                     </div>
 
 
                 {this.showMessages(messages)}
@@ -85,7 +110,8 @@ export class MessageBoard extends Component {
 
 
 const actions = {
-    getMessages
+    getMessages,
+    getMessagesByDate
 }
 
 const mapStateToProps = (state) => ({
