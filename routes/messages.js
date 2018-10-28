@@ -57,13 +57,32 @@ router.post('/messagesByDate', (req,res) => {
     .sort({ createdAt: -1 })
     .then(mess => {
         if(mess.length === 0){
-            return res.json([{nomessage:"there are no messages"}])
-        }
+            return res.json([{message:"There are no messages for this Date",
+            _id:"1",
+             title:"No Messages"}])
+}
+        
             return res.json(mess);
         })
         .catch(err => res.json(err))
 })
 
+router.post('/messagesBySearch', (req,res) => {
+    let searchString = req.body.searchString;
+  
+      Message.find({"author": searchString})
+    .limit(5)
+    .sort({ createdAt: -1 })
+    .then(mess => {
+        if(mess.length === 0){
+            return res.json([{message:"There are no messages from this Person/Team",
+                            _id:"1",
+                             title:"No Messages"}])
+        }
+            return res.json(mess);
+        })
+        .catch(err => res.json(err))
+})
 
 
 module.exports = router;

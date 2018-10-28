@@ -62,4 +62,24 @@ export const getMessagesByDate = (date) => (dispatch) => {
         })
 }
 
+export const getMessagesBySearch = (search) => (dispatch) => {
+    console.log("oh yeah baby")
+    console.log(search, "this is the search in actions")
+    axios.post('/api/messages/messagesBySearch', {searchString:search})
+    .then(response => {
+        console.log(response, "is this all the messages???")
+        dispatch({
+            type:GET_MESSAGES,
+            payload:response.data
+        })
+    })
+    .catch(err => {
+        dispatch({
+            type:GET_ERRORS,
+            payload:err
+        })
+    })
+}
+
+
 

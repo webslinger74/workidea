@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getMessages, getMessagesByDate } from '../actions/messageActions';
+import { getMessages, getMessagesByDate, getMessagesBySearch } from '../actions/messageActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,8 @@ export class MessageBoard extends Component {
         super(props);
         this.state = {
             startDate: moment(),
-            selectedDate:moment()
+            selectedDate:moment(),
+            search:''
           }
     }
 
@@ -30,6 +31,14 @@ export class MessageBoard extends Component {
         })  
     }
 
+    onChangeSearch = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        },() => {
+            this.props.getMessagesBySearch(this.state.search)
+        })
+    }
+
 
     convertStringMessageToHtml = (string) => {
             const html = string;
@@ -37,6 +46,8 @@ export class MessageBoard extends Component {
     }
 
     showMessages = (messages) => (
+
+        
        messages && messages.map(mess => (
              <div className="indMessage" key={mess._id}>
            
@@ -54,7 +65,7 @@ export class MessageBoard extends Component {
               
          ))
       
-)
+        )
 
            componentDidMount(){
         this.props.getMessages();
@@ -75,7 +86,9 @@ export class MessageBoard extends Component {
             <h2>Find Messages by:</h2>
             <div className="links">
             <div onClick={this.props.getMessages}>Latest</div>
-            <div>Select by Sender</div>
+            <div>Search by Sender
+                <input type="text" name="search" value={this.state.search} onChange={this.onChangeSearch} style={{width:'60%', marginLeft:'5px', marginBottom:'10px'}} />
+            </div>
             <div onClick={() => this.props.getMessagesByDate(this.state.selectedDate)}>Select By Date</div>
             <DatePicker
                 selected={this.state.startDate}
@@ -111,7 +124,8 @@ export class MessageBoard extends Component {
 
 const actions = {
     getMessages,
-    getMessagesByDate
+    getMessagesByDate,
+    getMessagesBySearch
 }
 
 const mapStateToProps = (state) => ({
