@@ -85,11 +85,11 @@ export class MessageBoard extends Component {
             <div className="hello">
             <h2>Find Messages by:</h2>
             <div className="links">
-            <div onClick={this.props.getMessages}>Latest</div>
+            <div className="latestMessages" onClick={this.props.getMessages}>Click for Your Latest Messages</div>
             <div>Search by Sender
-                <input type="text" name="search" value={this.state.search} onChange={this.onChangeSearch} style={{width:'60%', marginLeft:'5px', marginBottom:'10px'}} />
+                <input className="inpSearch" type="text" name="search" value={this.state.search} onChange={this.onChangeSearch} style={{width:'60%', marginLeft:'5px', marginBottom:'10px'}} />
             </div>
-            <div onClick={() => this.props.getMessagesByDate(this.state.selectedDate)}>Select By Date</div>
+            <div onClick={() => this.props.getMessagesByDate(this.state.selectedDate)}>Select By Date - Click Below to Change Date</div>
             <DatePicker
                 selected={this.state.startDate}
                 onChange={this.handleChange}

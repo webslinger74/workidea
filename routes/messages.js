@@ -37,7 +37,7 @@ router.post('/message', (req, res) => {
 
 router.get('/messages', (req,res) => {
     Message.find()
-    .limit(10)
+    .limit(20)
     .sort({ createdAt: -1 })
     .then(mess => {
             console.log(mess)
@@ -71,7 +71,7 @@ router.post('/messagesBySearch', (req,res) => {
     let searchString = req.body.searchString;
   
       Message.find({"author": searchString})
-    .limit(5)
+    .limit(10)
     .sort({ createdAt: -1 })
     .then(mess => {
         if(mess.length === 0){

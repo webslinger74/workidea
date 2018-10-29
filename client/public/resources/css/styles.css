@@ -931,6 +931,7 @@ footer .business_nfo .nfo {
 .hello {
     height:700px;
     width:100%;
+    margin-left:10px;
 }
 .waterTitle {
     color:rgba(129, 124, 124, 0.123);
@@ -939,4 +940,20 @@ footer .business_nfo .nfo {
 }
 .messageBoardDate {
     color:rgba(0, 0, 0, 0.315);
+}
+.latestMessages {
+    background-color: #dad6d693;
+    width:60%;
+    height:40px;
+    padding-top:10px;
+    padding-left:5px;
+}
+
+.latestMessages:hover {
+    background-color:#d4d1d1c4;
+
+}
+
+.inpSearch:hover {
+    background-color: rgba(243, 242, 242, 0.452);
 }
