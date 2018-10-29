@@ -33,7 +33,7 @@ class Messages extends Component {
               };
              
             }
-
+            // for the text-editor to pass in the message
             getStateValue = (editorState) => {
                 this.setState({message:editorState})
                 console.log(this.state);
