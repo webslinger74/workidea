@@ -52,20 +52,24 @@ export class MessageBoard extends Component {
              <div className="indMessage" key={mess._id}>
            <div>
                 <h3 className="waterTitle"> {mess.title} </h3> </div>
-                <div>
+                
                     {mess.images && mess.images.length > 0 ?
-                              <img className="messageBoardImg" src={mess.images[0].url}></img> : null
+                           <div>
+                               {mess.images.map((image) => (
+                                   <img className="messageBoardImg" src={image.url}></img>
+                               ))                 }
+                               </div> : null
                     }
-                  </div>
-                  <div>
-                <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
-            </div>
+                  
+                
                     <div>
            {mess.message ? 
                 this.convertStringMessageToHtml(mess.message):
                 null}                    
                 </div>
-              
+                <div>
+                <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
+            </div>
         
              </div>
               
