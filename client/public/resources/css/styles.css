@@ -976,3 +976,34 @@ footer .business_nfo .nfo {
     
 
 }
+
+/* Sports */
+
+#sliderSmall {
+    position:relative;
+    background-size: cover !important;
+    background-position: center left !important;
+    width:100% !important;
+    height:400px;
+}
+
+#sportsHeader {
+    font-size: 150px;
+    color:rgb(230, 226, 30);
+    position: absolute;
+    top:200px;
+    left:200px;
+    text-shadow:2px 2px #070706af;
+
+}
+.dividers2 {
+    height:5px;
+    width:100%;
+    background-color: #000000;
+}
+.sportsItem {
+    height:500px;
+    width: 80%;
+    background-color: #0000000a;
+    margin-left:10%;
+}

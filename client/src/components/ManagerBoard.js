@@ -7,6 +7,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import { getManagerMessages } from '../actions/managerActions';
+import ManagerImg from '../images/featured/manager.jpg';
 
 class ManagerBoard extends Component {
     constructor(props) {
@@ -86,8 +87,9 @@ class ManagerBoard extends Component {
 
  <div className="user_container">
             <div className="user_left_nav">
+            <img src={ManagerImg} style={{height:'200px', width:'200px'}}/>
             <div className="hello">
-            <h2>Find Messages by:</h2>
+            <h2>Your Manager's Message:</h2>
             <div className="links">
             <div className="latestMessages" onClick={this.props.getMessages}>Click - Latest Messages</div>
             <div>Search by Sender
@@ -107,7 +109,7 @@ class ManagerBoard extends Component {
             <div className="user_right">
                      {this.props.children}
         
-                     <div className="centred">MessageBoard - 
+                     <div className="centred">Manager Monthly Message - 
                     <span className="messageBoardDate">{this.state.selectedDate.toString().slice(0,16)}</span>
                      </div>
 

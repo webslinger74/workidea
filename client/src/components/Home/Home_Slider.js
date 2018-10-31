@@ -44,7 +44,7 @@ const HomeSlider = (props) => {
         autoplaySpeed:4000,
         dots: false,
         infinite: true,
-        speed:3000,
+        speed:8000,
         slidesToShow:1,
         arrows: false
        
