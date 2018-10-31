@@ -31,5 +31,20 @@ router.post('/message', (req, res) => {
             })
 
 
+router.get('/messages', (req,res) => {
+                Manager.find()
+                .limit(20)
+                .sort({ createdAt: -1 })
+                .then(mess => {
+                        console.log(mess)
+                        return res.json(mess);
+                    })
+                    .catch(err => res.json(err))
+            })
+            
+
+
+        
+
 module.exports = router;
 

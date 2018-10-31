@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-
+import { getManagerMessages } from '../actions/managerActions';
 
 class ManagerBoard extends Component {
     constructor(props) {
@@ -76,12 +76,12 @@ class ManagerBoard extends Component {
         )
 
            componentDidMount(){
-    //   this.props.getMessages();
+      this.props.getManagerMessages();
     }
 
 
     render() { 
-    //   const {messages}  =  this.props;
+       const {messages}  =  this.props;
         return ( 
 
  <div className="user_container">
@@ -112,7 +112,7 @@ class ManagerBoard extends Component {
                      </div>
 
                 <div className="messRight">
-             {/* {this.showMessages(messages)} */}
+              {this.showMessages(messages)} 
 
                 </div>
            
@@ -130,9 +130,13 @@ class ManagerBoard extends Component {
 
 
 const actions = {
+    getManagerMessages
 }
 
 const mapStateToProps = (state) => ({
+    message:state.manager.message,
+    messages:state.manager.allMessages
+
 
 })
 

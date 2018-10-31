@@ -21,6 +21,10 @@ module.exports = merge(common, {
             "/api/messages/**" :{
                 target:"http://localhost:5000",
                 secure:"false"
+            },
+            "/api/manager/**" :{
+                target:"http://localhost:5000",
+                secure:"false"
             }
            
           }

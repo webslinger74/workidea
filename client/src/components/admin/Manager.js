@@ -149,17 +149,7 @@ class Manager extends Component {
                               
 
                 <div className="form_devider"></div>
-                               {this.props.woods ?
-                            <SelectListGroup 
-                                             name="wood"
-                                             value={this.state.wood}
-                                             error={errors.wood}
-                                             onChange={this.onChange}
-                                             options={this.props.woods}
-                                             placeholder="Type of Wood"
-                                        
-                                        />: null}  
-
+                              
                              <TextFieldGroup 
                                  type="text"
                                  placeholder="Author"
