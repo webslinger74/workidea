@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
 const mess = require('./routes/messages');
+const manager = require('./routes/manager');
 const passport = require('passport');
 const formidable = require('express-formidable');
 const cloudinary = require('cloudinary')
@@ -46,6 +47,7 @@ require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api/messages', mess);
+app.use('/api/manager', manager);
 
 
 app.listen(port, (error)=> {

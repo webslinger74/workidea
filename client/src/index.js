@@ -12,12 +12,14 @@ import { combineReducers, compose} from 'redux';
 import errorsReducer from '../src/reducers/errorsReducer';
 import userReducer from '../src/reducers/user_reducer';
 import messagesReducer from '../src/reducers/messagesReducer';
+import managerReducer from '../src/reducers/managerReducer';
 
 const initialState = {};
 const rootReducers = combineReducers({
           auth: userReducer,
           errors: errorsReducer,
-          messages:messagesReducer
+          messages:messagesReducer,
+          manager:managerReducer
 })
 
 const middleware = [thunk];

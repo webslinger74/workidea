@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getMessages, getMessagesByDate, getMessagesBySearch } from '../actions/messageActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-export class MessageBoard extends Component {
+class ManagerBoard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +17,6 @@ export class MessageBoard extends Component {
             search:''
           }
     }
-
     handleChange = (date) => {
         console.log(date, "the date")
         this.setState({
@@ -27,7 +25,7 @@ export class MessageBoard extends Component {
             selectedDate:date
         }, () => {
             console.log(this.state.startDate, "startdate")
-            this.props.getMessagesByDate(this.state.selectedDate)
+        //    this.props.getMessagesByDate(this.state.selectedDate)
         })  
     }
 
@@ -78,19 +76,15 @@ export class MessageBoard extends Component {
         )
 
            componentDidMount(){
-        this.props.getMessages();
+    //   this.props.getMessages();
     }
-
-    
 
 
     render() { 
-        const {messages}  =  this.props;
+    //   const {messages}  =  this.props;
+        return ( 
 
-        return (
-
-           
-            <div className="user_container">
+ <div className="user_container">
             <div className="user_left_nav">
             <div className="hello">
             <h2>Find Messages by:</h2>
@@ -118,7 +112,7 @@ export class MessageBoard extends Component {
                      </div>
 
                 <div className="messRight">
-                {this.showMessages(messages)}
+             {/* {this.showMessages(messages)} */}
 
                 </div>
            
@@ -136,13 +130,18 @@ export class MessageBoard extends Component {
 
 
 const actions = {
-    getMessages,
-    getMessagesByDate,
-    getMessagesBySearch
 }
 
 const mapStateToProps = (state) => ({
-    messages: state.messages.allMessages
+
 })
 
-export default connect(mapStateToProps, actions)(MessageBoard);
+export default connect(mapStateToProps, actions)(ManagerBoard);
+                
+
+
+
+
+
+
+   

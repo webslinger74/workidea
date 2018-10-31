@@ -4,7 +4,7 @@ import React from 'react';
 const LoadingComponent = () => <h3>Please Wait...</h3>
 
 const ManagerComponentPromise = () => {
-    return import('./Manager');
+    return import('./ManagerBoard');
 }
 
 const AsyncManager = Loadable({
