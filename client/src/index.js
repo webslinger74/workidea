@@ -13,13 +13,15 @@ import errorsReducer from '../src/reducers/errorsReducer';
 import userReducer from '../src/reducers/user_reducer';
 import messagesReducer from '../src/reducers/messagesReducer';
 import managerReducer from '../src/reducers/managerReducer';
+import sportsReducer from './reducers/sportsReducer';
 
 const initialState = {};
 const rootReducers = combineReducers({
           auth: userReducer,
           errors: errorsReducer,
           messages:messagesReducer,
-          manager:managerReducer
+          manager:managerReducer,
+          sports:sportsReducer
 })
 
 const middleware = [thunk];

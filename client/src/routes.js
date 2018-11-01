@@ -11,6 +11,7 @@ import Sports from './components/Sports';
 import Achievements from './components/Achievments';
 import Login from './components/Login';
 import MessageBoard from './components/MessageBoard';
+import InputBingo from './components/admin/InputBingo';
 //import Feedback from './components/Feedback';
 //import Manager from './components/Manager';
 import UserDashboard from './components/admin/UserDashboard';
@@ -30,6 +31,7 @@ const Routes = () => {
                 <Route path="/managerMessage" exact component={Manager} />
                 <Route path="/siteperformance"  exact component={SitePerformance}/>
                 <Route path="/sports"  exact component={Sports}/>
+                <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/achievements"  exact component={Achievements}/>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
