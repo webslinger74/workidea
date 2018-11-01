@@ -1002,8 +1002,34 @@ footer .business_nfo .nfo {
     background-color: #000000;
 }
 .sportsItem {
-    height:500px;
+    padding-top:50px;
+    margin-top:100px;
+    height:1000px;
     width: 80%;
     background-color: #0000000a;
     margin-left:10%;
+}
+#bingocard {
+    background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0)), url('../../../src/images/sports/bingo-ballsfull.jpg');
+    background-repeat: no-repeat;
+    padding-top:10px;
+    text-align: center;
+    font-size: 80px;
+    background-size: 200px;
+    color:rgb(0, 0, 0);
+    
+}
+#bingoCardInner {
+    background-color: blue;
+    border-radius:100%;
+    height:75px;
+    width:75px;
+    margin-right:5px;
+
+}
+.cont {
+    display:flex;
+    font-size: 40px !important;
+
+
 }

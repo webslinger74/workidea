@@ -36,6 +36,7 @@ class UserLayout extends Component {
             <Link to="/managerMessage">Manager Input</Link>
             <Link to="/sports">Input Sports Events</Link>
             <Link to="/userdashboard">User Dashboard</Link>
+            <Link to="/sports">Input Bingo Numbers</Link>
             </div>
             {console.log(isAdd, "recs")}
             {isAdd && isAdd.isAdmin ? 
