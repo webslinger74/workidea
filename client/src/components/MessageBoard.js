@@ -55,8 +55,8 @@ export class MessageBoard extends Component {
                 
                     {mess.images && mess.images.length > 0 ?
                            <div>
-                               {mess.images.map((image) => (
-                                   <img className="messageBoardImg" src={image.url}></img>
+                               {mess.images.map((image, index) => (
+                                   <img key={index} className="messageBoardImg" src={image.url}></img>
                                ))                 }
                                </div> : null
                     }

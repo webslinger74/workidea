@@ -7,7 +7,7 @@ import MyButton from '../../Inputs/Button';
 import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import MyComponent from '../../utils/editor';
-
+import { addSportsEvent } from '../../actions/sportsActions';
 
 const Bool = [
     {
@@ -19,7 +19,7 @@ const Bool = [
         "_id":0
     }
 ]
-class Sports extends Component {
+class SportsAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,7 +69,7 @@ class Sports extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-        this.props.addSportsMessage(newState);
+      this.props.addSportsEvent(newState);
 
         }
 
@@ -122,7 +122,7 @@ class Sports extends Component {
         return (
             <UserLayout>
             <div>
-                <h1>Create Manager Message</h1>
+                <h1>Add Sports & Social Event</h1>
                 <form onSubmit={(event) => this.onSubmit(event)}>
                 
                 <FileUpload 
@@ -197,11 +197,11 @@ class Sports extends Component {
     }
 }
 const actions = {
-    addSportsMessage
+    addSportsEvent
 }
 
 const mapStateToProps = (state) => ({
-
+    events:state.events
 })
  
-export default connect(mapStateToProps, actions)(Sports);
+export default connect(mapStateToProps, actions)(SportsAdmin);

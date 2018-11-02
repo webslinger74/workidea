@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Sports = require('../models/Sports');
+const SSocial = require('../models/SSocial');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -37,7 +38,35 @@ router.get('/bingo', (req,res) => {
             })
             
 
+router.post('/event', (req,res) => {
+    const insertEvent = new SSocial({
+        title:req.body.title,
+        message:req.body.message,
+        author:req.body.author,
+        publish:req.body.publish,
+        images:req.body.images
+})
 
+insertEvent.save()
+    .then(event => {
+        console.log(event, "event details after model insert")
+       return res.json(event);
+
+    })
+    .catch(err => {
+    return console.log(err)
+    })
+})
+router.get('/events', (req,res) => {
+    SSocial.find({})
+    .limit(2)
+    .sort({ createdAt: -1 })
+    .then(event => {
+            console.log(event)
+            return res.json(event);
+        })
+        .catch(err => res.json(err))
+})
         
 
 module.exports = router;
