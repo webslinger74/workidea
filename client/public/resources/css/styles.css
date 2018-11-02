@@ -1009,13 +1009,17 @@ footer .business_nfo .nfo {
 .sportsItem {
     padding-top:50px;
     margin-top:100px;
-    height:1000px;
-    width: 80%;
+    margin-bottom:200px;
+    padding-bottom: 100px;
+    width:80%;
+    height:max-content;
     background-color: #0000000a;
-    margin-left:10%;
+    margin:auto;
+    text-align: center;
+    align-items: center;
 }
 #bingocard {
-    background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0)), url('../../../src/images/sports/bingo-ballsfull.jpg');
+    background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0));
     background-repeat: no-repeat;
     padding-top:10px;
     text-align: center;
@@ -1250,4 +1254,14 @@ footer .business_nfo .nfo {
     font-size: 40px !important;
 
 
+}
+
+.eventBoardImg {
+    height:300px;
+    width:900px;
+    overflow: hidden;
+    transition:5s;
+    border-radius:3%;
+    box-shadow: #6b6b6bc2;
+    margin-bottom:4px;
 }

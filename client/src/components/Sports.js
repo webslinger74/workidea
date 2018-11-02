@@ -30,7 +30,7 @@ class Sports extends Component {
                     {event.images && event.images.length > 0 ?
                            <div>
                                {event.images.map((image, index) => (
-                                   <img key={index} className="messageBoardImg" src={image.url}></img>
+                                   <img key={index} className="eventBoardImg" src={image.url}></img>
                                ))                 }
                                </div> : null
                     }
@@ -64,8 +64,14 @@ class Sports extends Component {
         <div id="sportsHeader">Sports AND Social</div>
         
         <div className="dividers2"></div>
-        <div className="sportsItem" id="bingocard">PAY DAY BINGO
-                   
+        <div className="sportsItem">
+        <h1>Pay Day Bingo</h1>
+            <p>Come and Play Bingo Every Pay Day on Site. £1 a ticket with Cash prizes to be Won every Month</p>  
+            <p>Local reps will be selling tickets near you in the lead up to Pay day</p>
+            <p>Rules - Email BST as soon as you have all the numbers on  your purchased ticket</p>
+            <p>Email with the number that you completed your card with !</p>
+            <p>GOOD LUCK</p>  
+            <div id="bingocard">               
                    <div className="cont">
                    { bingo && bingo.map(element => {
                     
@@ -78,8 +84,10 @@ class Sports extends Component {
         </div>
         
         </div>
+        </div>
         <div className="dividers2"></div>
-        <div className="sportsItem">Latest Events
+        <div className="sportsItem">
+        <h1 styles={{textAlign:'centre'}}>UpComing Events</h1>
             
                              {this.showMessages(events)}
     

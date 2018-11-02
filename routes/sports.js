@@ -59,7 +59,7 @@ insertEvent.save()
 })
 router.get('/events', (req,res) => {
     SSocial.find({})
-    .limit(2)
+    .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {
             console.log(event)
