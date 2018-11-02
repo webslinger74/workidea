@@ -1,4 +1,4 @@
-import { ADD_BINGO_NUMBERS
+import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS
 } from '../types/types';
 
 
@@ -12,6 +12,11 @@ case ADD_BINGO_NUMBERS:
 return {
     ...state,
     bingo:action.payload
+}
+case GET_BINGO_NUMBERS:
+return {
+    ...state,
+    bingoNumbers:action.payload
 }
 default:
     return state;

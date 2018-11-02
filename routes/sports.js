@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Sports = require('../models/Manager');
+const Sports = require('../models/Sports');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -18,7 +18,7 @@ router.post('/bingo', (req, res) => {
             insertNumber.save()
                 .then(number => {
                     console.log(number, "bingo number after model insert")
-                   return res.json(message);
+                   return res.json(number);
 
                 })
                 .catch(err => {
@@ -28,10 +28,9 @@ router.post('/bingo', (req, res) => {
 
 
 router.get('/bingo', (req,res) => {
-                Bingo.find()
-                .sort({ createdAt: -1 })
+                Sports.find({})
                 .then(numbers => {
-                        console.log(mess)
+                        console.log(numbers, "the numbers in routes")
                         return res.json(numbers);
                     })
                     .catch(err => res.json(err))

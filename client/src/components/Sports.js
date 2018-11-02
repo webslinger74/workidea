@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import HomeSliderSmall from './Home/Home_sliderSmall';
+import { getBingoNumbers } from '../actions/sportsActions';
+import { connect } from 'react-redux';
 
-const Sports = () => {
+class Sports extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+    }
+
+         componentDidMount(){
+            this.props.getBingoNumbers();
+        }
+
+    render(){
+        const { bingo } = this.props;
+        console.log(bingo, "bingo");
+
     return (
 
         <div>
@@ -14,16 +29,14 @@ const Sports = () => {
         <div className="sportsItem" id="bingocard">PayDay Bingo
                    
                    <div className="cont">
-                    <div id="bingoCardInner"> 18     
-                    </div>
-                    <div id="bingoCardInner">44
-                    </div>
-                    <div id="bingoCardInner">65
-                     </div>
-                    <div id="bingoCardInner">38
-                     </div>
-                    <div id="bingoCardInner">87
-                     </div>
+                   { bingo && bingo.map(element => {
+                    
+                    return (<div id={`bingoCardInner${element.number}`} key={element._id}> {element.number}
+                    </div> )
+                   })
+                   }
+                    
+                    
         </div>
         
         </div>
@@ -36,7 +49,16 @@ const Sports = () => {
         <div className="dividers2"></div>
         <div className="sportsItem">Contact Us</div>
         </div>
-      );
+      )
+    }
 }
+
+const actions = {
+    getBingoNumbers
+}
+
+const mapStateToProps = (state) => ({
+    bingo:state.sports.bingoNumbers
+})
  
-export default Sports;
+export default connect(mapStateToProps, actions)(Sports);

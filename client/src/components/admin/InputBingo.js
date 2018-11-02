@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import TextFieldGroup from '../../Inputs/TextFieldGroup';
-import TextAreaFieldGroup from '../../Inputs/TextAreaFieldGroup';
 import SelectListGroup from '../../Inputs/SelectListGroup';
-import MyButton from '../../Inputs/Button';
-import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
-import MyComponent from '../../utils/editor';
 import { addBingoNumber } from '../../actions/sportsActions';
 
 const Bool = [
@@ -19,7 +15,7 @@ const Bool = [
         "_id":0
     }
 ]
-const numbers = [
+/*const numbers = [
     {
         "name":1,
         "_id":1
@@ -69,6 +65,22 @@ const numbers = [
         "_id":12
     }
 ]
+*/
+
+const numbers = [];
+
+for(let x=1; x < 91; x++){
+    numbers.push({
+        "name":x,
+        "_id":x
+    })
+    console.log(numbers, "numbers")
+}
+
+
+
+
+
 
 class InputBingo extends Component {
     constructor(props) {
@@ -76,7 +88,6 @@ class InputBingo extends Component {
         this.state = {
                 number:'',
                 errors: {},
-                publish:false,
                 formSuccess: false
               };
              
