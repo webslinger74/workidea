@@ -925,8 +925,37 @@ footer .business_nfo .nfo {
 .indMessage:hover {
     background-color:rgba(211, 203, 203, 0.192);
     
-    
+   
 }
+.latestMessageTitle {
+    font-size:20px;
+    color:black;
+}
+.centredLatest {
+    font-size:40px;
+    color:black;
+    margin-left: 10px;
+}
+
+.latestMessage {
+    display:grid;
+    text-align:center;
+    grid-template-rows: auto auto auto auto;
+    grid-row: 1/4;
+    width: 45%;
+    border-bottom: 2px solid rgba(92, 86, 86, 0.541);
+    background-color:rgba(223, 182, 182, 0.061);
+    border-top: solid 5px #00000073;
+    transition:2s;
+    margin:5px;
+}
+
+.latestMessage:hover {
+    background-color:rgba(211, 203, 203, 0.287);
+    
+   
+}
+
 .hello {
     height:700px;
     width:100%;
@@ -1029,6 +1058,7 @@ footer .business_nfo .nfo {
     height:max-content;
     background-color: #0000000a;
     margin:auto;
+    margin-bottom:50px;
     text-align: center;
     align-items: center;
 }

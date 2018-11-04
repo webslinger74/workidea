@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 import MyButton from '../../Inputs/Button';
-import file1 from '../../images/sports/sports2.jpg';
-import file2 from '../../images/sports/sports7.jpg';
-import file3 from '../../images/sports/sports3.jpg';
-import file4 from '../../images/sports/sports6.jpg';
+import file1 from '../../images/sports/sports1.jpg';
+import file2 from '../../images/sports/beer.jpg';
+import file3 from '../../images/sports/food.jpg';
+import file4 from '../../images/sports/sports7.jpg';
 
 const HomeSliderSmall = (props) => {
    
@@ -34,7 +34,7 @@ const HomeSliderSmall = (props) => {
             img: file4,
             lineOne:'',
             lineTwo:'',
-            linkTitle:'Charity Contributions',
+            linkTitle:'Charity',
             linkTo:'/messages'
         },  {
             img: file1,
@@ -61,7 +61,7 @@ const HomeSliderSmall = (props) => {
             img: file4,
             lineOne:'',
             lineTwo:'',
-            linkTitle:'Charitable Contributions',
+            linkTitle:'Charity',
             linkTo:'/messages'
         },  {
             img: file1,
@@ -85,7 +85,7 @@ const HomeSliderSmall = (props) => {
             linkTo:'/achievements'
         },
         {
-            img: file4,
+            img: file1,
             lineOne:'',
             lineTwo:'',
             linkTitle:'Great Deals',

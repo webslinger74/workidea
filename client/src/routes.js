@@ -8,7 +8,6 @@ import Manager from './components/admin/Manager';
 import Messages from './components/admin/Messages';
 import SitePerformance from './components/SitePerformance';
 import Sports from './components/Sports';
-import Achievements from './components/Achievments';
 import Login from './components/Login';
 import MessageBoard from './components/MessageBoard';
 import InputBingo from './components/admin/InputBingo';
@@ -20,6 +19,7 @@ import AsyncFeedback from './components/AsyncFeedback';
 import AsyncManager from './components/AsyncManager';
 import Bingo from './components/Bingo';
 import Events from './components/Events';
+import WellBeing from './components/WellBeing';
 
 const Routes = () => {
     
@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route path="/events"  exact component={Events}/>
                 <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
-                <Route path="/achievements"  exact component={Achievements}/>
+                <Route path="/wellbeing"  exact component={WellBeing}/>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
                 <Route path="/manager" exact component={AsyncManager}/>

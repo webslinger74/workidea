@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomeSlider from './Home/Home_Slider';
+import LatestMessage from './LatestMessage';
 
 class Home extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Home extends Component {
             <div>
     
                 <HomeSlider />
+                <LatestMessage />
              
             </div>
           );

@@ -25,8 +25,8 @@ export class Header extends Component {
                     public: true
                 },
                 {
-                    name:'Achievements',
-                    linkTo:'/achievements',
+                    name:'Well-Being',
+                    linkTo:'/wellBeing',
                     public: true
                 },
                 {
