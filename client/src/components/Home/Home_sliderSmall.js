@@ -110,7 +110,7 @@ const HomeSliderSmall = (props) => {
             <div 
                 style={{
                     background:`url(${item.img})`,
-                    height:`${350}px`,
+                    height:`${200}px`,
                     backgroundSize:'cover',
                     borderRight:'5px solid black'
                 }}>

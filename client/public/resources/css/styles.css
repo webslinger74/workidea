@@ -984,17 +984,35 @@ footer .business_nfo .nfo {
     background-size: cover !important;
     background-position: center left !important;
     width:100% !important;
-    height:400px;
+    height:200px;
 }
 
 #sportsHeader {
-    font-size: 150px;
-    color:rgb(230, 226, 30);
+    font-size: 100px;
+    color:rgb(255, 49, 145);
     position: absolute;
-    top:200px;
-    left:200px;
-    text-shadow:2px 2px #070706af;
+    top:150px;
+    left:330px;
+    text-shadow:8px 6px #070706af;
+    animation:fadein 5s;
+    background-color: rgba(53, 51, 51, 0.089);
+    border-radius: 35%;
 
+}
+
+#sportsLinks {
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.indSportsLinks {
+    margin-right: 5%;
+}
+
+.indSportsLinks:hover {
+    background-color: #000;
+    color:whitesmoke;
 }
 
 .cont {
@@ -1007,10 +1025,6 @@ footer .business_nfo .nfo {
     background-color: #000000;
 }
 .sportsItem {
-    padding-top:50px;
-    margin-top:100px;
-    margin-bottom:200px;
-    padding-bottom: 100px;
     width:80%;
     height:max-content;
     background-color: #0000000a;

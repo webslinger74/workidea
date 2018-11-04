@@ -1,59 +1,15 @@
 import React, { Component } from 'react';
 import HomeSliderSmall from './Home/Home_sliderSmall';
-import { getBingoNumbers, getEvents } from '../actions/sportsActions';
 import { connect } from 'react-redux';
-import ReactHtmlParser from 'react-html-parser';
+import { Link } from 'react-router-dom';
+
 class Sports extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
 
-         componentDidMount(){
-            this.props.getBingoNumbers();
-            this.props.getEvents();
-        }
-
-        convertStringMessageToHtml = (string) => {
-            const html = string;
-            return <div>{ReactHtmlParser(html)}</div>
-    }
-
-    showMessages = (events) => (
-
-        
-       events && events.map(event => (
-             <div className="indMessage" key={event._id}>
-           <div>
-                <h3 className="waterTitle"> {event.title} </h3> </div>
-                
-                    {event.images && event.images.length > 0 ?
-                           <div>
-                               {event.images.map((image, index) => (
-                                   <img key={index} className="eventBoardImg" src={image.url}></img>
-                               ))                 }
-                               </div> : null
-                    }
-                  
-                
-                    <div>
-           {event.message ? 
-                this.convertStringMessageToHtml(event.message):
-                null}                    
-                </div>
-                <div>
-                <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
-            </div>
-        
-             </div>
-              
-         ))
-      
-        )
-
       render(){
-        const { bingo, events } = this.props;
-        console.log(bingo, "bingo");
 
     return (
 
@@ -61,51 +17,28 @@ class Sports extends Component {
             <div id="sliderSmall">
         <HomeSliderSmall/>
         </div>
-        <div id="sportsHeader">Sports AND Social</div>
-        
+        <div id="sportsHeader">SPORTS & SOCIAL</div>
+           <div id="sportsLinks">
+            <Link className="indSportsLinks" to="/events"><h2>Events</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>Bingo Numbers</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>Charity Contributions</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>News</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>Christmas Party</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>Bonfire Night</h2></Link>
+            <Link className="indSportsLinks" to="/bingo"><h2>Contact Us</h2></Link>
+                </div>                
         <div className="dividers2"></div>
         <div className="sportsItem">
-        <h1>Pay Day Bingo</h1>
-            <p>Come and Play Bingo Every Pay Day on Site. £1 a ticket with Cash prizes to be Won every Month</p>  
-            <p>Local reps will be selling tickets near you in the lead up to Pay day</p>
-            <p>Rules - Email BST as soon as you have all the numbers on  your purchased ticket</p>
-            <p>Email with the number that you completed your card with !</p>
-            <p>GOOD LUCK</p>  
-            <div id="bingocard">               
-                   <div className="cont">
-                   { bingo && bingo.map(element => {
-                    
-                    return (<div id={`bingoCardInner${element.number}`} key={element._id}> {element.number}
-                    </div> )
-                   })
-                   }
-                    
-                    
+
+        {this.props.children}
         </div>
-        
-        </div>
-        </div>
-        <div className="dividers2"></div>
-        <div className="sportsItem">
-        <h1 styles={{textAlign:'centre'}}>UpComing Events</h1>
-            
-                             {this.showMessages(events)}
-    
-        </div>
-        <div className="dividers2"></div>
-        <div className="sportsItem">Charitable Contributions</div>
-        <div className="dividers2"></div>
-        <div className="sportsItem">News</div>
-        <div className="dividers2"></div>
-        <div className="sportsItem">Contact Us</div>
-        </div>
+      </div>
+      
       )
     }
 }
 
 const actions = {
-    getBingoNumbers,
-    getEvents
 }
 
 const mapStateToProps = (state) => ({

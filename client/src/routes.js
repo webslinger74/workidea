@@ -18,6 +18,8 @@ import UserDashboard from './components/admin/UserDashboard';
 import SportsAdmin from './components/admin/SportsAdmin';
 import AsyncFeedback from './components/AsyncFeedback';
 import AsyncManager from './components/AsyncManager';
+import Bingo from './components/Bingo';
+import Events from './components/Events';
 
 const Routes = () => {
     
@@ -31,7 +33,8 @@ const Routes = () => {
                 <Route path="/messages"  exact component={Messages}/>
                 <Route path="/managerMessage" exact component={Manager} />
                 <Route path="/siteperformance"  exact component={SitePerformance}/>
-                <Route path="/sports"  exact component={Sports}/>
+                <Route path="/bingo"  exact component={Bingo}/>
+                <Route path="/events"  exact component={Events}/>
                 <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/achievements"  exact component={Achievements}/>
