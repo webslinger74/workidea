@@ -930,11 +930,24 @@ footer .business_nfo .nfo {
 .latestMessageTitle {
     font-size:20px;
     color:black;
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.13);
 }
 .centredLatest {
     font-size:40px;
     color:black;
-    margin-left: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.frontMessages {
+    display:flex; 
+    justify-content: space-around;
+    border-top:15px solid rgba(0, 0, 0, 0.082);
+    padding-top:25px;
+    padding-bottom:25px;
+    margin:5%;
+    border-bottom:15px solid rgba(0, 0, 0, 0.082);
+    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507)), url('../../../src/images/featured/news2.jpg');
+    background-size: cover;
 }
 
 .latestMessage {
@@ -942,12 +955,12 @@ footer .business_nfo .nfo {
     text-align:center;
     grid-template-rows: auto auto auto auto;
     grid-row: 1/4;
-    width: 45%;
-    border-bottom: 2px solid rgba(92, 86, 86, 0.541);
-    background-color:rgba(223, 182, 182, 0.061);
-    border-top: solid 5px #00000073;
+    width: 90%;
+    margin-left:5%;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+    background-color:rgba(27, 25, 25, 0.041);
+    border-top: dashed 2px #0000000a;
     transition:2s;
-    margin:5px;
 }
 
 .latestMessage:hover {
@@ -1004,6 +1017,21 @@ footer .business_nfo .nfo {
     transform:scale(1.01);
     
 
+}
+.messageBoardImgFront {
+    height:500px;
+    width:500px;
+    overflow: hidden;
+    transition:5s;
+    border-radius:50%;
+    margin-right:10px;
+    box-shadow: #6b6b6bc2;
+    opacity:0.7;
+    margin-bottom:4px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
+}
+.verticalLine {
+    border-right:15px solid rgba(0, 0, 0, 0.089);
 }
 
 /* Sports */

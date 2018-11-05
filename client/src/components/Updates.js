@@ -9,7 +9,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-class LatestMessage extends Component {
+class Guidance extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
@@ -65,10 +65,10 @@ showMessages = (messages) => {
         const { messages } = this.props;
         return ( 
             <div>
-              <div className="centredLatest">NEWS UPDATE
+              <div className="centredLatest">GUIDANCE UPDATES
                      </div>
 
-            
+                
                 {this.showMessages(messages)}
 
            
@@ -89,4 +89,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, actions)(LatestMessage);
+export default connect(mapStateToProps, actions)(Guidance);
