@@ -19,7 +19,7 @@ const Bool = [
         "_id":0
     }
 ]
-class SportsAdmin extends Component {
+class WellBeingAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -115,7 +115,7 @@ class SportsAdmin extends Component {
         return (
             <UserLayout>
             <div>
-                <h1>Add Sports & Social Event</h1>
+                <h1>Add Well Being Event</h1>
                 <form onSubmit={(event) => this.onSubmit(event)}>
                 
                 <FileUpload 
@@ -197,4 +197,4 @@ const mapStateToProps = (state) => ({
     events:state.events
 })
  
-export default connect(mapStateToProps, actions)(SportsAdmin);
+export default connect(mapStateToProps, actions)(WellBeingAdmin);

@@ -34,6 +34,7 @@ class UserLayout extends Component {
             <Link to="/messages">Create Message</Link>
             <Link to="/siteperformance">Input Site Performance</Link>
             <Link to="/managerMessage">Manager Input</Link>
+            <Link to="/wellBeingAdmin">Input Well Being Events</Link>
             <Link to="/sportsAdmin">Input Sports Events</Link>
             <Link to="/userdashboard">User Dashboard</Link>
             <Link to="/sports/bingo">Input Bingo Numbers</Link>
