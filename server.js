@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const users = require('./routes/users');
 const mess = require('./routes/messages');
 const manager = require('./routes/manager');
+const wellbeing = require('./routes/wellbeing');
 const sports = require('./routes/sports');
 const passport = require('passport');
 const formidable = require('express-formidable');
@@ -49,7 +50,8 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/messages', mess);
 app.use('/api/manager', manager);
-app.use('/api/sports', sports)
+app.use('/api/sports', sports);
+app.use('/api/wellbeing', wellbeing);
 
 
 app.listen(port, (error)=> {

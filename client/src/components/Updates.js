@@ -65,7 +65,7 @@ showMessages = (messages) => {
         const { messages } = this.props;
         return ( 
             <div>
-              <div className="centredLatest">GUIDANCE UPDATES
+              <div className="centredLatest">WELL BEING
                      </div>
 
                 

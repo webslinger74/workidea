@@ -65,7 +65,7 @@ showMessages = (messages) => {
         const { messages } = this.props;
         return ( 
             <div>
-              <div className="centredLatest">NEWS UPDATE
+              <div className="centredLatest">SPORTS & SOCIAL LATEST
                      </div>
 
             

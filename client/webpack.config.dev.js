@@ -29,6 +29,10 @@ module.exports = merge(common, {
             "/api/sports/**" :{
                 target:"http://localhost:5000",
                 secure:"false"
+            },
+            "/api/wellbeing/**" :{
+                target:"http://localhost:5000",
+                secure:"false"
             }
            
           }
