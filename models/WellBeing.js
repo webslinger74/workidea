@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const WellBeingSchema = new Schema({
+const WellBeingsSchema = new Schema({
     title: {
         type:String,
         required:true,
@@ -30,5 +30,5 @@ const WellBeingSchema = new Schema({
 
 },{timestamps:true});
 
-const WellBeing = mongoose.model('wellbeing', WellBeingSchema);
-module.exports = WellBeing;
+const WellBeings = mongoose.model('wellbeings', WellBeingsSchema);
+module.exports = WellBeings;

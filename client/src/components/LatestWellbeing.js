@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getMessages } from '../actions/messageActions';
+import { getWellBeingEvents } from '../actions/wellbeingActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-class LatestMessage extends Component {
+class LatestWellbeing extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
@@ -58,14 +58,14 @@ showMessages = (messages) => {
     }
 
        componentDidMount(){
-    this.props.getMessages();
+    this.props.getWellBeingEvents();
 }
 
     render() { 
         const { messages } = this.props;
         return ( 
             <div>
-              <div className="centredLatest">NEWS UPDATE
+              <div className="centredLatest">WELL BEING UPDATE
                      </div>
 
             
@@ -81,12 +81,12 @@ showMessages = (messages) => {
 }
 
 const actions = {
-    getMessages
+    getWellBeingEvents
 }
 
 const mapStateToProps = (state) => ({
-    messages: state.messages.allMessages
+    messages: state.wellbeing.allEvents
 })
 
 
-export default connect(mapStateToProps, actions)(LatestMessage);
+export default connect(mapStateToProps, actions)(LatestWellbeing);

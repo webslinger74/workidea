@@ -3,7 +3,7 @@ import { ADD_WELLBEING_EVENT, GET_WELLBEING_EVENTS
 
 
 const initialState = {
- message:{}
+ wellbeing:{}
 }
 
 const wellbeingReducer = (state=initialState, action)=> {

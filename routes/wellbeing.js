@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const WellBeing = require('../models/WellBeing');
+const WellBeings = require('../models/WellBeing');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -13,7 +13,8 @@ const cloudinary = require('cloudinary');
            
 
 router.post('/event', (req,res) => {
-    const insertEvent = new WellBeing({
+    console.log(req.body, "request")
+    const insertEvent = new WellBeings({
         title:req.body.title,
         message:req.body.message,
         author:req.body.author,
@@ -32,7 +33,8 @@ insertEvent.save()
     })
 })
 router.get('/events', (req,res) => {
-    WellBeing.find({})
+    console.log(req.body, "request")
+    WellBeings.find({})
     .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {

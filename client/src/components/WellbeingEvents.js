@@ -75,7 +75,7 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    events:state.wellbeing.events
+    events:state.wellbeing.allEvents
 })
  
 export default connect(mapStateToProps, actions)(WellBeingEvents);

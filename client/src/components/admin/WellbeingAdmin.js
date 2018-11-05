@@ -69,7 +69,7 @@ class WellBeingAdmin extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-      this.props.addWelBeingEvent(newState);
+      this.props.addWellBeingEvent(newState);
 
         }
       
