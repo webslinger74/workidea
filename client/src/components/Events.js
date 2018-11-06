@@ -36,11 +36,11 @@ class Events extends Component {
                     }
                   
                 
-                    <div>
+                
            {event.message ? 
                 this.convertStringMessageToHtml(event.message):
                 null}                    
-                </div>
+            
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>

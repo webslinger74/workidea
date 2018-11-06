@@ -29,11 +29,10 @@ showMessages = (messages) => {
             <h3 className="latestMessageTitle"> {messages[0].title} </h3> </div>
             
                 {messages[0].images && messages[0].images.length > 0 ?
-                       <div>
-                           {messages[0].images.map((image, index) => (
-                               <img key={index} className="messageBoardImgFront" src={image.url}></img>
-                           ))                 }
-                           </div> : null
+                       (<div className="imgHolder">
+                            
+                               <img className="messageBoardImgFront" src={messages[0].images[0].url}></img>
+                       </div>) : null
                 }
               
             
@@ -64,7 +63,7 @@ showMessages = (messages) => {
     render() { 
         const { messages } = this.props;
         return ( 
-            <div>
+            <div className="one">
               <div className="centredLatest">NEWS UPDATE
                      </div>
 

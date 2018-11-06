@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { getWellBeingEvents } from '../actions/wellbeingActions';
+import { getEvents } from '../actions/sportsActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import fabicycle from '@fortawesome/fontawesome-free-solid/faBicycle';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-class LatestWellbeing extends Component {
+class LatestSports extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
@@ -25,7 +24,7 @@ showMessages = (messages) => {
     
    if(messages && messages[0]) {
    return (
-         <div className="latestMessage" key={messages[0]._id}>
+         <div className="latestSportsMessage" key={messages[0]._id}>
        <div>
             <h3 className="latestMessageTitle"> {messages[0].title} </h3> </div>
             
@@ -59,14 +58,14 @@ showMessages = (messages) => {
     }
 
        componentDidMount(){
-    this.props.getWellBeingEvents();
+    this.props.getEvents();
 }
 
     render() { 
         const { messages } = this.props;
         return ( 
             <div>
-              <div className="centredLatest">WELL BEING UPDATE
+              <div className="centredLatest">SPORTS & SOCIAL LATEST
                      </div>
 
             
@@ -82,12 +81,12 @@ showMessages = (messages) => {
 }
 
 const actions = {
-    getWellBeingEvents
+    getEvents
 }
 
 const mapStateToProps = (state) => ({
-    messages: state.wellbeing.allEvents
+    messages: state.sports.events
 })
 
 
-export default connect(mapStateToProps, actions)(LatestWellbeing);
+export default connect(mapStateToProps, actions)(LatestSports);

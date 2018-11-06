@@ -21,7 +21,7 @@ export class Header extends Component {
                 },
                 {
                     name:'Sports & Social',
-                    linkTo:'/bingo',
+                    linkTo:'/events',
                     public: true
                 },
                 {

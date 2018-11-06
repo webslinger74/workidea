@@ -911,19 +911,33 @@ footer .business_nfo .nfo {
     padding-right:10px;
     text-align: right;
 }
+/*
 .indMessage {
     display:grid;
     text-align:center;
     grid-template-rows: auto auto auto auto;
+    margin:auto;
     grid-row: 1/4;
-    width: 90%;
+    width: 70%;
     border-bottom: 2px solid rgba(92, 86, 86, 0.541);
     background-color:rgba(223, 182, 182, 0.061);
     transition:2s;
 
 }
+*/
+
+.indMessage {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    align-content:center;
+    width:80%;
+    padding-left:10%;
+    padding-right:10%;
+    border-bottom:10px solid rgba(0, 0, 0, 0.061);
+}
 .indMessage:hover {
-    background-color:rgba(211, 203, 203, 0.192);
+    background-color:rgba(211, 203, 203, 0.054);
     
    
 }
@@ -938,16 +952,22 @@ footer .business_nfo .nfo {
     text-align: center;
     letter-spacing: 5px;
 }
+
 .frontMessages {
     display:flex; 
     justify-content: space-around;
+    width:80%;
     border-top:15px solid rgba(0, 0, 0, 0.082);
     padding-top:25px;
     padding-bottom:25px;
-    margin:5%;
+    margin:5% 7.5% 5% 10%;
     border-bottom:15px solid rgba(0, 0, 0, 0.082);
-    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507)), url('../../../src/images/featured/news2.jpg');
+    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
     background-size: cover;
+}
+
+
+.one {
 }
 
 .latestMessage {
@@ -955,8 +975,11 @@ footer .business_nfo .nfo {
     text-align:center;
     grid-template-rows: auto auto auto auto;
     grid-row: 1/4;
-    width: 90%;
-    margin-left:5%;
+    padding-left:25px;
+    padding-right:25px;
+    width: 85%;
+    margin-right:5px;
+    margin-left:10px;
     border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
     background-color:rgba(27, 25, 25, 0.041);
     border-top: dashed 2px #0000000a;
@@ -967,6 +990,18 @@ footer .business_nfo .nfo {
     background-color:rgba(211, 203, 203, 0.287);
     
    
+}
+.latestSportsMessage {
+    display:grid;
+    text-align:center;
+    grid-template-rows: auto auto auto auto;
+    grid-row: 1/4;
+    width: 90%;
+    margin:auto;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+    background-color:rgba(27, 25, 25, 0.041);
+    border-top: dashed 2px #0000000a;
+    transition:2s;
 }
 
 .hello {
@@ -1019,20 +1054,23 @@ footer .business_nfo .nfo {
 
 }
 .messageBoardImgFront {
-    height:500px;
-    width:500px;
+    height:300px;
+    width:300px;
     overflow: hidden;
     transition:5s;
     border-radius:50%;
-    margin-right:10px;
+    border:solid 5px rgba(12, 8, 8, 0.596);
     box-shadow: #6b6b6bc2;
-    opacity:0.5;
+    opacity:0.8;
     margin-bottom:4px;
+    justify-self: center;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
 }
 
 .verticalLine {
     border-right:15px solid rgba(0, 0, 0, 0.089);
+    margin-right:5px;
+    margin-left:5px;
 }
 
 /* Sports */
@@ -1066,6 +1104,7 @@ footer .business_nfo .nfo {
 
 .indSportsLinks {
     margin-right: 5%;
+    font-size:15px;
 }
 
 .indSportsLinks:hover {
@@ -1085,7 +1124,7 @@ footer .business_nfo .nfo {
 .sportsItem {
     width:80%;
     height:max-content;
-    background-color: #0000000a;
+    background-color: #ffffff;
     margin:auto;
     margin-bottom:50px;
     text-align: center;
@@ -1330,11 +1369,20 @@ footer .business_nfo .nfo {
 }
 
 .eventBoardImg {
-    height:300px;
-    width:900px;
+    height:25%;
+    width:50%;
     overflow: hidden;
     transition:5s;
     border-radius:3%;
     box-shadow: #6b6b6bc2;
     margin-bottom:4px;
+    border:5px solid grey;
+    opacity:0.8;
+}
+
+
+/* site performance */
+
+.performanceGrid {
+
 }
