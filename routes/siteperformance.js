@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Engagementcat = require('../models/Engagement');
+const Engagement = require('../models/Engagement');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../config/keys').secretOrKey;
@@ -12,22 +12,22 @@ const mongoose = require('mongoose');
 const validateLoginInput = require('../validation/login');
 const cloudinary = require('cloudinary');
 
-router.post('/engagementCat', (req, res) => {
+router.post('/engage', (req, res) => {
 
     //will need to put some validation in here and link in errors, and passport 
                 console.log(req.body, "request at backend");
-            const insertEngCat = new Engagementcat({
+            const cat = new Engagement({
                     category:req.body.category,
                     score:req.body.score,
-                    diffPrev:req.body.diffPrev,
-                    diffParent:req.body.diffParent,
-                    diffDWP:req.body.diffDWP
-            })
+                    diffprev:req.body.diffprev,
+                    diffparent:req.body.diffparent,
+                    diffdwp:req.body.diffdwp
+               })
 
-            insertEngCat.save()
-                .then(categoryDets => {
-                    console.log(categoryDets, "message after model insert")
-                   return res.json(categoryDets);
+                cat.save()
+                .then(response => {
+                    console.log(response, "message after model insert")
+                   return res.json(response);
 
                 })
                 .catch(err => {
@@ -35,13 +35,13 @@ router.post('/engagementCat', (req, res) => {
                 })
 })
 
-router.get('/engagementCat', (req,res) => {
-    EngagementCatScore.find({})
-    .limit(10)
+router.get('/engage', (req,res) => {
+    Engagement.find({})
+    .limit(12)
     .sort({ createdAt: -1 })
-    .then(categoryDets => {
-            console.log(categoryDets)
-            return res.json(categoryDets);
+    .then(response => {
+            console.log(response)
+            return res.json(response);
         })
         .catch(err => res.json(err))
 })

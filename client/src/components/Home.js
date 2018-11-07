@@ -4,6 +4,7 @@ import LatestMessage from './LatestMessage';
 import Guidance from './Updates';
 import LatestWellbeing from './LatestWellbeing';
 import LatestSports from './LatestSports';
+import LatestSitePerformance from './LatestSitePerformance';
 
 class Home extends Component {
     constructor(props) {
@@ -23,6 +24,11 @@ class Home extends Component {
                 <div className="frontMessages">
                  <div className="verticalLine"></div>
                     <div><LatestSports /></div>
+                    <div className="verticalLine"></div>
+                </div>
+                <div className="frontMessages">
+                 <div className="verticalLine"></div>
+                    <div><LatestSitePerformance /></div>
                     <div className="verticalLine"></div>
                 </div>
             </div>

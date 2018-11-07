@@ -13,7 +13,7 @@ const validateLoginInput = require('../validation/login');
 const cloudinary = require('cloudinary');
 
 router.post('/message', (req, res) => {
-
+        console.log(req.body, "reqbody for messages")
     //will need to put some validation in here and link in errors, and passport 
 
             const insertMessage = new Message({

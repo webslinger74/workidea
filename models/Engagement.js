@@ -5,32 +5,32 @@ const Schema = mongoose.Schema;
 const EngagementSchema = new Schema({
     category: {
         type:String,
+        unique:1,
         required:true,
-        unique: 1,
-        maxlength:750
+        maxlength:7500
     },
-    score:{
+    score: {
         type:String,
         required:true,
-        maxlength:1000
+        maxlength:7500
     },
-    diffPrev:{
+    diffprev: {
         type:String,
         required:true,
-        maxlength:1000
+        maxlength:7500
     },
-    diffParent:{
+    diffparent: {
         type:String,
         required:true,
-        maxlength:1000
+        maxlength:7500
     },
-    diffDWP:{
+    diffdwp: {
         type:String,
         required:true,
-        maxlength:100
+        maxlength:7500
     }
    
 },{timestamps:true});
 
-const Engagementcat = mongoose.model('engagementcats', EngagementSchema);
-module.exports = Engagementcat;
+const Engagement = mongoose.model('engagement', EngagementSchema);
+module.exports = Engagement;

@@ -45,9 +45,9 @@ class SitePerformanceEngagement extends Component {
         this.state = {
                     category:'',
                     score:'',
-                    diffPrev:'',
-                    diffParent:'',
-                    diffDWP:''  ,
+                    diffprev:'',
+                    diffparent:'',
+                    diffdwp:''  ,
                     errors:[]
             }
             
@@ -76,9 +76,14 @@ class SitePerformanceEngagement extends Component {
                     if(this.state[key] === "NO"){
                         this.state[key] = false;
                     }
-                    if( key === "title" ){
+                        if( key === "title" ){
                         this.state[key] = this.state[key].toString();
                     }
+
+                    if( key === "category" ){
+                        this.state[key] = this.state[key].toString();
+                    }
+
                     if( key === "message" ){
                         this.state[key] = this.state[key].toString();
                     }
@@ -114,8 +119,10 @@ class SitePerformanceEngagement extends Component {
                     }
                     newState[key] = this.state[key];
           }
-          console.log(typeof(newState.category), "the type of category")
+          console.log(typeof(newState.category), "the type of category");
           console.log(newState, "state just before adding product");
+          console.log(typeof(newState.diffDWP), "the type of category");
+            console.log(typeof(newState.diffParent), "the type of category")
         this.props.addEngagementCategoryScore(newState);
 
         }
@@ -184,18 +191,18 @@ class SitePerformanceEngagement extends Component {
                 <TextFieldGroup 
                                  type="text"
                                  placeholder="Diff from Prev Survey"
-                                 name="diffPrev"
-                                 error={errors.diffPrev}
-                                 value={this.state.diffPrev}
+                                 name="diffprev"
+                                 error={errors.diffprev}
+                                 value={this.state.diffprev}
                                  onChange={this.onChange}
                             /> 
 
                 <TextFieldGroup 
                                  type="text"
                                  placeholder="Diff from Parent"
-                                 name="diffParent"
-                                 error={errors.diffParent}
-                                 value={this.state.diffParent}
+                                 name="diffparent"
+                                 error={errors.diffparent}
+                                 value={this.state.diffparent}
                                  onChange={this.onChange}
                             /> 
 
@@ -203,9 +210,9 @@ class SitePerformanceEngagement extends Component {
                <TextFieldGroup 
                                  type="text"
                                  placeholder="Diff from DWP"
-                                 name="diffDWP"
-                                 error={errors.diffDWP}
-                                 value={this.state.diffDWP}
+                                 name="diffdwp"
+                                 error={errors.diffdwp}
+                                 value={this.state.diffdwp}
                                  onChange={this.onChange}
                             />  
 
@@ -240,7 +247,7 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-        category:state.sitePerformance.category
+        category:state.siteperformance.category
 })
  
 export default connect(mapStateToProps, actions)(SitePerformanceEngagement);

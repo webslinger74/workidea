@@ -3,7 +3,8 @@ import axios from 'axios';
 
 export const addEngagementCategoryScore = (score) => (dispatch) => {
     console.log(score, "the score before axios request fires")
-    axios.post('/api/siteperformance/engagementCat', score)
+    console.log(typeof(score), "the score before axios request fires")
+    axios.post('/api/site/engage', score)
         .then(response => {
             console.log(response, "this is the response from axios in action - engage cat")
             dispatch({
@@ -21,7 +22,7 @@ export const addEngagementCategoryScore = (score) => (dispatch) => {
 
 
 export const getEngagementCategoryScores = () => (dispatch) => {
-    axios.get('/api/siteperformance/engagementCat')
+    axios.get('/api/site/engage')
        
         .then(response => {
             console.log(response, "is this all the engagement cats???")

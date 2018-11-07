@@ -25,7 +25,7 @@ const rootReducers = combineReducers({
           manager:managerReducer,
           sports:sportsReducer,
           wellbeing:wellbeingReducer,
-          sitePerformance:sitePerformanceReducer
+          siteperformance:sitePerformanceReducer
 })
 
 const middleware = [thunk];
