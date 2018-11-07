@@ -38,6 +38,7 @@ class UserLayout extends Component {
             <Link to="/sportsAdmin">Input Sports Events</Link>
             <Link to="/userdashboard">User Dashboard</Link>
             <Link to="/sports/bingo">Input Bingo Numbers</Link>
+            <Link to="/siteperformanceEngAdmin">Input Site Engagement Scores</Link>
             </div>
             {console.log(isAdd, "recs")}
             {isAdd && isAdd.isAdmin ? 

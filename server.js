@@ -8,6 +8,7 @@ const users = require('./routes/users');
 const mess = require('./routes/messages');
 const manager = require('./routes/manager');
 const wellbeing = require('./routes/wellbeing');
+const siteperformance = require('./routes/siteperformance');
 const sports = require('./routes/sports');
 const passport = require('passport');
 const formidable = require('express-formidable');
@@ -52,6 +53,7 @@ app.use('/api/messages', mess);
 app.use('/api/manager', manager);
 app.use('/api/sports', sports);
 app.use('/api/wellbeing', wellbeing);
+app.use('api/siteperformance', siteperformance);
 
 
 app.listen(port, (error)=> {

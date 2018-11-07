@@ -21,6 +21,7 @@ import AsyncManager from './components/AsyncManager';
 import Bingo from './components/Bingo';
 import Events from './components/Events';
 import WellBeingEvents from './components/WellbeingEvents';
+import SitePerformanceEngagement from './components/admin/SitePerformanceEngagement';
 
 const Routes = () => {
     
@@ -37,6 +38,7 @@ const Routes = () => {
                 <Route path="/bingo"  exact component={Bingo}/>
                 <Route path="/events"  exact component={Events}/>
                 <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
+                <Route path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
                 <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/wellbeingEvents"  exact component={WellBeingEvents}/>

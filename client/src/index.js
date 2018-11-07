@@ -15,6 +15,7 @@ import messagesReducer from '../src/reducers/messagesReducer';
 import managerReducer from '../src/reducers/managerReducer';
 import sportsReducer from './reducers/sportsReducer';
 import wellbeingReducer from './reducers/wellbeingReducer';
+import sitePerformanceReducer from './reducers/siteperformanceReducer';
 
 const initialState = {};
 const rootReducers = combineReducers({
@@ -23,7 +24,8 @@ const rootReducers = combineReducers({
           messages:messagesReducer,
           manager:managerReducer,
           sports:sportsReducer,
-          wellbeing:wellbeingReducer
+          wellbeing:wellbeingReducer,
+          sitePerformance:sitePerformanceReducer
 })
 
 const middleware = [thunk];
