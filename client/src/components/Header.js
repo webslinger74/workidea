@@ -173,7 +173,7 @@ export class Header extends Component {
 
 
         return (
-            <header className="bck_b_light">
+            <header className="bck_b_light flowers">
             <div className="container">
             <div className="left">
             <div className="logo">

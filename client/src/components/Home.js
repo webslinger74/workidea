@@ -16,12 +16,12 @@ class Home extends Component {
             <div>
     
                 <HomeSlider />
-                <div className="frontMessages">
+                <div className="frontMessages newsWellFull">
                 <LatestMessage />
                 <div className="verticalLine"></div>
                 <LatestWellbeing />
                 </div>
-                <div className="frontMessages">
+                <div className="frontMessages sportFull">
                  <div className="verticalLine"></div>
                     <div><LatestSports /></div>
                     <div className="verticalLine"></div>
