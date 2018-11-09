@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getWellBeingEvents } from '../actions/wellbeingActions';
+import { getWellBeingEvents, deleteEvent } from '../actions/wellbeingActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import WellBeing from './WellBeing';
@@ -12,6 +12,9 @@ class WellBeingEvents extends Component {
 
          componentDidMount(){
             this.props.getWellBeingEvents();
+        }
+        componentDidUpdate(){
+           this.props.getWellBeingEvents();
         }
 
         convertStringMessageToHtml = (string) => {
@@ -44,7 +47,7 @@ class WellBeingEvents extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-        
+            <div onClick={()=> this.props.deleteEvent({id:event._id})} className="delete">Delete Event</div>
              </div>
               
          ))
@@ -71,7 +74,8 @@ class WellBeingEvents extends Component {
 }
 
 const actions = {
-    getWellBeingEvents
+    getWellBeingEvents,
+    deleteEvent
 }
 
 const mapStateToProps = (state) => ({

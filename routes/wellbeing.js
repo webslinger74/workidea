@@ -44,6 +44,17 @@ router.get('/events', (req,res) => {
         .catch(err => res.json(err))
 })
         
+router.post('/deleteEvent', (req, res) => {
+   
+    const id = req.body.id;
+
+    WellBeings.findOneAndDelete({_id:id})
+        .then(message => {
+   
+       return res.status(200).jsonmessage})
+        .catch(err => res.status(404)
+    .json({noMessagefound: 'No Mesage found'}));
+    })
 
 module.exports = router;
 
