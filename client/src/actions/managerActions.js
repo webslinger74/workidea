@@ -18,9 +18,25 @@ export const addManagerMessage = (message) => (dispatch) => {
         })
     })
 
-
-
 }
+
+export const deleteMessage = (id) => (dispatch) => {
+
+
+    console.log(id, "this is the id of the message???")
+    axios.post('/api/manager/deletemessage', id)
+    .then(response => {
+        console.log(response, "this is the response from axios in action")
+        dispatch(getManagerMessages())
+    }) 
+    .catch(err => {
+        dispatch({
+            type:GET_ERRORS,
+            payload:err
+        })
+    })
+}
+
 export const getManagerMessages = () => (dispatch) => {
     axios.get('/api/manager/messages')
        

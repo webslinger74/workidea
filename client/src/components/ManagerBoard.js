@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-import { getManagerMessages } from '../actions/managerActions';
+import { getManagerMessages, deleteMessage } from '../actions/managerActions';
 import ManagerImg from '../images/featured/manager.jpg';
 
 class ManagerBoard extends Component {
@@ -54,8 +54,8 @@ class ManagerBoard extends Component {
                 
                     {mess.images && mess.images.length > 0 ?
                            <div>
-                               {mess.images.map((image) => (
-                                   <img className="messageBoardImg" src={image.url}></img>
+                               {mess.images.map((image, index) => (
+                                   <img className="messageBoardImg" src={image.url} key={index}></img>
                                ))                 }
                                </div> : null
                     }
@@ -69,7 +69,7 @@ class ManagerBoard extends Component {
                 <div>
                 <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
             </div>
-        
+            <div onClick={()=> this.props.deleteMessage({id:mess._id})} className="delete">Delete Message</div>
              </div>
               
          ))
@@ -80,6 +80,10 @@ class ManagerBoard extends Component {
       this.props.getManagerMessages();
     }
 
+    componentDidMount(){
+        this.props.getManagerMessages();
+      }
+  
 
     render() { 
        const {messages}  =  this.props;
@@ -132,7 +136,8 @@ class ManagerBoard extends Component {
 
 
 const actions = {
-    getManagerMessages
+    getManagerMessages,
+    deleteMessage
 }
 
 const mapStateToProps = (state) => ({

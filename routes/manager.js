@@ -36,15 +36,21 @@ router.get('/messages', (req,res) => {
                 .limit(20)
                 .sort({ createdAt: -1 })
                 .then(mess => {
-                        console.log(mess)
                         return res.json(mess);
                     })
                     .catch(err => res.json(err))
             })
             
-
-
+router.post('/deletemessage', (req, res) => {
+   
+                const id = req.body.id;
+                Manager.findOneAndDelete({_id:id})
+                    .then(message => {
+                   return res.status(200).jsonmessage})
+                    .catch(err => res.status(404)
+                .json({noMessagefound: 'No Mesage found'}));
+                })
+            
         
-
 module.exports = router;
 
