@@ -67,6 +67,22 @@ router.get('/events', (req,res) => {
         })
         .catch(err => res.json(err))
 })
+
+
+router.post('/deleteEvent', (req, res) => {
+   
+    const id = req.body.id;
+    console.log(id, "the id on the back end");
+    console.log(typeof(id), "the id on the back end");
+
+    SSocial.findOneAndDelete({_id:id})
+        .then(message => {
+   // console.log(message, "this is themessageleted???");
+       return res.status(200).jsonmessage})
+        .catch(err => res.status(404)
+    .json({noMessagefound: 'No Mesage found'}));
+    })
+
         
 
 module.exports = router;

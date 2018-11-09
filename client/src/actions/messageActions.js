@@ -1,4 +1,4 @@
-import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES, DELETE_MESSAGE } from '../types/types';
+import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES } from '../types/types';
 import axios from 'axios';
 
 export const addMessage = (message) => (dispatch) => {
