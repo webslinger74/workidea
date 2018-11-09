@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getMessages, getMessagesByDate, getMessagesBySearch } from '../actions/messageActions';
+import { getMessages, getMessagesByDate, getMessagesBySearch, deleteMessage} from '../actions/messageActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-
 
 export class MessageBoard extends Component {
     constructor(props) {
@@ -51,6 +50,7 @@ export class MessageBoard extends Component {
        messages && messages.map(mess => (
              <div className="indMessage" key={mess._id}>
            <div>
+               
                 <h3 className="waterTitle"> {mess.title} </h3> </div>
                 
                     {mess.images && mess.images.length > 0 ?
@@ -70,7 +70,7 @@ export class MessageBoard extends Component {
                 <div>
                 <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
             </div>
-        
+            <div onClick={()=> this.props.deleteMessage({id:mess._id})} className="delete">Delete Message</div>
              </div>
               
          ))
@@ -81,7 +81,9 @@ export class MessageBoard extends Component {
         this.props.getMessages();
     }
 
-    
+    componentDidUpdate(){
+        this.props.getMessages();
+    }
 
 
     render() { 
@@ -138,7 +140,8 @@ export class MessageBoard extends Component {
 const actions = {
     getMessages,
     getMessagesByDate,
-    getMessagesBySearch
+    getMessagesBySearch,
+    deleteMessage
 }
 
 const mapStateToProps = (state) => ({
