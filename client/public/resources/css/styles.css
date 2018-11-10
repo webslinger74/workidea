@@ -793,11 +793,17 @@ footer .business_nfo .nfo {
 .user_container  .user_right {
     flex-grow: 1;
     padding: 0 0 0 29px;
+    height:100vh;
+    overflow-y: scroll;
 }
 
 .user_container  .user_rights {
     padding: 100px 100px 100px 100px;
     flex-grow: 0.8;
+    height:150vh;
+    overflow-y:scroll;
+
+
 }
 
 .user_container .user_nfo_panel {
