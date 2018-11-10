@@ -32,7 +32,7 @@ class Events extends Component {
 
         
        events && events.map(event => (
-             <div className="indMessage" key={event._id}>
+             <div className="indMessageMain" key={event._id}>
            <div>
                 <h3 className="waterTitle"> {event.title} </h3> </div>
                 
@@ -66,12 +66,11 @@ class Events extends Component {
     return (
         <Sports>
         <div>
-        <div className="sportsItem">
-        <h1 styles={{textAlign:'centre'}}>UpComing Events</h1>
+        
+        <h1 styles={{textAlign:'centre'}}>EVENTS</h1>
             
                              {this.showMessages(events)}
     
-        </div>
       </div>
       </Sports>
       )

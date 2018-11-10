@@ -776,8 +776,12 @@ footer .business_nfo .nfo {
     border-right: 1px solid #f8f8f8; 
     
 }
-
-.user_container .user_left_nav .links a {
+.user_container .user_left_navs {
+    border-right: 1px solid #f8f8f8; 
+    padding:2%;
+    
+}
+.user_container .user_left_navs .links a {
     display: block;
     border-bottom: 1px solid #dddddd;
     font-size: 20px;
@@ -789,6 +793,11 @@ footer .business_nfo .nfo {
 .user_container  .user_right {
     flex-grow: 1;
     padding: 0 0 0 29px;
+}
+
+.user_container  .user_rights {
+    padding: 100px 100px 100px 100px;
+    flex-grow: 0.8;
 }
 
 .user_container .user_nfo_panel {
@@ -931,6 +940,19 @@ footer .business_nfo .nfo {
 
 }
 */
+.indMessageMain {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    align-content:center;
+    width:80%;
+    padding-left:10%;
+    padding-right:10%;
+    margin-bottom: 2%;
+    border-bottom:10px solid rgba(0, 0, 0, 0.061);
+    background-image:radial-gradient(rgba(253, 251, 246, 0.144),rgba(251, 247, 243, 0.897)),url(../../../src/images/sports/background3.jpg);
+    background-size:7000%;
+}
 
 .indMessage {
     display:flex;
@@ -1136,10 +1158,12 @@ footer .business_nfo .nfo {
     width:80%;
     height:max-content;
     background-color: #ffffff;
-    margin:auto;
     margin-bottom:50px;
     text-align: center;
     align-items: center;
+    margin:auto;
+
+    
 }
 #bingocard {
     background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0));

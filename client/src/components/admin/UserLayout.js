@@ -26,7 +26,7 @@ class UserLayout extends Component {
 
         return (
             <div className="user_container">
-            <div className="user_left_nav">
+            <div className="user_left_navs">
             
             <h2>Admin Tasks</h2>
             <div className="links">
@@ -47,7 +47,7 @@ class UserLayout extends Component {
 
 
             </div>
-            <div className="user_right">
+            <div className="user_rights">
                      {this.props.children}
             
             

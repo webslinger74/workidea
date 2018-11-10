@@ -26,7 +26,7 @@ class WellBeingEvents extends Component {
 
         
        events && events.map(event => (
-             <div className="indMessage" key={event._id}>
+             <div className="indMessageMain" key={event._id}>
            <div>
                 <h3 className="waterTitle"> {event.title} </h3> </div>
                 

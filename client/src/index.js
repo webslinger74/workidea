@@ -16,6 +16,7 @@ import managerReducer from '../src/reducers/managerReducer';
 import sportsReducer from './reducers/sportsReducer';
 import wellbeingReducer from './reducers/wellbeingReducer';
 import sitePerformanceReducer from './reducers/siteperformanceReducer';
+import ScrollToTop from './utils/ScrollToTop';
 
 const initialState = {};
 const rootReducers = combineReducers({
@@ -43,7 +44,9 @@ const store = createStore(
 ReactDOM.render(
         <Provider store={ store }>
                  <BrowserRouter>
-                         <Routes />
+                         <ScrollToTop>
+                                  <Routes />
+                         </ScrollToTop>
                  </BrowserRouter>
         </Provider>
 , document.getElementById('root'));
