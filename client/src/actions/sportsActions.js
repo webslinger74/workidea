@@ -55,21 +55,20 @@ export const addSportsEvent = (event) => (dispatch) => {
         })
 }
 
-export const deleteEvent = (id) => (dispatch) => {
+export const deleteEvent = (id, history) => (dispatch) => {
 
-
+    console.log(history, "the history")
     console.log(id, "this is the id of the message???")
     axios.post('/api/sports/deleteEvent', id)
     .then(response => {
-        console.log(response, "this is the response from axios in action")
-        dispatch(getEvents())
-    }) 
+    })
     .catch(err => {
         dispatch({
             type:GET_ERRORS,
             payload:err
         })
     })
+    dispatch(getEvents());
 }
 
 

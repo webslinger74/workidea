@@ -3,6 +3,7 @@ import { getEvents, deleteEvent } from '../actions/sportsActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import Sports from './Sports';
+import { withRouter } from 'react-router-dom';
 
 class Events extends Component {
     constructor(props) {
@@ -13,9 +14,13 @@ class Events extends Component {
          componentDidMount(){
             this.props.getEvents();
         }
-        componentDidUpdate(){
-                
-        }
+
+        componentDidUpdate(prevProps){
+          
+                }
+            
+    
+                           
     
 
         convertStringMessageToHtml = (string) => {
@@ -48,7 +53,7 @@ class Events extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteEvent({id:event._id})} className="delete">Delete Event</div>
+            <div onClick={()=> this.props.deleteEvent({id:event._id}, this.props.history)} className="delete">Delete Event</div>
              </div>
               
          ))
@@ -62,7 +67,6 @@ class Events extends Component {
         <Sports>
         <div>
         <div className="sportsItem">
-        {this.props.children}
         <h1 styles={{textAlign:'centre'}}>UpComing Events</h1>
             
                              {this.showMessages(events)}
@@ -83,4 +87,4 @@ const mapStateToProps = (state) => ({
     events:state.sports.events
 })
  
-export default connect(mapStateToProps, actions)(Events);
+export default connect(mapStateToProps, actions)(withRouter(Events));

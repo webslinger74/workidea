@@ -81,8 +81,10 @@ export class MessageBoard extends Component {
         this.props.getMessages();
     }
 
-    componentDidUpdate(){
-        this.props.getMessages();
+    componentDidUpdate(prevProps){
+        if((prevProps.messages !== this.props.messages) && (Object.keys(this.props.messages).length !== 0)){
+            this.props.getMessages();
+        }
     }
 
 

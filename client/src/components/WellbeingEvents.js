@@ -14,7 +14,7 @@ class WellBeingEvents extends Component {
             this.props.getWellBeingEvents();
         }
         componentDidUpdate(){
-           this.props.getWellBeingEvents();
+
         }
 
         convertStringMessageToHtml = (string) => {
@@ -61,7 +61,6 @@ class WellBeingEvents extends Component {
         <WellBeing>
         <div>
         <div className="sportsItem">
-        {this.props.children}
         <h1 styles={{textAlign:'centre'}}>UpComing Events</h1>
             
                              {this.showMessages(events)}
