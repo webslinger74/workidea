@@ -13,9 +13,6 @@ class WellBeingEvents extends Component {
          componentDidMount(){
             this.props.getWellBeingEvents();
         }
-        componentDidUpdate(){
-
-        }
 
         convertStringMessageToHtml = (string) => {
             const html = string;

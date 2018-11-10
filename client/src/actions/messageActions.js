@@ -26,8 +26,7 @@ export const deleteMessage = (id) => (dispatch) => {
     console.log(id, "this is the id of the message???")
     axios.post('/api/messages/deletemessage', id)
     .then(response => {
-        console.log(response, "this is the response from axios in action")
-        dispatch(getMessages())
+        dispatch(getMessages());
     }) 
     .catch(err => {
         dispatch({
@@ -36,7 +35,6 @@ export const deleteMessage = (id) => (dispatch) => {
         })
     })
 }
-
 
 
 export const getMessages = () => (dispatch) => {

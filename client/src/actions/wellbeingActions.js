@@ -23,7 +23,7 @@ export const deleteEvent = (id) => (dispatch) => {
 
     axios.post('/api/wellbeing/deleteEvent', id)
     .then(response => {
-       
+        dispatch(getWellBeingEvents())
     }) 
     .catch(err => {
         dispatch({
@@ -31,7 +31,7 @@ export const deleteEvent = (id) => (dispatch) => {
             payload:err
         })
     })
-    dispatch(getWellBeingEvents())
+   
 }
 
 export const getWellBeingEvents = () => (dispatch) => {

@@ -61,6 +61,7 @@ export const deleteEvent = (id, history) => (dispatch) => {
     console.log(id, "this is the id of the message???")
     axios.post('/api/sports/deleteEvent', id)
     .then(response => {
+        dispatch(getEvents());
     })
     .catch(err => {
         dispatch({
@@ -68,7 +69,7 @@ export const deleteEvent = (id, history) => (dispatch) => {
             payload:err
         })
     })
-    dispatch(getEvents());
+
 }
 
 

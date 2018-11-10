@@ -46,7 +46,8 @@ router.post('/deletemessage', (req, res) => {
                 const id = req.body.id;
                 Manager.findOneAndDelete({_id:id})
                     .then(message => {
-                   return res.status(200).jsonmessage})
+                   return res.status(200).json({message})
+                    })
                     .catch(err => res.status(404)
                 .json({noMessagefound: 'No Mesage found'}));
                 })

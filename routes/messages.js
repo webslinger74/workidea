@@ -38,13 +38,10 @@ router.post('/message', (req, res) => {
 router.post('/deletemessage', (req, res) => {
    
     const id = req.body.id;
-    console.log(id, "the id on the back end");
-    console.log(typeof(id), "the id on the back end");
-
     Message.findOneAndDelete({_id:id})
         .then(message => {
-        console.log(message, "this is themessageleted???");
-       return res.status(200).jsonmessage})
+       return res.status(200).json({message})
+        })
         .catch(err => res.status(404)
     .json({noMessagefound: 'No Mesage found'}));
     })

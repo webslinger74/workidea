@@ -15,14 +15,6 @@ class Events extends Component {
             this.props.getEvents();
         }
 
-        componentDidUpdate(prevProps){
-          
-                }
-            
-    
-                           
-    
-
         convertStringMessageToHtml = (string) => {
             const html = string;
             return <div>{ReactHtmlParser(html)}</div>

@@ -73,17 +73,12 @@ class ManagerBoard extends Component {
              </div>
               
          ))
-      
         )
-
-           componentDidMount(){
-      this.props.getManagerMessages();
-    }
 
     componentDidMount(){
         this.props.getManagerMessages();
       }
-  
+
 
     render() { 
        const {messages}  =  this.props;
