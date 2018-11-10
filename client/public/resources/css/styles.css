@@ -270,19 +270,19 @@ header .container {
 }
 
 header .container .left{
-    width: 350px;
+    width: 400px;
 }
 
 header .container .right{
-   flex-grow: 1;
    border-left: 1px solid #eeeeee;
    border-right: 1px solid #eeeeee;
 }
 header .container .right .top ,
 header .container .right .bottom {
+    display:flex;
+    flex-direction:row;
     text-transform: uppercase;
     font-weight: 700;
-    text-align: right;
     color:#070606;
     font-size: 15px;
     padding: 10px 20px;
@@ -291,6 +291,8 @@ header .container .right .bottom {
 header .container .right .top {
     color:#070606;
     border-bottom: 1px solid #ffffff;
+    display:flex;
+    flex-direction:row-reverse;
 }
 
 header .cart_link {
@@ -913,7 +915,7 @@ footer .business_nfo .nfo {
     font-size: 14px;
     color:rgba(143, 140, 140, 0.582);
     padding-right:10px;
-    text-align: right;
+    text-align:center;
 }
 /*
 .indMessage {
@@ -935,10 +937,13 @@ footer .business_nfo .nfo {
     flex-direction: column;
     align-items: center;
     align-content:center;
-    width:80%;
+    width:60%;
     padding-left:10%;
     padding-right:10%;
+    margin-bottom: 2%;
     border-bottom:10px solid rgba(0, 0, 0, 0.061);
+    background-image:radial-gradient(rgba(253, 251, 246, 0.144),rgba(251, 247, 243, 0.897)),url(../../../src/images/sports/background3.jpg);
+    background-size:7000%;
 }
 .indMessage:hover {
     background-color:rgba(211, 203, 203, 0.054);
@@ -949,6 +954,7 @@ footer .business_nfo .nfo {
     font-size:20px;
     color:black;
     text-shadow: 2px 3px rgba(0, 0, 0, 0.13);
+    text-align: center;
 }
 .centredLatest {
     font-size:40px;
@@ -981,9 +987,9 @@ footer .business_nfo .nfo {
     grid-row: 1/4;
     padding-left:25px;
     padding-right:25px;
-    width: 85%;
+    width: 80%;
     margin-right:5px;
-    margin-left:10px;
+    margin-left:5px;
     border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
     background-color:rgba(27, 25, 25, 0.041);
     border-top: dashed 2px #0000000a;
@@ -1021,6 +1027,7 @@ footer .business_nfo .nfo {
 }
 .messageBoardDate {
     color:rgba(0, 0, 0, 0.315);
+    text-align: center;
 }
 .latestMessages {
     background-color: #dad6d693;
@@ -1058,11 +1065,11 @@ footer .business_nfo .nfo {
 
 }
 .messageBoardImgFront {
-    height:300px;
-    width:300px;
+    height:50%;
+    width:50%;
     overflow: hidden;
     transition:5s;
-    border-radius:50%;
+
     border:solid 5px rgba(12, 8, 8, 0.596);
     box-shadow: #6b6b6bc2;
     opacity:0.8;
@@ -1395,7 +1402,7 @@ footer .business_nfo .nfo {
 }
 
 .totalContainer {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.637),rgba(255, 255, 255, 0.541)),url(../../../src/images/featured/teamwork.jpg);
+    background-image:radial-gradient(rgba(253, 251, 246, 0.123),rgba(255, 255, 255, 0.609)),url(../../../src/images/featured/teamwork.jpg);
     background-size:cover;
 }
 
@@ -1411,7 +1418,7 @@ footer .business_nfo .nfo {
 }
 
 .sportFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.931),rgba(255, 255, 255, 0.781)),url(../../../src/images/featured/tennis.jpg);
+    background-image:linear-gradient(rgba(253, 251, 246, 0.856),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
     background-size:cover;
 }
 
@@ -1421,7 +1428,7 @@ footer .business_nfo .nfo {
 }
 
 .flowers {
-    background-image:linear-gradient(rgba(211, 161, 95, 0.863),rgba(233, 186, 58, 0.794)),url(../../../src/images/featured/chorltonflowers.jpg);
+    background-image:linear-gradient(rgba(211, 161, 95, 0.959),rgba(233, 186, 58, 0.76)),url(../../../src/images/featured/chorltonflowers.jpg);
     background-size:100%;
 }
 

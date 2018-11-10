@@ -13,29 +13,29 @@ const HomeSlider = (props) => {
             img: file1,
             lineOne:'Latest News',
             lineTwo:'Upto Date',
-            linkTitle:'See Now',
-            linkTo:'/messages'
+            linkTitle:'Latest Info',
+            linkTo:'/messageboard'
         },
         {
             img: file2,
             lineOne:'Engagement Activities',
             lineTwo:'Hassra Discounts',
             linkTitle:'View Offers',
-            linkTo:'/sports'
+            linkTo:'/events'
         } ,
         {
             img: file3,
             lineOne:'Productivity',
             lineTwo:'Quality vs Quantity',
             linkTitle:'See latest guidance',
-            linkTo:'/achievements'
+            linkTo:'/sitePerformance'
         },
         {
             img: file4,
             lineOne:'Chorlton Headlines',
             lineTwo:'Targets for coming year',
             linkTitle:'Hear from the SEO',
-            linkTo:'/messages'
+            linkTo:'/manager'
         }      
     ]
    

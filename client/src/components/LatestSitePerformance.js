@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getEngagementCategoryScores } from '../actions/siteperformanceActions';
 import { connect } from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import faSmile from '@fortawesome/fontawesome-free-solid/faSmile';
+import faBullseye from '@fortawesome/fontawesome-free-solid/faBullseye';
 
 
 class LatestSitePerformance extends Component {
@@ -23,19 +23,9 @@ class LatestSitePerformance extends Component {
             <div className="totalContainer">
 
                 <div className="frontMessages">
-                <FontAwesomeIcon
-                                    icon={faSmile}
-                                    className="icon"
-                                    size="6x"
-                                    color="gold"
-                                />
-                <h1 style={{fontSize:'60px',borderBottom:'grey solid 8px', paddingBottom:'-10px'}}> Staff Engagement </h1>
-                <FontAwesomeIcon
-                                    icon={faSmile}
-                                    className="icon"
-                                    size="6x"
-                                    color="gold"
-                                />
+              
+                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'60px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
+               
                 </div>
                         <div className="engagementContainer1">
                     {engageCats && engageCats ? 
@@ -44,10 +34,10 @@ class LatestSitePerformance extends Component {
                     return  ( <div key={index} className="engagementGridItem">
                     
                      <div style={{fontSize:'50px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
-                     <div>Score:{cat.score} </div>
-                     <div>Difference from Previous Year:{cat.diffprev} </div>
-                     <div>Difference from Parent:{cat.diffparent} </div>
-                     <div>Difference from DWW:{cat.diffdwp} </div>
+                     <div><span style={{fontSize:'60px'}}>{cat.score}</span> </div>
+                     <div>Difference from Previous Year: {cat.diffprev} </div>
+                     <div>Difference from Parent: {cat.diffparent} </div>
+                     <div>Difference from DWW:{ cat.diffdwp} </div>
                         </div>
                         )}
                     }) :null}
@@ -61,10 +51,10 @@ class LatestSitePerformance extends Component {
                     return  ( <div key={index} className="engagementGridItem">
                     
                      <div style={{fontSize:'30px', color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
-                     <div>Score:{cat.score} </div>
-                     <div>Difference from Previous Year:{cat.diffprev} </div>
-                     <div>Difference from Parent:{cat.diffparent} </div>
-                     <div>Difference from DWW:{cat.diffdwp} </div>
+                     <div><span style={{fontSize:'50px'}}>{ cat.score} </span></div>
+                     <div>Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
+                     <div>Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
+                     <div>Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
                         </div>
                         )}
                     }) :null}

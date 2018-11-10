@@ -14,7 +14,7 @@ class Events extends Component {
             this.props.getEvents();
         }
         componentDidUpdate(){
-            this.props.getEvents();
+                
         }
     
 
