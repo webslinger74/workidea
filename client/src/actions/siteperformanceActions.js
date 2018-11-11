@@ -21,6 +21,19 @@ export const addEngagementCategoryScore = (score, history) => (dispatch) => {
         })
 }
 
+export const deleteCategory = (categoryId) => (dispatch) => {
+            axios.post('/api/site/engagecategory', categoryId)
+                .then(response => {
+                    dispatch(getEngagementCategoryScores());
+                })
+                .catch(err => {
+                    dispatch({
+                        type:GET_ERRORS,
+                        payload:err
+                    })
+                })
+}
+
 
 export const getEngagementCategoryScores = () => (dispatch) => {
     axios.get('/api/site/engage')
