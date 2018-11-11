@@ -1,4 +1,4 @@
-import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS, ADD_SPORTS_EVENT, GET_EVENTS
+import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS, ADD_SPORTS_EVENT, GET_EVENTS, ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY
 } from '../types/types';
 
 
@@ -27,6 +27,16 @@ case GET_EVENTS:
 return {
     ...state,
     events:action.payload
+}
+case ADD_CHRISTMAS_PARTY:
+return {
+    ...state,
+    christmasParty:action.payload
+}
+case GET_CHRISTMAS_PARTY:
+return {
+    ...state,
+    christmasParty:action.payload
 }
 default:
     return state;

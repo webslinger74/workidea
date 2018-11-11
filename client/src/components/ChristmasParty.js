@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Sports from './Sports';
 import ReactHtmlParser from 'react-html-parser';
+import { getChristmasParty } from '../actions/sportsActions';
 
 class ChristmasParty extends Component {
     constructor(props) {
@@ -47,14 +48,14 @@ showMessages = (messages) => {
   
        } else {
            return (
-               <div>No Messages are currently Listed, Try again later</div>
+               <div>No Christmas Party is scheduled currently, Try again later</div>
            )
        }
     }
 
        componentDidMount(){
- //   this.props.getEvents();
-}
+          this.props.getChristmasParty();
+        }
 
        
 
@@ -64,7 +65,6 @@ showMessages = (messages) => {
             <Sports>
         <div>    
         <div className="sportsItem">
-        <h1>Details of the ChristmasParty 2018</h1>
            
             <p>KEEP POSTED FOR LATEST NEWS</p>  
             <div className="centredLatest">Christmas Party 2018
@@ -90,11 +90,11 @@ showMessages = (messages) => {
 }
 
 const actions = {
-    
+    getChristmasParty
 }
 
 const mapStateToProps = (state) => ({
-
+    party:state.sports.christmasParty
 })
  
 export default connect(mapStateToProps, actions)(ChristmasParty);

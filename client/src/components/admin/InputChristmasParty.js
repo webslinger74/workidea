@@ -7,7 +7,7 @@ import MyButton from '../../Inputs/Button';
 import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import MyComponent from '../../utils/editor';
-import { addSportsEvent } from '../../actions/sportsActions';
+import { addChristmasParty } from '../../actions/sportsActions';
 
 const Bool = [
     {
@@ -69,7 +69,7 @@ class InputChristmasParty extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
- //     this.props.addSportsEvent(newState);
+     this.props.addChristmasParty(newState);
 
         }
 
@@ -192,7 +192,7 @@ class InputChristmasParty extends Component {
     }
 }
 const actions = {
-    
+    addChristmasParty
 }
 
 const mapStateToProps = (state) => ({

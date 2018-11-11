@@ -1,4 +1,7 @@
-import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS, GET_ERRORS, ADD_SPORTS_EVENT, GET_EVENTS }from '../types/types';
+import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS,
+         GET_ERRORS, ADD_SPORTS_EVENT, GET_EVENTS, 
+         ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY }from '../types/types';
+
 import axios from 'axios';
 
 
@@ -44,6 +47,40 @@ export const addSportsEvent = (event) => (dispatch) => {
         .then(response => {
             dispatch({
                 type:ADD_SPORTS_EVENT,
+                payload:response.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+
+export const addChristmasParty = (party) => (dispatch) => {
+    axios.post('/api/sports/christmasparty', party)
+        .then(response => {
+            dispatch({
+                type:ADD_CHRISTMAS_PARTY,
+                payload:response.data
+
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+export const getChristmasParty = () => (dispatch) => {
+    axios.get('/api/sports/christmasparty')
+       
+        .then(response => {
+            console.log(response, "is this all the events???")
+            dispatch({
+                type:GET_CHRISTMAS_PARTY,
                 payload:response.data
             })
         })

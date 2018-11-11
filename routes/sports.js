@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Sports = require('../models/Sports');
 const SSocial = require('../models/SSocial');
+const Party = require('../models/Party');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -57,6 +58,42 @@ insertEvent.save()
     return console.log(err)
     })
 })
+
+
+
+
+router.post('/christmasparty', (req,res) => {
+    const insertEvent = new Party({
+        title:req.body.title,
+        message:req.body.message,
+        author:req.body.author,
+        publish:req.body.publish,
+        images:req.body.images
+})
+
+insertEvent.save()
+    .then(event => {
+        console.log(event, "event details after model insert")
+       return res.json(event);
+
+    })
+    .catch(err => {
+    return console.log(err)
+    })
+})
+
+router.get('/christmasparty', (req,res) => {
+    Party.find({})
+    .limit(1)
+    .sort({ createdAt: -1 })
+    .then(event => {
+            console.log(event)
+            return res.json(event);
+        })
+        .catch(err => res.json(err))
+})
+
+
 router.get('/events', (req,res) => {
     SSocial.find({})
     .limit(10)
