@@ -64,8 +64,8 @@ showMessages = (messages) => {
     return (
             <Sports>
         
-        <div className="sportsItem"> 
-        <div id="christmasBackground">   
+        <div className="sportsItem2"> 
+        <div id="celebrationBackground">   
             <div className="centredLatest">Celebration Day</div>
             
                 {this.showMessages(celebrationDay)}

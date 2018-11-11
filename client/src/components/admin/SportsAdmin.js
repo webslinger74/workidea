@@ -8,6 +8,7 @@ import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import MyComponent from '../../utils/editor';
 import { addSportsEvent } from '../../actions/sportsActions';
+import { withRouter } from 'react-router-dom';
 
 const Bool = [
     {
@@ -69,7 +70,7 @@ class SportsAdmin extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-      this.props.addSportsEvent(newState);
+      this.props.addSportsEvent(newState, this.props.history);
 
         }
 
@@ -204,4 +205,4 @@ const mapStateToProps = (state) => ({
     events:state.events
 })
  
-export default connect(mapStateToProps, actions)(SportsAdmin);
+export default connect(mapStateToProps, actions)(withRouter(SportsAdmin));

@@ -4,6 +4,7 @@ import TextFieldGroup from '../../Inputs/TextFieldGroup';
 import SelectListGroup from '../../Inputs/SelectListGroup';
 import UserLayout from './UserLayout';
 import { addEngagementCategoryScore } from '../../actions/siteperformanceActions';
+import { withRouter } from 'react-router-dom';
 
 const EngagementCats = [
     {
@@ -123,7 +124,7 @@ class SitePerformanceEngagement extends Component {
           console.log(newState, "state just before adding product");
           console.log(typeof(newState.diffDWP), "the type of category");
             console.log(typeof(newState.diffParent), "the type of category")
-        this.props.addEngagementCategoryScore(newState);
+        this.props.addEngagementCategoryScore(newState, this.props.history);
 
         }
 
@@ -250,4 +251,4 @@ const mapStateToProps = (state) => ({
         category:state.siteperformance.category
 })
  
-export default connect(mapStateToProps, actions)(SitePerformanceEngagement);
+export default connect(mapStateToProps, actions)(withRouter(SitePerformanceEngagement));

@@ -8,6 +8,7 @@ import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import MyComponent from '../../utils/editor';
 import { addCelebrationDay } from '../../actions/sportsActions';
+import { withRouter } from 'react-router-dom';
 
 const Bool = [
     {
@@ -69,7 +70,7 @@ class InputCelebrationDay extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-     this.props.addCelebrationDay(newState);
+     this.props.addCelebrationDay(newState, this.props.history);
 
         }
 
@@ -199,4 +200,4 @@ const mapStateToProps = (state) => ({
     events:state.events
 })
  
-export default connect(mapStateToProps, actions)(InputCelebrationDay);
+export default connect(mapStateToProps, actions)(withRouter(InputCelebrationDay));

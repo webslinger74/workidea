@@ -1152,10 +1152,16 @@ footer .business_nfo .nfo {
 }
 
 #christmasBackground {
-    background-image:radial-gradient(rgba(253, 251, 246, 0.698),rgba(255, 255, 255, 0.801)),url(../../../src/images/sports/christmasbackground.jpg);
+    background-image:radial-gradient(rgba(253, 251, 246, 0.616),rgba(255, 255, 255, 0.753)),url(../../../src/images/sports/christmasnice.jpg);
     background-size:cover;
 }
 
+#celebrationBackground {
+    background-image:radial-gradient(rgba(253, 251, 246, 0.698),rgba(255, 255, 255, 0.801)),url(../../../src/images/sports/celebration.jpg);
+    background-size:cover;
+    width:95%;
+    margin:auto;
+}
 .cont {
     display:flex;
     flex-wrap:wrap;
@@ -1174,9 +1180,18 @@ footer .business_nfo .nfo {
     text-align: center;
     align-items: center;
     margin:auto;
-
-    
 }
+
+.sportsItem2 {
+    width:100%;
+    height:max-content;
+    background-color: #ffffff;
+    margin-bottom:50px;
+    text-align: center;
+    align-items: center;
+    margin:auto;    
+}
+
 #bingocard {
     background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0));
     background-repeat: no-repeat;

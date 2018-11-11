@@ -8,6 +8,8 @@ import FileUpload from './FileUpload';
 import UserLayout from './UserLayout';
 import { addMessage } from '../../actions/messageActions';
 import MyComponent from '../../utils/editor';
+import { withRouter } from 'react-router-dom';
+
 const Bool = [
     {
         "name":"YES",
@@ -94,7 +96,7 @@ class Messages extends Component {
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");
-        this.props.addMessage(newState);
+        this.props.addMessage(newState, this.props.history);
 
         }
 
@@ -239,4 +241,4 @@ const mapStateToProps = (state) => ({
 
 })
  
-export default connect(mapStateToProps, actions)(Messages);
+export default connect(mapStateToProps, actions)(withRouter(Messages));

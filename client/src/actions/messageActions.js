@@ -1,7 +1,7 @@
 import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES } from '../types/types';
 import axios from 'axios';
 
-export const addMessage = (message) => (dispatch) => {
+export const addMessage = (message, history) => (dispatch) => {
     console.log(message, "the score before axios request fires")
     console.log(typeof(message), "the score before axios request fires")
     axios.post('/api/messages/message', message)
@@ -11,6 +11,7 @@ export const addMessage = (message) => (dispatch) => {
                 type:ADD_MESSAGE,
                 payload:response.data
             })
+            history.push('/messageboard')
         })
         .catch(err => {
             dispatch({

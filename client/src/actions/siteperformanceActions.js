@@ -1,7 +1,7 @@
 import { GET_ERRORS, ADD_ENGAGEMENT_CATEGORY_SCORE, GET_ENGAGEMENT_CATEGORY_SCORES } from '../types/types';
 import axios from 'axios';
 
-export const addEngagementCategoryScore = (score) => (dispatch) => {
+export const addEngagementCategoryScore = (score, history) => (dispatch) => {
     console.log(score, "the score before axios request fires")
     console.log(typeof(score), "the score before axios request fires")
     axios.post('/api/site/engage', score)
@@ -11,6 +11,7 @@ export const addEngagementCategoryScore = (score) => (dispatch) => {
                 type:ADD_ENGAGEMENT_CATEGORY_SCORE,
                 payload:response.data
             })
+            history.push('/')
         })
         .catch(err => {
             dispatch({

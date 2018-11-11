@@ -43,13 +43,14 @@ export const getBingoNumbers = () => (dispatch) => {
         })
 }
 
-export const addSportsEvent = (event) => (dispatch) => {
+export const addSportsEvent = (event, history) => (dispatch) => {
     axios.post('/api/sports/event', event)
         .then(response => {
             dispatch({
                 type:ADD_SPORTS_EVENT,
                 payload:response.data
             })
+            history.push('/events')
         })
         .catch(err => {
             dispatch({
@@ -59,14 +60,14 @@ export const addSportsEvent = (event) => (dispatch) => {
         })
 }
 
-export const addChristmasParty = (party) => (dispatch) => {
+export const addChristmasParty = (party, history) => (dispatch) => {
     axios.post('/api/sports/christmasparty', party)
         .then(response => {
             dispatch({
                 type:ADD_CHRISTMAS_PARTY,
                 payload:response.data
-
             })
+            history.push('/christmas')
         })
         .catch(err => {
             dispatch({
@@ -75,7 +76,7 @@ export const addChristmasParty = (party) => (dispatch) => {
             })
         })
 }
-export const addCelebrationDay = (event) => (dispatch) => {
+export const addCelebrationDay = (event, history) => (dispatch) => {
     axios.post('/api/sports/celebrationday', event)
         .then(response => {
             dispatch({
@@ -83,6 +84,7 @@ export const addCelebrationDay = (event) => (dispatch) => {
                 payload:response.data
 
             })
+            history.push('/celebration');
         })
         .catch(err => {
             dispatch({
@@ -117,6 +119,7 @@ export const getChristmasParty = () => (dispatch) => {
                 type:GET_CHRISTMAS_PARTY,
                 payload:response.data
             })
+
         })
         .catch(err => {
             dispatch({
