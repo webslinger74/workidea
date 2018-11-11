@@ -1,6 +1,6 @@
 import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS,
          GET_ERRORS, ADD_SPORTS_EVENT, GET_EVENTS, 
-         ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY }from '../types/types';
+         ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY, ADD_CELEBRATION_DAY }from '../types/types';
 
 import axios from 'axios';
 
@@ -63,6 +63,22 @@ export const addChristmasParty = (party) => (dispatch) => {
         .then(response => {
             dispatch({
                 type:ADD_CHRISTMAS_PARTY,
+                payload:response.data
+
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+export const addCelebrationDay = (event) => (dispatch) => {
+    axios.post('/api/sports/celebrationday', event)
+        .then(response => {
+            dispatch({
+                type:ADD_CELEBRATION_DAY,
                 payload:response.data
 
             })

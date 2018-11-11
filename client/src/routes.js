@@ -23,6 +23,7 @@ import CharityContributions from './components/CharityContributions';
 import News from './components/News';
 import ChristmasParty from './components/ChristmasParty';
 import InputChristmasParty from './components/admin/InputChristmasParty';
+import InputCelebrationDay from './components/admin/InputCelebrationDay';
 
 const Routes = () => {
     
@@ -43,6 +44,7 @@ const Routes = () => {
                 <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/sports/christmasparty" exact component={InputChristmasParty}/>
+                <Route path="/sports/celebrationday" exact component={InputCelebrationDay}/>
                 <Route path="/charity" exact component={CharityContributions}/>
                 <Route path="/christmas" exact component={ChristmasParty}/>
                 <Route path="/news" exact component={News}/>

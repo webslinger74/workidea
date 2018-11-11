@@ -24,8 +24,8 @@ class Sports extends Component {
             <Link className="indSportsLinks" to="/charity"><h2>Charity Contributions</h2></Link>
             <Link className="indSportsLinks" to="/news"><h2>News</h2></Link>
             <Link className="indSportsLinks" to="/christmas"><h2>Christmas Party</h2></Link>
-            <Link className="indSportsLinks" to="/bingo"><h2>Bonfire Night</h2></Link>
-            <Link className="indSportsLinks" to="/bingo"><h2>Contact Us</h2></Link>
+            <Link className="indSportsLinks" to="/events"><h2>Celebration Day</h2></Link>
+            <Link className="indSportsLinks" to="/events"><h2>Contact Us</h2></Link>
                 </div>                
         <div className="dividers2"></div>
         <div className="sportsItem">

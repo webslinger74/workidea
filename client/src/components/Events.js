@@ -58,8 +58,9 @@ class Events extends Component {
     return (
         <Sports>
         <div>
-        
-        <h1 styles={{textAlign:'centre'}}>EVENTS</h1>
+
+        <div className="centredLatest">Events</div>
+
             
                              {this.showMessages(events)}
     

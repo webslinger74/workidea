@@ -63,20 +63,14 @@ showMessages = (messages) => {
         const { party } = this.props;
     return (
             <Sports>
-        <div>    
-        <div className="sportsItem">
-           
-            <p>KEEP POSTED FOR LATEST NEWS</p>  
-            <div className="centredLatest">Christmas Party 2018
-                     </div>
-
+        
+        <div className="sportsItem"> 
+        <div id="christmasBackground">   
+            <div className="centredLatest">Christmas Party 2018</div>
             
                 {this.showMessages(party)}
-
-           
-
-         
-        </div>
+                 
+            </div>
         <div className="dividers2"></div>
         <div className="sportsItem">
     
