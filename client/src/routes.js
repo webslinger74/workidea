@@ -25,6 +25,10 @@ import ChristmasParty from './components/ChristmasParty';
 import InputChristmasParty from './components/admin/InputChristmasParty';
 import InputCelebrationDay from './components/admin/InputCelebrationDay';
 import CelebrationDay from './components/CelebrationDay';
+import WellbeingHealthFood from './components/WellbeingHealthFood';
+import WellBeingHealthAtWork from './components/WellBeingHealthAtWork';
+import WellBeingCharity from './components/WellBeingCharity';
+import WellbeingKeepFit from './components/WellbeingKeepFit';
 
 const Routes = () => {
     
@@ -50,7 +54,14 @@ const Routes = () => {
                 <Route path="/charity" exact component={CharityContributions}/>
                 <Route path="/christmas" exact component={ChristmasParty}/>
                 <Route path="/news" exact component={News}/>
-                <Route path="/wellbeingEvents"  exact component={WellBeingEvents}/>
+                <Route path="/wellbeing/Events"  exact component={WellBeingEvents}/>
+                <Route path="/wellbeing/Keepfit"  exact component={WellbeingKeepFit}/>
+                <Route path="/wellbeing/Healthfood"  exact component={WellbeingHealthFood}/>
+                <Route path="/wellbeing/Charity"  exact component={WellBeingCharity}/>
+                <Route path="/wellbeing/Healthatwork"  exact component={WellBeingHealthAtWork}/>
+
+
+
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
                 <Route path="/manager" exact component={AsyncManager}/>
