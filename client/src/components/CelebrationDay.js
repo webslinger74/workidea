@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Sports from './Sports';
 import ReactHtmlParser from 'react-html-parser';
-import { getCelebrationDay } from '../actions/sportsActions';
+import { getCelebrationDay, deleteCelebrationDay } from '../actions/sportsActions';
 
 class CelebrationDay extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ showMessages = (messages) => {
             <div>
             <h3 className="authorStamp"> {messages[0].author} - {messages[0].createdAt}  </h3>
         </div>
-    
+        <div onClick={()=> this.props.deleteCelebrationDay({id:messages[0]._id})} className="delete">Delete Celebration Day</div>
          </div>
           
      )
@@ -84,7 +84,8 @@ showMessages = (messages) => {
 }
 
 const actions = {
-    getCelebrationDay
+    getCelebrationDay,
+    deleteCelebrationDay
 }
 
 const mapStateToProps = (state) => ({

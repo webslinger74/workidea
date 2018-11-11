@@ -136,7 +136,17 @@ router.post('/delchristmasparty', (req, res) => {
         .catch(err => res.status(404)
     .json({noMessagefound: 'No Mesage found'}));
     })
-
+    router.post('/delcelebrationday', (req, res) => {
+   
+        const id = req.body.id;
+    
+        Celebration.findOneAndDelete({_id:id})
+            .then(message => {
+           return res.status(200).json({message})
+            })
+            .catch(err => res.status(404)
+        .json({noMessagefound: 'No Mesage found'}));
+        })
 
 router.get('/events', (req,res) => {
     SSocial.find({})

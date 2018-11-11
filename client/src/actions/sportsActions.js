@@ -107,6 +107,19 @@ export const addCelebrationDay = (event, history) => (dispatch) => {
             })
         })
 }
+export const deleteCelebrationDay = (celebrationId) => (dispatch) => {
+    axios.post('/api/sports/delcelebrationday', celebrationId)
+        .then(response => {
+            dispatch(getCelebrationDay());
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+
 export const getCelebrationDay = () => (dispatch) => {
     axios.get('/api/sports/celebrationday')
        
