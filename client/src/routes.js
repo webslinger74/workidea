@@ -7,12 +7,9 @@ import Home from './components/Home';
 import Manager from './components/admin/Manager';
 import Messages from './components/admin/Messages';
 import SitePerformance from './components/SitePerformance';
-import Sports from './components/Sports';
 import Login from './components/Login';
 import MessageBoard from './components/MessageBoard';
 import InputBingo from './components/admin/InputBingo';
-//import Feedback from './components/Feedback';
-//import Manager from './components/Manager';
 import UserDashboard from './components/admin/UserDashboard';
 import SportsAdmin from './components/admin/SportsAdmin';
 import WellBeingAdmin from './components/admin/WellbeingAdmin';
@@ -22,6 +19,10 @@ import Bingo from './components/Bingo';
 import Events from './components/Events';
 import WellBeingEvents from './components/WellbeingEvents';
 import SitePerformanceEngagement from './components/admin/SitePerformanceEngagement';
+import CharityContributions from './components/CharityContributions';
+import News from './components/News';
+import ChristmasParty from './components/ChristmasParty';
+import InputChristmasParty from './components/admin/InputChristmasParty';
 
 const Routes = () => {
     
@@ -41,6 +42,10 @@ const Routes = () => {
                 <Route path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
                 <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
+                <Route path="/sports/christmasparty" exact component={InputChristmasParty}/>
+                <Route path="/charity" exact component={CharityContributions}/>
+                <Route path="/christmas" exact component={ChristmasParty}/>
+                <Route path="/news" exact component={News}/>
                 <Route path="/wellbeingEvents"  exact component={WellBeingEvents}/>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
