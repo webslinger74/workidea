@@ -117,7 +117,7 @@ class InputCelebrationDay extends Component {
         return (
             <UserLayout>
             <div>
-                <h1>Add Christmas Party Details</h1>
+                <h1>Input Celebration Day Details</h1>
                 <form onSubmit={(event) => this.onSubmit(event)}>
                 
                 <FileUpload 
