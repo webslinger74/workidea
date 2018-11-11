@@ -76,6 +76,20 @@ export const addChristmasParty = (party, history) => (dispatch) => {
             })
         })
 }
+
+export const deleteChristmasParty = (partyId) => (dispatch) => {
+    axios.post('/api/sports/delchristmasparty', partyId)
+        .then(response => {
+            dispatch(getChristmasParty());
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+
 export const addCelebrationDay = (event, history) => (dispatch) => {
     axios.post('/api/sports/celebrationday', event)
         .then(response => {

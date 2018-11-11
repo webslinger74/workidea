@@ -38,7 +38,7 @@ class LatestSitePerformance extends Component {
                      <div>Difference from Previous Year: {cat.diffprev} </div>
                      <div>Difference from Parent: {cat.diffparent} </div>
                      <div>Difference from DWW:{ cat.diffdwp} </div>
-                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Message</div>
+                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
                         </div>
                         )}
                     }) :null}
@@ -56,7 +56,7 @@ class LatestSitePerformance extends Component {
                      <div>Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
                      <div>Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
                      <div>Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
-                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Message</div>
+                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
                         </div>
                         )}
                     }) :null}
