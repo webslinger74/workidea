@@ -1,7 +1,7 @@
 import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS,
          GET_ERRORS, ADD_SPORTS_EVENT, GET_EVENTS, 
          ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY, ADD_CELEBRATION_DAY,
-        GET_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY }from '../types/types';
+        GET_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY, ADD_SITE_EMAIL, ADD_CONTACT }from '../types/types';
 
 import axios from 'axios';
 
@@ -242,4 +242,39 @@ export const deleteCharity = (id) => (dispatch) => {
         })
     })
 
+}
+
+export const addContact = (contactDets, history) => (dispatch) => {
+    axios.post('/api/sports/contact', contactDets)
+    .then(response => {
+        console.log(response, "is this all the events???")
+        dispatch({
+            type:ADD_CONTACT,
+            payload:response.data
+        })
+        history.push('/');
+    })
+    .catch(err => {
+        dispatch({
+            type:GET_ERRORS,
+            payload:err
+        })
+    })
+}
+export const addSiteEmail = (siteEmail, history) => (dispatch) => {
+    axios.post('/api/sports/siteEmail', siteEmail)
+    .then(response => {
+        console.log(response, "is this all the events???")
+        dispatch({
+            type:ADD_SITE_EMAIL,
+            payload:response.data
+        })
+        history.push('/');
+    })
+    .catch(err => {
+        dispatch({
+            type:GET_ERRORS,
+            payload:err
+        })
+    })
 }

@@ -1488,13 +1488,14 @@ footer .business_nfo .nfo {
     flex-direction: row;
     padding-bottom: 5%;
     opacity:0.85;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .charityItems {
     display:flex;
     flex-direction: column;
     margin:5%;
-    width:25%;
     border-radius: 100%;
     opacity: 0.85;
 }
