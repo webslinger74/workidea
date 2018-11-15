@@ -1,7 +1,7 @@
 import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS,
          GET_ERRORS, ADD_SPORTS_EVENT, GET_EVENTS, 
          ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY, ADD_CELEBRATION_DAY,
-        GET_CELEBRATION_DAY }from '../types/types';
+        GET_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY }from '../types/types';
 
 import axios from 'axios';
 
@@ -190,4 +190,56 @@ export const getEvents = () => (dispatch) => {
                 payload:err
             })
         })
+}
+
+export const addCharity = (charityDets, history) => (dispatch) => {
+        axios.post('/api/sports/charity', charityDets)
+        .then(response => {
+            console.log(response, "is this all the events???")
+            dispatch({
+                type:ADD_CHARITY,
+                payload:response.data
+            })
+            history.push('/charity');
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+
+
+export const getCharity = () => (dispatch) => {
+    axios.get('/api/sports/charity')
+       
+        .then(response => {
+            console.log(response, "is this all the charity???")
+            dispatch({
+                type:GET_CHARITY,
+                payload:response.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err
+            })
+        })
+}
+
+export const deleteCharity = (id) => (dispatch) => {
+
+    axios.post('/api/sports/deleteCharity', id)
+    .then(response => {
+        dispatch(getCharity());
+    })
+    .catch(err => {
+        dispatch({
+            type:GET_ERRORS,
+            payload:err
+        })
+    })
+
 }

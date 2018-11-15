@@ -1,5 +1,5 @@
 import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS, ADD_SPORTS_EVENT, GET_EVENTS, ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY,
-    GET_CELEBRATION_DAY, ADD_CELEBRATION_DAY
+    GET_CELEBRATION_DAY, ADD_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY
 } from '../types/types';
 
 
@@ -48,6 +48,16 @@ case ADD_CELEBRATION_DAY:
 return {
     ...state,
     celebrationDay:action.payload
+}
+case ADD_CHARITY:
+return {
+    ...state,
+    charity:action.payload
+}
+case GET_CHARITY:
+return {
+    ...state,
+    charities:action.payload
 }
 default:
     return state;

@@ -4,6 +4,7 @@ const Sports = require('../models/Sports');
 const SSocial = require('../models/SSocial');
 const Party = require('../models/Party');
 const Celebration = require('../models/Celebration');
+const CharityConts = require('../models/CharityConts');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -173,7 +174,48 @@ router.post('/deleteEvent', (req, res) => {
     .json({noMessagefound: 'No Mesage found'}));
     })
 
-        
+    router.post('/charity', (req, res) => {
+    
+        const insertCharity = new CharityConts({
+            charity:req.body.charityName,
+            amount:req.body.amount,
+            images:req.body.images
+    })
+    
+    insertCharity.save()
+        .then(event => {
+            console.log(event, "event details after model insert")
+           return res.json(event);
+    
+        })
+        .catch(err => {
+        return console.log(err)
+        })
+    }) 
+    
+    router.get('/charity', (req,res) => {
+        CharityConts.find({})
+        .limit(20)
+        .sort({ createdAt: -1 })
+        .then(event => {
+                console.log(event)
+                return res.json(event);
+            })
+            .catch(err => res.json(err))
+    })
+
+    router.post('/deleteCharity', (req, res) => {
+   
+        const id = req.body.id;
+    
+        CharityConts.findOneAndDelete({_id:id})
+            .then(message => {
+       // console.log(message, "this is themessageleted???");
+           return res.status(200).json({message})
+            })
+            .catch(err => res.status(404)
+        .json({noMessagefound: 'No Mesage found'}));
+        })
 
 module.exports = router;
 

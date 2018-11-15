@@ -1483,3 +1483,22 @@ footer .business_nfo .nfo {
     background-size:100%;
 }
 
+.charityContainer {
+    display:flex;
+    flex-direction: row;
+    padding-bottom: 5%;
+    opacity:0.85;
+}
+
+.charityItems {
+    display:flex;
+    flex-direction: column;
+    margin:5%;
+    width:25%;
+    border-radius: 100%;
+    opacity: 0.85;
+}
+.charityBackground {
+    background-image:linear-gradient(rgba(240, 237, 233, 0.849),rgba(226, 223, 217, 0.897)),url(../../../src/images/sports/charity.gif);
+    background-size:cover;
+}
