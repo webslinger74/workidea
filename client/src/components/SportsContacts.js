@@ -35,10 +35,10 @@ class SportsContacts extends Component {
                     </div>         
                            
             
-                <div> <h3 style={{paddingLeft:'5px', paddingRight:'25px', color:'green'}}> {contact.contactEmail}</h3> 
+                <div> <h3 style={{paddingLeft:'25px', paddingRight:'25px', color:'green'}}> {contact.contactEmail}</h3> 
                         <h4> {contact.position}  </h4></div>
 
-            <div onClick={()=> this.props.deleteContact({id:contact._id}, this.props.history)} className="delete">Del</div>
+            <div onClick={()=> this.props.deleteContact({id:contact._id}, this.props.history)} className="delete">DEL</div>
                         
              </div>
                <div className="contactBorder"></div>
