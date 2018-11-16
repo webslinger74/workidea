@@ -22,4 +22,7 @@ export const GET_CELEBRATION_DAY = "GET_CELEBRATION_DAY";
 export const ADD_CHARITY = "ADD_CHARITY";
 export const GET_CHARITY = "GET_CHARITY";
 export const ADD_SITE_EMAIL = "ADD_SITE_EMAIL";
+export const GET_SITE_EMAIL = "GET_SITE_EMAIL";
 export const ADD_CONTACT = "ADD_CONTACT";
+export const GET_CONTACTS = "GET_CONTACTS";
+export const DELETE_CONTACT = "DELETE_CONTACT";

@@ -148,7 +148,7 @@ class SportsContact extends Component {
                                  onChange={this.onChange}
                             />
                      
-                        <input type="submit" className="btn btn-info btn-block mt-4" />
+                        <input type="submit" className="btn btn-info btn-block mt-4" value="Submit Email"/>
 
                 </form>
 
@@ -187,14 +187,11 @@ class SportsContact extends Component {
                  <TextFieldGroup 
                                 type="text"
                                 placeholder="Position"
-                                name="positionl"
+                                name="position"
                                 error={errors.position}
                                 value={this.state.position}
                                 onChange={this.onChange}
                            />
-
-                 <div className="form_devider"></div>
-                             
                         
                        <div>
                                 
@@ -212,7 +209,8 @@ class SportsContact extends Component {
                            :null}
                            </div>
 
-                          <input type="submit" className="btn btn-info btn-block mt-4" />
+                          <input type="submit" className="btn btn-info btn-block mt-4" value="Submit Contact"/>
+                          <div className="form_devider"></div>
 
                </form>
             </div>

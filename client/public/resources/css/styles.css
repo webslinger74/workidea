@@ -1024,6 +1024,22 @@ footer .business_nfo .nfo {
     transition:2s;
 }
 
+.latestMessageContacts {
+    display:grid;
+    text-align:center;
+    grid-template-rows: auto auto auto auto;
+    grid-row: 1/4;
+    padding-left:25px;
+    padding-right:25px;
+    width: 98%;
+    margin-right:5px;
+    margin-bottom:5vh;
+    margin-left:5px;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+    background-color:rgba(27, 25, 25, 0.041);
+    border-top: dashed 2px #0000000a;
+    transition:2s;
+}
 .latestMessage:hover {
     background-color:rgba(211, 203, 203, 0.287);
     
@@ -1502,4 +1518,35 @@ footer .business_nfo .nfo {
 .charityBackground {
     background-image:linear-gradient(rgba(240, 237, 233, 0.849),rgba(226, 223, 217, 0.897)),url(../../../src/images/sports/charity.gif);
     background-size:cover;
+}
+
+
+.sportsContactsContainer {
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+    flex-wrap:wrap;
+}
+.indSportsContactDetails {
+    display:flex;
+    flex-direction: row;
+    flex-grow:1;
+    margin-bottom:2.5vh;
+    margin-top:2.5vh;
+    margin-right:5vw;
+    margin-left:5vw;
+    
+}
+
+.contactBorder {
+    height:4px;
+    width:100%;
+    margin:auto;
+    background-color:rgba(0, 0, 0, 0.089);
+}
+
+.sportsContactsImg {
+    height:75px;
+    width:75px;
+    border-radius:100%;
 }

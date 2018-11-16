@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Sports = require('../models/Sports');
 const SSocial = require('../models/SSocial');
+const SiteEmail = require('../models/SiteEmail');
 const Party = require('../models/Party');
 const Celebration = require('../models/Celebration');
 const CharityConts = require('../models/CharityConts');
+const SportsContact = require('../models/SportsContact');
 const keys = require('../config/keys').secretOrKey;
 const passport = require('passport');
 const admin = require('../config/admin');
@@ -215,6 +217,94 @@ router.post('/deleteEvent', (req, res) => {
             })
             .catch(err => res.status(404)
         .json({noMessagefound: 'No Mesage found'}));
+        })
+
+
+        router.post('/siteEmail', (req, res) => {
+    
+            const insertEmail = new SiteEmail({
+                siteEmail:req.body.sportsEmail
+        })
+        
+        insertEmail.save()
+            .then(event => {
+                console.log(event, "site email details after model insert")
+               return res.json(event);
+        
+            })
+            .catch(err => {
+            return console.log(err)
+            })
+        }) 
+
+        router.post('/deleteSiteEmail', (req, res) => {
+   
+            const id = req.body.id;
+        
+            SiteEmail.findOneAndDelete({_id:id})
+                .then(message => {
+           // console.log(message, "this is themessageleted???");
+               return res.status(200).json({message})
+                })
+                .catch(err => res.status(404)
+            .json({noMessagefound: 'No Mesage found'}));
+            })
+
+        router.get('/siteEmail', (req,res) => {
+            SiteEmail.find({})
+            .limit(1)
+            .sort({ createdAt: -1 })
+            .then(event => {
+                    console.log(event)
+                    return res.json(event);
+                })
+                .catch(err => res.json(err))
+        })
+
+        router.post('/contact', (req, res) => {
+    
+            const insertContact = new SportsContact({
+                contactName:req.body.contactName,
+                contactEmail:req.body.contactEmail,
+                position:req.body.position,
+                images:req.body.images
+        })
+        
+        insertContact.save()
+            .then(event => {
+                console.log(event, "site email details after model insert")
+               return res.json(event);
+        
+            })
+            .catch(err => {
+            return console.log(err)
+            })
+        }) 
+
+        
+    router.post('/deleteContact', (req, res) => {
+   
+        const id = req.body.id;
+    
+        SportsContact.findOneAndDelete({_id:id})
+            .then(message => {
+       // console.log(message, "this is themessageleted???");
+           return res.status(200).json({message})
+            })
+            .catch(err => res.status(404)
+        .json({noMessagefound: 'No Mesage found'}));
+        })
+
+
+        router.get('/contacts', (req,res) => {
+            SportsContact.find({})
+            .limit(20)
+            .sort({ createdAt: -1 })
+            .then(event => {
+                    console.log(event)
+                    return res.json(event);
+                })
+                .catch(err => res.json(err))
         })
 
 module.exports = router;

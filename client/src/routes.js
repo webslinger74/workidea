@@ -31,6 +31,7 @@ import WellbeingHealthFood from './components/WellbeingHealthFood';
 import WellBeingHealthAtWork from './components/WellBeingHealthAtWork';
 import WellBeingCharity from './components/WellBeingCharity';
 import WellbeingKeepFit from './components/WellbeingKeepFit';
+import SportsContacts from './components/SportsContacts';
 
 const Routes = () => {
     
@@ -55,6 +56,7 @@ const Routes = () => {
                 <Route path="/sports/celebrationday" exact component={InputCelebrationDay}/>
                 <Route path="/sports/charity" exact component={InputCharity}/>
                 <Route path="/sports/contact" exact component={InputSportsContact}/>
+                <Route path="/sports/contacts" exact component={SportsContacts}/>
                 <Route path="/charity" exact component={CharityContributions}/>
                 <Route path="/christmas" exact component={ChristmasParty}/>
                 <Route path="/news" exact component={News}/>

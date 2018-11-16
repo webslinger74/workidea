@@ -1,5 +1,5 @@
 import { ADD_BINGO_NUMBERS, GET_BINGO_NUMBERS, ADD_SPORTS_EVENT, GET_EVENTS, ADD_CHRISTMAS_PARTY, GET_CHRISTMAS_PARTY,
-    GET_CELEBRATION_DAY, ADD_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY
+    GET_CELEBRATION_DAY, ADD_CELEBRATION_DAY, ADD_CHARITY, GET_CHARITY, ADD_SITE_EMAIL, ADD_CONTACT, GET_CONTACTS, GET_SITE_EMAIL
 } from '../types/types';
 
 
@@ -58,6 +58,26 @@ case GET_CHARITY:
 return {
     ...state,
     charities:action.payload
+}
+case ADD_SITE_EMAIL:
+return {
+    ...state,
+    siteEmail:action.payload
+}
+case GET_SITE_EMAIL:
+return {
+    ...state,
+    siteEmail:action.payload
+}
+case ADD_CONTACT:
+return {
+    ...state,
+    contacts:action.payload
+}
+case GET_CONTACTS:
+return {
+    ...state,
+    contacts:action.payload
 }
 default:
     return state;
