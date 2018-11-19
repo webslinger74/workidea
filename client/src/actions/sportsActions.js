@@ -158,7 +158,7 @@ export const getChristmasParty = () => (dispatch) => {
         })
 }
 
-export const deleteEvent = (id, history) => (dispatch) => {
+export const deleteEvent = (id, history, url) => (dispatch) => {
 
     console.log(history, "the history")
     console.log(id, "this is the id of the message???")
@@ -166,11 +166,18 @@ export const deleteEvent = (id, history) => (dispatch) => {
     .then(response => {
         dispatch(getEvents());
     })
-    .catch(err => {
-        dispatch({
-            type:GET_ERRORS,
-            payload:err
-        })
+
+    url.forEach(element => {
+        axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+        .then((response) => {
+            console.log("image deleted from cloudinary", url);
+            })
+            .catch(err => {
+                dispatch({
+                    type:GET_ERRORS,
+                    payload:err
+                })
+            })
     })
 
 }

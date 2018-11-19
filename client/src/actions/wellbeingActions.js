@@ -2,7 +2,7 @@ import { GET_ERRORS, ADD_WELLBEING_EVENT, GET_WELLBEING_EVENTS } from '../types/
 import axios from 'axios';
 
 
-export const addWellBeingEvent = (event) => (dispatch) => {
+export const addWellBeingEvent = (event, history) => (dispatch) => {
     axios.post('/api/wellbeing/event', event)
        
         .then(response => {
@@ -10,6 +10,7 @@ export const addWellBeingEvent = (event) => (dispatch) => {
                 type:ADD_WELLBEING_EVENT,
                 payload:response.data
             })
+            history.push('/wellbeing/Events');
         })
         .catch(err => {
             dispatch({
@@ -19,20 +20,25 @@ export const addWellBeingEvent = (event) => (dispatch) => {
         })
 }
 
-export const deleteEvent = (id) => (dispatch) => {
+export const deleteEvent = (id, url) => (dispatch) => {
 
     axios.post('/api/wellbeing/deleteEvent', id)
     .then(response => {
         dispatch(getWellBeingEvents())
     }) 
-    .catch(err => {
-        dispatch({
-            type:GET_ERRORS,
-            payload:err
-        })
+    url.forEach(element => {
+        axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+        .then((response) => {
+            console.log("image deleted from cloudinary", url);
+            })
+            .catch(err => {
+                dispatch({
+                    type:GET_ERRORS,
+                    payload:err
+                })
+            })
     })
-   
-}
+   }
 
 export const getWellBeingEvents = () => (dispatch) => {
     axios.get('/api/wellbeing/events')       

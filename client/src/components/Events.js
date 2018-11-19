@@ -45,7 +45,7 @@ class Events extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteEvent({id:event._id}, this.props.history)} className="delete">Delete Event</div>
+            <div onClick={()=> this.props.deleteEvent({id:event._id}, this.props.history, event.images)} className="delete">Delete Event</div>
              </div>
               
          ))

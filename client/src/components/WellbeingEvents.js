@@ -3,6 +3,7 @@ import { getWellBeingEvents, deleteEvent } from '../actions/wellbeingActions';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import WellBeing from './WellBeing';
+import { withRouter } from 'react-router-dom';
 
 class WellBeingEvents extends Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class WellBeingEvents extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteEvent({id:event._id})} className="delete">Delete Event</div>
+            <div onClick={()=> this.props.deleteEvent({id:event._id}, event.images)} className="delete">Delete Event</div>
              </div>
               
          ))
@@ -78,4 +79,4 @@ const mapStateToProps = (state) => ({
     events:state.wellbeing.allEvents
 })
  
-export default connect(mapStateToProps, actions)(WellBeingEvents);
+export default connect(mapStateToProps, actions)(withRouter(WellBeingEvents));

@@ -70,7 +70,7 @@ export class MessageBoard extends Component {
                 <div>
                 <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteMessage({id:mess._id})} className="delete">Delete Message</div>
+            <div onClick={()=> this.props.deleteMessage({id:mess._id},mess.images)} className="delete">Delete Message</div>
              </div>
               
          ))

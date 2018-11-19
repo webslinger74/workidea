@@ -133,7 +133,9 @@ router.post('/uploadimage', /* passport.authenticate('jwt', {session:false}),adm
 })
 
 router.get('/removeimage', /* passport.authenticate('jwt', {session:false}), admin,*/ (req,res) => {
+    
     let image_id = req.query.public_id;
+    console.log(image_id, "image id just before cloud at back end");
     cloudinary.uploader.destroy(image_id, (error, result) => {
         if(error){
             return res.json({success:false});

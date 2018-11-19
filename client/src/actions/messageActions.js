@@ -1,5 +1,6 @@
 import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES } from '../types/types';
 import axios from 'axios';
+import { array } from 'prop-types';
 
 export const addMessage = (message, history) => (dispatch) => {
     console.log(message, "the score before axios request fires")
@@ -21,20 +22,29 @@ export const addMessage = (message, history) => (dispatch) => {
         })
 }
 
-export const deleteMessage = (id) => (dispatch) => {
+export const deleteMessage = (id, url) => (dispatch) => {
 
 
     console.log(id, "this is the id of the message???")
+    console.log(url, "the image url prior to deletion from cloudinary");
     axios.post('/api/messages/deletemessage', id)
     .then(response => {
         dispatch(getMessages());
     }) 
-    .catch(err => {
-        dispatch({
-            type:GET_ERRORS,
-            payload:err
-        })
-    })
+
+    url.forEach(element => {
+        axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+        .then((response) => {
+            console.log("image deleted from cloudinary", url);
+            })
+            .catch(err => {
+                dispatch({
+                    type:GET_ERRORS,
+                    payload:err
+                })
+            })
+    });
+
 }
 
 
