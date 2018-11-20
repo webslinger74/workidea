@@ -21,21 +21,24 @@ export const addManagerMessage = (message, history) => (dispatch) => {
 
 }
 
-export const deleteMessage = (id) => (dispatch) => {
+export const deleteMessage = (id, url) => (dispatch) => {
 
-
-    console.log(id, "this is the id of the message???")
     axios.post('/api/manager/deletemessage', id)
          .then((response) => {
                 dispatch(getManagerMessages())
          })
-    .catch(err => {
-        dispatch({
-            type:GET_ERRORS,
-            payload:err
+         url.forEach(element => {
+            axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+            .then((response) => {
+                })
+                .catch(err => {
+                    dispatch({
+                        type:GET_ERRORS,
+                        payload:err
+                    })
+                })
         })
-    })
-}
+   }
 
 export const getManagerMessages = () => (dispatch) => {
     axios.get('/api/manager/messages')

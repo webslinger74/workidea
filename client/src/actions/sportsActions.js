@@ -79,18 +79,23 @@ export const addChristmasParty = (party, history) => (dispatch) => {
         })
 }
 
-export const deleteChristmasParty = (partyId) => (dispatch) => {
+export const deleteChristmasParty = (partyId, images) => (dispatch) => {
     axios.post('/api/sports/delchristmasparty', partyId)
         .then(response => {
             dispatch(getChristmasParty());
         })
-        .catch(err => {
-            dispatch({
-                type:GET_ERRORS,
-                payload:err
-            })
+        images.forEach(element => {
+            axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+            .then((response) => {
+                })
+                .catch(err => {
+                    dispatch({
+                        type:GET_ERRORS,
+                        payload:err
+                    })
+                })
         })
-}
+       }
 
 export const addCelebrationDay = (event, history) => (dispatch) => {
     axios.post('/api/sports/celebrationday', event)
@@ -109,18 +114,24 @@ export const addCelebrationDay = (event, history) => (dispatch) => {
             })
         })
 }
-export const deleteCelebrationDay = (celebrationId) => (dispatch) => {
+export const deleteCelebrationDay = (celebrationId, images) => (dispatch) => {
     axios.post('/api/sports/delcelebrationday', celebrationId)
         .then(response => {
             dispatch(getCelebrationDay());
         })
-        .catch(err => {
-            dispatch({
-                type:GET_ERRORS,
-                payload:err
-            })
+        images.forEach(element => {
+            axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
+            .then((response) => {
+                })
+                .catch(err => {
+                    dispatch({
+                        type:GET_ERRORS,
+                        payload:err
+                    })
+                })
         })
-}
+       }
+
 
 export const getCelebrationDay = () => (dispatch) => {
     axios.get('/api/sports/celebrationday')

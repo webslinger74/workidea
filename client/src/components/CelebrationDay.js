@@ -41,7 +41,7 @@ showMessages = (messages) => {
             <div>
             <h3 className="authorStamp"> {messages[0].author} - {messages[0].createdAt}  </h3>
         </div>
-        <div onClick={()=> this.props.deleteCelebrationDay({id:messages[0]._id})} className="delete">Delete Celebration Day</div>
+        <div onClick={()=> this.props.deleteCelebrationDay({id:messages[0]._id}, messages[0].images)} className="delete">Delete Celebration Day</div>
          </div>
           
      )
