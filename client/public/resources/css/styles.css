@@ -10,12 +10,11 @@ body {
 }
 
 .container {
-    width:1100px;
+    width:100%;
     margin: 0 auto;
 }
 .page_container {
     min-height: 75vh;
-    padding-top: 85px;
 }
 .main_loader {
     text-align: center;
@@ -37,6 +36,7 @@ a {
 
 .bck_b_dark {
     background: #272723;
+    width:100%;
 }
 
 .dialog_alert {
@@ -248,51 +248,96 @@ select {
             HEADER
 ==============================*/
 header {
-    position: fixed;
     z-index: 999;
     width: 100%;
     border-bottom: 1px solid white;
 }
+@media (max-width:850px){
+    header .logo {
+        font-size:65px;
+        padding:3px 0px;
+    }
+}
+
+@media (min-width:851px){
+    header .logo{
+        font-size:60px;
+        text-align: center;
+            }
+        }
 
 header .logo {
     font-family: 'Monoton', cursive;
     color: #ffffff;
-    font-size: 40px;
-    padding: 11px 0px;
+    margin-left:1%;
 }
 
 header a {
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
+
+
 
 header .container {
-    display: flex;
+
 }
 
-header .container .left{
-    width: 400px;
+header .left{
+    width:40%;
 }
 
-header .container .right{
+@media (max-width:850px){
+    header .left {
+        width:100%;
+        text-align: center;
+    }
+}
+
+header .right{
+    width:60%;
    border-left: 1px solid #eeeeee;
    border-right: 1px solid #eeeeee;
 }
-header .container .right .top ,
-header .container .right .bottom {
+
+@media (max-width:850px){
+    header .right {
+        width:100%;
+    }
+}
+header .right .top,
+header .right .bottom {
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     text-transform: uppercase;
     font-weight: 700;
     color:#070606;
     font-size: 15px;
-    padding: 10px 20px;
 }
 
-header .container .right .top {
+header .right .bottom {
+    justify-content: space-around;
+    padding-top:7px;
+}
+
+@media (max-width:850px){
+   header .right .bottom { 
+       display:flex;
+       flex-direction:column;
+       font-size:15px;
+       text-align: center;
+           }
+       }
+
+header .right .top {
     color:#070606;
     border-bottom: 1px solid #ffffff;
     display:flex;
     flex-direction:row-reverse;
+    padding-right:5%;
+    padding-top:2%;
+    padding-bottom: 2%;
 }
 
 header .cart_link {
@@ -345,6 +390,8 @@ footer .right {
 footer .business_nfo {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 1%;
+
 }
 
 footer .business_nfo .tag {
@@ -973,6 +1020,12 @@ footer .business_nfo .nfo {
     background-image:radial-gradient(rgba(253, 251, 246, 0.144),rgba(251, 247, 243, 0.897)),url(../../../src/images/sports/background3.jpg);
     background-size:7000%;
 }
+
+@media (max-width:850px){
+    .indMessage {
+        width:90%; 
+    }
+}
 .indMessage:hover {
     background-color:rgba(211, 203, 203, 0.054);
     
@@ -994,6 +1047,7 @@ footer .business_nfo .nfo {
 .frontMessages {
     display:flex; 
     justify-content: space-around;
+    flex-direction: row;
     width:80%;
     border-top:15px solid rgba(0, 0, 0, 0.082);
     padding-top:25px;
@@ -1002,6 +1056,12 @@ footer .business_nfo .nfo {
     border-bottom:15px solid rgba(0, 0, 0, 0.082);
     background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
     background-size: cover;
+}
+
+@media (max-width:850px){
+    .frontMessages {
+        flex-direction:column;
+    }
 }
 
 .latestMessage {
@@ -1019,7 +1079,12 @@ footer .business_nfo .nfo {
     border-top: dashed 2px #0000000a;
     transition:2s;
 }
-
+@media (max-width:850px){
+    .latestMessage {
+        margin:auto;
+        width:90%;
+    }
+}
 
 .latestMessage:hover {
     background-color:rgba(211, 203, 203, 0.287);
@@ -1126,10 +1191,24 @@ footer .business_nfo .nfo {
     top:18%;
     left:30%;
     text-shadow:8px 6px #070706af;
-    animation:fadein 5s;
+    animation:fadein 1s;
     background-color: rgba(53, 51, 51, 0.089);
     border-radius: 35%;
 
+}
+
+@media (max-width:850px){
+    #sportsHeader {
+    font-size: 40px;
+    color:rgb(255, 49, 145);
+    position: absolute;
+    top:80px;
+    left:30%;
+    text-shadow:8px 6px #070706af;
+    animation:fadein 1s;
+    background-color: rgba(53, 51, 51, 0.089);
+    border-radius: 35%;
+    }
 }
 
 #sportsLinks {
@@ -1474,10 +1553,26 @@ footer .business_nfo .nfo {
     background-image:linear-gradient(rgba(253, 251, 246, 0.863),rgb(255, 255, 255)),url(../../../src/images/featured/lifestyle.jpg);
     background-size:cover;
 }
+@media (max-width:850px) {
+    .flowers {
+        display:flex;
+        flex-direction:column;
+    }
+}
+@media (min-width:851px){
+    .flowers {
+        flex-direction: row;
+    }
+}
 
 .flowers {
+
     background-image:linear-gradient(rgba(211, 161, 95, 0.959),rgba(233, 186, 58, 0.76)),url(../../../src/images/featured/chorltonflowers.jpg);
     background-size:100%;
+    width:100%;
+    display:flex;
+    
+
 }
 
 .charityContainer {
