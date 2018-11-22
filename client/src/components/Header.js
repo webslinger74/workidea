@@ -8,6 +8,7 @@ export class Header extends Component {
         super(props);
      
         this.state = {
+            active:false,
             page: [
                 {
                     name:'Home',
@@ -71,6 +72,8 @@ export class Header extends Component {
         }
 
     }
+
+
 
     showLinks = (type) => {
         let list = [];
@@ -161,6 +164,14 @@ export class Header extends Component {
                  <Link key={i} to={item.linkTo}>{item.name}</Link>
         
                  )
+
+
+    toggleClass = () => {
+        const currentState = this.state.active;
+        this.setState({
+            active:!currentState
+        })
+    }
     
     
 
@@ -185,10 +196,11 @@ export class Header extends Component {
 
             {this.showLinks(this.state.user)}
             </div>
-            <div className="bottom">
+            <div onClick={this.toggleClass}>Menu</div>
+            <div className={this.state.active ? 'bottom' : 'hiddenMenus'}>
+            
             
             {this.showLinks(this.state.page)}
-
 
 
             </div>

@@ -277,12 +277,6 @@ header a {
 }
 
 
-
-
-header .container {
-
-}
-
 header .left{
     width:40%;
 }
@@ -324,11 +318,28 @@ header .right .bottom {
 @media (max-width:850px){
    header .right .bottom { 
        display:flex;
-       flex-direction:column;
-       font-size:15px;
+       flex-direction: column;
+       font-size:16px;
        text-align: center;
+       height:30vh;
+       opacity:0.5;
+       margin-bottom:10px;
+       transition:height 1s linear, opacity 0.5s 1.1s linear;
+       
+
            }
        }
+
+.hiddenMenus {
+    display:flex;
+    flex-direction:column;
+    font-size:16px;
+    text-align: center;
+    height:0vh;
+    opacity:0;
+    transition:opacity 0.08s linear, height 1s linear;
+
+}
 
 header .right .top {
     color:#070606;
@@ -819,6 +830,12 @@ footer .business_nfo .nfo {
     min-height: 700px;
 }
 
+@media (max-width:850px){
+    .user_container {
+        flex-direction: column;
+    }
+}
+
 .user_container .user_left_nav {
     border-right: 1px solid #f8f8f8; 
     
@@ -1023,7 +1040,7 @@ footer .business_nfo .nfo {
 
 @media (max-width:850px){
     .indMessage {
-        width:90%; 
+        width:80%; 
     }
 }
 .indMessage:hover {
@@ -1105,9 +1122,19 @@ footer .business_nfo .nfo {
 }
 
 .hello {
-    height:700px;
     width:100%;
-    margin-left:10px;
+    margin-left:20px;
+    margin-bottom:40px;
+}
+
+@media (max-width:850px){
+    .hello {
+        display:flex;
+        flex-direction: column;
+        margin-top:20px;
+        align-items:flex-start;
+        margin-left:15px;
+    }
 }
 .waterTitle {
     color:rgba(129, 124, 124, 0.123);
@@ -1652,4 +1679,16 @@ footer .business_nfo .nfo {
     border-radius:10%;
     border:2px solid green
 
+}
+
+.hiddenMenu {
+    display:none;
+    visibility: hidden;
+}
+
+@media (max-width:850px){
+    .hiddenMenu {
+        display:block;
+        visibility: visible;
+    }
 }
