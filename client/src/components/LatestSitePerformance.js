@@ -24,7 +24,7 @@ class LatestSitePerformance extends Component {
 
                 <div className="frontMessages">
               
-                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'60px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
+                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'40px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
                
                 </div>
                         <div className="engagementContainer1">

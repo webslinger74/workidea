@@ -254,18 +254,23 @@ header {
 }
 @media (max-width:850px){
     header .logo {
-        font-size:65px;
+        font-size:45px;
         padding:3px 0px;
     }
 }
 
-@media (min-width:851px){
+@media (max-width:1100px){
     header .logo{
-        font-size:60px;
+        font-size:50px;
         text-align: center;
             }
         }
-
+@media (min-width:1101px){
+            header .logo{
+                font-size:60px;
+                text-align: center;
+                    }
+                }
 header .logo {
     font-family: 'Monoton', cursive;
     color: #ffffff;
@@ -285,6 +290,7 @@ header .left{
     header .left {
         width:100%;
         text-align: center;
+        height:6%;
     }
 }
 
@@ -349,6 +355,14 @@ header .right .top {
     padding-right:5%;
     padding-top:2%;
     padding-bottom: 2%;
+}
+
+@media (max-width:850px){
+    header .right .top {
+        height:5%;
+        padding-top:0px;
+        padding-bottom:0px;
+    }
 }
 
 header .cart_link {
@@ -1570,6 +1584,7 @@ footer .business_nfo .nfo {
     background-color: rgba(128, 128, 128, 0.883);
     padding:15px;
 }
+
 
 .sportFull {
     background-image:linear-gradient(rgba(253, 251, 246, 0.856),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);

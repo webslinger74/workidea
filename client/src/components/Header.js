@@ -8,6 +8,7 @@ export class Header extends Component {
         super(props);
      
         this.state = {
+            width:window.innerWidth,
             active:false,
             page: [
                 {
@@ -73,7 +74,21 @@ export class Header extends Component {
 
     }
 
+    componentDidMount(){
+       
+        console.log(this.state.width);
 
+    }
+
+    componentDidUpdate(){
+        console.log("component did update")
+        window.addEventListener('resize',  this.handleResize);
+    }
+    componentWillUnmount(){
+       window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize = () => this.forceUpdate();
 
     showLinks = (type) => {
         let list = [];
@@ -173,15 +188,45 @@ export class Header extends Component {
         })
     }
     
+    windowWidth = () => {
+        console.log(window.innerWidth,"the window width");
+        if (window.innerWidth <= 850)
+            return (
+                <div>
+            <div onClick={this.toggleClass}>
+            Menu
+            </div>
+            {this.state.active ? <div className="bottom">{this.showLinks(this.state.page)}</div>:<div className="hiddenMenus"></div>}
+            </div>
+            )
+            
+        else 
+            return (
+                
+                <div className='bottom'>
+            
+            
+            {this.showLinks(this.state.page)}
+
+
+            </div>
+            )
+        
+           }
+        
+  
+                    
+
+  
+  
     
-
-
-
+ 
     render() { 
 
-           
-
-
+        window.addEventListener('resize', ()=> {
+            console.log("changed");
+            this.windowWidth();
+        })
 
         return (
             <header className="bck_b_light flowers">
@@ -196,17 +241,12 @@ export class Header extends Component {
 
             {this.showLinks(this.state.user)}
             </div>
-            <div onClick={this.toggleClass}>Menu</div>
-            <div className={this.state.active ? 'bottom' : 'hiddenMenus'}>
             
+            {this.windowWidth()}
             
-            {this.showLinks(this.state.page)}
-
 
             </div>
-            </div>
-    
-            
+
             </header>
           );
     }
