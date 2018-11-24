@@ -29,6 +29,7 @@ class MyComponent extends React.Component {
                   theme="snow"
                   modules={MyComponent.modules}
                   formats={MyComponent.formats}
+                  style={{marginTop:'10px', height:'150px'}}
                    />
            </div>
     )

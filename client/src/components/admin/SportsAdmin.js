@@ -140,6 +140,7 @@ class SportsAdmin extends Component {
                                  error={errors.title}
                                  value={this.state.title}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />
 
 
@@ -159,6 +160,7 @@ class SportsAdmin extends Component {
                                  error={errors.author}
                                  value={this.state.author}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />  
 
                             <SelectListGroup
@@ -169,6 +171,7 @@ class SportsAdmin extends Component {
                                  value={this.state.publish}
                                  onChange={this.onChange}
                                  options={Bool}
+                                 style={{marginBottom:'10px'}}
                             />
 
                              <div>

@@ -177,6 +177,7 @@ class SitePerformanceEngagement extends Component {
                                              onChange={this.onChange}
                                              options={EngagementCats}
                                              placeholder="Categories of Engagment"
+                                             style={{marginBottom:'10px'}}
                                         
                                         />
                 
@@ -187,6 +188,7 @@ class SitePerformanceEngagement extends Component {
                                  error={errors.score}
                                  value={this.state.score}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             /> 
 
                 <TextFieldGroup 
@@ -196,6 +198,7 @@ class SitePerformanceEngagement extends Component {
                                  error={errors.diffprev}
                                  value={this.state.diffprev}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             /> 
 
                 <TextFieldGroup 
@@ -205,6 +208,7 @@ class SitePerformanceEngagement extends Component {
                                  error={errors.diffparent}
                                  value={this.state.diffparent}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             /> 
 
 
@@ -215,6 +219,7 @@ class SitePerformanceEngagement extends Component {
                                  error={errors.diffdwp}
                                  value={this.state.diffdwp}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />  
 
                             <div>

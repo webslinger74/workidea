@@ -173,6 +173,7 @@ class SportsContact extends Component {
                                 error={errors.contactName}
                                 value={this.state.contactName}
                                 onChange={this.onChange}
+                                style={{marginBottom:'10px'}}
                            />
                 
                <TextFieldGroup 
@@ -182,6 +183,7 @@ class SportsContact extends Component {
                                 error={errors.contactEmail}
                                 value={this.state.contactEmail}
                                 onChange={this.onChange}
+                                style={{marginBottom:'10px'}}
                            />
 
                  <TextFieldGroup 
@@ -191,6 +193,7 @@ class SportsContact extends Component {
                                 error={errors.position}
                                 value={this.state.position}
                                 onChange={this.onChange}
+                                style={{marginBottom:'10px'}}
                            />
                         
                        <div>

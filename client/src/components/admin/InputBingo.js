@@ -167,6 +167,7 @@ class InputBingo extends Component {
                                  value={this.state.number}
                                  onChange={this.onChange}
                                  options={numbers}
+                                 style={{marginBottom:'10px'}}
                             />
 
                             <div>
@@ -185,7 +186,7 @@ class InputBingo extends Component {
                             :null}
                             </div>
 
-                           <input type="submit" className="btn btn-info btn-block mt-4" />
+                           <input className="submitBtn"  type="submit" value="Add Bingo Number" />
 
                 </form>
             </div>

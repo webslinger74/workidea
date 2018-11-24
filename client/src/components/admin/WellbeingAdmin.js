@@ -133,6 +133,7 @@ class WellBeingAdmin extends Component {
                                  error={errors.title}
                                  value={this.state.title}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />
 
 
@@ -152,6 +153,7 @@ class WellBeingAdmin extends Component {
                                  error={errors.author}
                                  value={this.state.author}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />  
 
                             <SelectListGroup
@@ -162,6 +164,7 @@ class WellBeingAdmin extends Component {
                                  value={this.state.publish}
                                  onChange={this.onChange}
                                  options={Bool}
+                                 style={{marginBottom:'10px'}}
                             />
 
                              <div>
@@ -180,7 +183,7 @@ class WellBeingAdmin extends Component {
                             :null}
                             </div>
 
-                           <input type="submit" className="btn btn-info btn-block mt-4" />
+                           <input className="submitBtn" type="submit" value="Add Wellbeing Event" />
 
                 </form>
             </div>

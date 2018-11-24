@@ -67,6 +67,8 @@ constructor(){
                     error={errors.staffnumber}
                     value={this.state.staffnumber}
                     onChange={this.onChange}
+                    style={{marginBottom:'10px'}}
+                    
                   />
                      <TextFieldGroup 
                     type="password"
@@ -75,6 +77,7 @@ constructor(){
                     error={errors.password}
                     value={this.state.password}
                     onChange={this.onChange}
+                    style={{marginBottom:'5px'}}
                   />             
 
                     { this.state.formError ?
@@ -83,7 +86,7 @@ constructor(){
                         </div>
                     :null}
                   
-                  <input type="submit" value="Login" />
+                  <input className="submitBtn" type="submit" value="Login" />
                 </form>
             </div>
 </div>

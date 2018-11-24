@@ -112,6 +112,7 @@ class InputCharity extends Component {
                                  error={errors.charityName}
                                  value={this.state.charityName}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />
                 <TextFieldGroup 
                                  type="text"
@@ -120,6 +121,7 @@ class InputCharity extends Component {
                                  error={errors.amount}
                                  value={this.state.amount}
                                  onChange={this.onChange}
+                                 style={{marginBottom:'10px'}}
                             />
                                          
                             
@@ -146,7 +148,7 @@ class InputCharity extends Component {
                             :null}
                             </div>
 
-                           <input type="submit" className="btn btn-info btn-block mt-4" />
+                           <input className="submitBtn" type="submit" value="Add Charity" />
 
                 </form>
             </div>

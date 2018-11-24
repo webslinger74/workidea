@@ -8,6 +8,7 @@ const SelectListGroup = ({
     info,
     onChange,
     options,
+    style,
     placeholder
     
 }) => {
@@ -31,6 +32,7 @@ const SelectListGroup = ({
       'is-invalid':error})}
           name={name}
           value={value}
+          style={style}
           onChange={onChange}>
           <option value="">Select</option>
 

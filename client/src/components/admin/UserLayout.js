@@ -12,7 +12,8 @@ class UserLayout extends Component {
              wellbeingactive:false,
              siteperformanceactive:false,
              messageactive:false,
-             adminactive:false
+             adminactive:false,
+             manageractive:false
          }
      }
 
@@ -54,42 +55,44 @@ class UserLayout extends Component {
             <h2>Admin Tasks</h2>
             <div className="links">
 
-             <div className="taskbutton" onClick={() => this.toggleButton("adminactive")} >Admin Tasks</div>
+             <div className="taskbutton" onClick={() => this.toggleButton("adminactive")} >Admin Tasks{this.state.adminactive ? " -" : " +"} </div>
             <div className={this.state.adminactive ? "open" : "closed"}>
 
-            <Link to="/login">Login</Link>
-            <Link to="/userdashboard">User Dashboard</Link>
+            <Link className="adminlinks" to="/login">Login</Link>
+            <Link className="adminlinks" to="/userdashboard">User Dashboard</Link>
             </div>
 
-            <div className="taskbutton" onClick={() => this.toggleButton("messageactive")} >Main MessageBoard Tasks</div>
+            <div className="taskbutton" onClick={() => this.toggleButton("messageactive")} >Main MessageBoard Tasks {this.state.messageactive ? " -" : " +"}</div>
             <div className={this.state.messageactive ? "open" : "closed"}>
 
-            <Link to="/messages">Create Message</Link>
+            <Link className="adminlinks" to="/messages">Create Message</Link>
             </div>
        
 
-             <div className="taskbutton" onClick={() => this.toggleButton("wellbeingactive")} >WellBeing Tasks</div>
+             <div className="taskbutton" onClick={() => this.toggleButton("wellbeingactive")} >WellBeing Tasks {this.state.wellbeingactive ? " -" : " +"}</div>
             <div className={this.state.wellbeingactive ? "open" : "closed"}>
-            <Link to="/wellBeingAdmin">Input Well Being Events</Link>
+            <Link className="adminlinks" to="/wellBeingAdmin">Input Well Being Events</Link>
             </div>
-
-            <div className="taskbutton" onClick={() => this.toggleButton("sportactive")} >Sports & Social Tasks</div>
+ 
+            <div className="taskbutton" onClick={() => this.toggleButton("sportactive")} >Sports & Social Tasks {this.state.sportactive ? " -" : " +"}</div>
             <div className={this.state.sportactive ? "open" : "closed"}>
-            <Link to="/sportsAdmin">Input Sports Events</Link>
-            <Link to="/sports/christmasparty">Input Christmas Party Details</Link>
-            <Link to="/sports/celebrationday">Input Celebration Day Agenda</Link>
-            <Link to="/sports/charity">Input Charity Details</Link>
-            <Link to="/sports/bingo">Input Bingo Numbers</Link>
-            <Link to="/sports/contact">Input S&S Contact Details</Link>
+            <Link className="adminlinks" to="/sportsAdmin">Input Sports Events</Link>
+            <Link className="adminlinks" to="/sports/christmasparty">Input Christmas Party Details</Link>
+            <Link  className="adminlinks" to="/sports/celebrationday">Input Celebration Day Agenda</Link>
+            <Link  className="adminlinks" to="/sports/charity">Input Charity Details</Link>
+            <Link className="adminlinks" to="/sports/bingo">Input Bingo Numbers</Link>
+            <Link  className="adminlinks" to="/sports/contact">Input S&S Contact Details</Link>
             </div>
             
-            <div className="taskbutton" onClick={() => this.toggleButton("siteperformanceactive")} >Site Performance Tasks</div>
+            <div className="taskbutton" onClick={() => this.toggleButton("siteperformanceactive")} >Site Performance Tasks {this.state.siteperformanceactive ? " -" : " +"}</div>
             <div className={this.state.siteperformanceactive ? "open" : "closed"}>
-            <Link to="/siteperformance">Input Site Performance</Link>
-            <Link to="/siteperformanceEngAdmin">Input Site Engagement Scores</Link>
+            <Link className="adminlinks" to="/siteperformance">Input Site Performance</Link>
+            <Link className="adminlinks" to="/siteperformanceEngAdmin">Input Site Engagement Scores</Link>
             </div>
-
-                 <Link to="/managerMessage">Manager Input</Link>
+            <div className="taskbutton" onClick={() => this.toggleButton("manageractive")} >Manager Tasks {this.state.manageractive ? " -" : " +"}</div>
+            <div className={this.state.manageractive ? "open" : "closed"}>
+                 <Link className="adminlinks" to="/managerMessage">Manager Input</Link>
+                 </div>
             </div>
             {console.log(isAdd, "recs")}
             {isAdd && isAdd.isAdmin ? 
