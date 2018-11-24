@@ -69,9 +69,9 @@ showMessages = (messages) => {
               <div className="centredLatest">WELL BEING UPDATE
                      </div>
 
-            
+                <Link to="/wellbeing/Events">
                 {this.showMessages(messages)}
-
+                </Link>
            
             
 

@@ -3,7 +3,7 @@ import { getEngagementCategoryScores, deleteCategory } from '../actions/siteperf
 import { connect } from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import faBullseye from '@fortawesome/fontawesome-free-solid/faBullseye';
-
+import { Link } from 'react-router-dom';
 
 class LatestSitePerformance extends Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class LatestSitePerformance extends Component {
         const { engageCats } = this.props;
         return ( 
             <div className="totalContainer">
+            <Link to="/siteperformance">
 
                 <div className="frontMessages">
               
@@ -62,6 +63,7 @@ class LatestSitePerformance extends Component {
                     }) :null}
 
                     </div>
+                    </Link>
             </div>
          );
     }
