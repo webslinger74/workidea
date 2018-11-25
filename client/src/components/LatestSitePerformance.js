@@ -25,7 +25,7 @@ class LatestSitePerformance extends Component {
 
                 <div className="frontMessages">
               
-                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'40px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
+                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'35px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
                
                 </div>
                         <div className="engagementContainer1">
@@ -34,7 +34,7 @@ class LatestSitePerformance extends Component {
                                  if(cat.category === "Engagement Index"){
                     return  ( <div key={index} className="engagementGridItem">
                     
-                     <div style={{fontSize:'50px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
+                     <div style={{fontSize:'45px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
                      <div><span style={{fontSize:'60px'}}>{cat.score}</span> </div>
                      <div>Difference from Previous Year: {cat.diffprev} </div>
                      <div>Difference from Parent: {cat.diffparent} </div>

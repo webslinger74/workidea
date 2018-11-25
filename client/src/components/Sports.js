@@ -19,13 +19,13 @@ class Sports extends Component {
         </div>
         <div id="sportsHeader">SPORTS & SOCIAL</div>
            <div id="sportsLinks">
-            <Link className="indSportsLinks" to="/events"><h2>Events</h2></Link>
-            <Link className="indSportsLinks" to="/bingo"><h2>Bingo Numbers</h2></Link>
-            <Link className="indSportsLinks" to="/charity"><h2>Charity Contributions</h2></Link>
-            <Link className="indSportsLinks" to="/news"><h2>News</h2></Link>
-            <Link className="indSportsLinks" to="/christmas"><h2>Christmas Party</h2></Link>
-            <Link className="indSportsLinks" to="/celebration"><h2>Celebration Day</h2></Link>
-            <Link className="indSportsLinks" to="/sports/contacts"><h2>Contact Us</h2></Link>
+            <Link className="indSportsLinks" to="/events">EVENTS</Link>
+            <Link className="indSportsLinks" to="/bingo">BINGO NUMBERS</Link>
+            <Link className="indSportsLinks" to="/charity">CHARITY CONTRIBUTIONS</Link>
+            <Link className="indSportsLinks" to="/news">NEWS</Link>
+            <Link className="indSportsLinks" to="/christmas">CHRISTMAS PARTY</Link>
+            <Link className="indSportsLinks" to="/celebration">CELEBRATION DAY</Link>
+            <Link className="indSportsLinks" to="/sports/contacts">CONTACT US</Link>
                 </div>                
         <div className="dividers2"></div>
         <div className="sportsItem">

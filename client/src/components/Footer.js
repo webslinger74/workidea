@@ -60,14 +60,26 @@ const Footer = () => {
                             </div>
                         </div>
                     </div> 
-                    <div className="left">
+                    <div className="rightside">
+                    <div className="right_item">
                         <h2>Be the first to know</h2>
                         <div>
                             <div>
                             Get all the latest information on events, sales and offers.You can miss out.
                             </div>
                         </div>
-                    </div>      
+                    </div>  
+                
+                    <div className="right_item">
+        
+                        <h2>Copyright 2018</h2>
+                        <div>
+                            <div>
+                            Full design rights by Steven Webster
+                            </div>
+                        </div>
+                    </div> 
+                    </div>         
                 </div>
             </div>
         </footer>
