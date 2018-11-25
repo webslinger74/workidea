@@ -21,7 +21,7 @@ class Bingo extends Component {
             <Sports>
         <div>    
         <div className="sportsItem">
-        <h1>Pay Day Bingo</h1>
+        <h1  style={{backgroundColor:'gold'}}>Pay Day Bingo</h1>
             <p>Come and Play Bingo Every Pay Day on Site. £1 a ticket with Cash prizes to be Won every Month</p>  
             <p>Local reps will be selling tickets near you in the lead up to Pay day</p>
             <p>Rules - Email BST as soon as you have all the numbers on  your purchased ticket</p>

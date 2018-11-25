@@ -59,7 +59,7 @@ class Events extends Component {
         <Sports>
         <div>
 
-        <div className="centredLatest">Events</div>
+        <div className="centredLatest" style={{backgroundColor:'gold'}}>Events</div>
 
             
                              {this.showMessages(events)}

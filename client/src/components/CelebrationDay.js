@@ -66,7 +66,7 @@ showMessages = (messages) => {
         
         <div className="sportsItem2"> 
         <div id="celebrationBackground">   
-            <div className="centredLatest">Celebration Day</div>
+            <div  style={{backgroundColor:'gold'}} className="centredLatest">Celebration Day</div>
             
                 {this.showMessages(celebrationDay)}
                  

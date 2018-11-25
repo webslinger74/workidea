@@ -27,7 +27,7 @@ class CharityContributions extends Component {
             <Sports>
         <div className="charityBackground">    
         <div>
-        <h1>Money Raised this Year For Charity: £{(this.props.charities && this.props.charities) ? this.getGrandTotal() : 0.00}</h1>
+        <h1  style={{backgroundColor:'gold'}}>Money Raised this Year For Charity: £{(this.props.charities && this.props.charities) ? this.getGrandTotal() : 0.00}</h1>
            
             <p>Please Check out how much YOU have helped the S&Social raise through site events this year!</p>  
 

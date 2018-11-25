@@ -19,13 +19,13 @@ class WellBeing extends Component {
         </div>
         <div id="sportsHeader">HEALTH & WELLBEING</div>
            <div id="sportsLinks">
-            <Link className="indSportsLinks" to="/wellbeing/Events"><h2>Events</h2></Link>
-            <Link className="indSportsLinks" to="/wellbeing/Keepfit"><h2>Keep Fit & Stay Fit</h2></Link>
-            <Link className="indSportsLinks" to="/wellbeing/Healthfood"><h2>Healthy Food</h2></Link>
-            <Link className="indSportsLinks" to="/"><h2>News</h2></Link>
-            <Link className="indSportsLinks" to="/"><h2>Contact Us</h2></Link>
-            <Link className="indSportsLinks" to="/wellbeing/Charity"><h2>Charity</h2></Link>
-            <Link className="indSportsLinks" to="/wellbeing/Healthatwork"><h2>Health At Work</h2></Link>
+            <Link className="indSportsLinks" to="/wellbeing/Events">Events</Link>
+            <Link className="indSportsLinks" to="/wellbeing/Keepfit">Keep Fit & Stay Fit</Link>
+            <Link className="indSportsLinks" to="/wellbeing/Healthfood">Healthy Food</Link>
+            <Link className="indSportsLinks" to="/">News</Link>
+            <Link className="indSportsLinks" to="/">Contact Us</Link>
+            <Link className="indSportsLinks" to="/wellbeing/Charity">Charity</Link>
+            <Link className="indSportsLinks" to="/wellbeing/Healthatwork">Health At Work</Link>
                 </div>                
         <div className="dividers2"></div>
         <div className="sportsItem">

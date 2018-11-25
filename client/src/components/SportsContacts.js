@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Sports from './Sports';
 import { withRouter } from 'react-router-dom';
 import { deleteContact, getContacts, getSiteEmail, deleteSiteEmail } from '../actions/sportsActions';
+import blankImage from '../images/featured/blank-profile-picture.png';
 
 class SportsContacts extends Component {
     constructor(props) {
@@ -23,14 +24,19 @@ class SportsContacts extends Component {
                
              <div className="indSportsContactDetails">
           
-                    <div>
+                    <div> 
+                        {contacts && contact.images.length === 0 ? 
+                         (  <div>
+                         <div><img className="sportsContactImg" style={{height:'50px', width:'50px'}} src={blankImage}></img></div>
+                         </div>)  : null} 
+                   
                     {contact.images && contact.images.length > 0 ?
                            <div>
                                {contact.images.map((image, index) => (
-                                   <img key={index} className="sportsContactsImg" src={image.url}></img>
+                                   <img key={index} style={{height:'50px', width:'50px'}} className="sportsContactsImg" src={image.url}></img>
                                ))                 }
-                               </div> : null
-                    }
+                               </div> :null
+                                    }
                    <div> <h3> {contact.contactName} </h3> </div>
                     </div>         
                            
@@ -53,7 +59,7 @@ class SportsContacts extends Component {
                 return (
                       <div className="latestMessageContacts" key={siteEmail[0]._id}>
                     <div>
-                    <div><span style={{fontSize:'35px'}}>Sports & Social Email Address: </span> {siteEmail[0].siteEmail} </div>
+                    <div><span style={{fontSize:'30px'}}>Sports & Social Email Address: </span> {siteEmail[0].siteEmail} </div>
                          </div>
 
                     <div onClick={()=> this.props.deleteSiteEmail({id:siteEmail[0]._id}, this.props.history)} className="delete">DEL</div>
@@ -74,7 +80,7 @@ class SportsContacts extends Component {
     return (
         <Sports>
         <div>
-
+        <div  style={{backgroundColor:'gold', marginBottom:'25px'}} className="centredLatest">Meet The Team</div>       
                             {this.showSiteEmail(siteEmail)}
 
         <div className="sportsContactsContainer">
