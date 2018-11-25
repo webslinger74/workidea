@@ -75,14 +75,28 @@ export class Header extends Component {
     }
 
     componentDidMount(){
+
+        
+        window.addEventListener('resize', ()=> {
+            console.log("changed");
+            this.setState({active:false});
+            this.windowWidth();
+        })
+        window.addEventListener('load', ()=> {
+            this.setState({active:false});
+            this.windowWidth();
+        })
+        window.addEventListener('click', ()=> {
+            this.windowWidth();
+        })
+       
        
         console.log(this.state.width);
 
     }
 
     componentDidUpdate(){
-        console.log("component did update")
-        window.addEventListener('resize',  this.handleResize);
+     
     }
     componentWillUnmount(){
        window.removeEventListener('resize', this.handleResize);
@@ -196,7 +210,8 @@ export class Header extends Component {
             <div onClick={this.toggleClass}>
             Menu
             </div>
-            {this.state.active ? <div className="bottom">{this.showLinks(this.state.page)}</div>:<div className="hiddenMenus"></div>}
+            {this.state.active ? <div className="bottom">{this.showLinks(this.state.page)}</div>
+            :<div className="hiddenMenus"></div>}
             </div>
             )
             
@@ -223,10 +238,6 @@ export class Header extends Component {
  
     render() { 
 
-        window.addEventListener('resize', ()=> {
-            console.log("changed");
-            this.windowWidth();
-        })
 
         return (
             <header className="bck_b_light flowers">

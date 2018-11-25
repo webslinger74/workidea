@@ -17,7 +17,7 @@ class News extends Component {
             <Sports>
         <div>    
         <div className="sportsItem">
-        <h1  style={{backgroundColor:'gold'}}>LATEST NEWS-HEADLINES FROM THE SPORTS & SOCIAL TEAM</h1>
+        <h1  style={{backgroundColor:'gold'}}>LATEST NEWS</h1>
            
             <p>KEEP POSTED FOR LATEST NEWS</p>  
          

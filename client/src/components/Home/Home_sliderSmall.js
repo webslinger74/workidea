@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Slider from 'react-slick';
 import MyButton from '../../Inputs/Button';
 import file1 from '../../images/sports/sports1.jpg';
@@ -6,9 +6,99 @@ import file2 from '../../images/sports/beer.jpg';
 import file3 from '../../images/sports/food.jpg';
 import file4 from '../../images/sports/sports7.jpg';
 
-const HomeSliderSmall = (props) => {
-   
-    const slides = [
+
+class HomeSliderSmall extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            slidesToShow:1
+         }
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('resize', ()=> {
+            console.log("listener removed");
+        })
+
+        window.removeEventListener('load', () => {
+            console.log("removed 2nd load listener");
+        })
+    }
+
+
+    
+    componentDidMount(){
+
+        window.addEventListener('click', () => {
+            if(window.innerWidth < 850){
+                console.log(window.innerWidth);
+                this.setState({
+                    slidesToShow:2
+                })
+                
+            }
+            if (window.innerWidth < 550 ){
+                this.setState({
+                    slidesToShow:1
+                })
+            }
+            else if (window.innerWidth > 850 ){
+                this.setState({
+                    slidesToShow:3
+                })
+                
+            }
+          
+        }) 
+
+        window.addEventListener('load', () => {
+            if(window.innerWidth < 850){
+                console.log(window.innerWidth);
+                this.setState({
+                    slidesToShow:2
+                })
+                
+            }
+            if (window.innerWidth < 550 ){
+                this.setState({
+                    slidesToShow:1
+                })
+            }
+            else if (window.innerWidth > 850 ){
+                this.setState({
+                    slidesToShow:3
+                })
+                
+            }
+          
+        })
+
+        window.addEventListener('resize', () => {
+            if(window.innerWidth < 850){
+                console.log(window.innerWidth);
+                this.setState({
+                    slidesToShow:2
+                })
+                
+            }
+            if (window.innerWidth < 550 ){
+                this.setState({
+                    slidesToShow:1
+                })
+            }
+            else if (window.innerWidth > 850 ){
+                this.setState({
+                    slidesToShow:3
+                })
+                
+            }
+          
+        })
+
+    }
+
+
+    slides = [
         {
             img: file1,
             lineOne:'',
@@ -93,19 +183,10 @@ const HomeSliderSmall = (props) => {
         }                
     ]
    
-    const settings = {
-        autoplay:true,
-        autoplaySpeed:3000,
-        dots: false,
-        infinite: true,
-        speed:10000,
-        slidesToShow:4,
-        arrows: false
-       
-    }
+  
    
-  const generateSlides = () => (
-       slides ? slides.map((item, i) => (
+    generateSlides = () => (
+       this.slides ? this.slides.map((item, i) => (
        <div key={i}>
             <div 
                 style={{
@@ -134,19 +215,34 @@ const HomeSliderSmall = (props) => {
        : null
    )
    
-   
-   
-    return ( 
+
+      render(){
+
+        
+       let settings = {
+            autoplay:true,
+            autoplaySpeed:3000,
+            dots: false,
+            infinite: true,
+            speed:10000,
+            slidesToShow:this.state.slidesToShow,
+            arrows: false
+           
+        }
+    
+        return (
+
 
         <div id="sliderSmall">
 
         <Slider {...settings} >
-            {generateSlides()}
+            {this.generateSlides()}
         </Slider>
 
         </div>
 
      );
+}
 }
  
 export default HomeSliderSmall;
