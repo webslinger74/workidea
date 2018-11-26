@@ -15,21 +15,16 @@ class SitePerformance extends Component {
 
         <div>
         
-        <div id="sportsHeader">SITE PERFORMANCE</div>
-         
-                          
-        <div className="dividers2"></div>
-        <div className="performanceGrid">
-            
-
-
-
-        </div>
         <div className="sportsItem">
-
-        {this.props.children}
-        </div>
-      </div>
+        <h1  style={{backgroundColor:'gold'}}>LATEST SITE PERFORMANCE</h1>
+           
+            <p>KEEP POSTED FOR LATEST PERFORMANCE METRICS</p>  
+         
+        
+        <div className="dividers2"></div>
+       </div>
+       </div>
+    
       
       )
     }

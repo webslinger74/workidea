@@ -31,7 +31,11 @@ export class Header extends Component {
                     linkTo:'/wellbeing/Events',
                     public: true
                 },
-                {
+               {
+                    name:'Guidance',
+                    linkTo:'/guidance',
+                    public: true
+                    },                {
                     name:'Site Performance',
                     linkTo:'/sitePerformance',
                     public: true
