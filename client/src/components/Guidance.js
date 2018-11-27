@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getGuidance, deleteGuidance } from '../actions/guidanceActions';
+import ReactHtmlParser from 'react-html-parser';
 
 class Guidance extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ showMessages = (events) => (
 
 
       render(){
-            const guidance = this.props;
+            const { guidance } = this.props;
     return (
             
         <div>    
@@ -87,7 +88,7 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-        guidance:state.guidance.allguidance
+        guidance:state.guidance.allGuidance
 })
  
 export default connect(mapStateToProps, actions)(Guidance);

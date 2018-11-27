@@ -16,7 +16,7 @@ return {
 case GET_GUIDANCE:
 return {
     ...state,
-    allguidance:action.payload
+    allGuidance:action.payload
  }
 
 default:

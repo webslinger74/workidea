@@ -49,9 +49,8 @@ export const deleteGuidance = (id, url) => (dispatch) => {
 
 export const getGuidance = () => (dispatch) => {
     axios.get('/api/guidance/getguidance')
-       
         .then(response => {
-            console.log(response, "is this all the messages???")
+            console.log(response, "is this all the messagesbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb???")
             dispatch({
                 type:GET_GUIDANCE,
                 payload:response.data

@@ -32,6 +32,7 @@ insertGuidance.save()
     return console.log(err)
     })
 })
+
 router.get('/getguidance', (req,res) => {
     console.log(req.body, "request")
     Guidance.find({})
