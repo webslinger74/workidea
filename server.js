@@ -9,6 +9,7 @@ const mess = require('./routes/messages');
 const manager = require('./routes/manager');
 const wellbeing = require('./routes/wellbeing');
 const site = require('./routes/siteperformance');
+const guidance = require('./routes/guidance');
 const sports = require('./routes/sports');
 const passport = require('passport');
 const formidable = require('express-formidable');
@@ -53,6 +54,7 @@ app.use('/api/site', site);
 app.use('/api/manager', manager);
 app.use('/api/sports', sports);
 app.use('/api/wellbeing', wellbeing);
+app.use('/api/guidance', guidance);
 
 
 

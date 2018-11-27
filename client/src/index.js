@@ -16,6 +16,7 @@ import managerReducer from '../src/reducers/managerReducer';
 import sportsReducer from './reducers/sportsReducer';
 import wellbeingReducer from './reducers/wellbeingReducer';
 import sitePerformanceReducer from './reducers/siteperformanceReducer';
+import guidanceReducer from './reducers/guidanceReducer';
 import ScrollToTop from './utils/ScrollToTop';
 
 const initialState = {};
@@ -26,7 +27,8 @@ const rootReducers = combineReducers({
           manager:managerReducer,
           sports:sportsReducer,
           wellbeing:wellbeingReducer,
-          siteperformance:sitePerformanceReducer
+          siteperformance:sitePerformanceReducer,
+          guidance:guidanceReducer
 })
 
 const middleware = [thunk];

@@ -33,6 +33,7 @@ import WellBeingCharity from './components/WellBeingCharity';
 import WellbeingKeepFit from './components/WellbeingKeepFit';
 import SportsContacts from './components/SportsContacts';
 import Guidance from './components/Guidance';
+import GuidanceAdmin from './components/admin/Guidance';
 
 const Routes = () => {
     
@@ -50,6 +51,7 @@ const Routes = () => {
                 <Route path="/events"  exact component={Events}/>
                 <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
                 <Route path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
+                <Route path="/guidanceAdmin" exact component={GuidanceAdmin}/>
                 <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/sports/christmasparty" exact component={InputChristmasParty}/>

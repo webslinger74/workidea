@@ -26,3 +26,6 @@ export const GET_SITE_EMAIL = "GET_SITE_EMAIL";
 export const ADD_CONTACT = "ADD_CONTACT";
 export const GET_CONTACTS = "GET_CONTACTS";
 export const DELETE_CONTACT = "DELETE_CONTACT";
+export const ADD_GUIDANCE = "ADD_GUIDANCE";
+export const DELETE_GUIDANCE = "DELETE_GUIDANCE";
+export const GET_GUIDANCE = "GET_GUIDANCE";

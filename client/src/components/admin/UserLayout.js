@@ -13,7 +13,8 @@ class UserLayout extends Component {
              siteperformanceactive:false,
              messageactive:false,
              adminactive:false,
-             manageractive:false
+             manageractive:false,
+             guidanceactive:false
          }
      }
 
@@ -92,6 +93,10 @@ class UserLayout extends Component {
             <div className="taskbutton" onClick={() => this.toggleButton("manageractive")} >Manager Tasks {this.state.manageractive ? " -" : " +"}</div>
             <div className={this.state.manageractive ? "open" : "closed"}>
                  <Link className="adminlinks" to="/managerMessage">Manager Input</Link>
+                 </div>
+            <div className="taskbutton" onClick={() => this.toggleButton("guidanceactive")} >Guidance Tasks {this.state.guidanceactive ? " -" : " +"}</div>
+            <div className={this.state.guidanceactive ? "open" : "closed"}>
+                 <Link className="adminlinks" to="/guidanceAdmin">Guidance Input</Link>
                  </div>
             </div>
             {console.log(isAdd, "recs")}
