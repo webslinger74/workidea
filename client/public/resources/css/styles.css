@@ -323,7 +323,7 @@ header .right .bottom {
     text-transform: uppercase;
     font-weight: 700;
     color:#070606;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 header .right .bottom {
@@ -335,7 +335,7 @@ header .right .bottom {
    header .right .bottom { 
        display:flex;
        flex-direction: column;
-       font-size:16px;
+       font-size:14px;
        text-align: center;
        letter-spacing:6px;
        height:30vh;
@@ -1189,9 +1189,27 @@ footer .business_nfo .nfo {
     background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
     background-size: cover;
 }
+.frontMessages2 {
+    display:flex; 
+    justify-content: space-around;
+    flex-direction: row;
+    width:60%;
+    border-top:15px solid rgba(0, 0, 0, 0.082);
+    padding-top:25px;
+    padding-bottom:25px;
+    margin:5% 7.5% 5% 20%;
+    border-bottom:15px solid rgba(0, 0, 0, 0.082);
+    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
+    background-size: cover;
+}
 
 @media (max-width:850px){
     .frontMessages {
+        flex-direction:column;
+    }
+}
+@media (max-width:850px){
+    .frontMessages2 {
         flex-direction:column;
     }
 }
@@ -1756,8 +1774,14 @@ footer .business_nfo .nfo {
 
 
 .sportFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.856),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
+    background-image:linear-gradient(rgba(253, 251, 246, 0.897),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
     background-size:cover;
+}
+
+.guidanceFull {
+    background-image:linear-gradient(rgba(253, 251, 246, 0.623),rgba(255, 255, 255, 0.87)),url(../../../src/images/featured/new-guidance.jpg);
+    background-size:cover;
+
 }
 
 .newsWellFull {

@@ -1,17 +1,17 @@
-import { GET_ERRORS, ADD_GUIDANCE, GET_GUIDANCE } from '../types/types';
+import { GET_ERRORS, ADD_PEG, GET_PEG } from '../types/types';
 import axios from 'axios';
 
-export const addGuidance = (guidance, history) => (dispatch) => {
-    console.log(guidance, "the score before axios request fires")
-    console.log(typeof(guidance), "the score before axios request fires")
-    axios.post('/api/guidance/addguidance', guidance)
+export const addPeg = (peg, history) => (dispatch) => {
+    console.log(peg, "the score before axios request fires")
+    console.log(typeof(peg), "the score before axios request fires")
+    axios.post('/api/peg/addPegEvent', peg)
         .then(response => {
             console.log(response, "this is the response from axios in action")
             dispatch({
-                type:ADD_GUIDANCE,
+                type:ADD_PEG,
                 payload:response.data
             })
-            history.push('/guidance')
+            history.push('/peg')
         })
         .catch(err => {
             dispatch({
@@ -21,14 +21,14 @@ export const addGuidance = (guidance, history) => (dispatch) => {
         })
 }
 
-export const deleteGuidance = (id, history, url) => (dispatch) => {
+export const deletePeg = (id, history, url) => (dispatch) => {
 
 
     console.log(id, "this is the id of the message???")
     console.log(url, "the image url prior to deletion from cloudinary");
-    axios.post('/api/guidance/deleteguidance', id)
+    axios.post('/api/peg/deletePeg', id)
     .then(response => {
-        dispatch(getGuidance());
+        dispatch(getPeg());
     }) 
 
     url.forEach(element => {
@@ -47,12 +47,12 @@ export const deleteGuidance = (id, history, url) => (dispatch) => {
 }
 
 
-export const getGuidance = () => (dispatch) => {
-    axios.get('/api/guidance/getguidance')
+export const getPeg = () => (dispatch) => {
+    axios.get('/api/peg/getPeg')
         .then(response => {
             console.log(response, "is this all ")
             dispatch({
-                type:GET_GUIDANCE,
+                type:GET_PEG,
                 payload:response.data
             })
         })

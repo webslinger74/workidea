@@ -46,6 +46,11 @@ export class Header extends Component {
                     public: true
                 },
                 {
+                    name:'PEG',
+                    linkTo:'/peg',
+                    public: true
+                },
+                {
                     name:'Feedback',
                     linkTo:'/feedback',
                     public: true

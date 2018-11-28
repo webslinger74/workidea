@@ -41,6 +41,10 @@ module.exports = merge(common, {
             "/api/guidance/**" :{
                 target:"http://localhost:5000",
                 secure:"false"
+            },
+            "/api/peg/**" :{
+                target:"http://localhost:5000",
+                secure:"false"
             }
           
            

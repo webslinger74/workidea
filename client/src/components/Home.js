@@ -5,6 +5,8 @@ import Guidance from './Updates';
 import LatestWellbeing from './LatestWellbeing';
 import LatestSports from './LatestSports';
 import LatestSitePerformance from './LatestSitePerformance';
+import LatestGuidance from './LatestGuidance';
+import LatestPegNews from './LatestPegNews';
 
 class Home extends Component {
     constructor(props) {
@@ -24,6 +26,16 @@ class Home extends Component {
                 <div className="frontMessages sportFull">
                  <div className="verticalLine"></div>
                     <div><LatestSports /></div>
+                    <div className="verticalLine"></div>
+                </div>
+                <div className="frontMessages2 guidanceFull">
+                 <div className="verticalLine"></div>
+                    <div><LatestGuidance /></div>
+                    <div className="verticalLine"></div>
+                </div>
+                <div className="frontMessages sportFull">
+                 <div className="verticalLine"></div>
+                    <div><LatestPegNews /></div>
                     <div className="verticalLine"></div>
                 </div>
                 <div className="frontMessages">

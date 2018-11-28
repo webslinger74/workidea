@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getGuidance, deleteGuidance } from '../actions/guidanceActions';
+import { getPeg, deletePeg } from '../actions/pegActions';
 import ReactHtmlParser from 'react-html-parser';
 
-class Guidance extends Component {
+class Peg extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     componentDidMount(){
-        this.props.getGuidance();
+        this.props.getPeg();
     }
 
     convertStringMessageToHtml = (string) => {
@@ -51,7 +51,7 @@ showMessages = (events) => (
 
 
       render(){
-            const { guidance } = this.props;
+            const { peg } = this.props;
     return (
             
         <div>    
@@ -59,16 +59,16 @@ showMessages = (events) => (
          
  <div>
 
-<div className="centredLatest" style={{backgroundColor:'gold', marginTop:'10px'}}>Latest Guidance</div>
-              {guidance && guidance.length === 0 ?
+<div className="centredLatest" style={{backgroundColor:'gold', marginTop:'10px'}}>Latest PEG News</div>
+              {peg && peg.length === 0 ?
                 (
                 <div>
-              <p>KEEP POSTED FOR LATEST GUIDANCE</p> 
+              <p>KEEP POSTED FOR LATEST PEG NEWS</p> 
               </div>
                 )
               : null }
     
-                     {this.showMessages(guidance)}
+                     {this.showMessages(peg)}
 
 </div>
          
@@ -86,12 +86,12 @@ showMessages = (events) => (
 }
 
 const actions = {
-    getGuidance,
-    deleteGuidance
+    getPeg,
+    deletePeg
 }
 
 const mapStateToProps = (state) => ({
-        guidance:state.guidance.allGuidance
+        peg:state.peg.pegEvents
 })
  
-export default connect(mapStateToProps, actions)(Guidance);
+export default connect(mapStateToProps, actions)(Peg);

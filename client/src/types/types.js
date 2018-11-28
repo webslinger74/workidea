@@ -29,3 +29,5 @@ export const DELETE_CONTACT = "DELETE_CONTACT";
 export const ADD_GUIDANCE = "ADD_GUIDANCE";
 export const DELETE_GUIDANCE = "DELETE_GUIDANCE";
 export const GET_GUIDANCE = "GET_GUIDANCE";
+export const ADD_PEG = "ADD_PEG";
+export const GET_PEG = "GET_PEG";

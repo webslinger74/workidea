@@ -14,7 +14,8 @@ class UserLayout extends Component {
              messageactive:false,
              adminactive:false,
              manageractive:false,
-             guidanceactive:false
+             guidanceactive:false,
+             pegactive:false
          }
      }
 
@@ -97,6 +98,10 @@ class UserLayout extends Component {
             <div className="taskbutton" onClick={() => this.toggleButton("guidanceactive")} >Guidance Tasks {this.state.guidanceactive ? " -" : " +"}</div>
             <div className={this.state.guidanceactive ? "open" : "closed"}>
                  <Link className="adminlinks" to="/guidanceAdmin">Guidance Input</Link>
+                 </div>
+            <div className="taskbutton" onClick={() => this.toggleButton("pegactive")} >PEG {this.state.pegactive ? " -" : " +"}</div>
+            <div className={this.state.pegactive ? "open" : "closed"}>
+                 <Link className="adminlinks" to="/pegAdmin">PEG</Link>
                  </div>
             </div>
             {console.log(isAdd, "recs")}

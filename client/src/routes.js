@@ -34,6 +34,8 @@ import WellbeingKeepFit from './components/WellbeingKeepFit';
 import SportsContacts from './components/SportsContacts';
 import Guidance from './components/Guidance';
 import GuidanceAdmin from './components/admin/Guidance';
+import PEGAdmin from './components/admin/Peg';
+import Peg from './components/Peg';
 
 const Routes = () => {
     
@@ -52,6 +54,7 @@ const Routes = () => {
                 <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
                 <Route path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
                 <Route path="/guidanceAdmin" exact component={GuidanceAdmin}/>
+                <Route path="/pegAdmin" exact component={PEGAdmin}/>
                 <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
                 <Route path="/sports/bingo" exact component={InputBingo}/>
                 <Route path="/sports/christmasparty" exact component={InputChristmasParty}/>
@@ -69,7 +72,7 @@ const Routes = () => {
                 <Route path="/wellbeing/Charity"  exact component={WellBeingCharity}/>
                 <Route path="/wellbeing/Healthatwork"  exact component={WellBeingHealthAtWork}/>
                 <Route path="/guidance"  exact component={Guidance}/>
-
+                <Route path="/peg" exact component={Peg} />
 
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>

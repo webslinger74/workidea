@@ -10,6 +10,7 @@ const manager = require('./routes/manager');
 const wellbeing = require('./routes/wellbeing');
 const site = require('./routes/siteperformance');
 const guidance = require('./routes/guidance');
+const peg = require('./routes/peg');
 const sports = require('./routes/sports');
 const passport = require('passport');
 const formidable = require('express-formidable');
@@ -55,6 +56,7 @@ app.use('/api/manager', manager);
 app.use('/api/sports', sports);
 app.use('/api/wellbeing', wellbeing);
 app.use('/api/guidance', guidance);
+app.use('/api/peg', peg);
 
 
 
