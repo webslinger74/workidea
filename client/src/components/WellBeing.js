@@ -17,7 +17,6 @@ class WellBeing extends Component {
             <div id="sliderSmall">
         <HomeSliderSmall/>
         </div>
-        <div id="sportsHeader">HEALTH & WELLBEING</div>
            <div id="sportsLinks">
             <Link className="indSportsLinks" to="/wellbeing/Events">Events</Link>
             <Link className="indSportsLinks" to="/wellbeing/Keepfit">Keep Fit & Stay Fit</Link>

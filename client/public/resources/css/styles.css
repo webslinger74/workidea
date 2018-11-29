@@ -331,6 +331,7 @@ header .right .bottom {
     padding-top:7px;
 }
 
+
 @media (max-width:850px){
    header .right .bottom { 
        display:flex;
@@ -1980,4 +1981,26 @@ footer .business_nfo .nfo {
 
 .submitBtn:hover {
     background-color:rgba(255, 184, 3, 0.883);
+}
+
+
+.RED {
+    color:red;
+    transition:0.5s linear;
+    font-size:12px;
+}
+
+.RED:hover {
+    color:red;
+}
+
+.BLACK {
+    color:black;
+    transition:0.2s ease-out;
+}
+
+.BLACK:hover {
+    color:rgba(255, 255, 255, 0.794);
+    font-size:13.5px;
+    
 }

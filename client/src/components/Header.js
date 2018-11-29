@@ -8,6 +8,7 @@ export class Header extends Component {
         super(props);
      
         this.state = {
+            link:["Home"],
             width:window.innerWidth,
             active:false,
             page: [
@@ -189,6 +190,15 @@ export class Header extends Component {
     }
 }
 
+    changeColor = (name)=> {
+        console.log("is it called");
+            this.setState({
+                link:[name]
+            }, () => {
+                   })
+    }
+
+
     defaultLinks = (item, i) => (
         item.name === 'Log Out' ?
             <div className="log_out_link"
@@ -199,7 +209,7 @@ export class Header extends Component {
                  {item.name}
 
             </div>:
-                 <Link key={i} to={item.linkTo}>{item.name}</Link>
+                 <Link className={this.state.link && (this.state.link[0] === item.name) ? "RED": "BLACK"} onClick={() => this.changeColor(item.name)} key={i} to={item.linkTo}>{item.name}</Link>
         
                  )
 

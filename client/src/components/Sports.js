@@ -17,7 +17,6 @@ class Sports extends Component {
             <div id="sliderSmall">
         <HomeSliderSmall/>
         </div>
-        <div id="sportsHeader">SPORTS & SOCIAL</div>
            <div id="sportsLinks">
             <Link className="indSportsLinks" to="/events">EVENTS</Link>
             <Link className="indSportsLinks" to="/bingo">BINGO NUMBERS</Link>
