@@ -1778,6 +1778,11 @@ footer .business_nfo .nfo {
     background-size:cover;
 }
 
+.engagedFull {
+    background-image:linear-gradient(rgba(253, 251, 246, 0.924),rgba(255, 255, 255, 0.856)),url(../../../src/images/featured/engaged.jpg);
+    background-size:cover;
+}
+
 .guidanceFull {
     background-image:linear-gradient(rgba(253, 251, 246, 0.623),rgba(255, 255, 255, 0.87)),url(../../../src/images/featured/new-guidance.jpg);
     background-size:cover;

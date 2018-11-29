@@ -33,7 +33,7 @@ class Home extends Component {
                     <div><LatestGuidance /></div>
                     <div className="verticalLine"></div>
                 </div>
-                <div className="frontMessages sportFull">
+                <div className="frontMessages engagedFull">
                  <div className="verticalLine"></div>
                     <div><LatestPegNews /></div>
                     <div className="verticalLine"></div>
