@@ -37,10 +37,10 @@ router.post('/addslide', (req, res) => {
                 })
 })
 
-router.post('/deletemessage', (req, res) => {
+router.post('/deleteslide', (req, res) => {
    
     const id = req.body.id;
-    Message.findOneAndDelete({_id:id})
+    Slide.findOneAndDelete({_id:id})
         .then(message => {
        return res.status(200).json({message})
         })

@@ -21,14 +21,14 @@ export const addSlide = (slide, history) => (dispatch) => {
         })
 }
 
-export const deleteMessage = (id, url) => (dispatch) => {
+export const deleteSlide = (id, url) => (dispatch) => {
 
 
     console.log(id, "this is the id of the message???")
     console.log(url, "the image url prior to deletion from cloudinary");
-    axios.post('/api/messages/deletemessage', id)
+    axios.post('/api/slide/deleteslide', id)
     .then(response => {
-        dispatch(getMessages());
+        dispatch(getSlides());
     }) 
 
     url.forEach(element => {
