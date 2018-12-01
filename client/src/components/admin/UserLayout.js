@@ -62,6 +62,7 @@ class UserLayout extends Component {
 
             <Link className="adminlinks" to="/login">Login</Link>
             <Link className="adminlinks" to="/userdashboard">User Dashboard</Link>
+            <Link className="adminlinks" to="/inputSlide">Add HomeSlider slide</Link>
             </div>
 
             <div className="taskbutton" onClick={() => this.toggleButton("messageactive")} >Main MessageBoard Tasks {this.state.messageactive ? " -" : " +"}</div>

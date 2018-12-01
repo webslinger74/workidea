@@ -19,6 +19,7 @@ import sitePerformanceReducer from './reducers/siteperformanceReducer';
 import guidanceReducer from './reducers/guidanceReducer';
 import pegReducer from './reducers/pegReducer';
 import ScrollToTop from './utils/ScrollToTop';
+import slideReducer from './reducers/slideReducer';
 
 const initialState = {};
 const rootReducers = combineReducers({
@@ -30,7 +31,8 @@ const rootReducers = combineReducers({
           wellbeing:wellbeingReducer,
           siteperformance:sitePerformanceReducer,
           guidance:guidanceReducer,
-          peg:pegReducer
+          peg:pegReducer,
+          slide:slideReducer
 })
 
 const middleware = [thunk];

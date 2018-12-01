@@ -36,6 +36,8 @@ import Guidance from './components/Guidance';
 import GuidanceAdmin from './components/admin/Guidance';
 import PEGAdmin from './components/admin/Peg';
 import Peg from './components/Peg';
+import HomeSliderInput from './components/admin/HomeSliderInput';
+
 
 const Routes = () => {
     
@@ -62,6 +64,7 @@ const Routes = () => {
                 <Route path="/sports/celebrationday" exact component={InputCelebrationDay}/>
                 <Route path="/sports/charity" exact component={InputCharity}/>
                 <Route path="/sports/contact" exact component={InputSportsContact}/>
+                <Route path="/inputSlide" exact component={HomeSliderInput}/>
                 <Route path="/sports/contacts" exact component={SportsContacts}/>
                 <Route path="/charity" exact component={CharityContributions}/>
                 <Route path="/christmas" exact component={ChristmasParty}/>

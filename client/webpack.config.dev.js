@@ -45,11 +45,12 @@ module.exports = merge(common, {
             "/api/peg/**" :{
                 target:"http://localhost:5000",
                 secure:"false"
+            },
+            "/api/slide/**" :{
+                target:"http://localhost:5000",
+                secure:"false"
             }
-          
-           
           }
-
     }
    
 })

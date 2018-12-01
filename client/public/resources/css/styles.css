@@ -192,6 +192,16 @@ select {
     display: table;
     background: #e1ddc3;
     margin-top: 10px;
+    transition:0.3s linear;
+}
+
+.link_default:hover {
+    text-transform: uppercase;
+    padding: 10px;
+    display: table;
+    background: #080808;
+    color:gray;
+    margin-top: 10px;
 }
 
 .card_link,
@@ -1312,7 +1322,6 @@ footer .business_nfo .nfo {
     width:200px;
     overflow: hidden;
     transform:scale(1.01);
-    
 
 }
 .messageBoardImgFront {
@@ -1320,14 +1329,18 @@ footer .business_nfo .nfo {
     width:50%;
     overflow: hidden;
     transition:5s;
-
-    border:solid 5px rgba(12, 8, 8, 0.596);
-    box-shadow: #6b6b6bc2;
-    opacity:0.8;
+    box-shadow:3px 4px #6b6b6bc2;
+    opacity:0.6;
     margin-bottom:4px;
     justify-self: center;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
 }
+
+.messageBoardImgFront:hover {
+    opacity:1;
+}
+
+
 
 .verticalLine {
     border-right:15px solid rgba(0, 0, 0, 0.089);
@@ -1987,7 +2000,7 @@ footer .business_nfo .nfo {
 .RED {
     color:red;
     transition:0.5s linear;
-    font-size:12px;
+    font-size:13px;
 }
 
 .RED:hover {

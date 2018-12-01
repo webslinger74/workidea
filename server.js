@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
 const mess = require('./routes/messages');
+const slide = require('./routes/slide');
 const manager = require('./routes/manager');
 const wellbeing = require('./routes/wellbeing');
 const site = require('./routes/siteperformance');
@@ -57,6 +58,7 @@ app.use('/api/sports', sports);
 app.use('/api/wellbeing', wellbeing);
 app.use('/api/guidance', guidance);
 app.use('/api/peg', peg);
+app.use('/api/slide', slide);
 
 
 
