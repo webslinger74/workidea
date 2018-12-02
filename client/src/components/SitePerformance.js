@@ -18,13 +18,19 @@ class SitePerformance extends Component {
     componentDidUpdate(){
         this.drawChart();
     }
-    
+
+    y = d3.scaleLinear().domain([0,6000]).range([0,600]);
+
     drawChart = () => {
-        const data =[120,50,60,70,40,34];
-        const svg = d3.select('#barChart').append("svg").attr("width", 700).attr("height", 300).attr("fill", "red");
+        const data =[1200,500,6000,2000,1005,340];
+        const svg = d3.select ('#barChart').append("svg").attr("width", 700).attr("height", 300);
         svg.selectAll("rect").data(data)
                 .enter().append("rect")
-                .attr("x", (d,i) => i * 70).attr("y", 0).attr("width", 25).attr("height", (d,i) => d).attr("fill", "green");
+                .attr("x", (d,i) => 300 + (i * 70))
+                .attr("y", 50)
+                .attr("width", 25)
+                .attr("height", (d,i) => this.y(d))
+                .attr("fill", "blue");
 
         
 
@@ -33,7 +39,7 @@ class SitePerformance extends Component {
 
 
       render(){
-
+            console.log(this.y(5004));
     return (
 
         

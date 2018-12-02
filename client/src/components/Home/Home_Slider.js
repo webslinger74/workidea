@@ -23,7 +23,17 @@ class HomeSlider extends Component {
     speed:2500,
     fade:true,
     slidesToShow:1,
-    arrows: false
+    slidesToScroll:4,
+    arrows: false,
+    afterChange: function() {
+        let siblings = document.querySelectorAll(".slick-slide");
+        let current = document.querySelector(".slick-current");
+
+        for(let i = 0; i < siblings.length; i++) {
+            siblings[i].style.zIndex = 0;
+        }
+        current.style.zIndex = 10;
+    }
    
 }
 
@@ -47,11 +57,11 @@ class HomeSlider extends Component {
                  />
             </div>
              </div>
-                <div style={{zIndex:999}} onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete</div>
+                <div onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete {item._id}</div>
 
              </div>
     
-    </div>))
+</div>))
     : null
 )
    render(){
