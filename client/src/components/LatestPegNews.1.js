@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
+
 class LatestPegNews extends Component {
     constructor(props) {
         super(props);
@@ -64,9 +65,7 @@ showMessages = (messages) => {
         const { peg } = this.props;
         return ( 
             <div>
-                
               <div className="centredLatest">LATEST PEG NEWS
-            
                      </div>
 
                 <Link to="/peg">
@@ -74,7 +73,7 @@ showMessages = (messages) => {
                 </Link>
            
             
-    
+
                 </div>
          );
     }
