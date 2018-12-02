@@ -22,7 +22,12 @@ class SitePerformance extends Component {
     drawChart = () => {
         const data =[120,50,60,70,40,34];
         const svg = d3.select('#barChart').append("svg").attr("width", 700).attr("height", 300).attr("fill", "red");
-        svg.selectAll("rect").data(data).enter().append("rect").attr("x", (d,i) => i * 70).attr("y", 0).attr("width", 25).attr("height", (d,i) => d).attr("fill", "green");
+        svg.selectAll("rect").data(data)
+                .enter().append("rect")
+                .attr("x", (d,i) => i * 70).attr("y", 0).attr("width", 25).attr("height", (d,i) => d).attr("fill", "green");
+
+        
+
 
     }
 

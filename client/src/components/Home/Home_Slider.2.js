@@ -20,13 +20,14 @@ class HomeSlider2 extends Component {
   settings = {
     adaptiveHeight:true,
     autoplay:true,
-    autoplaySpeed:6000,
+    autoplaySpeed:8000,
+    pauseOnHover:false,
     dots: false,
+    dotsClass:"dots",
     arrows: false,
-    vertical:true,
     fade: true,
     infinite: true,
-    speed:200,
+    speed:800,
     slidesToShow: 1,
     slidesToScroll:1  
 }
@@ -34,13 +35,12 @@ class HomeSlider2 extends Component {
   generateSlides = () => (
     this.props.slides ? this.props.slides.map((item, i) => (
 
-    <div key={i}>
+    <div key={i} style={{height:'200%'}}>
      <div className="pegcont" style={{
                  background:`url(${item.images[0].url})`,
-                 backgroundSize:'50% 100%',
-                 height:'150%',
-                 width:'60%',
-                 border:'solid 3px white',
+                 backgroundSize:'100% 100%',
+                 height:'100%',
+                 width:'60%'
 
              }}>
                         <div className="slide2-title">{item.title}</div>
@@ -52,6 +52,7 @@ class HomeSlider2 extends Component {
                  linkTo={"/peg"}
                  
                  />
+    
             </div>
 
              </div>

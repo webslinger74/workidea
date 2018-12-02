@@ -15,10 +15,13 @@ class HomeSlider extends Component {
  
   settings = {
     autoplay:true,
-    autoplaySpeed:4000,
+    autoplaySpeed:10000,
+    pauseOnHover:false,
+    pauseOnFocus:false,
     dots: false,
     infinite: true,
-    speed:8000,
+    speed:2500,
+    fade:true,
     slidesToShow:1,
     arrows: false
    
@@ -44,7 +47,7 @@ class HomeSlider extends Component {
                  />
             </div>
              </div>
-                <div onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete</div>
+                <div style={{zIndex:999}} onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete</div>
 
              </div>
     
