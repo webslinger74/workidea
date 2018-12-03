@@ -2098,3 +2098,9 @@ footer .business_nfo .nfo {
     font-size:13.5px;
     
 }
+
+.dynamicCharts {
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+}

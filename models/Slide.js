@@ -16,7 +16,7 @@ const SlideSchema = new Schema({
     pageCat: {
         required: true,
         type:String,
-        maxlength:25
+        maxlength:250
     },
     linkTitle: {
         type:String,

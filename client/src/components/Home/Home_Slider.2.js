@@ -28,7 +28,8 @@ class HomeSlider2 extends Component {
     infinite: true,
     speed:0,
     slidesToShow: 1,
-    slidesToScroll:1
+    slidesToScroll:1,
+    pauseOnHover:true
 }
 
 
