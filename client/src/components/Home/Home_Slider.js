@@ -23,7 +23,7 @@ class HomeSlider extends Component {
     speed:2500,
     fade:true,
     slidesToShow:1,
-    slidesToScroll:4,
+    slidesToScroll:1,
     arrows: false,
     afterChange: function() {
         let siblings = document.querySelectorAll(".slick-slide");

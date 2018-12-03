@@ -25,12 +25,13 @@ class HomeSlider2 extends Component {
     dots: false,
     dotsClass:"dots",
     arrows: false,
-    fade: true,
     infinite: true,
-    speed:800,
+    speed:0,
     slidesToShow: 1,
-    slidesToScroll:1  
+    slidesToScroll:1
 }
+
+
 
   generateSlides = () => (
     this.props.slides ? this.props.slides.map((item, i) => (
@@ -41,11 +42,10 @@ class HomeSlider2 extends Component {
                  backgroundSize:'100% 100%',
                  height:'100%',
                  width:'60%'
-
              }}>
                         <div className="slide2-title">{item.title}</div>
                      <div className="slide2-message">{this.convertStringMessageToHtml(item.message)}</div>
-            <div style={{zIndex:999, paddingBottom:'5px'}}>
+            <div style={{paddingBottom:'5px'}}>
                 <MyButton
                  type="default"
                  title="Go To PEG"
