@@ -3,6 +3,7 @@ import HomeSliderSmall from './Home/Home_sliderSmall';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
+import { blob } from 'd3-fetch';
 
 class SitePerformance extends Component {
     constructor(props) {
@@ -23,28 +24,30 @@ class SitePerformance extends Component {
 
     drawChart = () => {
         const data = [
-            {"name" : "fender",
-            "amount" : 1200},
-            {"name": "gibson",
-            "amount" : 500},
-            {"name" : "yahmaha",
-            "amount": 6000},
-            {"name": "laney",
-            "amount": 2000 },
-            {"name": "taylor",
-            "amount": 1005},
-            {"name": "warwick",
-            "amount": 340},
-            {"name": "line6",
-            "amount" : 9000},
-            {"name": "marshall",
-            "amount" : 15000},
-            {"name": "PRS",
-            "amount" : 1200},
-            {"name": "Hohner",
-            "amount" : 1500},
-            {"name": "peavey",
-            "amount" : 2200}
+            {"name" : "Jan",
+            "amount" : 7.4},
+            {"name": "Feb",
+            "amount" : 8.2},
+            {"name" : "March",
+            "amount": 4.6},
+            {"name": "April",
+            "amount": 6.7 },
+            {"name": "May",
+            "amount": 7.2},
+            {"name": "June",
+            "amount": 5.8},
+            {"name": "July",
+            "amount" : 3.9},
+            {"name": "August",
+            "amount" : 8.3},
+            {"name": "Sept",
+            "amount" : 7.4},
+            {"name": "Oct",
+            "amount" : 6.9},
+            {"name": "Nov",
+            "amount" : 5.4},
+            {"name": "Dec",
+            "amount" : 0}
         ];
         const min = d3.min(data, d => d.amount);
         const max = d3.max(data, d => d.amount);
@@ -197,8 +200,8 @@ class SitePerformance extends Component {
          
        
             <div className="dynamicCharts">
-            <div id="barChart"></div>
-            <div id="barChart2"></div>
+            <div id="barChart" style={{textAlign:"center", fontWeight:"bold"}}>Average Days Lost</div>
+            <div id="barChart2" style={{textAlign:"center", fontWeight:"bold"}}>PEG Results 2018</div>
             </div>
             <div className="dividers2"></div>
        
