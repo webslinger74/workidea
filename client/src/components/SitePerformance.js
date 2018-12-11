@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
 import d3Tip from 'd3-tip';
  import BarChart from './BarChart';
+ import PieChart from './PieChart';
 
 class SitePerformance extends Component {
     constructor(props) {
         super(props);
        this.state = {
-           data:false,
-           allData: [
+           data1:false,
+           allData1: [
             {"name" : "Jan",
             "amount" : 2.7},
             {"name": "Feb",
@@ -51,15 +52,22 @@ class SitePerformance extends Component {
             "amount": 65},
             {"name": "Inclusion",
             "amount": 45}
-        ]
+        ],
+            data3:false,
+            allData3:[{"name" : "Mental Illness", "amount" : 71},
+            {"name": "Cough & Colds","amount" : 54},
+            {"name" : "Stomach bugs","amount": 33},
+            {"name": "Physical", "amount": 92 },
+            {"name": "Bereavement", "amount": 65},
+            {"name": "Cancer", "amount": 45} ]
        }
     }
 
     changeState = () => {
         this.setState({
-            data:!this.state.data
+            data1:!this.state.data1
         }, () => {
-            console.log(this.state.data, "the state of data boolean")
+            console.log(this.state.data1, "the state of data boolean")
             this.changeData();
         })
         
@@ -76,12 +84,23 @@ class SitePerformance extends Component {
         
       
     }
+
+    changeState3 = () => {
+        this.setState({
+            data3:!this.state.data3
+        }, () => {
+            console.log(this.state.data3, "the state of data boolean")
+            this.changeData3();
+        })
+        
+      
+    }
     componentDidUpdate(){
     }
 
     changeData = () => {
-        if(this.state.data) {
-            this.setState({allData:[
+        if(this.state.data1) {
+            this.setState({allData1:[
             {"name" : "Jan",
             "amount" : 7.4},
             {"name": "Feb",
@@ -106,10 +125,10 @@ class SitePerformance extends Component {
             "amount" : 5.4},
             {"name": "Dec",
             "amount" : 4}
-        ]}, () => console.log(this.state.allData))
+        ]}, () => console.log(this.state.allData1))
     }
         else { 
-            this.setState({allData: [
+            this.setState({allData1: [
             {"name" : "Jan",
             "amount" : 2.7},
             {"name": "Feb",
@@ -135,7 +154,7 @@ class SitePerformance extends Component {
             {"name": "Dec",
             "amount" : 0}
         ]
-    }, () => console.log(this.state.allData))
+    }, () => console.log(this.state.allData1))
 }}
 changeData2 = () => {
     if(this.state.data2) {
@@ -171,6 +190,24 @@ changeData2 = () => {
         ] 
 }, () => console.log(this.state.allData2))
 }}
+changeData3 = () => {
+    if(this.state.data3) {
+        this.setState({allData3:  [{"name" : "Mental Illness", "amount" : 62},
+        {"name": "Cough & Colds","amount" : 33},
+        {"name" : "Stomach bugs","amount": 56},
+        {"name": "Physical", "amount": 76},
+        {"name": "Bereavement", "amount": 43},
+        {"name": "Cancer", "amount": 28} ] }, () => console.log(this.state.allData3))
+}
+    else { 
+        this.setState({allData3: [{"name" : "Mental Illness", "amount" : 76},
+        {"name": "Cough & Colds","amount" : 65},
+        {"name" : "Stomach bugs","amount": 45},
+        {"name": "Physical", "amount": 87},
+        {"name": "Bereavement", "amount": 22},
+        {"name": "Cancer", "amount": 65} ]
+}, () => console.log(this.state.allData3))
+}}
 
       render(){
      
@@ -187,10 +224,10 @@ changeData2 = () => {
          </div>
          <div className="flexPerformance">
          <div className="flexPerformanceInner">
-                        <div className="perfTitle">Average Sickness Days Lost {this.state.data ? 2017 : 2018}</div>
-            <BarChart height={500} width={600} color={"red"} data={this.state.allData} />
+                        <div className="perfTitle">Average Sickness Days Lost {this.state.data1 ? 2017 : 2018}</div>
+            <BarChart height={500} width={600} color={"red"} data={this.state.allData1} />
 
-            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data ? "View 2018" : "View 2017" }</div>
+            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
            <div className="flexPerformanceInner">
 
@@ -200,8 +237,15 @@ changeData2 = () => {
 
             </div>
        </div>
+       <div className="flexPerformanceInner">
+       <div className="perfTitle">% of Sickness Categories {this.state.data3 ? 2017 : 2018}</div>
+                 <PieChart data={this.state.allData3}
+                                    
+                                   />
+
+                 <div className="perfViewBtn" onClick={() => this.changeState3()}>{this.state.data3 ? "View 2018" : "View 2017" }</div>
        </div>
-    
+    </div>
       
       )
     }

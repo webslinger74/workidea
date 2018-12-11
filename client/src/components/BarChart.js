@@ -48,10 +48,6 @@ class BarChart extends Component {
             .paddingInner(0.2)
             .paddingOuter(0.2);
 
-       
-
-      //  const svg = d3.select ('#barChart').append("svg").attr("width", 700).attr("height", 600);
-
         let u = d3.select(this.svgElememt)
         
         let gr = d3.select(this.grElement)
