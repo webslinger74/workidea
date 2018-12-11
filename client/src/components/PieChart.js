@@ -24,6 +24,9 @@ class PieChart extends Component {
         }
 
     }
+    showMessage = (name) => {
+        console.log(name, "the name of path");
+    }
 
 drawPie = (data) => {
     const dims = { height:300,
@@ -67,8 +70,10 @@ drawPie = (data) => {
     .attr('stroke', 'white')
     .attr('fill', d => colour(d.data.name))
     .attr('stroke-width', 3)
+    .on('click', (d => this.showMessage(d.data.name)))
     .transition().duration(3000)
     .attr("d", arcPath);
+    
 
     paths.enter()
         .append('path')
@@ -76,8 +81,10 @@ drawPie = (data) => {
         .attr('stroke', 'white')
         .attr('fill', d => colour(d.data.name))   
         .attr('stroke-width', 3)
+        .on('click', (d => this.showMessage(d.data.name)))
         .transition().duration(3000)
         .attr("d", arcPath);
+    
         
 }
 
