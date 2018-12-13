@@ -208,7 +208,7 @@ export class Header extends Component {
     
     windowWidth = () => {
         console.log(window.innerWidth,"the window width");
-        if (window.innerWidth <= 850)
+        if (window.innerWidth <= 950)
             return (
                 <div>
             <div onClick={this.toggleClass}>
