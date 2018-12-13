@@ -54,12 +54,12 @@ class SitePerformance extends Component {
             "amount": 45}
         ],
             data3:false,
-            allData3:[{"name" : "Mental Illness", "amount" : 71},
-            {"name": "Cough & Colds","amount" : 54},
-            {"name" : "Stomach bugs","amount": 33},
-            {"name": "Physical", "amount": 92 },
-            {"name": "Bereavement", "amount": 65},
-            {"name": "Cancer", "amount": 45} ]
+            allData3:[{"name" : "Mental Illness", "amount" : 71,"desc": "Brain Tumour"},
+            {"name": "Cough & Colds","amount" : 50,"desc": "Coughs"},
+            {"name" : "Stomach bugs","amount": 33,"desc": "Stomach Bug"},
+            {"name": "Physical", "amount": 92,"desc": "Break Foot"} ,
+            {"name": "Bereavement", "amount": 65,"desc": "Death of Parent"},
+            {"name": "Cancer", "amount": 45,"desc": "Brain Cancer"} ]
        }
     }
 
@@ -192,20 +192,20 @@ changeData2 = () => {
 }}
 changeData3 = () => {
     if(this.state.data3) {
-        this.setState({allData3:  [{"name" : "Mental Illness", "amount" : 62},
-        {"name": "Cough & Colds","amount" : 33},
-        {"name" : "Stomach bugs","amount": 56},
-        {"name": "Physical", "amount": 76},
-        {"name": "Bereavement", "amount": 43},
-        {"name": "Cancer", "amount": 28} ] }, () => console.log(this.state.allData3))
+        this.setState({allData3:  [{"name" : "Mental Illness", "amount" : 62,"desc": "Dementia"},
+        {"name": "Cough & Colds","amount" : 33,"desc":"Cough" },
+        {"name" : "Stomach bugs","amount": 56,"desc": "Stomach Bugs"},
+        {"name": "Physical", "amount": 76,"desc": "Broken Leg"},
+        {"name": "Bereavement", "amount": 43,"desc":"Death" },
+        {"name": "Cancer", "amount": 28, "desc":  "Cancer of Lungs"} ]})
 }
     else { 
-        this.setState({allData3: [{"name" : "Mental Illness", "amount" : 76},
-        {"name": "Cough & Colds","amount" : 65},
-        {"name" : "Stomach bugs","amount": 45},
-        {"name": "Physical", "amount": 87},
-        {"name": "Bereavement", "amount": 22},
-        {"name": "Cancer", "amount": 65} ]
+        this.setState({allData3: [{"name" : "Mental Illness", "amount" : 76, "desc": "Schizophrenia"},
+        {"name": "Cough & Colds","amount" : 65,"desc": "Influenza"},
+        {"name" : "Stomach bugs","amount": 45, "desc": "Food Poisoning"},
+        {"name": "Physical", "amount": 87, "desc": "Broken Arm"},
+        {"name": "Bereavement", "amount": 22, "desc": "Death of Family Member"},
+        {"name": "Cancer", "amount": 65, "desc": "Breast Cancer"} ]
 }, () => console.log(this.state.allData3))
 }}
 
@@ -217,6 +217,7 @@ changeData3 = () => {
         
 
         <div>
+    
               <div className="sportsItem">
         <h1  style={{backgroundColor:'gold'}}>LATEST SITE PERFORMANCE</h1>
 

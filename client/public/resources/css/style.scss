@@ -1,3 +1,244 @@
+$primaryColor:rgba(255, 72, 0, 0.883);
+$secondaryColor:rgba(199, 187, 14, 0.753);
+
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Oswald', sans-serif;
+    color: #404040;
+}
+ //////////////////////// / //  /////Header Component////////////////
+.header {
+    display:flex;
+    background-color: $primaryColor;
+    flex-direction: row;
+    background-image:linear-gradient($primaryColor,$secondaryColor),url(../../../src/images/featured/chorltonflowers.jpg);
+    background-size:100%;
+    width:100%;
+     
+    .left {
+        width:40%;
+
+        .logo {
+            font-size: 40px;
+            font-family: 'Monoton', cursive;
+            color: #ffffff;
+            margin-left:1%;
+            padding-left:10px;
+            animation:headlogo 30s infinite;
+
+            @keyframes headlogo {
+                0%{ color: #ffffff;
+                     }
+                50% { color:rgba(235, 228, 228, 0.945); }
+                80% { color:rgba(235, 228, 228, 0.842); }
+                98% { color:rgba(8, 8, 8, 0.945); }
+                100% { color:rgba(224, 213, 213, 0.849);}
+            }
+        }
+    }
+
+    .right {
+        width:60%;
+        border-left: 1px solid #eeeeee;
+        border-right: 1px solid #eeeeee;
+
+        .top {
+            color:#070606;
+            border-bottom: 1px solid #ffffff;
+            flex-direction:row-reverse;
+            padding-right:5%;
+            padding-top:2%;
+            padding-bottom: 2%;
+        }
+
+               .top,
+               .bottom {
+                    display:flex;
+                    flex-wrap:wrap;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color:#070606;
+                    font-size: 14px;
+                }
+
+               .bottom {
+                    justify-content: space-around;
+                    padding-top:7px;
+                    flex-direction: row;
+
+                     
+                        .RED {
+                            color:red;
+                            transition:0.5s linear;
+                            font-size:13px;
+
+                            &:hover {
+                                color:red;
+                            }
+                        }
+                        
+                        
+                        
+                        .BLACK {
+                            color:black;
+                            transition:0.2s ease-out;
+
+                            &:hover {
+                                color:rgba(255, 255, 255, 0.794);
+                                font-size:13.5px;
+                            }
+                        }
+                        
+                      
+                        
+
+                    }
+               
+
+             
+           }
+
+
+    //end of header/////////////////////////////////////////////////////////////////////////////////////////////////
+}
+
+
+/////////////////////////  FOOTER  /////////////////////////////////////////////////////////////////
+
+
+.footer {
+
+     width:100%;
+     margin: 0 auto;
+     background: #272723;
+
+    .logo {
+        text-align: center;
+        font-family: 'Monoton', cursive;
+        color: #ffffff;
+        font-size: 40px;
+        padding: 11px 0px;
+        border-bottom: 1px solid #4d4d4d;
+    }
+     .wrapper {
+    display: flex;
+    color: #828282;
+    padding-left:12px;
+    padding-right:12px;
+        
+      
+                .rightside {
+                    display:flex;
+                    flex-direction: column;
+                    width:40%;
+
+                    .right_item {
+                        padding-right:5%;
+                        margin-left:2%;
+                    }
+                }
+                .left {
+                              flex: 1;
+                              display:flex;
+                              flex-direction: column;
+                              width:60%;
+
+
+
+                              .business_nfo {
+                                display: flex;
+                                flex-wrap: wrap;
+                                padding-left: 1%;
+
+                              
+                            
+
+                                    .tag {
+                                        flex-grow: 1;
+                                        position: relative;
+                                        width: 50%;
+                                        margin-bottom: 30px;
+
+                                                .icon {
+                                                    position: absolute;
+                                                    font-size: 26px;
+                                                    top: 10px;
+
+                                                    
+                                                      
+                                                }
+                                                @media(max-width:850px){
+                                                    .icon {
+                                                    font-size: 18px;
+                                                }
+                                                }
+                                          
+                                                .nfo {
+                                                    padding-left: 40px;
+                                                }
+                                                @media(max-width:850px){
+                                                        .nfo {
+                                                    font-size:18px;
+                                                }
+                                                }
+                                                @media(max-width:500px){
+                                                        .nfo {
+                                                        font-size:12px;
+                                                    }
+                                                    }
+                                    }
+                            }
+                            @media(max-width:850px){
+                                .business_nfo {
+                            flex-direction:row;
+                            flex-wrap:wrap;
+                            margin-left:20px;
+                            width:80%;
+                            padding-right:5px;
+                        }
+                        }
+                        @media(max-width:500px){
+                            .business_nfo {
+                            font-size:15px;
+                
+                        }
+                    }
+             }
+             @media(max-width:850px){
+                .left {
+            padding-left:5px;
+            padding-right:5px;
+            align-items:center;;
+            width:100%;
+        }
+        }
+
+        }
+        @media(max-width:850px){
+            .wrapper {
+        flex-direction:column;
+        padding-left:5px;
+        padding-right:5px;
+        align-items:center;;
+    }
+    }
+
+
+       
+
+}
+ 
+
+
+
+
+
+
+
+
+/////////////////////////////End of FOOTER ///////////////////////////////////////////////////////////////////
+
 body {
     margin:0;
     padding:0;
@@ -490,102 +731,6 @@ header .log_out_link {
 }
 
 
-/*============================
-            FOOTER
-==============================*/
-
-
-
-footer .logo {
-    text-align: center;
-    font-family: 'Monoton', cursive;
-    color: #ffffff;
-    font-size: 40px;
-    padding: 11px 0px;
-    border-bottom: 1px solid #4d4d4d;
-}
-
-footer .wrapper {
-    display: flex;
-    color: #828282;
-    padding-left:12px;
-    padding-right:12px;
-}
-
-@media(max-width:850px){
-    footer .wrapper {
-    display:flex;
-    flex-direction:column;
-    padding-left:5px;
-    padding-right:5px;
-    align-items:center;
-}
-}
-footer .left,
-footer .right {
-    flex: 1;
-}
-
-footer .rightside {
-    display:flex;
-    flex-direction: column;
-}
-
-footer .business_nfo {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 1%;
-}
-footer .right_item {
-    padding-right:5%;
-    margin-left:2%;
-}
-@media(max-width:850px){
-    footer .business_nfo {
-        display:flex;
-        flex-direction:row;
-        margin-left:20px;
-    }
-}
-@media(max-width:500px){
-    footer .business_nfo {
-        display:flex;
-        flex-direction:row;
-        margin-left:20px;
-        font-size:15px;
-    }
-}
-footer .business_nfo .tag {
-    flex-grow: 1;
-    position: relative;
-    width: 50%;
-    margin-bottom: 30px;
-}
-footer .business_nfo .icon {
-    position: absolute;
-    font-size: 26px;
-    top: 10px;
-}
-footer .business_nfo .nfo {
-    padding-left: 40px;
-}
-@media(max-width:850px){
-footer .business_nfo .nfo {
-    font-size:18px;
-}
-}
-@media(max-width:500px){
-    footer .business_nfo .nfo {
-        font-size:12px;
-    }
-    }
-@media(max-width:850px){
-    footer .business_nfo .icon {
-        position: absolute;
-        font-size: 18px;
-        top: 10px;
-    }
-}
 
 /*============================
         FEATURED IMAGE

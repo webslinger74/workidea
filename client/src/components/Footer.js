@@ -9,8 +9,7 @@ import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope';
 const Footer = () => {
     return (
         
-        <footer className="bck_b_dark">
-            <div className="container">
+        <div className="footer">
                 <div className="logo">
                     CHORLTON
                 </div>
@@ -81,8 +80,7 @@ const Footer = () => {
                     </div> 
                     </div>         
                 </div>
-            </div>
-        </footer>
+        </div>
     
     );
 };

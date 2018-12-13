@@ -8,6 +8,8 @@ class PieChart extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showMessage:false,
+            description:''
         }
     }
 
@@ -24,8 +26,12 @@ class PieChart extends Component {
         }
 
     }
-    showMessage = (name) => {
-        console.log(name, "the name of path");
+    showMessage = (name, desc) => {
+        console.log(name, "the name of path", desc, "description");
+        this.setState({
+            showMessage:true,
+            description:desc
+        })
     }
 
 drawPie = (data) => {
@@ -70,7 +76,7 @@ drawPie = (data) => {
     .attr('stroke', 'white')
     .attr('fill', d => colour(d.data.name))
     .attr('stroke-width', 3)
-    .on('click', (d => this.showMessage(d.data.name)))
+    .on('click', (d => this.showMessage(d.data.name, d.data.desc)))
     .transition().duration(3000)
     .attr("d", arcPath);
     
@@ -81,7 +87,7 @@ drawPie = (data) => {
         .attr('stroke', 'white')
         .attr('fill', d => colour(d.data.name))   
         .attr('stroke-width', 3)
-        .on('click', (d => this.showMessage(d.data.name)))
+        .on('click', (d => this.showMessage(d.data.name, d.data.desc)))
         .transition().duration(3000)
         .attr("d", arcPath);
     
@@ -103,6 +109,9 @@ render(){
                 
                 </g>
             </svg>
+
+            <div style={{fontSize:'20px'}}>{this.state.showMessage ? this.state.description : null}
+                </div>
           
             </div>
          

@@ -174,22 +174,7 @@ export class Header extends Component {
         }
     }
 
-    cartLink = (item,i) => {
-        if(this.props.currentUser){
-        const  currentUser  = this.props.currentUser;
-        console.log(currentUser, "this is the user from in the component");
-        
-        return (
-            <div className="cart_link" key={i}>
-                <span>{currentUser.cart ? currentUser.cart.length : 0}</span>
-                <Link to={item.linkTo}>
-                    {item.name}
-                </Link>
-            </div>
-        )
-    }
-}
-
+   
     changeColor = (name)=> {
         console.log("is it called");
             this.setState({
@@ -259,7 +244,7 @@ export class Header extends Component {
 
 
         return (
-            <header className="bck_b_light flowers">
+            <div className="header">
             
             <div className="left">
             <div className="logo">
@@ -277,7 +262,7 @@ export class Header extends Component {
 
             </div>
 
-            </header>
+            </div>
           );
     }
 }
