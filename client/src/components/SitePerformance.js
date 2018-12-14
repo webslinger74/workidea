@@ -17,19 +17,19 @@ class SitePerformance extends Component {
             "amount" : 2.7},
             {"name": "Feb",
             "amount" : 12},
-            {"name" : "March",
+            {"name" : "Mar",
             "amount": 4},
-            {"name": "April",
+            {"name": "Apr",
             "amount": 6 },
             {"name": "May",
             "amount": 7},
-            {"name": "June",
+            {"name": "Jun",
             "amount": 8},
-            {"name": "July",
+            {"name": "Jul",
             "amount" : 3.9},
-            {"name": "August",
+            {"name": "Aug",
             "amount" : 8.3},
-            {"name": "Sept",
+            {"name": "Sep",
             "amount" : 7.4},
             {"name": "Oct",
             "amount" : 6.9},
@@ -40,9 +40,9 @@ class SitePerformance extends Component {
         ],
         data2:false,
         allData2: [
-            {"name" : "My Work",
+            {"name" : "Work",
             "amount" : 71},
-            {"name": "My Manager",
+            {"name": "Manager",
             "amount" : 54},
             {"name" : "Leadership",
             "amount": 33},
@@ -105,19 +105,19 @@ class SitePerformance extends Component {
             "amount" : 7.4},
             {"name": "Feb",
             "amount" : 12.2},
-            {"name" : "March",
+            {"name" : "Mar",
             "amount": 4.6},
-            {"name": "April",
+            {"name": "Apr",
             "amount": 6.7 },
             {"name": "May",
             "amount": 7.2},
-            {"name": "June",
+            {"name": "Jun",
             "amount": 5.8},
-            {"name": "July",
+            {"name": "Jul",
             "amount" : 3.9},
-            {"name": "August",
+            {"name": "Aug",
             "amount" : 8.3},
-            {"name": "Sept",
+            {"name": "Sep",
             "amount" : 7.4},
             {"name": "Oct",
             "amount" : 6.9},
@@ -133,19 +133,19 @@ class SitePerformance extends Component {
             "amount" : 2.7},
             {"name": "Feb",
             "amount" : 12},
-            {"name" : "March",
+            {"name" : "Mar",
             "amount": 4},
-            {"name": "April",
+            {"name": "Apr",
             "amount": 6 },
             {"name": "May",
             "amount": 7},
-            {"name": "June",
+            {"name": "Jun",
             "amount": 8},
-            {"name": "July",
+            {"name": "Jul",
             "amount" : 3.9},
-            {"name": "August",
+            {"name": "Aug",
             "amount" : 8.3},
-            {"name": "Sept",
+            {"name": "Sep",
             "amount" : 7.4},
             {"name": "Oct",
             "amount" : 6.9},
@@ -159,9 +159,9 @@ class SitePerformance extends Component {
 changeData2 = () => {
     if(this.state.data2) {
         this.setState({allData2: [
-            {"name" : "My Work",
+            {"name" : "Work",
             "amount" : 71},
-            {"name": "My Manager",
+            {"name": "Manager",
             "amount" : 54},
             {"name" : "Leadership",
             "amount": 33},
@@ -175,9 +175,9 @@ changeData2 = () => {
 }
     else { 
         this.setState({allData2: [
-            {"name" : "My Work",
+            {"name" : "Work",
             "amount" : 54},
-            {"name": "My Manager",
+            {"name": "Manager",
             "amount" : 34},
             {"name" : "Leadership",
             "amount": 78},
@@ -216,29 +216,28 @@ changeData3 = () => {
 
         
 
-        <div>
+        <div className="sitePerformanceBackground">
     
-              <div className="sportsItem">
-        <h1  style={{backgroundColor:'gold'}}>LATEST SITE PERFORMANCE</h1>
+              <div className="sitePerformanceItem">
+        LATEST SITE PERFORMANCE
 
            
          </div>
          <div className="flexPerformance">
          <div className="flexPerformanceInner">
                         <div className="perfTitle">Average Sickness Days Lost {this.state.data1 ? 2017 : 2018}</div>
-            <BarChart height={500} width={600} color={"red"} data={this.state.allData1} />
+            <BarChart height={300} width={400} color={"red"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
            <div className="flexPerformanceInner">
 
                <div className="perfTitle">Peg Results {this.state.data2 ? 2017 : 2018}</div>
-            <BarChart height={500} width={600} color={"green"} data={this.state.allData2} />
+            <BarChart height={300} width={400} color={"green"} data={this.state.allData2} />
             <div className="perfViewBtn" onClick={() => this.changeState2()}>{this.state.data2 ? "View 2018" : "View 2017" }</div>
 
             </div>
-       </div>
-       <div className="flexPerformanceInner">
+            <div className="flexPerformanceInner">
        <div className="perfTitle">% of Sickness Categories {this.state.data3 ? 2017 : 2018}</div>
                  <PieChart data={this.state.allData3}
                                     
@@ -246,6 +245,32 @@ changeData3 = () => {
 
                  <div className="perfViewBtn" onClick={() => this.changeState3()}>{this.state.data3 ? "View 2018" : "View 2017" }</div>
        </div>
+       <div className="flexPerformanceInner">
+                        <div className="perfTitle">New Claims Processed {this.state.data1 ? 2017 : 2018}</div>
+            <BarChart height={300} width={400} color={"purple"} data={this.state.allData1} />
+
+            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
+        </div>
+        <div className="flexPerformanceInner">
+                        <div className="perfTitle">Award Reviews Processed {this.state.data1 ? 2017 : 2018}</div>
+            <BarChart height={300} width={400} color={"pink"} data={this.state.allData1} />
+
+            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
+        </div>
+        <div className="flexPerformanceInner">
+                        <div className="perfTitle">Tasks Cleared {this.state.data1 ? 2017 : 2018}</div>
+            <BarChart height={300} width={400} color={"yellow"} data={this.state.allData1} />
+
+            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
+        </div>
+        <div className="flexPerformanceInner">
+                        <div className="perfTitle">Tasks Outstanding {this.state.data1 ? 2017 : 2018}</div>
+            <BarChart height={300} width={400} color={"orange"} data={this.state.allData1} />
+
+            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
+        </div>
+       </div>
+     
     </div>
       
       )

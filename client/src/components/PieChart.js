@@ -9,7 +9,9 @@ class PieChart extends Component {
         super(props);
         this.state = {
             showMessage:false,
-            description:''
+            description:'',
+            name:'',
+            amount:''
         }
     }
 
@@ -26,29 +28,31 @@ class PieChart extends Component {
         }
 
     }
-    showMessage = (name, desc) => {
+    showMessage = (name, desc, amount) => {
         console.log(name, "the name of path", desc, "description");
         this.setState({
             showMessage:true,
-            description:desc
+            description:desc,
+            name,
+            amount
         })
     }
 
 drawPie = (data) => {
-    const dims = { height:300,
-                   width:300,
-                   radius: 150 };
+    const dims = { height:200,
+                   width:200,
+                   radius: 100 };
 
     const centre = { x:dims.width / 2 + 5,
-                    y:dims.height / 2 +5 };
+                    y:dims.height / 2 + 5 };
                     
                     
     let u = d3.select(this.svgElememt)
-        .attr('width', dims.width + 150)
+        .attr('width', dims.width + 100)
         .attr('height', dims.height + 50);
 
     const graph = d3.select(this.grElement)
-        .attr('transform', `translate(${centre.x + 100}, ${centre.y})`);
+        .attr('transform', `translate(${centre.x + 50}, ${centre.y})`);
 
 
     
@@ -59,26 +63,44 @@ drawPie = (data) => {
 
     const arcPath =  d3.arc()
         .outerRadius(dims.radius)
-        .innerRadius(dims.radius / 16);
+        .innerRadius(dims.radius / 2);
 
     const colour = d3.scaleOrdinal(d3['schemeSet3'])
 
+        
+    const arcTweenEnter = (d) => {
+        var i = d3.interpolate(d.endAngle, d.startAngle);
+        return function(t) {
+            d.startAngle = i(t)
+         return arcPath(d)
+        }
+    }
 
+    const arcTweenExit = (d) => {
+        var i = d3.interpolate(d.startAngle, d.endAngle);
+        return function(t) {
+            d.startAngle = i(t)
+         return arcPath(d)
+        }
+    }
 
         colour.domain(data.map(d => d.name))
 
         const paths = graph.selectAll('path')
             .data(pie(data));
 
-    paths.exit().remove();
+    paths.exit()
+        .transition().duration(750)
+        .attrTween('d', arcTweenExit)
+        .remove();
     
     paths.attr('class', 'arc')
     .attr('stroke', 'white')
     .attr('fill', d => colour(d.data.name))
     .attr('stroke-width', 3)
-    .on('click', (d => this.showMessage(d.data.name, d.data.desc)))
-    .transition().duration(3000)
-    .attr("d", arcPath);
+    .on('mouseover', (d => this.showMessage(d.data.name, d.data.desc, d.data.amount)))
+    .transition().duration(2000)
+    .attrTween("d", arcTweenEnter);
     
 
     paths.enter()
@@ -87,9 +109,9 @@ drawPie = (data) => {
         .attr('stroke', 'white')
         .attr('fill', d => colour(d.data.name))   
         .attr('stroke-width', 3)
-        .on('click', (d => this.showMessage(d.data.name, d.data.desc)))
-        .transition().duration(3000)
-        .attr("d", arcPath);
+        .on('mouseover', (d => this.showMessage(d.data.name, d.data.desc)))
+        .transition().duration(2000)
+        .attrTween("d", arcTweenEnter);
     
         
 }
@@ -103,15 +125,25 @@ render(){
 
         <div>
                    
-            <div className="dynamicPieCharts">
+            <div className="dynamicCharts">
             <svg ref={element => this.svgElememt = element}>
                 <g ref={element => this.grElement = element}>
                 
                 </g>
+              
             </svg>
-
-            <div style={{fontSize:'20px'}}>{this.state.showMessage ? this.state.description : null}
+            <div className="catMessage" style={{textAlign:'center'}}>{this.state.showMessage ?
+                                (
+                                    <div>
+                                 <div  style={{fontSize:'14px', fontWeight:'bold', paddingBottom:'2px'}}>Category - {this.state.name} </div>
+                                 <div  style={{fontSize:'10px', paddingBottom:'2px'}}>Top Issue - {this.state.description} </div>
+                                 <div  style={{fontSize:'10px', paddingBottom:'2px'}}>Absences - {this.state.amount} </div>
+                                    </div>
+                                ) 
+                                 
+                                 : null}
                 </div>
+         
           
             </div>
          

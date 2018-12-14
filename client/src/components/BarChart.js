@@ -31,11 +31,11 @@ class BarChart extends Component {
         const max = d3.max(data, d => d.amount);
 
         const margin = {
-            top:20, right:20, bottom:100, left:100
+            top:20, right:20, bottom:100, left:50
         }
 
-        const graphWidth = 600 - margin.right - margin.left;
-        const graphHeight = 500 - margin.top - margin.bottom;
+        const graphWidth = 400 - margin.right - margin.left;
+        const graphHeight = 300 - margin.top - margin.bottom;
 
 
         const y = d3.scaleLinear()
@@ -44,7 +44,7 @@ class BarChart extends Component {
 
         const x = d3.scaleBand()
             .domain(data.map(item => item.name))
-            .range([0,500])
+            .range([0,300])
             .paddingInner(0.2)
             .paddingOuter(0.2);
 
