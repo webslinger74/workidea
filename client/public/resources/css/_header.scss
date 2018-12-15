@@ -1,0 +1,137 @@
+.header {
+    display:flex;
+    background-color: $primaryColor;
+    flex-direction: row;
+    background-image:linear-gradient($primaryColor,$secondaryColor),url(../../../src/images/featured/chorltonflowers.jpg);
+    background-size:100%;
+    width:100%;
+     
+    .left {
+        width:30%;
+
+        .logo {
+            font-size: 4rem;
+            font-family: 'Monoton', cursive;
+            color: #ffffff;
+            margin-left:1%;
+            padding-left:1rem;
+            animation:headlogo 30s infinite;
+
+            @keyframes headlogo {
+                0%{ color: #ffffff;
+                     }
+                50% { color:rgba(235, 228, 228, 0.945); }
+                80% { color:rgba(235, 228, 228, 0.842); }
+                98% { color:rgba(8, 8, 8, 0.945); }
+                100% { color:rgba(224, 213, 213, 0.849);}
+            }
+        }
+    }
+    @media (max-width:950px){
+            .left {
+            width:100%;
+            text-align: center;
+            height:6%;
+        }
+    }
+
+    .right {
+        width:70%;
+        border-left: 1px solid #eeeeee;
+        border-right: 1px solid #eeeeee;
+        font-size:1.4rem;
+
+        .hiddenMenus {
+            display:flex;
+            flex-direction:column;
+            width:50%;
+            font-size:1.4rem;
+            text-align: center;
+            height:0vh;
+            opacity:0;
+            transition:opacity 0.08s linear, height 1s linear;
+        
+        }
+
+        .top {
+            color:#070606;
+            border-bottom: 1px solid #ffffff;
+            flex-direction:row-reverse;
+            padding-right:5%;
+            padding-bottom:2px;
+            padding-top:3px;
+            font-size:1.4rem;
+        }
+
+               .top,
+               .bottom {
+                    display:flex;
+                    flex-wrap:wrap;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color:#070606;
+
+                    .RED {
+                        color:red;
+                        transition:0.5s linear;
+                        font-size:1.7rem;
+
+                        &:hover {
+                            color:red;
+                        }
+                    }
+                    
+                    
+                    
+                    .BLACK {
+                        color:black;
+                        transition:0.2s ease-out;
+
+                        &:hover {
+                            color:rgba(255, 255, 255, 0.794);
+                            font-size:1.4rem;
+                        }
+                    }
+                    
+                  
+                }
+
+               .bottom {
+                    justify-content: space-around;
+                    padding-top:7px;
+                    flex-direction: row;
+                    padding-bottom:3px;    
+
+                    }
+                    @media (max-width:950px){
+                            .bottom { 
+                            display:flex;
+                            flex-direction:column;
+                            width:100%;
+                            text-align: center;
+                            letter-spacing:0.5rem;
+                        //    font-size:2rem;
+                            height:40vh;
+                            opacity:0.8;
+                            margin-bottom:0.5rem;
+                            transition:height 1s linear, opacity 0.5s 1.1s linear;
+                            
+                     
+                                }
+                            }
+               
+
+             
+           }
+           @media (max-width:950px){
+              .right {
+                width:100%;
+            }
+        }
+
+}
+  @media (max-width:950px){
+    .header {
+      flex-direction:column;
+  }
+}

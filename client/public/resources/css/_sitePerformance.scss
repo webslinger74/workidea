@@ -1,0 +1,70 @@
+.sitePerformanceBackground {
+    background-image: linear-gradient(rgba(240, 237, 233, 0.979),rgba(226, 223, 217, 0.966)),url(../../../src/images/featured/performanceBack.jpg);
+
+    .sitePerformanceItem {
+        background-color: $primaryColor;
+        margin-top:10px;
+        text-align: center;
+    }
+
+    .flexPerformance {
+        display:flex;
+        width:100%;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+
+            
+            .flexPerformanceInner {
+                display:flex;
+                flex-direction:column;
+                align-items: center;
+
+                .perfTitle {
+                    font-size: 20px;
+                    transform:translateX(0%)
+                }
+
+                .dynamicCharts {
+                    display:flex;
+                    flex-direction:column;
+                    flex-grow:1;
+
+                    .arc:hover {
+                        fill-opacity:0.5;
+                    }
+                    
+                    
+                    .bars:hover {
+                        fill: #2196F3;
+                    }
+                    
+                    
+                    .bars2:hover {
+                        fill:rgba(21, 218, 21, 0.623);
+                    }
+                }
+                .perfViewBtn {
+                    background-color:rgb(8, 1, 15);
+                    color:white;
+                    font-size: 2rem;
+                    width: 10rem;
+                    height:3rem;
+                    padding-top:3px;
+                    text-align: center;
+                    margin-bottom:5rem;
+
+                     &:hover {
+                        background-color:rgba(0, 0, 0, 0.829);
+                        color:white;
+                     }
+                }
+                
+            }
+    
+    }
+
+}
+
+
+

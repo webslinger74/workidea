@@ -1,0 +1,121 @@
+.footer {
+
+    width:100%;
+    margin: 0 auto;
+    background:$backgroundDarkColor;
+
+   .logo {
+       text-align: center;
+       font-family: 'Monoton', cursive;
+       color: #ffffff;
+       font-size: 4rem;
+       padding: 1.1rem 0px;
+       border-bottom: 1px solid #4d4d4d;
+   }
+    .wrapper {
+   display: flex;
+   color: #828282;
+   padding-left:1.2rem;
+   padding-right:1.2rem;
+       
+     
+               .rightside {
+                   display:flex;
+                   flex-direction: column;
+                   width:40%;
+
+                   .right_item {
+                       padding-right:5%;
+                       margin-left:2%;
+                   }
+               }
+               .left {
+                             flex: 1;
+                             display:flex;
+                             flex-direction: column;
+                             width:60%;
+
+
+
+                             .business_nfo {
+                               display: flex;
+                               flex-wrap: wrap;
+                               padding-left: 1%;
+
+                             
+                           
+
+                                   .tag {
+                                       flex-grow: 1;
+                                       position: relative;
+                                       width: 50%;
+                                       margin-bottom: 3rem;
+
+                                               .icon {
+                                                   position: absolute;
+                                                   font-size: 2.6rem;
+                                                   top: 1rem;
+
+                                                   
+                                                     
+                                               }
+                                               @media(max-width:950px){
+                                                   .icon {
+                                                   font-size: 1.8rem;
+                                               }
+                                               }
+                                         
+                                               .nfo {
+                                                   padding-left: 4rem;
+                                               }
+                                               @media(max-width:950px){
+                                                       .nfo {
+                                                   font-size:1.8rem;
+                                               }
+                                               }
+                                               @media(max-width:500px){
+                                                       .nfo {
+                                                       font-size:1.2rem;
+                                                   }
+                                                   }
+                                   }
+                           }
+                           @media(max-width:850px){
+                               .business_nfo {
+                           flex-direction:row;
+                           flex-wrap:wrap;
+                           margin-left:20px;
+                           width:80%;
+                           padding-right:5px;
+                       }
+                       }
+                       @media(max-width:500px){
+                           .business_nfo {
+                           font-size:1.5rem;
+               
+                       }
+                   }
+            }
+            @media(max-width:850px){
+               .left {
+           padding-left:5px;
+           padding-right:5px;
+           align-items:center;;
+           width:100%;
+       }
+       }
+
+       }
+       @media(max-width:850px){
+           .wrapper {
+       flex-direction:column;
+       padding-left:5px;
+       padding-right:5px;
+       align-items:center;;
+   }
+   }
+
+
+      
+
+}

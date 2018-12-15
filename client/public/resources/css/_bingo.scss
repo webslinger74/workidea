@@ -1,0 +1,244 @@
+
+#bingocard {
+    background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0));
+    background-repeat: no-repeat;
+    padding-top:10px;
+    text-align: center;
+    font-size: 80px;
+    background-size: 200px;
+    color:rgb(0, 0, 0);
+    
+}
+
+@media(max-width:550px){
+    #bingocard {
+        background-image:linear-gradient(rgba(255, 255, 255, 0.034),rgba(255, 255, 255, 0));
+        background-repeat: no-repeat;
+        padding-top:10px;
+        text-align: center;
+        font-size: 30px;
+        background-size: 60px;
+        color:rgb(0, 0, 0);
+        
+    }
+}
+
+#bingoCardInner1, 
+#bingoCardInner11,
+#bingoCardInner21, 
+#bingoCardInner31,
+#bingoCardInner41,
+#bingoCardInner51,
+#bingoCardInner61,
+#bingoCardInner71,
+#bingoCardInner81
+                {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: blue;
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #5cabff, #000);
+    animation:fadein 2s;
+
+}
+#bingoCardInner2, 
+#bingoCardInner12,
+#bingoCardInner22,
+#bingoCardInner32,
+#bingoCardInner42,
+#bingoCardInner52,
+#bingoCardInner62,
+#bingoCardInner72,
+#bingoCardInner82
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(255, 0, 0);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #ff825c93, #000);
+    animation:fadein 2s;
+
+
+}
+
+@keyframes fadein {
+    from { opacity:0 }
+    to { opacity:1 }
+}
+
+#bingoCardInner3,
+#bingoCardInner13,
+#bingoCardInner23,
+#bingoCardInner33,
+#bingoCardInner43,
+#bingoCardInner53,
+#bingoCardInner63,
+#bingoCardInner73,
+#bingoCardInner83
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(0, 255, 13);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #5cffae, #000);
+    animation:fadein 2s;
+
+}#bingoCardInner4, 
+#bingoCardInner14,
+#bingoCardInner24,
+#bingoCardInner34,
+#bingoCardInner44,
+#bingoCardInner54,
+#bingoCardInner64,
+#bingoCardInner74,
+#bingoCardInner84
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(255, 0, 234);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #ff5ca0, #000);
+    animation:fadein 2s;
+
+}
+#bingoCardInner5,
+#bingoCardInner15,
+#bingoCardInner25,
+#bingoCardInner35,
+#bingoCardInner45,
+#bingoCardInner55,
+#bingoCardInner65,
+#bingoCardInner75,
+#bingoCardInner85
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(255, 196, 0);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    animation:fadein 2s;
+
+}
+#bingoCardInner6,
+#bingoCardInner16,
+#bingoCardInner26, 
+#bingoCardInner36,
+#bingoCardInner46,
+#bingoCardInner56,
+#bingoCardInner66,
+#bingoCardInner76,
+#bingoCardInner86
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(0, 255, 234);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #5cabff5e, #000);
+    animation:fadein 2s;
+
+
+}
+
+
+
+
+
+#bingoCardInner7, 
+#bingoCardInner17,
+#bingoCardInner27,
+#bingoCardInner37,
+#bingoCardInner47,
+#bingoCardInner57,
+#bingoCardInner67,
+#bingoCardInner77,
+#bingoCardInner87
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(230, 23, 212);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #ff5cf136, #000);
+    animation:fadein 2s;
+}
+
+#bingoCardInner8,
+#bingoCardInner18,
+#bingoCardInner28,
+#bingoCardInner38,
+#bingoCardInner48,
+#bingoCardInner58,
+#bingoCardInner68,
+#bingoCardInner78,
+#bingoCardInner88
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000;
+    background-color: rgb(25, 107, 14);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #41f3145e, #000);
+    animation:fadein 2s;
+}
+#bingoCardInner9,
+#bingoCardInner19,
+#bingoCardInner29,
+#bingoCardInner39,
+#bingoCardInner49,
+#bingoCardInner59,
+#bingoCardInner69,
+#bingoCardInner79,
+#bingoCardInner89
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000; 
+    background-color: rgb(255, 123, 0);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #e6b2095e, #000);
+    animation:fadein 2s;
+}
+
+#bingoCardInner10,
+#bingoCardInner20,
+#bingoCardInner30,
+#bingoCardInner40,
+#bingoCardInner50,
+#bingoCardInner60,
+#bingoCardInner70,
+#bingoCardInner80,
+#bingoCardInner90
+                 {
+    color:whitesmoke;
+    text-shadow:2px 2px #000; 
+    background-color: rgb(0, 255, 221);
+    border-radius:100%;
+    height:100px;
+    width:100px;
+    margin-right:5px;
+    background:radial-gradient(circle at 25px 100px, #09e62e5e, #000);
+    animation:fadein 2s;
+}
