@@ -12,6 +12,7 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
 @import "admin";
 @import "sports";
 @import "sitePerformance";
+@import "sportsLinks";
 @import "base";
 
 
@@ -26,7 +27,7 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
     flex-direction:column !important;
     align-items: center !important;
     flex-grow:1 !important;
-    padding-top:20px !important;
+    padding-top:2rem !important;
     margin:auto !important;
 }
 
@@ -36,34 +37,26 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
         flex-direction:column;
         align-items: center;
         flex-grow:1;
-        padding-top:20px;
+        padding-top:2rem;
         background-size:200% !important;
     }
 }
 
 .slide2-title {
     background-color:rgba(128, 128, 128, 0.822);
-    font-size:40px;
+    font-size:4rem;
     text-align: center;
     color:white;
-    padding-right: 10px;
-    padding-left:10px;
-    margin-top:5px;
+    padding-right: 1rem;
+    padding-left:1rem;
+    margin-top:0.5rem;
 }
 
 @media(max-width:850px){
     .slide2-title {
-       font-size:12px;
+       font-size:1.2rem;
     }
 }
-/*
-.homeSlider2 {
-
-    background-size:cover;
-    border:5px solid rgba(0, 0, 0, 0.185);
-    
-}
-*/
 
 .slick-slide:first-child {
     z-index: 10;
@@ -76,14 +69,14 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
     margin:auto;
     padding-left:5px;
     padding-right:5px;
-    margin-top:10px;
+    margin-top:1rem;
     transition:2s;
       
 }
 
 @media(max-width:850px){
     .slide2-message {
-        font-size:12px;
+        font-size:1.2rem;
         width:70%;
     }
 }
@@ -102,20 +95,16 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
 }
 .main_loader {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 10rem;
 }
 
 .page_wrapper {
-    padding-top: 85px;
+    padding-top: 8.5rem;
 }
 
 a {
     text-decoration: none;
     color:inherit;
-}
-
-.bck_b_light {
- /*   background: #a07f66;*/
 }
 
 .bck_b_dark {
@@ -124,15 +113,15 @@ a {
 }
 
 .dialog_alert {
-    padding: 51px;
-    font-size: 30px;
+    padding: 5.1rem;
+    font-size: 3lrem;
 }
 
 .load_more_container {
     clear: both;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
     border-top: 5px solid #f5f5f5;
-    padding-top: 20px;
+    padding-top: 2rem;
 }
 
 .load_more_container span {
@@ -140,22 +129,22 @@ a {
     background: #2196F3;
     color: #ffffff;
     font-size: 27px;
-    padding: 10px 60px;
+    padding: 1rem 6rem;
     display: table;
     margin: 0 auto;
 }
 
 .no_result {
-    font-size: 40px;
+    font-size: 4rem;
     color: #999592;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 4rem;
 }
 
 .not_found_container {
-    font-size: 70px;
+    font-size: 7rem;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 7rem;
     color: #dddddd;
 }
 
@@ -165,43 +154,21 @@ a {
     clear: both;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-
-
 /*============================
             BUTTONS
 ==============================*/
 .link_default {
     text-transform: uppercase;
-    padding: 10px;
+    padding: 1rem;
     display: table;
     background: #e1ddc3;
-    margin-top: 10px;
+    margin-top: 1rem;
     transition:0.3s linear;
 }
 
 .link_default:hover {
-    text-transform: uppercase;
-    padding: 10px;
-    display: table;
     background: #080808;
     color:gray;
-    margin-top: 10px;
 }
 
 
@@ -213,7 +180,7 @@ tr:nth-child(even) {
 
 .page_top {
     border-bottom: 1px solid #999592;   
-    padding: 20px 0px;
+    padding: 2rem 0rem;
     text-transform: uppercase;
 }
 
@@ -231,7 +198,7 @@ tr:nth-child(even) {
     position:relative;
     background-size: cover !important;
     background-position: center left !important;
-    height:550px !important; 
+    height:55rem !important; 
     width:100%;
 }
 
@@ -241,7 +208,7 @@ tr:nth-child(even) {
         position:relative;
         background-size: cover !important;
         background-position: center left !important;
-        height:300px !important;
+        height:30rem !important;
         width:100%;
     }
 }
@@ -255,47 +222,45 @@ tr:nth-child(even) {
 .featured_container .featured_action .tag {
     background: #82828287;
     color: #ffffff;
-    padding: 0px 10px;
+    padding: 0px 1rem;
     text-transform: uppercase;
     display: table;
     width:95%;
 }
 
 .featured_container .featured_action .tag.title {
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 700;
 }
 
 @media(max-width:850px){
     .featured_container .featured_action .tag.title {
-        font-size: 35px;
+        font-size: 3.5rem;
         font-weight: 700;
     }
 }
 
 @media(max-width:550px){
     .featured_container .featured_action .tag.title {
-        font-size: 35px;
-        font-weight: 700;
         text-align:center;
     }
 }
 
 .featured_container .featured_action .tag.low_title {
-    font-size: 45px;
+    font-size: 4.5rem;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 @media(max-width:850px){
     .featured_container .featured_action .tag.low_title {
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 600;
     }
 }
 @media(max-width:550px){
     .featured_container .featured_action .tag.low_title {
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 600;
         text-align: center;
     }
@@ -306,10 +271,10 @@ tr:nth-child(even) {
 ==============================*/
 
 .home_promotion .home_promotion_img {
-    height: 400px;
+    height: 40rem;
     background-size: cover !important;
     background-position: top center !important;
-    padding: 73px;
+    padding: 7.3rem;
     box-sizing: border-box;
 }
 
@@ -323,15 +288,15 @@ tr:nth-child(even) {
 }
 
 .home_promotion .tag.title {
-    font-size: 70px;
+    font-size: 7rem;
     font-weight: 700;
-    margin: 10px auto;
+    margin: 1rem auto;
 }
 
 .home_promotion .tag.low_title {
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 1rem;
     margin: 0 auto;
 }
 
@@ -350,14 +315,14 @@ tr:nth-child(even) {
 /* MESSAGE BOARD  */
 
 .centred {
-    font-size: 30px;
-    padding-left:5px;
+    font-size: 3rem;
+    padding-left:0.5rem;
     color:rgb(241, 235, 235);
 }
 .authorStamp {
-    font-size: 14px;
+    font-size: 1.4rem;
     color:rgba(143, 140, 140, 0.582);
-    padding-right:10px;
+    padding-right:1rem;
     text-align:center;
 }
 
@@ -384,7 +349,7 @@ tr:nth-child(even) {
     padding-left:10%;
     padding-right:10%;
     margin-bottom: 2%;
-    border-bottom:10px solid rgba(0, 0, 0, 0.061);
+    border-bottom:1rem solid rgba(0, 0, 0, 0.061);
     background-image:radial-gradient(rgba(253, 251, 246, 0.144),rgba(251, 247, 243, 0.897)),url(../../../src/images/sports/background3.jpg);
     background-size:7000%;
 }
@@ -400,16 +365,16 @@ tr:nth-child(even) {
    
 }
 .latestMessageTitle {
-    font-size:20px;
+    font-size:2rem;
     color:black;
     text-shadow: 2px 3px rgba(0, 0, 0, 0.13);
     text-align: center;
 }
 .centredLatest {
-    font-size:40px;
+    font-size:4rem;
     color:black;
     text-align: center;
-    letter-spacing: 5px;
+    letter-spacing:0.5rem;
 }
 
 .frontMessages {
@@ -417,11 +382,11 @@ tr:nth-child(even) {
     justify-content: space-around;
     flex-direction: row;
     width:80%;
-    border-top:15px solid rgba(0, 0, 0, 0.082);
-    padding-top:25px;
-    padding-bottom:25px;
+    border-top:1.5rem solid rgba(0, 0, 0, 0.082);
+    padding-top:2.5rem;
+    padding-bottom:2.5rem;
     margin:5% 7.5% 5% 10%;
-    border-bottom:15px solid rgba(0, 0, 0, 0.082);
+    border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
     background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
     background-size: cover;
 }
@@ -430,11 +395,11 @@ tr:nth-child(even) {
     justify-content: space-around;
     flex-direction: row;
     width:60%;
-    border-top:15px solid rgba(0, 0, 0, 0.082);
-    padding-top:25px;
-    padding-bottom:25px;
+    border-top:1.5rem solid rgba(0, 0, 0, 0.082);
+    padding-top:2.5rem;
+    padding-bottom:2.5rem;
     margin:5% 7.5% 5% 20%;
-    border-bottom:15px solid rgba(0, 0, 0, 0.082);
+    border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
     background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
     background-size: cover;
 }
@@ -455,8 +420,8 @@ tr:nth-child(even) {
     text-align:center;
     grid-template-rows: auto auto auto auto;
     grid-row: 1/4;
-    padding-left:25px;
-    padding-right:25px;
+    padding-left:2.5rem;
+    padding-right:2.5rem;
     width: 80%;
     margin-right:5px;
     margin-left:5px;
@@ -492,17 +457,17 @@ tr:nth-child(even) {
 
 .hello {
     width:100%;
-    margin-left:20px;
-    margin-bottom:40px;
+    margin-left:2rem;
+    margin-bottom:4rem;
 }
 
 @media (max-width:850px){
     .hello {
         display:flex;
         flex-direction: column;
-        margin-top:20px;
+        margin-top:2rem;
         align-items:flex-start;
-        margin-left:15px;
+        margin-left:1.5rem;
     }
 }
 .waterTitle {
@@ -518,9 +483,9 @@ tr:nth-child(even) {
 .latestMessages {
     background-color: #dad6d693;
     width:60%;
-    height:40px;
-    padding-top:10px;
-    padding-left:5px;
+    height:4rem;
+    padding-top:1rem;
+    padding-left:0.5rem;
 }
 
 .latestMessages:hover {
@@ -533,18 +498,18 @@ tr:nth-child(even) {
 }
 
 .messageBoardImg {
-    height:200px;
-    width:200px;
+    height:20rem;
+    width:20rem;
     overflow: hidden;
     transition:5s;
     border-radius:3%;
-    margin-right:10px;
+    margin-right:1rem;
     box-shadow: #6b6b6bc2;
     margin-bottom:4px;
 }
 .messageBoardImg:hover {
-    height:200px;
-    width:200px;
+    height:20rem;
+    width:20rem;
     overflow: hidden;
     transform:scale(1.01);
 
@@ -568,7 +533,7 @@ tr:nth-child(even) {
 
 
 .verticalLine {
-    border-right:15px solid rgba(0, 0, 0, 0.089);
+    border-right:1.5rem solid rgba(0, 0, 0, 0.089);
     margin-right:5px;
     margin-left:5px;
 }
@@ -591,14 +556,14 @@ tr:nth-child(even) {
 }
 
 .engagementGridItem {
-    margin-left:30px;
-    margin-right:30px;
-    margin-bottom:40px;
-    margin-top:35px;
+    margin-left:3rem;
+    margin-right:3rem;
+    margin-bottom:4rem;
+    margin-top:3.5rem;
     color:whitesmoke;
     text-align: center;
     background-color: rgba(128, 128, 128, 0.883);
-    padding:15px;
+    padding:1.5rem;
 }
 
 
@@ -696,8 +661,8 @@ tr:nth-child(even) {
     text-align:center;
     grid-template-rows: auto auto auto auto;
     grid-row: 1/4;
-    padding-left:25px;
-    padding-right:25px;
+    padding-left:2.5rem;
+    padding-right:2.5rem;
     width: 95%;
     margin-right:5px;
     margin-bottom:5vh;
@@ -716,8 +681,8 @@ tr:nth-child(even) {
 }
 
 .sportsContactsImg {
-    height:75px;
-    width:75px;
+    height:7.5rem;
+    width:7.5rem;
     border-radius:10%;
     border:2px solid green
 
@@ -773,7 +738,7 @@ tr:nth-child(even) {
 
 .taskbutton {
     background-color:rgba(255, 170, 0, 0.616);
-    margin-bottom:10px;
+    margin-bottom:1rem;
     text-align: center;
     padding-top:5px;
     padding-bottom:5px;
@@ -800,10 +765,10 @@ tr:nth-child(even) {
 .submitBtn {
     background-color:goldenrod;
     width:50%;
-    font-size:20px;
+    font-size:2rem;
     letter-spacing:3px;
     align-self: center;
-    margin-top:10px;
+    margin-top:1rem;
 
 }
 
@@ -815,7 +780,7 @@ tr:nth-child(even) {
 .RED {
     color:red;
     transition:0.5s linear;
-    font-size:13px;
+    font-size:1.3rem;
 }
 
 .RED:hover {
@@ -829,7 +794,7 @@ tr:nth-child(even) {
 
 .BLACK:hover {
     color:rgba(255, 255, 255, 0.794);
-    font-size:13.5px;
+    font-size:1.35rem;
     
 }
 

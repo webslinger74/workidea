@@ -3,7 +3,7 @@
 
     .sitePerformanceItem {
         background-color: $primaryColor;
-        margin-top:10px;
+        margin-top:1rem;
         text-align: center;
     }
 
@@ -21,8 +21,7 @@
                 align-items: center;
 
                 .perfTitle {
-                    font-size: 20px;
-                    transform:translateX(0%)
+                    font-size:2rem;
                 }
 
                 .dynamicCharts {
@@ -50,13 +49,12 @@
                     font-size: 2rem;
                     width: 10rem;
                     height:3rem;
-                    padding-top:3px;
+                    padding-top:0.3rem;
                     text-align: center;
                     margin-bottom:5rem;
 
                      &:hover {
                         background-color:rgba(0, 0, 0, 0.829);
-                        color:white;
                      }
                 }
                 

@@ -1,3 +1,62 @@
+.sportsItem {
+    width:80%;
+    height:max-content;
+    background-color: #ffffff;
+    margin-bottom:50px;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+        .centredLatest {
+            font-size:4rem;
+            color:black;
+            text-align: center;
+            letter-spacing:0.5rem;   
+        }
+        .indMessageMain {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            align-content:center;
+            width:80%;
+            padding-left:10%;
+            padding-right:10%;
+            margin-bottom: 2%;
+            border-bottom:10px solid rgba(0, 0, 0, 0.061);
+            background-image:radial-gradient(rgba(253, 251, 246, 0.144),rgba(251, 247, 243, 0.897)),url(../../../src/images/sports/background3.jpg);
+            background-size:7000%;
+
+            
+            .eventBoardImg {
+                height:25%;
+                width:50%;
+                overflow: hidden;
+                transition:5s;
+                margin-bottom:4px;
+                opacity:0.8;
+            }
+
+            .sportEventTitle {
+                color:rgba(129, 124, 124, 0.123);
+                text-align:left;
+            }
+            .authorStamp {
+                font-size: 1.4rem;
+                color:rgba(143, 140, 140, 0.582);
+                padding-right:1rem;
+                text-align:center;
+            }
+            
+            .delete {
+                display:flex;
+                flex-direction: row-reverse;
+            }
+           
+        }
+        p {
+            font-size: 1.6rem;
+        }
+    }
+
 #sliderSmall {
     position:relative;
     background-size: cover !important;
@@ -6,101 +65,9 @@
     height:150px;
 }
 
-#sportsHeader {
-    font-size: 3rem;
-    color:rgb(255, 49, 145);
-    position: absolute;
-    top:0.1%;
-    left:45%;
-    text-shadow:3px 4px #070706af;
-    animation:fadein 1s;
-    border-radius: 35%;
-
-}
-
-@media (max-width:850px){
-    #sportsHeader {
-    font-size: 1.5rem;
-    color:rgb(255, 49, 145);
-    position: absolute;
-    top:2%;
-    left:80%;
-    margin-left:auto;
-    text-shadow:2px 1px #070706af;
-    background-color:none;
-    animation:fadein 1s;
-    }
-}
-@media (max-width:700px){
-    #sportsHeader {
-    font-size: 1.8rem;
-    color:rgb(255, 49, 145);
-    position: absolute;
-    top:10%;
-    left:40%;
-    margin-left:auto;
-    text-shadow:1px 1px #070706af;
-    background-color:none;
-    animation:fadein 1s;
-    }
-}
-
-#sportsLinks {
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
-}
-
-@media(max-width:1300px){
-    #sportsLinks {
-        display:flex;
-        flex-direction:row;
-        justify-content: space-evenly;
-    }
-}
-
-@media(max-width:550px){
-    #sportsLinks {
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        margin-top:1%;
-    }
-}
-
-.indSportsLinks {
-    font-size:18px;
-    padding-top:1%;
-    transition:1s;
-}
-
-@media(max-width:1300px){
-    .indSportsLinks {
-        font-size: 1.5rem;
-    }
-}
-
-@media(max-width:850px){
-    .indSportsLinks {
-        font-size: 1.3rem;
-        
-    }
-}
-@media(max-width:550px){
-    .indSportsLinks {
-        font-size: 1.8rem;
-        padding-left:8%;
-        padding-right:8%;
-        letter-spacing:4px;
-        
-    }
-}
 
 
 
-.indSportsLinks:hover {
-    background-color:rgba(51, 50, 50, 0.096);
-}
 
 #christmasBackground {
     background-image:radial-gradient(rgba(253, 251, 246, 0.616),rgba(255, 255, 255, 0.753)),url(../../../src/images/sports/christmasnice.jpg);
@@ -123,15 +90,11 @@
     margin-bottom: 2%;
     background-color: #000000;
 }
-.sportsItem {
-    width:80%;
-    height:max-content;
-    background-color: #ffffff;
-    margin-bottom:50px;
-    text-align: center;
-    align-items: center;
-    margin:auto;
-}
+
+
+
+
+
 
 .sportsItem2 {
     width:100%;
@@ -152,15 +115,3 @@
 
 }
 
-
-.eventBoardImg {
-    height:25%;
-    width:50%;
-    overflow: hidden;
-    transition:5s;
-    border-radius:3%;
-    box-shadow: #6b6b6bc2;
-    margin-bottom:4px;
-    border:5px solid grey;
-    opacity:0.8;
-}

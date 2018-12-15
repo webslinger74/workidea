@@ -1,0 +1,55 @@
+#sportsLinks {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+        
+        .indSportsLinks {
+                font-size:18px;
+                padding-top:1%;
+                transition:1s;
+            }
+            @media(max-width:1300px){
+                .indSportsLinks {
+                    font-size: 1.5rem;
+                }
+            }
+            
+            @media(max-width:850px){
+                .indSportsLinks {
+                    font-size: 1.3rem;
+                    
+                }
+            }
+            @media(max-width:550px){
+                .indSportsLinks {
+                    font-size: 1.8rem;
+                    padding-left:8%;
+                    padding-right:8%;
+                    letter-spacing:4px;
+                    
+                }
+            }
+            .indSportsLinks:hover {
+                background-color:rgba(51, 50, 50, 0.096);
+            }
+}
+
+@media(max-width:1300px){
+    #sportsLinks {
+        display:flex;
+        flex-direction:row;
+        justify-content: space-evenly;
+    }
+}
+
+@media(max-width:550px){
+    #sportsLinks {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top:1%;
+    }
+}
+
+
+

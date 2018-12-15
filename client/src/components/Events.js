@@ -26,7 +26,7 @@ class Events extends Component {
        events && events.map(event => (
              <div className="indMessageMain" key={event._id}>
            <div>
-                <h3 className="waterTitle"> {event.title} </h3> </div>
+                <h3 className="sportEventTitle"> {event.title} </h3> </div>
                 
                     {event.images && event.images.length > 0 ?
                            <div>
