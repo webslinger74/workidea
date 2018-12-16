@@ -13,8 +13,9 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
 @import "sports";
 @import "sitePerformance";
 @import "sportsLinks";
+@import "home";
+@import "pegFrontCont";
 @import "base";
-
 
 
 .delete {
@@ -22,67 +23,10 @@ $backgroundDarkColor:rgba(0, 0, 0, 0.897);
     flex-direction: row-reverse;
 }
 
-.pegcont {
-    display:flex !important;
-    flex-direction:column !important;
-    align-items: center !important;
-    flex-grow:1 !important;
-    padding-top:2rem !important;
-    margin:auto !important;
-}
-
-@media(max-width:850px){
-    .pegcont {
-        display:flex;
-        flex-direction:column;
-        align-items: center;
-        flex-grow:1;
-        padding-top:2rem;
-        background-size:200% !important;
-    }
-}
-
-.slide2-title {
-    background-color:rgba(128, 128, 128, 0.822);
-    font-size:4rem;
-    text-align: center;
-    color:white;
-    padding-right: 1rem;
-    padding-left:1rem;
-    margin-top:0.5rem;
-}
-
-@media(max-width:850px){
-    .slide2-title {
-       font-size:1.2rem;
-    }
-}
-
 .slick-slide:first-child {
     z-index: 10;
 }
 
-.slide2-message {
-    background-color:rgba(255, 255, 255, 0.808);
-    text-align: center;
-    width:50%;
-    margin:auto;
-    padding-left:5px;
-    padding-right:5px;
-    margin-top:1rem;
-    transition:2s;
-      
-}
-
-@media(max-width:850px){
-    .slide2-message {
-        font-size:1.2rem;
-        width:70%;
-    }
-}
-.slide2-message:hover {
-    background-color:rgba(255, 255, 255, 0.979);
-}
 .pegButton {
     margin:auto;
 }
@@ -184,12 +128,6 @@ a {
     text-transform: uppercase;
 }
 
-
-
-
-
-
-
 /*============================
         FEATURED IMAGE
 ==============================*/
@@ -201,7 +139,6 @@ a {
     height:55rem !important; 
     width:100%;
 }
-
 
 @media(max-width:550px){
     .featured_container .featured_image {
@@ -265,52 +202,6 @@ a {
         text-align: center;
     }
 }
-
-/*============================
-        FEATURED PROMOTION
-==============================*/
-
-.home_promotion .home_promotion_img {
-    height: 40rem;
-    background-size: cover !important;
-    background-position: top center !important;
-    padding: 7.3rem;
-    box-sizing: border-box;
-}
-
-
-.home_promotion .tag {
-    background: #82828287;
-    color: #ffffff;
-    padding: 0px 20px;
-    text-transform: uppercase;
-    display: table;
-}
-
-.home_promotion .tag.title {
-    font-size: 7rem;
-    font-weight: 700;
-    margin: 1rem auto;
-}
-
-.home_promotion .tag.low_title {
-    font-size: 5rem;
-    font-weight: 300;
-    margin-top: 1rem;
-    margin: 0 auto;
-}
-
-.home_promotion .my_link a {
-    margin: 10px auto;
-}
-
-
-
-
-
-
-
-
 
 /* MESSAGE BOARD  */
 
@@ -377,44 +268,6 @@ a {
     letter-spacing:0.5rem;
 }
 
-.frontMessages {
-    display:flex; 
-    justify-content: space-around;
-    flex-direction: row;
-    width:80%;
-    border-top:1.5rem solid rgba(0, 0, 0, 0.082);
-    padding-top:2.5rem;
-    padding-bottom:2.5rem;
-    margin:5% 7.5% 5% 10%;
-    border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
-    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
-    background-size: cover;
-}
-.frontMessages2 {
-    display:flex; 
-    justify-content: space-around;
-    flex-direction: row;
-    width:60%;
-    border-top:1.5rem solid rgba(0, 0, 0, 0.082);
-    padding-top:2.5rem;
-    padding-bottom:2.5rem;
-    margin:5% 7.5% 5% 20%;
-    border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
-    background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
-    background-size: cover;
-}
-
-@media (max-width:850px){
-    .frontMessages {
-        flex-direction:column;
-    }
-}
-@media (max-width:850px){
-    .frontMessages2 {
-        flex-direction:column;
-    }
-}
-
 .latestMessage {
     display:grid;
     text-align:center;
@@ -442,19 +295,6 @@ a {
     
    
 }
-.latestSportsMessage {
-    display:grid;
-    text-align:center;
-    grid-template-rows: auto auto auto auto;
-    grid-row: 1/4;
-    width: 90%;
-    margin:auto;
-    border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
-    background-color:rgba(27, 25, 25, 0.041);
-    border-top: dashed 2px #0000000a;
-    transition:2s;
-}
-
 .hello {
     width:100%;
     margin-left:2rem;
@@ -514,32 +354,12 @@ a {
     transform:scale(1.01);
 
 }
-.messageBoardImgFront {
-    height:50%;
-    width:50%;
-    overflow: hidden;
-    transition:5s;
-    box-shadow:3px 4px #6b6b6bc2;
-    opacity:0.6;
-    margin-bottom:4px;
-    justify-self: center;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
-}
-
-.messageBoardImgFront:hover {
-    opacity:1;
-}
-
-
 
 .verticalLine {
     border-right:1.5rem solid rgba(0, 0, 0, 0.089);
     margin-right:5px;
     margin-left:5px;
 }
-
-
-
 
 /* site performance */
 
@@ -566,27 +386,6 @@ a {
     padding:1.5rem;
 }
 
-
-.sportFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.897),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
-    background-size:cover;
-}
-
-.engagedFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.924),rgba(255, 255, 255, 0.856)),url(../../../src/images/featured/engaged.jpg);
-    background-size:cover;
-}
-
-.guidanceFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.623),rgba(255, 255, 255, 0.87)),url(../../../src/images/featured/new-guidance.jpg);
-    background-size:cover;
-
-}
-
-.newsWellFull {
-    background-image:linear-gradient(rgba(253, 251, 246, 0.863),rgb(255, 255, 255)),url(../../../src/images/featured/lifestyle.jpg);
-    background-size:cover;
-}
 @media (max-width:850px) {
     .flowers {
         display:flex;

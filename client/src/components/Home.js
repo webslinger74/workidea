@@ -36,7 +36,7 @@ class Home extends Component {
                 </div>
                 <div className="frontMessages2 guidanceFull">
                  <div className="verticalLine"></div>
-                    <div><LatestGuidance /></div>
+                    <LatestGuidance />
                     <div className="verticalLine"></div>
                 </div>   
 

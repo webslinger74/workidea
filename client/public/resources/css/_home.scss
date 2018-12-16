@@ -1,0 +1,175 @@
+.mainBackground {
+
+    .frontMessages {
+        display:flex; 
+        justify-content: space-around;
+        flex-direction: row;
+        width:80%;
+        border-top:1.5rem solid rgba(0, 0, 0, 0.082);
+        padding-top:2.5rem;
+        padding-bottom:2.5rem;
+        margin:5% 7.5% 5% 10%;
+        border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
+        background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
+        background-size: cover;
+
+                .latestMessage {
+                    display:grid;
+                    text-align:center;
+                    grid-template-rows: auto auto auto auto;
+                    grid-row: 1/4;
+                    padding-left:2.5rem;
+                    padding-right:2.5rem;
+                    width: 80%;
+                    margin-right:5px;
+                    margin-left:5px;
+                    border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+                    background-color:rgba(27, 25, 25, 0.041);
+                    border-top: dashed 2px #0000000a;
+                    transition:2s;
+                        &:hover {
+                            background-color:rgba(211, 203, 203, 0.287);
+                             }
+
+                    div div p {
+                        font-size:1.4rem;    
+                    }
+
+                    div .messageBoardImgFront {
+                        height:50%;
+                        width:50%;
+                        overflow: hidden;
+                        transition:5s;
+                        box-shadow:3px 4px #6b6b6bc2;
+                        opacity:0.6;
+                        margin-bottom:4px;
+                        justify-self: center;
+                        box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
+
+                        &:hover {
+                            opacity:1;
+                        }
+                    }
+                    
+                   
+                }
+                @media (max-width:850px){
+                    .latestMessage {
+                        margin:auto;
+                        width:90%;
+                    }
+                }
+        .latestSportsMessage {
+                display:grid;
+                text-align:center;
+                grid-template-rows: auto auto auto auto;
+                grid-row: 1/4;
+                width: 90%;
+                margin:auto;
+                border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+                background-color:rgba(27, 25, 25, 0.041);
+                border-top: dashed 2px #0000000a;
+                transition:2s;
+
+                div div p {
+                    font-size:1.6rem;
+                }
+                div .messageBoardImgFront {
+                    height:50%;
+                    width:50%;
+                    overflow: hidden;
+                    transition:5s;
+                    box-shadow:3px 4px #6b6b6bc2;
+                    opacity:0.6;
+                    margin-bottom:4px;
+                    justify-self: center;
+                    box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
+
+                    &:hover {
+                        opacity:1;
+                    }
+                }
+                }
+       
+        } 
+        @media (max-width:850px){
+            .frontMessages {
+                flex-direction:column;
+            }
+        } 
+        .frontMessages2 {
+            display:flex; 
+            justify-content: space-around;
+            flex-direction: row;
+            width:60%;
+            border-top:1.5rem solid rgba(0, 0, 0, 0.082);
+            padding-top:2.5rem;
+            padding-bottom:2.5rem;
+            margin:5% 7.5% 5% 20%;
+            border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
+            background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
+            background-size: cover;
+
+            .latestSportsMessage {
+                display:grid;
+                text-align:center;
+                grid-template-rows: auto auto auto auto;
+                grid-row: 1/4;
+                width: 90%;
+                margin:auto;
+                border-bottom: 2px dashed rgba(0, 0, 0, 0.048);
+                background-color:rgba(27, 25, 25, 0.041);
+                border-top: dashed 2px #0000000a;
+                transition:2s;
+
+                div div p {
+                    font-size:1.6rem;
+                }
+                div .messageBoardImgFront {
+                    height:50%;
+                    width:50%;
+                    overflow: hidden;
+                    transition:5s;
+                    box-shadow:3px 4px #6b6b6bc2;
+                    opacity:0.6;
+                    margin-bottom:4px;
+                    justify-self: center;
+                    box-shadow: 2px 2px rgba(0, 0, 0, 0.109);
+
+                    &:hover {
+                        opacity:1;
+                    }
+                }
+                }
+        } 
+    @media (max-width:850px){
+            .frontMessages2 {
+            flex-direction:column;
+            width:95%;
+            border-left: 10px solid black;
+            border-right:10px solid black;
+            align-items: center;
+            margin-left:1%;
+           }
+
+        }  
+    .guidanceFull {
+        background-image:linear-gradient(rgba(253, 251, 246, 0.623),rgba(255, 255, 255, 0.87)),url(../../../src/images/featured/new-guidance.jpg);
+        background-size:cover;
+        
+        }
+        
+    .engagedFull {
+        background-image:linear-gradient(rgba(253, 251, 246, 0.924),rgba(255, 255, 255, 0.856)),url(../../../src/images/featured/engaged.jpg);
+        background-size:cover;
+        }
+    .newsWellFull {
+        background-image:linear-gradient(rgba(253, 251, 246, 0.863),rgb(255, 255, 255)),url(../../../src/images/featured/lifestyle.jpg);
+        background-size:cover;
+            }
+    .sportFull {
+        background-image:linear-gradient(rgba(253, 251, 246, 0.897),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
+        background-size:cover;
+            }
+  
+}   

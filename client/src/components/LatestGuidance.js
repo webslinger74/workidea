@@ -29,7 +29,7 @@ showMessages = (messages) => {
             <h3 className="latestMessageTitle"> {messages[0].title} </h3> </div>
             
             {messages[0].images && messages[0].images.length > 0 ?
-                       (<div className="imgHolder">
+                       (<div>
                             
                                <img className="messageBoardImgFront" src={messages[0].images[0].url}></img>
                        </div>) : null
