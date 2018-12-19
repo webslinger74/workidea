@@ -54,16 +54,14 @@ drawPie = (data) => {
     const graph = d3.select(this.grElement)
         .attr('transform', `translate(${centre.x + 50}, ${centre.y})`);
 
-
-    
-
+  
     const pie = d3.pie()
         .sort(null)
         .value(d => d.amount);
 
     const arcPath =  d3.arc()
         .outerRadius(dims.radius)
-        .innerRadius(dims.radius / 2);
+        .innerRadius(dims.radius / 4);
 
     const colour = d3.scaleOrdinal(d3['schemeSet3'])
 
@@ -112,7 +110,6 @@ drawPie = (data) => {
         .on('mouseover', (d => this.showMessage(d.data.name, d.data.desc)))
         .transition().duration(2000)
         .attrTween("d", arcTweenEnter);
-    
         
 }
 
@@ -128,9 +125,8 @@ render(){
             <div className="dynamicCharts">
             <svg ref={element => this.svgElememt = element}>
                 <g ref={element => this.grElement = element}>
-                
-                </g>
-              
+                   </g>
+                <g ref={element => this.gr2Element = element}></g>
             </svg>
             <div className="catMessage" style={{textAlign:'center'}}>{this.state.showMessage ?
                                 (

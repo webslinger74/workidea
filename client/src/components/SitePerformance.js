@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeSliderSmall from './Home/Home_sliderSmall';
+import PieMeter from './PieMeter';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
@@ -268,6 +268,10 @@ changeData3 = () => {
             <BarChart height={300} width={400} color={"orange"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
+        </div>
+        <div className="flexPerformanceInner">
+                        <div className="perfTitle">Pie Meter Example</div>
+            <PieMeter />
         </div>
        </div>
      
