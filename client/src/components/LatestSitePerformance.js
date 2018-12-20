@@ -10,51 +10,66 @@ class LatestSitePerformance extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPieMeter:false
+            showPieMeter:false,
+            style:false
          }
     }
 
     componentDidMount(){
         this.props.getEngagementCategoryScores();
+
+        window.addEventListener('scroll', function(e){
+            let somediv = document.getElementById('what');
+            let distanceFromTop = somediv.getBoundingClientRect().top;
+
+            if(distanceFromTop <200 && distanceFromTop >=50){
+                       callstate2();
+            }
+            
+            if(distanceFromTop <= -100 && distanceFromTop >= -400){
+                      callstate();    
+        }
+      })
+      const callstate = () => {
+
+        if(!this.state.showPieMeter){
+        this.setState({
+            showPieMeter:true   
+             })
+             }
+            }
+     
+       const callstate2 = ()=> {
+           this.setState({
+                style:true
+           })
+       }
+        }
+
+      
+
+    componentWillUnmount(){
+        window.removeEventListener('scroll', function(e){
+
+        });
     }
 
   
     render() { 
-
-       const callstate = () => {
-
-            if(!this.state.showPieMeter){
-            this.setState({
-                showPieMeter:true,
-                
-        })
-        }
-    }
-      
-        
-          window.addEventListener('scroll', function(e){
-              let somediv = document.getElementById('what');
-              let distanceFromTop = somediv.getBoundingClientRect().top;
-            
-              if(distanceFromTop <=100 && distanceFromTop >=-200){
-                
-              }
-              
-
-              if(distanceFromTop <= -300 && distanceFromTop >= -400){
-                        callstate();    
-          }
-        })
-            
+    
     
         const { engageCats } = this.props;
+    
+    
         return ( 
             <div className="totalContainer">
             <Link to="/siteperformance">
 
                 <div className="frontMessages">
-                <div id="what" style={{overflow:'visible'}}>
-                          What's Life Like At Chorlton?
+                <div id="what">
+                    {!this.state.style ?
+                          <h1>What's Life Like At Chorlton?</h1>
+                     :   <h1 className="chorltonTransform">What's Life Like At Chorlton?</h1>}
                     </div>
               
                

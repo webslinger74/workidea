@@ -28,7 +28,24 @@ drawPie = (amount) => {
     const width = 180;
     const height = 180;
     const duration = 3500;
-    const foregroundColor = "#0a8";
+    let foregroundColor = "";
+    if(amount >0 && amount <40){
+         foregroundColor = "red"
+    } else if (amount >=40 && amount <50){
+        foregroundColor = "orange"
+    }  else if (amount >=50){
+        foregroundColor = "#0a8";
+    }
+
+    
+
+  //   foregroundColor = "#0a8";
+
+
+
+
+
+
     const backgroundColor = "#ccc";
 
  const radius = Math.min(width, height) / 2;
@@ -75,6 +92,7 @@ drawPie = (amount) => {
         .attr('text-anchor', 'middle')
         .attr('dy', '.45')
         .attr('transform', 'translate(' + 0 + ',' + 25 + ')')
+        .attr('fill', foregroundColor)
         .text(1)
 
         textInner.transition()
@@ -101,7 +119,7 @@ render(){
                    
             <div className="dynamicCharts">
             <svg ref={element => this.svgElememt = element}>
-                <g style={{fontSize:'60px', fontWeight:'bold' , fill:'green'}}ref={element => this.grElement = element}>
+                <g style={{fontSize:'60px', fontWeight:'bold'}}ref={element => this.grElement = element}>
                    </g>
                 </svg>
                   

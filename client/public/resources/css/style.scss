@@ -363,6 +363,38 @@ a {
 
 /* site performance */
 
+
+
+@keyframes moveTitle {
+    0% {
+        font-size:50px;
+        opacity:1;
+    //    transform: translateY(0px);
+   
+}
+
+    75% {
+        font-size:55px;
+    }
+
+    85% {
+
+    }
+    95% {
+        font-size:60px;
+    }
+    100% {
+        font-size:50px;
+        opacity:0;
+ //       transform: translateY(100px);
+    }
+}
+
+.chorltonTransform {
+    animation:moveTitle 15s linear;
+}
+
+
 .engagementContainer {
     display:flex;
     flex-wrap: wrap;
