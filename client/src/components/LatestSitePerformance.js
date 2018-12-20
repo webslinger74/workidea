@@ -4,28 +4,59 @@ import { connect } from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import faBullseye from '@fortawesome/fontawesome-free-solid/faBullseye';
 import { Link } from 'react-router-dom';
+import PieMeter from './PieMeter';
 
 class LatestSitePerformance extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+            showPieMeter:false
+         }
     }
 
     componentDidMount(){
         this.props.getEngagementCategoryScores();
     }
 
-
-
+  
     render() { 
+
+       const callstate = () => {
+
+            if(!this.state.showPieMeter){
+            this.setState({
+                showPieMeter:true,
+                
+        })
+        }
+    }
+      
+        
+          window.addEventListener('scroll', function(e){
+              let somediv = document.getElementById('what');
+              let distanceFromTop = somediv.getBoundingClientRect().top;
+            
+              if(distanceFromTop <=100 && distanceFromTop >=-200){
+                
+              }
+              
+
+              if(distanceFromTop <= -300 && distanceFromTop >= -400){
+                        callstate();    
+          }
+        })
+            
+    
         const { engageCats } = this.props;
         return ( 
             <div className="totalContainer">
             <Link to="/siteperformance">
 
                 <div className="frontMessages">
+                <div id="what" style={{overflow:'visible'}}>
+                          What's Life Like At Chorlton?
+                    </div>
               
-                <h1 style={{paddingLeft:'3%', textAlign:'center', backgroundColor:'gray', fontSize:'35px', textShadow:'2px solid black', letterSpacing:'3px', color:'gold'}}> CHORLTON STAFF ENGAGEMENT </h1>
                
                 </div>
                         <div className="engagementContainer1">
@@ -35,7 +66,8 @@ class LatestSitePerformance extends Component {
                     return  ( <div key={index} className="engagementGridItem">
                     
                      <div style={{fontSize:'45px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
-                     <div><span style={{fontSize:'60px'}}>{cat.score}</span> </div>
+                   {this.state.showPieMeter ?
+                     <div><PieMeter amount={cat.score} /> </div> : null }
                      <div>Difference from Previous Year: {cat.diffprev} </div>
                      <div>Difference from Parent: {cat.diffparent} </div>
                      <div>Difference from DWW:{ cat.diffdwp} </div>
@@ -53,7 +85,7 @@ class LatestSitePerformance extends Component {
                     return  ( <div key={index} className="engagementGridItem">
                     
                      <div style={{fontSize:'30px', color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
-                     <div><span style={{fontSize:'50px'}}>{ cat.score} </span></div>
+                              {this.state.showPieMeter ? <PieMeter amount={cat.score} /> : null }
                      <div>Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
                      <div>Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
                      <div>Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>

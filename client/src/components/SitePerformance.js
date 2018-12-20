@@ -271,7 +271,7 @@ changeData3 = () => {
         </div>
         <div className="flexPerformanceInner">
                         <div className="perfTitle">Pie Meter Example</div>
-            <PieMeter />
+            <PieMeter amount={80} />
         </div>
        </div>
      

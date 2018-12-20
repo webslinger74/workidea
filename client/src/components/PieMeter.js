@@ -8,44 +8,25 @@ class PieMeter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showMessage:false,
-            description:'',
-            name:'',
-            amount:''
-        }
+                    }
     }
 
 
     componentDidMount(){
-        this.drawPie();
-        
+        this.drawPie(this.props.amount);
     }
 
-    componentDidUpdate(prevProps){
-         //   console.log(this.props.data, "pie data on update")
-         //   this.drawPie();
-        }
+ 
+drawPie = (amount) => {
 
-    showMessage = (name, desc, amount) => {
-        console.log(name, "the name of path", desc, "description");
-        this.setState({
-            showMessage:true,
-            description:desc,
-            name,
-            amount
-        })
-    }
-
-drawPie = () => {
-                
     ///////
-    const  percent = .95;
+    const  percent = amount / 100;
  // 0.0 to 1.0
-    const textNorm = percent * 100;
+    const textNorm = amount;
     const text = (percent * 100) + "%";
-    const thickness = 30;
-    const width = 260;
-    const height = 260;
+    const thickness = 20;
+    const width = 180;
+    const height = 180;
     const duration = 3500;
     const foregroundColor = "#0a8";
     const backgroundColor = "#ccc";
@@ -55,8 +36,8 @@ drawPie = () => {
                     
     let u = d3.select(this.svgElememt)
         .attr('class', 'pie')
-        .attr('width', 260)
-        .attr('height', 260)
+        .attr('width', 180)
+        .attr('height', 180)
 
     const graph = d3.select(this.grElement)
         .attr('transform', 'translate(' + (width/2) + ',' + (height/2) + ')');
@@ -123,18 +104,7 @@ render(){
                 <g style={{fontSize:'60px', fontWeight:'bold' , fill:'green'}}ref={element => this.grElement = element}>
                    </g>
                 </svg>
-            <div className="catMessage" style={{textAlign:'center'}}>{this.state.showMessage ?
-                                (
-                                    <div>
-                                 <div  style={{fontSize:'14px', fontWeight:'bold', paddingBottom:'2px'}}>Category - {this.state.name} </div>
-                                 <div  style={{fontSize:'10px', paddingBottom:'2px'}}>Top Issue - {this.state.description} </div>
-                                 <div  style={{fontSize:'10px', paddingBottom:'2px'}}>Absences - {this.state.amount} </div>
-                                    </div>
-                                ) 
-                                 
-                                 : null}
-                </div>
-         
+                  
           
             </div>
          
