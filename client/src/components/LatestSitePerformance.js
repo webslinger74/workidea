@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { getEngagementCategoryScores, deleteCategory } from '../actions/siteperformanceActions';
 import { connect } from 'react-redux';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import faBullseye from '@fortawesome/fontawesome-free-solid/faBullseye';
 import { Link } from 'react-router-dom';
 import PieMeter from './PieMeter';
 
@@ -21,34 +19,29 @@ class LatestSitePerformance extends Component {
             let somediv = document.getElementById('what');
             let distanceFromTop = somediv.getBoundingClientRect().top;
 
-
             if(distanceFromTop <200 && distanceFromTop >=50){
                        callstate2();
-            }
-            
+            }            
             if(distanceFromTop <= 0 && distanceFromTop >= -300){
                       callstate();    
-        }
-
+            }
 
         let titleDiv = document.getElementById('chorltonT');
         let distance = titleDiv.getBoundingClientRect().top;
 
-     
             titleDiv.style.paddingTop = distance * 0.2 + "px";
-         //   titleDiv.style.opacity = distance * 100;
             titleDiv.style.height = distance + 160 + "px";
     
-      })
-      const callstate = () => {
+          })
+            const callstate = () => {
 
-        if(!this.state.showPieMeter){
-        this.setState({
-            showPieMeter:true   
-             })
-             }
-            }
-         }
+                    if(!this.state.showPieMeter){
+                     this.setState({
+                        showPieMeter:true   
+                             })
+                            }
+                        }
+                }
 
       
 

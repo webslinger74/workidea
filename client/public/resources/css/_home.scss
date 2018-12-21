@@ -154,22 +154,32 @@
 
         }  
     .guidanceFull {
-        background-image:linear-gradient(rgba(253, 251, 246, 0.623),rgba(255, 255, 255, 0.87)),url(../../../src/images/featured/new-guidance.jpg);
+        background-image:linear-gradient(rgba(253, 251, 246, 0.87),rgba(255, 255, 255, 0.924)),url(../../../src/images/featured/new-guidance.jpg);
         background-size:cover;
+        background-attachment: fixed;
+        height:100%
         
         }
         
     .engagedFull {
-        background-image:linear-gradient(rgba(253, 251, 246, 0.924),rgba(255, 255, 255, 0.856)),url(../../../src/images/featured/engaged.jpg);
+        background-image:linear-gradient(rgba(253, 251, 246, 0.883),rgba(255, 255, 255, 0.876)),url(../../../src/images/featured/engaged.jpg);
         background-size:cover;
+        background-attachment: fixed;
+        height:100%
         }
     .newsWellFull {
         background-image:linear-gradient(rgba(253, 251, 246, 0.863),rgb(255, 255, 255)),url(../../../src/images/featured/lifestyle.jpg);
         background-size:cover;
+        background-attachment: fixed;
+        height:100%
             }
     .sportFull {
         background-image:linear-gradient(rgba(253, 251, 246, 0.897),rgba(255, 255, 255, 0.65)),url(../../../src/images/featured/tennis.jpg);
         background-size:cover;
+      //  background-size:100%;
+        background-attachment: fixed;
+        height:100%
+        
             }
   
 }   
