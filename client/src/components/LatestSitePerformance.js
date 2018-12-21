@@ -10,8 +10,7 @@ class LatestSitePerformance extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPieMeter:false,
-            style:false
+            showPieMeter:false
          }
     }
 
@@ -22,13 +21,24 @@ class LatestSitePerformance extends Component {
             let somediv = document.getElementById('what');
             let distanceFromTop = somediv.getBoundingClientRect().top;
 
+
             if(distanceFromTop <200 && distanceFromTop >=50){
                        callstate2();
             }
             
-            if(distanceFromTop <= -100 && distanceFromTop >= -400){
+            if(distanceFromTop <= 0 && distanceFromTop >= -300){
                       callstate();    
         }
+
+
+        let titleDiv = document.getElementById('chorltonT');
+        let distance = titleDiv.getBoundingClientRect().top;
+
+     
+            titleDiv.style.paddingTop = distance * 0.2 + "px";
+         //   titleDiv.style.opacity = distance * 100;
+            titleDiv.style.height = distance + 160 + "px";
+    
       })
       const callstate = () => {
 
@@ -38,13 +48,7 @@ class LatestSitePerformance extends Component {
              })
              }
             }
-     
-       const callstate2 = ()=> {
-           this.setState({
-                style:true
-           })
-       }
-        }
+         }
 
       
 
@@ -67,9 +71,8 @@ class LatestSitePerformance extends Component {
 
                 <div className="frontMessages">
                 <div id="what">
-                    {!this.state.style ?
-                          <h1>What's Life Like At Chorlton?</h1>
-                     :   <h1 className="chorltonTransform">What's Life Like At Chorlton?</h1>}
+                    
+                      <div id="chorltonT">LIFE AT CHORLTON?</div>
                     </div>
               
                

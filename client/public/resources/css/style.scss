@@ -369,7 +369,7 @@ a {
     0% {
         font-size:50px;
         opacity:1;
-    //    transform: translateY(0px);
+
    
 }
 
@@ -378,7 +378,7 @@ a {
     }
 
     85% {
-
+        opacity:0.2
     }
     95% {
         font-size:60px;
@@ -390,8 +390,14 @@ a {
     }
 }
 
-.chorltonTransform {
-    animation:moveTitle 15s linear;
+#chorltonT {
+    font-size:9rem;
+    font-weight: bold;
+  //  transition:1s linear;
+}
+
+#what {
+  //  height:20rem;
 }
 
 
@@ -403,8 +409,11 @@ a {
 }
 
 .totalContainer {
-    background-image:radial-gradient(rgba(253, 251, 246, 0.123),rgba(255, 255, 255, 0.609)),url(../../../src/images/featured/teamwork.jpg);
-    background-size:cover;
+    background-image:radial-gradient(rgba(253, 251, 246, 0),rgba(255, 255, 255, 0)),url(../../../src/images/featured/teamwork.jpg);
+    background-size:100%;
+    background-attachment: fixed;
+    height:100%
+    
 }
 
 .engagementGridItem {
