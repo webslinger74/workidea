@@ -8,6 +8,7 @@ import LatestSitePerformance from './LatestSitePerformance';
 import LatestGuidance from './LatestGuidance';
 import LatestPegNews from './LatestPegNews';
 import HomeSlider2 from './Home/Home_Slider.2';
+import HeaderHidden from './HeaderHidden';
 
 class Home extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Home extends Component {
     render() { 
         return (
             <div>
+                <HeaderHidden />
                 <div className="mainBackground">
                 <HomeSlider />
                 <div className="frontMessages newsWellFull">

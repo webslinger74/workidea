@@ -3,13 +3,14 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-export class Header extends Component {
+export class HeaderHidden extends Component {
     constructor(props) {
         super(props);
      
         this.state = {
             link:["Home"],
             width:window.innerWidth,
+            showBottomWide:false,
             active:false,
             page: [
                 {
@@ -56,63 +57,57 @@ export class Header extends Component {
                     linkTo:'/feedback',
                     public: true
                 }
-            ],
-            user:[
-                {
-                    name: 'My Cart',
-                    linkTo:'/user/cart',
-                    public:false
-                },
-                {
-                    name:'My Account',
-                    linkTo:'/user/dashboard',
-                    public:false
-                },
-                {
-                    name:'Admin',
-                    linkTo:'/login',
-                    public:true
-                },
-                {
-                    name:'Log Out',
-                    linkTo:'/user/logout',
-                    public:false
-                }
-
             ]
+           
         }
 
     }
 
     componentDidMount(){
+        let somediv = document.getElementById('bottomWide');
+        somediv.style.position = "fixed";
+        somediv.style.transitionProperty = "opacity";
+        somediv.style.transitionDuration = "all 3s"
+    //    somediv.style.top = -50;
+     //   somediv.style.zIndex = -30000000000000;
+        let distanceFromTop = somediv.getBoundingClientRect().top;
 
+        let headerDiv = document.getElementById('headerOne');
+      
+    //    somediv.style.position = "fixed";
+    //    somediv.style.top = -50;
+      //  somediv.style.zIndex = 24445342533;
+        window.addEventListener('scroll', function(e){
+     //        somediv = document.getElementById('bottomWide');
+     let dFromTop = window.scrollY;
+     console.log(dFromTop, "d from top");
+     if(dFromTop > 60){
+        somediv.style.top = 0;
+        somediv.style.zIndex = 50000000;
+        somediv.style.opacity = 1;
+        }
+        else {
+            somediv.style.zIndex = -5000000000000;
+            somediv.style.top = -50;
+            somediv.style.opacity = 0;
+        }
+  
+           
+           
         
-        window.addEventListener('resize', ()=> {
-            console.log("changed");
-            this.setState({active:false});
-            this.windowWidth();
-        })
-        window.addEventListener('load', ()=> {
-            this.setState({active:false});
-            this.windowWidth();
-        })
-        window.addEventListener('click', ()=> {
-            this.windowWidth();
-        })
-       
-       
-        console.log(this.state.width);
-
+          
+     //       let scrollAmount = somediv.scrollTop;
+        //    if(distanceFromTop < 200){
+          //      somediv.style.top = -50;
+       //     }         
+})
+           
+           
     }
 
     componentDidUpdate(){
-     
+              
     }
-    componentWillUnmount(){
-       window.removeEventListener('resize', this.handleResize);
-    }
-
-    handleResize = () => this.forceUpdate();
 
     showLinks = (type) => {
         let list = [];
@@ -194,7 +189,8 @@ export class Header extends Component {
                  {item.name}
 
             </div>:
-                 <Link className={this.state.link && (this.state.link[0] === item.name) ? "RED": "BLACK"} onClick={() => this.changeColor(item.name)} key={i} to={item.linkTo}>{item.name}</Link>
+                 <Link className={this.state.link && (this.state.link[0] === item.name) ? "RED": "BLACK"}
+                  onClick={() => this.changeColor(item.name)} key={i} to={item.linkTo}>{item.name}</Link>
         
                  )
 
@@ -206,59 +202,25 @@ export class Header extends Component {
         })
     }
     
-    windowWidth = () => {
-        console.log(window.innerWidth,"the window width");
-        if (window.innerWidth <= 950)
-            return (
-                <div>
-            <div onClick={this.toggleClass}>
-            Menu
-            </div>
-            {this.state.active ? <div className="bottom">{this.showLinks(this.state.page)}</div>
-            :<div className="hiddenMenus"></div>}
-            </div>
-            )
+      
+                    
+   
+     
+    render() { 
+
+
+        return (
+            <div className="headerHidden">  
             
-        else 
-            return (
-                
-                <div className='bottom'>
+                      <div className="mainHiddenHeader">
+          
+            <div id='bottomWide'>
             
             
             {this.showLinks(this.state.page)}
 
 
             </div>
-            )
-        
-           }
-        
-  
-                    
-
-  
-  
-    
- 
-    render() { 
-
-
-        return (
-            <div className="header" id="headerOne">
-            
-            <div className="left">
-            <div className="logo">
-            CHORLTON
-            </div>
-            </div>
-            <div className="right">
-            <div className="top">
-
-            {this.showLinks(this.state.user)}
-            </div>
-            
-            {this.windowWidth()}
-            
 
             </div>
 
@@ -277,7 +239,7 @@ const actions = {
     
 }
 
-export default connect(mapStateToProps, actions)(withRouter(Header));
+export default connect(mapStateToProps, actions)(withRouter(HeaderHidden));
 
 
 

@@ -425,6 +425,11 @@ a {
     text-align: center;
     background-color: rgba(128, 128, 128, 0.883);
     padding:1.5rem;
+    transition:2s linear;
+
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.979);
+    }
 }
 
 @media (max-width:850px) {
@@ -636,5 +641,50 @@ a {
     color:rgba(255, 255, 255, 0.794);
     font-size:1.35rem;
     
+}
+
+
+
+#bottomWide {
+    display:flex;
+    flex-wrap:wrap;
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#070606;
+    width:100%;
+    justify-content: space-around;
+    padding-top:7px;
+    flex-direction: row;
+    padding-bottom:3px; 
+    background-color:goldenrod;
+    position:fixed;
+    top:-50px;
+   z-index: -5000000000000000000;
+   transition:2s linear;
+
+    .RED {
+        color:red;
+        transition:0.5s linear;
+        font-size:1.7rem;
+
+        &:hover {
+            color:red;
+        }
+    }
+    
+    
+    
+    .BLACK {
+        color:black;
+        transition:0.2s ease-out;
+        font-size:1.7rem;
+
+        &:hover {
+            color:rgba(255, 255, 255, 0.794);
+            font-size:1.7rem;
+        }
+    }
+    
+  
 }
 
