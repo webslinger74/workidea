@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import HeaderHidden from './HeaderHidden';
 
 export class MessageBoard extends Component {
     constructor(props) {
@@ -86,7 +87,7 @@ export class MessageBoard extends Component {
 
         return (
 
-           
+           <div><HeaderHidden />
             <div className="user_container">
             <div className="user_left_nav">
             <div className="hello">
@@ -125,6 +126,7 @@ export class MessageBoard extends Component {
             </div>
             
                
+              </div>
               </div>
           )
     }

@@ -7,6 +7,32 @@ import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope';
 
 
 const Footer = () => {
+
+    window.addEventListener("load", function(e){
+        const nodes =  document.querySelectorAll('[data-popup');
+        for(let i=0; i<nodes.length; i++){
+           let ctrl = document.createElement("span");
+           ctrl.innerHTML = "&times;";
+           ctrl.setAttribute("data-control", "close");
+           ctrl.addEventListener("click", function(e){
+               this.parentNode.setAttribute("data-popup", "closed");
+           });
+           nodes[i].appendChild(ctrl);
+        } 
+        
+        
+        var outerNodes = document.querySelectorAll('[href^="#"]');
+        for(let i=0; i<outerNodes.length; i++){
+            outerNodes[i].addEventListener("click", function(e){
+                let box = document.querySelector(this.getAttribute("href"));
+                if(box != null && box.hasAttribute("data-popup")){
+                    box.setAttribute("data-popup", "open");
+                }
+            })
+        }
+        });
+
+
     return (
         
         <div className="footer">
@@ -18,20 +44,27 @@ const Footer = () => {
                         <h2>Contact information</h2>
                         <div className="business_nfo">
                             <div className="tag">
-                                <FontAwesomeIcon
+                             <a href="#box1"><FontAwesomeIcon
                                     icon={faCompass}
                                     className="icon"
-                                />
+                                /></a>
+                                <article id="box1" data-popup>Graemes House,
+                                                         Wilbrahim Road,
+                                                         Chorlton,
+                                                         Manchester,
+                                                         M21 9BU</article>
                                 <div className="nfo">
                                     <div>Address</div>
                                     <div>GRAEMES HOUSE</div>
                                 </div>
                             </div>
                             <div className="tag">
-                                <FontAwesomeIcon
+                            <a href="#box2"><FontAwesomeIcon
                                     icon={faPhone}
                                     className="icon"
-                                />
+                                /></a>
+                                  <article id="box2" data-popup>Main: 0161 881 5454,
+                                                                    BST: 0161 881 3423</article>
                                 <div className="nfo">
                                     <div>Phone</div>
                                     <div>0161 881 0000</div>

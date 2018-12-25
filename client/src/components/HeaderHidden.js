@@ -10,7 +10,6 @@ export class HeaderHidden extends Component {
         this.state = {
             link:["Home"],
             width:window.innerWidth,
-            showBottomWide:false,
             active:false,
             page: [
                 {
@@ -68,17 +67,9 @@ export class HeaderHidden extends Component {
         somediv.style.position = "fixed";
         somediv.style.transitionProperty = "opacity";
         somediv.style.transitionDuration = "all 3s"
-    //    somediv.style.top = -50;
-     //   somediv.style.zIndex = -30000000000000;
-        let distanceFromTop = somediv.getBoundingClientRect().top;
 
-        let headerDiv = document.getElementById('headerOne');
-      
-    //    somediv.style.position = "fixed";
-    //    somediv.style.top = -50;
-      //  somediv.style.zIndex = 24445342533;
+     //   let distanceFromTop = somediv.getBoundingClientRect().top;
         window.addEventListener('scroll', function(e){
-     //        somediv = document.getElementById('bottomWide');
      let dFromTop = window.scrollY;
      console.log(dFromTop, "d from top");
      if(dFromTop > 60){
@@ -90,19 +81,9 @@ export class HeaderHidden extends Component {
             somediv.style.zIndex = -5000000000000;
             somediv.style.top = -50;
             somediv.style.opacity = 0;
-        }
-  
-           
-           
-        
-          
-     //       let scrollAmount = somediv.scrollTop;
-        //    if(distanceFromTop < 200){
-          //      somediv.style.top = -50;
-       //     }         
-})
-           
-           
+        }           
+    })
+                  
     }
 
     componentDidUpdate(){

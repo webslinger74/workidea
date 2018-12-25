@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getGuidance, deleteGuidance } from '../actions/guidanceActions';
 import ReactHtmlParser from 'react-html-parser';
+import HeaderHidden from './HeaderHidden';
 
 class Guidance extends Component {
     constructor(props) {
@@ -54,7 +55,8 @@ showMessages = (events) => (
             const { guidance } = this.props;
     return (
             
-        <div>    
+        <div>  
+            <HeaderHidden />  
         <div className="sportsItem">
          
  <div>

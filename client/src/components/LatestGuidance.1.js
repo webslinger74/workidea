@@ -14,10 +14,6 @@ class LatestGuidance extends Component {
         super(props);
         this.state = {  }
     }
-
-
-   
-
     convertStringMessageToHtml = (string) => {
         const html = string;
         return <div>{ReactHtmlParser(html)}</div>
@@ -40,8 +36,8 @@ showMessages = (messages) => {
                 }
               
               
-            <div className="cssAnimationGuidance">
-                <div className="cssAnimationGuidanceInner">
+            
+                <div>
        {messages[0].message ? 
             this.convertStringMessageToHtml(messages[0].message):
             null}                    
@@ -49,11 +45,7 @@ showMessages = (messages) => {
             <div>
             <h3 className="authorStamp"> {messages[0].author} - {messages[0].createdAt}  </h3>
         </div>
-
-
-               
-                </div>
-                <div id="btnView">Read More</div>
+    
          </div>
           
      )
@@ -67,35 +59,18 @@ showMessages = (messages) => {
 
        componentDidMount(){
     this.props.getGuidance();
-      
-
-       }
-
-       componentDidUpdate(){
-            let btnView = document.getElementById("btnView");
-            console.log(btnView, "btnView");
-            btnView.innerText = "Read More";
-            btnView.addEventListener("click", () => toggleMessage());
-               
-            const toggleMessage = () => {           
-                let messageToBring = document.getElementsByClassName("cssAnimationGuidance");
-                console.log(messageToBring, "message to bring")
-                messageToBring[0].classList.toggle("bringIn");
-                btnView.innerText = "X";
-            }
-       }
+}
 
     render() { 
-      
         const { guidance } = this.props;
         return ( 
             <div>
               <div className="centredLatest">GUIDANCE UPDATE
                      </div>
 
-                
+                <Link to="/guidance">
                 {this.showMessages(guidance)}
-        
+                </Link>
            
             
 

@@ -36,11 +36,12 @@ module.exports = {
                       'style-loader',
                       'css-loader',
                       'resolve-url-loader',
+
                      
                     ]
                   },       
                     {
-                    test: /\.(png|jpg|gif)$/,
+                    test: /\.(png|jpg|jpeg|gif)$/,
                     use: [
                       {
                         loader:'url-loader',
