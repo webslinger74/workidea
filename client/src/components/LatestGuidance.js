@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 
 class LatestGuidance extends Component {
@@ -35,7 +36,7 @@ showMessages = (messages) => {
             {messages[0].images && messages[0].images.length > 0 ?
                        (<div>
                             
-                               <img className="messageBoardImgFront" src={messages[0].images[0].url}></img>
+                               <img className="imgGuidance" src={messages[0].images[0].url}></img>
                        </div>) : null
                 }
               
@@ -73,23 +74,41 @@ showMessages = (messages) => {
 
        componentDidUpdate(){
             let btnView = document.getElementById("btnView");
-            console.log(btnView, "btnView");
             btnView.innerText = "Read More";
-            btnView.addEventListener("click", () => toggleMessage());
+            btnView.addEventListener("click", (e) => toggleMessage(e));
                
-            const toggleMessage = () => {           
+            const toggleMessage = (e) => {           
                 let messageToBring = document.getElementsByClassName("cssAnimationGuidance");
-                console.log(messageToBring, "message to bring")
                 messageToBring[0].classList.toggle("bringIn");
-                btnView.innerText = "X";
+                let txt = e.target;
+                if(messageToBring[0].classList.contains("bringIn")){
+                    txt.innerText = "Close"; 
+                } else {
+                    txt.innerText = "Read More";
+                }
+                let imgToBring = document.getElementsByClassName("imgGuidance");
+                imgToBring[0].classList.toggle("imgAdd");
+    
+                var elmnt = document.getElementById("imgGuidance");
+                elmnt.scrollIntoView();
+                window.scrollBy(0,-50)
+                               
+               /*
+                if(!imgToBring[0].classList.contains("imgAdd")){
+                setTimeout(() => {
+                    window.scrollBy(100,-600);
+                }, 1);
+              }
+              */
             }
-       }
+                }
+            
 
     render() { 
       
         const { guidance } = this.props;
         return ( 
-            <div>
+            <div id="imgGuidance">
               <div className="centredLatest">GUIDANCE UPDATE
                      </div>
 

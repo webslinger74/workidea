@@ -39,7 +39,15 @@ module.exports = {
 
                      
                     ]
-                  },       
+                  }, {
+                    test: /\.(jpe?g|png|gif|svg)$/,
+                    use:[
+                      {
+                    loader: 'image-webpack-loader'
+                    // This will apply the loader before the other ones
+                  }
+                ]
+              },       
                     {
                     test: /\.(png|jpg|jpeg|gif)$/,
                     use: [

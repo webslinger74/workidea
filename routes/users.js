@@ -120,17 +120,16 @@ router.get('/current', passport.authenticate('jwt', {session:false}), (req, res)
 
 router.post('/uploadimage', /* passport.authenticate('jwt', {session:false}),admin,*/ formidable(), (req, res) => {
     console.log(req.files.file.path, "request file path")
-    cloudinary.uploader.upload(req.files.file.path,(result) => {
+    cloudinary.v2.uploader.upload(req.files.file.path, {transformation: {quality:80}}, function(error, result){
             console.log(result, "this is something back from cloudinary");
+            console.log(error, "this is the error from cloudinary");
             res.status(200).send({
                public_id:result.public_id,
                url:result.url 
             })
-    },{
-        public_id: `${Date.now()}`,
-        resource_type:'auto'
     })
-})
+});
+
 
 router.get('/removeimage', /* passport.authenticate('jwt', {session:false}), admin,*/ (req,res) => {
     

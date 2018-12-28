@@ -42,9 +42,7 @@ class Home extends Component {
                     <LatestGuidance />
                     <div className="verticalLine"></div>
                 </div>  
-                
-                <SlantBorderEffect /> 
-                <div className="frontMessages engagedFull">
+                    <div className="frontMessages engagedFull">
                  <div className="verticalLine"></div>
                     <div><LatestPegNews /></div>
                     <div className="verticalLine"></div>

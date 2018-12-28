@@ -101,11 +101,11 @@
             display:flex; 
             justify-content: space-around;
             flex-direction: row;
-            width:60%;
+            width:90%;
             border-top:1.5rem solid rgba(0, 0, 0, 0.082);
             padding-top:2.5rem;
             padding-bottom:2.5rem;
-            margin:5% 7.5% 5% 20%;
+            margin:auto;
             border-bottom:1.5rem solid rgba(0, 0, 0, 0.082);
             background-image:radial-gradient(rgba(245, 244, 244, 0.582), rgba(245, 244, 244, 0.507));
             background-size: cover;
@@ -154,7 +154,7 @@
 
         }  
     .guidanceFull {
-        background-image:linear-gradient(rgba(253, 251, 246, 0.87),rgba(255, 255, 255, 0.924)),url(../../../src/images/featured/new-guidance.jpg);
+        background-image:linear-gradient(rgba(253, 251, 246, 0.424),rgba(255, 255, 255, 0.39)),url(../../../src/images/featured/new-guidance.jpg);
         background-size:cover;
         background-attachment: fixed;
         height:100%
