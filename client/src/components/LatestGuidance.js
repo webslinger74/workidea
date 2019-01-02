@@ -74,6 +74,7 @@ showMessages = (messages) => {
 
        componentDidUpdate(){
             let btnView = document.getElementById("btnView");
+            if(btnView){
             btnView.innerText = "Read More";
             btnView.addEventListener("click", (e) => toggleMessage(e));
                
@@ -102,7 +103,7 @@ showMessages = (messages) => {
               */
             }
                 }
-            
+            }
 
     render() { 
       

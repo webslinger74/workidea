@@ -130,7 +130,7 @@ router.post('/uploadimage', /* passport.authenticate('jwt', {session:false}),adm
     })
 });
 
-
+//
 router.get('/removeimage', /* passport.authenticate('jwt', {session:false}), admin,*/ (req,res) => {
     
     let image_id = req.query.public_id;
