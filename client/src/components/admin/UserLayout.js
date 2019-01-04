@@ -22,6 +22,7 @@ class UserLayout extends Component {
     genLinks = () => (
         <div>
          <h2>Admin</h2>
+         
            {admin.map((item,index) => {
              return (
                 <div className="links" key={index} > 
@@ -61,6 +62,7 @@ class UserLayout extends Component {
             <div className={this.state.adminactive ? "open" : "closed"}>
 
             <Link className="adminlinks" to="/login">Login</Link>
+            <Link className="adminlinks" to="/register">Register</Link>
             <Link className="adminlinks" to="/userdashboard">User Dashboard</Link>
             <Link className="adminlinks" to="/inputSlide">Add HomeSlider slide</Link>
             </div>
@@ -105,12 +107,7 @@ class UserLayout extends Component {
                  <Link className="adminlinks" to="/pegAdmin">PEG</Link>
                  </div>
             </div>
-            {console.log(isAdd, "recs")}
-            {isAdd && isAdd.isAdmin ? 
-            this.genLinks()
-        : null}
-
-
+          
             </div>
             <div className="user_rights">
                      {this.props.children}

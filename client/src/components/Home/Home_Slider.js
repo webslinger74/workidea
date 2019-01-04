@@ -28,7 +28,7 @@ class HomeSlider extends Component {
     afterChange: function() {
         let siblings = document.querySelectorAll(".slick-slide");
         let current = document.querySelector(".slick-current");
-        console.log(siblings, "siblings")
+      //  console.log(siblings, "siblings")
             if(siblings.length > 0){
 
         for(let i = 0; i < siblings.length; i++) {

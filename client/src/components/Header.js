@@ -59,18 +59,18 @@ export class Header extends Component {
             ],
             user:[
                 {
-                    name: 'My Cart',
-                    linkTo:'/user/cart',
+                    name: 'Admin',
+                    linkTo:'/admin',
                     public:false
                 },
                 {
                     name:'My Account',
-                    linkTo:'/user/dashboard',
+                    linkTo:'/userdashboard',
                     public:false
                 },
                 {
                     name:'Admin',
-                    linkTo:'/login',
+                    linkTo:'/admin',
                     public:true
                 },
                 {
@@ -101,12 +101,12 @@ export class Header extends Component {
         })
        
        
-        console.log(this.state.width);
+   //     console.log(this.state.width);
 
     }
 
     componentDidUpdate(){
-     
+        
     }
     componentWillUnmount(){
        window.removeEventListener('resize', this.handleResize);
@@ -117,18 +117,18 @@ export class Header extends Component {
     showLinks = (type) => {
         let list = [];
         if(!this.props.auth){
-            console.log("not logged in")
+       //     console.log("not logged in")
             if(type === this.state.user){
                 type.filter(link => {
                if(link.public === true){
                    list.push(link)
                }    
                 })
-                console.log(list, "this is the list of links after filter")
+          //      console.log(list, "this is the list of links after filter")
                const newlist =  list.map((item, i) =>  {
                   return this.defaultLinks(item, i)
               })
-              console.log(newlist, "this is the post list")
+        //      console.log(newlist, "this is the post list")
               return newlist;
 
 
@@ -138,7 +138,7 @@ export class Header extends Component {
                         const pagelist = type.map((item,i) => {
                             return this.defaultLinks(item,i)
                         })
-                        console.log(pagelist, "this is the post list of public links")
+                //        console.log(pagelist, "this is the post list of public links")
                         return pagelist
                     }                 
                 }           
@@ -153,13 +153,11 @@ export class Header extends Component {
                     }
                 })
                 const newlist = list.map((item, i) => {
-                    if(item.name !== "My Cart"){
+                    
                     return this.defaultLinks(item,i);
-                    } else {
-                        return this.cartLink(item,i);
-                    }
-                });
-                console.log(newlist, "this is the post list")
+                    }                  
+                );
+         //       console.log(newlist, "this is the post list")
                 return newlist;
             }
             else {
@@ -269,7 +267,7 @@ export class Header extends Component {
  
 
 const mapStateToProps = (state) => ({
-  //  auth: state.auth.isAuthenticated,
+   auth: state.auth.isAuthenticated,
   //  currentUser: state.auth.FullUserRecord
 })
 

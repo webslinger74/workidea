@@ -8,6 +8,7 @@ import Manager from './components/admin/Manager';
 import Messages from './components/admin/Messages';
 import SitePerformance from './components/SitePerformance';
 import Login from './components/Login';
+import Register from './components/Register';
 import MessageBoard from './components/MessageBoard';
 import InputBingo from './components/admin/InputBingo';
 import UserDashboard from './components/admin/UserDashboard';
@@ -37,7 +38,7 @@ import GuidanceAdmin from './components/admin/Guidance';
 import PEGAdmin from './components/admin/Peg';
 import Peg from './components/Peg';
 import HomeSliderInput from './components/admin/HomeSliderInput';
-
+import UserLayout from './components/admin/UserLayout';
 
 const Routes = () => {
     
@@ -46,7 +47,7 @@ const Routes = () => {
             <Layout>
             <Switch>
 
-                <Route path="/"  exact component={Home}/>
+                <Route path="/"  exact component={Home}/> 
                 <Route path="/userdashboard"  exact component={UserDashboard}/>
                 <Route path="/messages"  exact component={Messages}/>
                 <Route path="/managerMessage" exact component={Manager} />
@@ -64,7 +65,10 @@ const Routes = () => {
                 <Route path="/sports/celebrationday" exact component={InputCelebrationDay}/>
                 <Route path="/sports/charity" exact component={InputCharity}/>
                 <Route path="/sports/contact" exact component={InputSportsContact}/>
-                <Route path="/inputSlide" exact component={HomeSliderInput}/>
+
+                <PrivateRoute path="/inputSlide" exact component={HomeSliderInput}/>
+                
+
                 <Route path="/sports/contacts" exact component={SportsContacts}/>
                 <Route path="/charity" exact component={CharityContributions}/>
                 <Route path="/christmas" exact component={ChristmasParty}/>
@@ -76,7 +80,8 @@ const Routes = () => {
                 <Route path="/wellbeing/Healthatwork"  exact component={WellBeingHealthAtWork}/>
                 <Route path="/guidance"  exact component={Guidance}/>
                 <Route path="/peg" exact component={Peg} />
-
+                <Route path="/admin" exact component={UserLayout} />
+                <PrivateRoute path="/register" exact component={Register} />
                 <Route path="/login" exact component={Login}/>
                 <Route path="/messageboard" exact component={MessageBoard}/>
                 <Route path="/manager" exact component={AsyncManager}/>

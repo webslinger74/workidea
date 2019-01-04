@@ -71,7 +71,7 @@ export class HeaderHidden extends Component {
      //   let distanceFromTop = somediv.getBoundingClientRect().top;
         window.addEventListener('scroll', function(e){
      let dFromTop = window.scrollY;
-     console.log(dFromTop, "d from top");
+  //   console.log(dFromTop, "d from top");
      if(dFromTop > 60){
         somediv.style.top = 0;
         somediv.style.zIndex = 50000000;

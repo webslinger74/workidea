@@ -20,7 +20,7 @@ class LatestSitePerformance extends Component {
             let distanceFromTop = somediv.getBoundingClientRect().top;
 
             if(distanceFromTop <200 && distanceFromTop >=50){
-                       callstate2();
+                       callstate();
             }            
             if(distanceFromTop <= 0 && distanceFromTop >= -300){
                       callstate();    

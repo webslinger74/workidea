@@ -17,23 +17,20 @@ router.post('/register', (req, res) => {
         const { errors, isValid } = validateRegisterInput(req.body);
         if (!isValid) {
             console.log(errors)
-            return res.status(400).json(errors);
-           
+            return res.status(400).json(errors); 
         }
 
         console.log(req, "this is the request before the db")
-    User.findOne({email:req.body.email})
+    User.findOne({staffnumber:req.body.name})
         .then((user) => {
             if(user) {
                 errors.email = 'Email already exists';
                 return res.status(400).json(errors);
             } else {
                 const newUser = new User({
-                    name:req.body.name,
-                    lastname:req.body.lastName,
-                    email:req.body.email,
+                    staffnumber:req.body.name,
                     password:req.body.password,
-                    role:req.body.role ? req.body.role : 0
+                    role:req.body.role ? req.body.role : 1
                 });
 
                   bcrypt.genSalt(10, (error, salt) => {
@@ -41,7 +38,6 @@ router.post('/register', (req, res) => {
                     bcrypt.hash(newUser.password, salt, (error, hash) => {
                         if(error) throw error;
                         newUser.password = hash;
-                        console.log("about to save")
                         newUser.save()
                         .then((user) => {
                             res.json(user)
@@ -68,7 +64,7 @@ router.post('/login', (req, res) => {
     const staffnumber = req.body.staffnumber;
     const password = req.body.password;
 
-    User.findOne({staffnumber})
+    User.findOne({staffnumber:staffnumber})
         .then((user) => {
             if(!user) {
                 errors.staffnumber = "User not found"
@@ -80,9 +76,7 @@ router.post('/login', (req, res) => {
 
                         const payload = {
                             id: user.id,
-                            name:user.name,
-                            lastname:user.lastname,
-                            email:user.email
+                            name:user.staffnumber
                         } //creates jwt payload
                         jwt.sign(payload, keys, { expiresIn: 7200 }, (error, token) => {
                             if (error) {console.log(error)} 
@@ -110,8 +104,6 @@ router.get('/current', passport.authenticate('jwt', {session:false}), (req, res)
     res.json({   id:req.user.id,
                  staffnumber:req.user.staffnumber,
                  name:req.user.name,
-                 lastname:req.user.lastname,
-                 email:req.user.email,
                  isAdmin:req.user.role === 0 ? false : true,
                  isAuth: true
 

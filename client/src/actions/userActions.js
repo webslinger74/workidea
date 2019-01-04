@@ -1,16 +1,32 @@
 import { USER_DETAILS, SET_CURRENT_USER, GET_ERRORS } from '../types/types';
 import axios from 'axios';
+import setAuthToken from '../utils/setAuthToken';
+import jwt_decode from 'jwt-decode';
 
+export const registeruser = (userData, history) => (dispatch) => {           
+          
+    axios
+      .post('api/users/register', userData)
+      .then(res => { 
+      //  console.log(res.data)
+        history.push('/login')})
+        .catch((err) => {
+            dispatch({
+                type:GET_ERRORS,
+                payload:err.response.data
+            })
+        
+})
+};
 
 export const loginUser = (UserData) => (dispatch) => {
         //axios request to check if user is valid user and password
         // if valid then we need to dispatch to user reducer current user details
         // if not valid need to dispatch error to error reducer
 
-        console.log("here we go", UserData)
         axios.post('/api/users/login', UserData)
             .then(response =>  {
-                  const { token } = res.data;
+                  const { token } = response.data;
                 localStorage.setItem('jwtToken', token);
                 //put token in axios request headers
                 setAuthToken(token);
@@ -24,6 +40,7 @@ export const loginUser = (UserData) => (dispatch) => {
                 })
                 })          
             .catch((err) => {
+                console.log(err, "the error");
                 dispatch({
                     type:GET_ERRORS,
                     payload:err.response.data
@@ -52,3 +69,4 @@ export const setCurrentUser = (decoded) => {
         payload:decoded
     }
 };
+
