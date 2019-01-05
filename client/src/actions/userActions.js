@@ -1,4 +1,4 @@
-import { USER_DETAILS, SET_CURRENT_USER, GET_ERRORS } from '../types/types';
+import { USER_DETAILS, SET_CURRENT_USER, GET_ERRORS, CLEAR_USER_DETAILS } from '../types/types';
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
@@ -69,4 +69,22 @@ export const setCurrentUser = (decoded) => {
         payload:decoded
     }
 };
+
+export const logoutUser = (history) => (dispatch) => {
+    
+    localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+     dispatch(setCurrentUser({}));
+      dispatch(clearUserDetails());
+    history.push('/');
+
+
+}
+
+export const clearUserDetails = () => {
+    return {
+        type:CLEAR_USER_DETAILS,
+        payload:{}
+    }
+}
 

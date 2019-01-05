@@ -1,5 +1,6 @@
 import { SET_CURRENT_USER,
-         USER_DETAILS
+         USER_DETAILS,
+         CLEAR_USER_DETAILS
         } from '../types/types';
 
 import isEmpty from '../../../validation/is-Empty';
@@ -19,6 +20,11 @@ const userReducer = (state=initialState, action)=> {
             user:action.payload
         }
         case USER_DETAILS:
+        return {
+            ...state,
+            FullUserRecord:action.payload
+        }
+        case CLEAR_USER_DETAILS:
         return {
             ...state,
             FullUserRecord:action.payload

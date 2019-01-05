@@ -33,3 +33,4 @@ export const ADD_PEG = "ADD_PEG";
 export const GET_PEG = "GET_PEG";
 export const ADD_SLIDE = "ADD_SLIDE";
 export const GET_SLIDES = "GET_SLIDES";
+export const CLEAR_USER_DETAILS = "CLEAR_USER_DETAILS";

@@ -9,7 +9,6 @@ import LatestGuidance from './LatestGuidance';
 import LatestPegNews from './LatestPegNews';
 import HomeSlider2 from './Home/Home_Slider.2';
 import HeaderHidden from './HeaderHidden';
-import SlantBorderEffect from './SlantBorderEffect';
 
 class Home extends Component {
     constructor(props) {

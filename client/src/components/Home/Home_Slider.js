@@ -58,9 +58,9 @@ class HomeSlider extends Component {
                  linkTo={"/" + item.pageCat}
                  />
             </div>
-             </div>
-                <div onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete {item._id}</div>
-
+             </div>{this.props.auth ?
+                <div style={{ textAlign:"center", width:"100px", fontSize:"20px", backgroundColor:"black", color:"white"}}onClick={()=> this.props.deleteSlide({id:item._id}, item.images)}>delete</div>
+                : null }
              </div>
     
 </div>))
@@ -88,7 +88,8 @@ class HomeSlider extends Component {
 }
 
 const mapStateToProps = (state) => ({
-        slides:state.slide.slides
+        slides:state.slide.slides,
+        auth:state.auth.isAuthenticated
 });
 
 const actions = {

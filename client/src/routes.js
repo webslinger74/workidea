@@ -48,23 +48,23 @@ const Routes = () => {
             <Switch>
 
                 <Route path="/"  exact component={Home}/> 
-                <Route path="/userdashboard"  exact component={UserDashboard}/>
-                <Route path="/messages"  exact component={Messages}/>
-                <Route path="/managerMessage" exact component={Manager} />
+                <PrivateRoute path="/userdashboard"  exact component={UserDashboard}/>
+                <PrivateRoute path="/messages"  exact component={Messages}/>
+                <PrivateRoute path="/managerMessage" exact component={Manager} />
                 <Route path="/siteperformance"  exact component={SitePerformance}/>
                 <Route path="/bingo"  exact component={Bingo}/>
                 <Route path="/events"  exact component={Events}/>
-                <Route path="/sportsAdmin"  exact component={SportsAdmin}/>
-                <Route path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
-                <Route path="/guidanceAdmin" exact component={GuidanceAdmin}/>
-                <Route path="/pegAdmin" exact component={PEGAdmin}/>
-                <Route path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
-                <Route path="/sports/bingo" exact component={InputBingo}/>
-                <Route path="/sports/christmasparty" exact component={InputChristmasParty}/>
+                <PrivateRoute path="/sportsAdmin"  exact component={SportsAdmin}/>
+                <PrivateRoute path="/siteperformanceEngAdmin"  exact component={SitePerformanceEngagement}/>
+                <PrivateRoute path="/guidanceAdmin" exact component={GuidanceAdmin}/>
+                <PrivateRoute path="/pegAdmin" exact component={PEGAdmin}/>
+                <PrivateRoute path="/wellbeingAdmin"  exact component={WellBeingAdmin}/>
+                <PrivateRoute path="/sports/bingo" exact component={InputBingo}/>
+                <PrivateRoute path="/sports/christmasparty" exact component={InputChristmasParty}/>
                 <Route path="/celebration" exact component={CelebrationDay}/>
-                <Route path="/sports/celebrationday" exact component={InputCelebrationDay}/>
-                <Route path="/sports/charity" exact component={InputCharity}/>
-                <Route path="/sports/contact" exact component={InputSportsContact}/>
+                <PrivateRoute path="/sports/celebrationday" exact component={InputCelebrationDay}/>
+                <PrivateRoute path="/sports/charity" exact component={InputCharity}/>
+                <PrivateRoute path="/sports/contact" exact component={InputSportsContact}/>
 
                 <PrivateRoute path="/inputSlide" exact component={HomeSliderInput}/>
                 

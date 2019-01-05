@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {logoutUser} from '../actions/userActions';
 
 
 export class Header extends Component {
@@ -165,7 +166,7 @@ export class Header extends Component {
                     const pagelist = type.map((item,i) => {
                         return this.defaultLinks(item,i)
                     })
-                    console.log(pagelist, "this is the post list of public links")
+              //      console.log(pagelist, "this is the post list of public links")
                     return pagelist
                 }  
             }   
@@ -174,7 +175,7 @@ export class Header extends Component {
 
    
     changeColor = (name)=> {
-        console.log("is it called");
+    //    console.log("is it called");
             this.setState({
                 link:[name]
             }, () => {
@@ -184,7 +185,7 @@ export class Header extends Component {
 
     defaultLinks = (item, i) => (
         item.name === 'Log Out' ?
-            <div className="log_out_link"
+            <div className="logoutBtn" style={{paddingRight:'20px'}}
                 key={i}
                 onClick={() => this.props.logoutUser(this.props.history)}
                 >
@@ -192,7 +193,7 @@ export class Header extends Component {
                  {item.name}
 
             </div>:
-                 <Link className={this.state.link && (this.state.link[0] === item.name) ? "RED": "BLACK"} onClick={() => this.changeColor(item.name)} key={i} to={item.linkTo}>{item.name}</Link>
+                 <Link style={{paddingRight:'20px'}} className={this.state.link && (this.state.link[0] === item.name) ? "RED": "BLACK"} onClick={() => this.changeColor(item.name)} key={i} to={item.linkTo}>{item.name}</Link>
         
                  )
 
@@ -205,7 +206,7 @@ export class Header extends Component {
     }
     
     windowWidth = () => {
-        console.log(window.innerWidth,"the window width");
+     //   console.log(window.innerWidth,"the window width");
         if (window.innerWidth <= 950)
             return (
                 <div>
@@ -272,7 +273,7 @@ const mapStateToProps = (state) => ({
 })
 
 const actions = {
-    
+    logoutUser
 }
 
 export default connect(mapStateToProps, actions)(withRouter(Header));

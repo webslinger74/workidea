@@ -67,32 +67,7 @@ class Messages extends Component {
                         this.state[key] = this.state[key].toString();
                     }
 
-                    if(key === "brand"){
-                     const getId = this.props.brands.filter((brandobj) => {
-                        if(brandobj.name === this.state[key]){
-                                return brandobj._id;
-                          }
-                        })
-
-                        if(getId.length === 0){
-                            console.log(getId, "if undefined??")
-                            this.state[key] = undefined;
-                        } else {
-                            this.state[key] = getId[0]._id
-                        }
-                    }
-                    if(key === "wood"){
-                     const getId = this.props.woods.filter((woodobj) => {
-                        if(woodobj.name === this.state[key]){
-                                return woodobj._id;
-                            }
-                        })
-                        if(getId.length === 0){
-                            this.state[key] = undefined;
-                        } else {
-                            this.state[key] = getId[0]._id
-                        }
-                    }
+                 
                     newState[key] = this.state[key];
           }
           console.log(newState, "state just before adding product");

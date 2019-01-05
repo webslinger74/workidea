@@ -71,7 +71,15 @@ export class MessageBoard extends Component {
                 <div>
                 <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteMessage({id:mess._id},mess.images)} className="delete">Delete Message</div>
+            
+
+            {this.props.auth ?
+            <div style={{paddingRight:"20px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteMessage({id:mess._id},mess.images)} className="delete"> Delete Message</div>
+            : null }
+
+
+
+
              </div>
               
          ))
@@ -142,7 +150,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    messages: state.messages.allMessages
+    messages: state.messages.allMessages,
+    auth:state.auth.isAuthenticated
 })
 
 export default connect(mapStateToProps, actions)(MessageBoard);
