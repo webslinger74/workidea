@@ -420,6 +420,15 @@ a {
     justify-content: center;
   
 }
+.engDesc {
+    font-size: 1.6rem;
+    color:black;
+}
+
+.engagementContainer1 {
+    width:80%;
+    margin:auto;
+}
 
 .totalContainer {
     background-image:radial-gradient(rgba(253, 251, 246, 0),rgba(255, 255, 255, 0)),url(../../../src/images/featured/teamwork.jpg);
@@ -903,5 +912,13 @@ a {
     height:250px;
     width:250px;
 }
+
+.videoTitle {
+    position: relative;
+    font-size:8rem;
+    color:black;
+    text-align: center;
+}
+
 
 

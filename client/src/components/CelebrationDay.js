@@ -41,8 +41,9 @@ showMessages = (messages) => {
             <div>
             <h3 className="authorStamp"> {messages[0].author} - {messages[0].createdAt}  </h3>
         </div>
-        <div onClick={()=> this.props.deleteCelebrationDay({id:messages[0]._id}, messages[0].images)} className="delete">Delete Celebration Day</div>
-         </div>
+        {this.props.auth ?
+        <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteCelebrationDay({id:messages[0]._id}, messages[0].images)} className="delete">Delete Celebration Day</div>
+        : null } </div>
           
      )
   
@@ -89,7 +90,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    celebrationDay:state.sports.celebrationDay
+    celebrationDay:state.sports.celebrationDay,
+    auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(CelebrationDay);

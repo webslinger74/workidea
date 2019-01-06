@@ -43,9 +43,9 @@ class SportsContacts extends Component {
             
                 <div> <h3 style={{paddingLeft:'25px', paddingRight:'25px', color:'green'}}> {contact.contactEmail}</h3> 
                         <h4> {contact.position}  </h4></div>
-
-            <div onClick={()=> this.props.deleteContact({id:contact._id}, this.props.history)} className="delete">DEL</div>
-                        
+                {this.props.auth ?
+            <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteContact({id:contact._id}, this.props.history)} className="delete">DEL</div>
+               : null }         
              </div>
                <div className="contactBorder"></div>
            </div>   
@@ -61,9 +61,9 @@ class SportsContacts extends Component {
                     <div>
                     <div><span style={{fontSize:'30px'}}>Sports & Social Email Address: </span> {siteEmail[0].siteEmail} </div>
                          </div>
-
-                    <div onClick={()=> this.props.deleteSiteEmail({id:siteEmail[0]._id}, this.props.history)} className="delete">DEL</div>
-                        </div>
+                        {this.props.auth ?
+                    <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteSiteEmail({id:siteEmail[0]._id}, this.props.history)} className="delete">DEL</div>
+                     : null }   </div>
                 )
                              }
 
@@ -102,7 +102,8 @@ const actions = {
 
 const mapStateToProps = (state) => ({
     contacts:state.sports.contacts,
-    siteEmail:state.sports.siteEmail
+    siteEmail:state.sports.siteEmail,
+    auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(withRouter(SportsContacts));

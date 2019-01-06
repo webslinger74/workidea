@@ -45,8 +45,11 @@ class Events extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteEvent({id:event._id}, this.props.history, event.images)} className="delete">Delete Event</div>
-             </div>
+
+            {this.props.auth ?
+            <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteEvent({id:event._id}, this.props.history, event.images)} className="delete">Delete Event</div>
+            : null }
+            </div>
               
          ))
       
@@ -76,7 +79,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    events:state.sports.events
+    events:state.sports.events,
+    auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(withRouter(Events));

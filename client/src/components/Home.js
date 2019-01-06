@@ -9,6 +9,7 @@ import LatestGuidance from './LatestGuidance';
 import LatestPegNews from './LatestPegNews';
 import HomeSlider2 from './Home/Home_Slider.2';
 import HeaderHidden from './HeaderHidden';
+import App from './MediaPlayer';
 
 class Home extends Component {
     constructor(props) {
@@ -50,9 +51,11 @@ class Home extends Component {
                  <div className="verticalLine"></div>
                     <div><LatestSitePerformance /></div>
                     <div className="verticalLine"></div>
+                    
                 
                 </div>
                 </div>
+                <div><App /></div>
             </div>
           );
     }

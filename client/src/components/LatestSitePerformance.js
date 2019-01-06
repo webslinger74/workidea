@@ -60,7 +60,7 @@ class LatestSitePerformance extends Component {
     
         return ( 
             <div className="totalContainer">
-            <Link to="/siteperformance">
+            <Link to="/">
 
                 <div className="frontMessages">
                 <div id="what">
@@ -79,11 +79,14 @@ class LatestSitePerformance extends Component {
                      <div style={{fontSize:'45px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
                    {this.state.showPieMeter ?
                      <div><PieMeter amount={cat.score} /> </div> : null }
-                     <div>Difference from Previous Year: {cat.diffprev} </div>
-                     <div>Difference from Parent: {cat.diffparent} </div>
-                     <div>Difference from DWW:{ cat.diffdwp} </div>
-                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
-                        </div>
+                        <div className="engDesc">Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
+                     <div className="engDesc">Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
+                     <div className="engDesc">Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
+
+
+                     {this.props.auth ?
+                     <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
+                      : null }  </div>
                         )}
                     }) :null}
 
@@ -97,11 +100,12 @@ class LatestSitePerformance extends Component {
                     
                      <div style={{fontSize:'30px', color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
                               {this.state.showPieMeter ? <PieMeter amount={cat.score} /> : null }
-                     <div>Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
-                     <div>Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
-                     <div>Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
-                     <div onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
-                        </div>
+                     <div className="engDesc">Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
+                     <div className="engDesc">Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
+                     <div className="engDesc">Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
+                     {this.props.auth ?
+                     <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
+                     : null }   </div>
                         )}
                     }) :null}
 
@@ -119,7 +123,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-        engageCats:state.siteperformance.allCategories
+        engageCats:state.siteperformance.allCategories,
+        auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(LatestSitePerformance);

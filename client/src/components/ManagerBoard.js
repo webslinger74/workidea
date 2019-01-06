@@ -69,7 +69,9 @@ class ManagerBoard extends Component {
                 <div>
                 <h3 className="authorStamp"> {mess.author} - {mess.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteMessage({id:mess._id}, mess.images)} className="delete">Delete Message</div>
+            {this.props.auth ?
+            <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteMessage({id:mess._id}, mess.images)} className="delete">Delete Message</div>
+             : null }
              </div>
               
          ))
@@ -137,7 +139,8 @@ const actions = {
 
 const mapStateToProps = (state) => ({
     message:state.manager.message,
-    messages:state.manager.allMessages
+    messages:state.manager.allMessages,
+    auth:state.auth.isAuthenticated
 
 
 })

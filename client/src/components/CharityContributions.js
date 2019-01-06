@@ -37,8 +37,9 @@ class CharityContributions extends Component {
                                   return  (
                                         <div key={charity._id} className="charityItems">
                                          Total Raised for: <span style={{fontSize:'40px', color:'green'}}>{charity.charity}</span> = <strong style={{fontSize:'40px'}}>£{charity.amount}</strong> 
-                                         <div onClick={()=> this.props.deleteCharity({id:charity._id})}><span style={{fontSize:'12px'}}>DELETE</span></div>
-                                        </div>
+                                            {this.props.auth ?
+                                         <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteCharity({id:charity._id})}><span style={{fontSize:'12px'}}>DELETE</span></div>
+                                       : null } </div>
                                     )
                                 }
 
@@ -70,7 +71,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    charities:state.sports.charities
+    charities:state.sports.charities,
+    auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(CharityContributions);

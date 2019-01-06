@@ -45,8 +45,9 @@ class WellBeingEvents extends Component {
                 <div>
                 <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
             </div>
-            <div onClick={()=> this.props.deleteEvent({id:event._id}, event.images)} className="delete">Delete Event</div>
-             </div>
+            {this.props.auth ?
+            <div style={{paddingRight:"40px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteEvent({id:event._id}, event.images)} className="delete">Delete Event</div>
+           : null }  </div>
               
          ))
       
@@ -76,7 +77,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-    events:state.wellbeing.allEvents
+    events:state.wellbeing.allEvents,
+    auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(withRouter(WellBeingEvents));

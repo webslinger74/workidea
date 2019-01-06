@@ -49,7 +49,7 @@ module.exports = {
                 ]
               },       
                     {
-                    test: /\.(png|jpg|jpeg|gif)$/,
+                    test: /\.(png|jpg|jpeg|gif|)$/,
                     use: [
                       {
                         loader:'url-loader',
@@ -62,7 +62,7 @@ module.exports = {
                     ]
                   },
                   {
-                  test: /\.(woff(2)?|ttf|eot|svg)(\?v=d+\.\d+)?$/,
+                  test: /\.(woff(2)?|ttf|eot|svg|mov|mp4)(\?v=d+\.\d+)?$/,
                   use: [
                     {
                       loader:'file-loader',

@@ -74,7 +74,7 @@ export class MessageBoard extends Component {
             
 
             {this.props.auth ?
-            <div style={{paddingRight:"20px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteMessage({id:mess._id},mess.images)} className="delete"> Delete Message</div>
+            <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteMessage({id:mess._id},mess.images)} className="delete"> Delete Message</div>
             : null }
 
 

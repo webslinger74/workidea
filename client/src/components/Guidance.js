@@ -43,7 +43,9 @@ showMessages = (events) => (
             <div>
             <h3 className="authorStamp"> {event.author} - {event.createdAt}  </h3>
         </div>
-        <div onClick={()=> this.props.deleteGuidance({id:event._id}, this.props.history, event.images)} className="delete">Delete Guidance</div>
+        {this.props.auth ?
+        <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}}  onClick={()=> this.props.deleteGuidance({id:event._id}, this.props.history, event.images)} className="delete">Delete Guidance</div>
+         : null }
          </div>
           
      ))
@@ -93,7 +95,8 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-        guidance:state.guidance.allGuidance
+        guidance:state.guidance.allGuidance,
+        auth:state.auth.isAuthenticated
 })
  
 export default connect(mapStateToProps, actions)(Guidance);
