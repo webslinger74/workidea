@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
-import song from './videos/disco.mov';
 import song2 from './videos/launch.mp4';
  
 class App extends Component {
