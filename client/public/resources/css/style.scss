@@ -404,13 +404,18 @@ a {
 }
 
 #chorltonT {
-    font-size:9rem;
+    font-size:8rem;
     font-weight: bold;
-  //  transition:1s linear;
-}
 
-#what {
-  //  height:20rem;
+    @media(max-width:850px){
+        font-size: 6rem;
+        margin-left: 10%;
+    }
+    
+    @media(max-width:600px){
+        font-size: 5rem;
+        margin-left:10%;
+    }
 }
 
 
@@ -434,7 +439,22 @@ a {
     background-image:radial-gradient(rgba(253, 251, 246, 0),rgba(255, 255, 255, 0)),url(../../../src/images/featured/teamwork.jpg);
     background-size:100%;
     background-attachment: fixed;
-    height:100%
+    height:100%;
+
+    @media(max-width:700px){
+        background-image:radial-gradient(rgba(253, 251, 246, 0),rgba(19, 18, 18, 0.383)),url(../../../src/images/featured/teamwork.jpg);
+        background-size:300%;
+        overflow:hidden;
+        background-attachment: fixed;
+        height:100%;
+    }
+    @media(max-width:500px){
+        background-image:radial-gradient(rgba(253, 251, 246, 0.363),rgba(255, 255, 255, 0.253)),url(../../../src/images/featured/teamwork.jpg);
+        background-size:300%;
+        overflow:hidden;
+        background-attachment: fixed;
+        height:100%;
+    }
     
 }
 
@@ -448,6 +468,11 @@ a {
     background-color: rgba(128, 128, 128, 0.883);
     padding:1.5rem;
     transition:2s linear;
+    font-size: 5rem;
+
+    @media(max-width:600px){
+        font-size: 3rem;
+    }
 
     &:hover {
         background-color: rgba(128, 128, 128, 0.979);
@@ -689,8 +714,22 @@ a {
         transition:0.5s linear;
         font-size:1.7rem;
 
+        @media(max-width:700px){
+            font-size:1.3rem;
+        }
+        @media(max-width:500px){
+            font-size:1.1rem;
+        }
+
         &:hover {
             color:red;
+
+            @media(max-width:700px){
+                font-size:1.3rem;
+            }
+            @media(max-width:500px){
+                font-size:1.1rem;
+            }
         }
     }
     
@@ -701,9 +740,23 @@ a {
         transition:0.2s ease-out;
         font-size:1.7rem;
 
+        @media(max-width:700px){
+            font-size:1.3rem;
+        }
+        @media(max-width:500px){
+            font-size:1.1rem;
+        }
+
         &:hover {
             color:rgba(255, 255, 255, 0.794);
             font-size:1.7rem;
+
+            @media(max-width:700px){
+                font-size:1.3rem;
+            }
+            @media(max-width:500px){
+                font-size:1.1rem;
+            }
         }
     }
     
@@ -914,11 +967,26 @@ a {
 }
 
 .videoTitle {
-    position: relative;
-    font-size:8rem;
+    position: absolute;
+    top:10vh;
+    left:5vw;
+    font-size:2rem;
     color:black;
     text-align: center;
+    z-index:10;
+    letter-spacing: 5px;
 }
 
+.outerVid {
+    display:block;
+    position:relative;
+}
 
+.innerVid {
+    z-index: 5;
+}
+
+.outertitle {
+    position:relative;
+}
 

@@ -14,11 +14,15 @@ class App extends Component {
 
   render () {
     return (
-        <div>
-            
-         <ReactPlayer url={song2} playing={true} controls={false} loop={true} height={'100%'} width={'100%'}/>
-            <div className="videoTitle">Chorlton Performance Takes Off!</div>
-            
+        
+        <div className="outerVid">
+         <div className="outertitle">
+            <div className="videoTitle">CHORLTON PERFORMANCE TAKE OFF!</div>
+            </div>
+          <div className="innerVid">
+             <ReactPlayer url={song2} playing={true} controls={false} loop={true} height="100%" width="100%"/>
+             </div>
+           
         </div>
     )
 }

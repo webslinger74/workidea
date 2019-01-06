@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from './MediaPlayer';
 
 class Feedback extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Feedback extends Component {
     render() { 
         return (
             <div>
-                Feedback
+                <div><App /></div>
             </div>
           );
     }

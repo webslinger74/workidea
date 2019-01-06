@@ -104,7 +104,7 @@ export class HeaderHidden extends Component {
                const newlist =  list.map((item, i) =>  {
                   return this.defaultLinks(item, i)
               })
-              console.log(newlist, "this is the post list")
+         //     console.log(newlist, "this is the post list")
               return newlist;
 
 
@@ -114,7 +114,7 @@ export class HeaderHidden extends Component {
                         const pagelist = type.map((item,i) => {
                             return this.defaultLinks(item,i)
                         })
-                        console.log(pagelist, "this is the post list of public links")
+               //         console.log(pagelist, "this is the post list of public links")
                         return pagelist
                     }                 
                 }           
@@ -135,7 +135,7 @@ export class HeaderHidden extends Component {
                         return this.cartLink(item,i);
                     }
                 });
-                console.log(newlist, "this is the post list")
+          //      console.log(newlist, "this is the post list")
                 return newlist;
             }
             else {
@@ -143,7 +143,7 @@ export class HeaderHidden extends Component {
                     const pagelist = type.map((item,i) => {
                         return this.defaultLinks(item,i)
                     })
-                    console.log(pagelist, "this is the post list of public links")
+              //      console.log(pagelist, "this is the post list of public links")
                     return pagelist
                 }  
             }   

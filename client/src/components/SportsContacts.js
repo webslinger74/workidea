@@ -41,7 +41,7 @@ class SportsContacts extends Component {
                     </div>         
                            
             
-                <div> <h3 style={{paddingLeft:'25px', paddingRight:'25px', color:'green'}}> {contact.contactEmail}</h3> 
+                <div> <h3 style={{paddingLeft:'25px', paddingRight:'25px',fontSize:"17px", color:'green'}}> {contact.contactEmail}</h3> 
                         <h4> {contact.position}  </h4></div>
                 {this.props.auth ?
             <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteContact({id:contact._id}, this.props.history)} className="delete">DEL</div>
@@ -59,7 +59,7 @@ class SportsContacts extends Component {
                 return (
                       <div className="latestMessageContacts" key={siteEmail[0]._id}>
                     <div>
-                    <div><span style={{fontSize:'30px'}}>Sports & Social Email Address: </span> {siteEmail[0].siteEmail} </div>
+                    <div><span style={{fontSize:'20px'}}>Sports & Social Email Address: </span><span style={{fontSize:'30px'}}>   {siteEmail[0].siteEmail}</span> </div>
                          </div>
                         {this.props.auth ?
                     <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteSiteEmail({id:siteEmail[0]._id}, this.props.history)} className="delete">DEL</div>

@@ -76,7 +76,7 @@ class LatestSitePerformance extends Component {
                                  if(cat.category === "Engagement Index"){
                     return  ( <div key={index} className="engagementGridItem">
                     
-                     <div style={{fontSize:'45px',color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
+                     <div style={{color:'gold', fontWeight:'600', marginBottom:'15px'}}>{cat.category}</div>
                    {this.state.showPieMeter ?
                      <div><PieMeter amount={cat.score} /> </div> : null }
                         <div className="engDesc">Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
