@@ -89,19 +89,27 @@
                         transition:0.5s linear;
                         font-size:1.7rem;
 
+                        @media(max-width:950px){
+                            font-size: 2rem;
+                        }
+
                         &:hover {
                             color:red;
+
+                            @media(max-width:950px){
+                                font-size: 2rem;
+                            }
                         }
                     }
                     
-                    //
+                    
                     
                     .BLACK {
                         color:black;
                         transition:0.2s ease-out;
                         
                         @media(max-width:950px){
-                            font-size: 3rem;
+                            font-size: 2rem;
                         }
         
 
@@ -110,7 +118,7 @@
                             font-size:1.4rem;
                           
                             @media(max-width:950px){
-                                font-size: 3rem;
+                                font-size: 2rem;
                             }
 
                         }
