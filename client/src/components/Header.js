@@ -210,7 +210,7 @@ export class Header extends Component {
         if (window.innerWidth <= 950)
             return (
                 <div>
-            <div onClick={this.toggleClass}>
+            <div className="headerMenuBtn" onClick={this.toggleClass}>
             Menu
             </div>
             {this.state.active ? <div className="bottom">{this.showLinks(this.state.page)}</div>

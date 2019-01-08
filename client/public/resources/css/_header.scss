@@ -53,6 +53,11 @@
         
         }
 
+        .headerMenuBtn {
+            font-size:3.5rem;
+            padding-left:0.5rem;
+        }
+
         .top {
             color:#070606;
             border-bottom: 1px solid #ffffff;
@@ -94,10 +99,20 @@
                     .BLACK {
                         color:black;
                         transition:0.2s ease-out;
+                        
+                        @media(max-width:950px){
+                            font-size: 3rem;
+                        }
+        
 
                         &:hover {
                             color:rgba(255, 255, 255, 0.794);
                             font-size:1.4rem;
+                          
+                            @media(max-width:950px){
+                                font-size: 3rem;
+                            }
+
                         }
                     }
                     
