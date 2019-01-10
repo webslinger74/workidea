@@ -4,9 +4,9 @@ import axios from 'axios';
 export const addPeg = (peg, history) => (dispatch) => {
     console.log(peg, "the score before axios request fires")
     console.log(typeof(peg), "the score before axios request fires")
-    axios.post('/api/peg/addPegEvent', peg)
+   return axios.post('/api/peg/addPegEvent', peg)
         .then(response => {
-            console.log(response, "this is the response from axios in action")
+          //  console.log(response, "this is the response from axios in action")
             dispatch({
                 type:ADD_PEG,
                 payload:response.data
@@ -24,8 +24,8 @@ export const addPeg = (peg, history) => (dispatch) => {
 export const deletePeg = (id, history, url) => (dispatch) => {
 
 
-    console.log(id, "this is the id of the message???")
-    console.log(url, "the image url prior to deletion from cloudinary");
+//    console.log(id, "this is the id of the message???")
+  //  console.log(url, "the image url prior to deletion from cloudinary");
     axios.post('/api/peg/deletePeg', id)
     .then(response => {
         dispatch(getPeg());
@@ -34,7 +34,7 @@ export const deletePeg = (id, history, url) => (dispatch) => {
     url.forEach(element => {
         axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
         .then((response) => {
-            console.log("image deleted from cloudinary", url);
+      //      console.log("image deleted from cloudinary", url);
             })
             .catch(err => {
                 dispatch({
@@ -48,9 +48,9 @@ export const deletePeg = (id, history, url) => (dispatch) => {
 
 
 export const getPeg = () => (dispatch) => {
-    axios.get('/api/peg/getPeg')
+    return axios.get('/api/peg/getPeg')
         .then(response => {
-            console.log(response, "is this all ")
+       //     console.log(response, "is this all ")
             dispatch({
                 type:GET_PEG,
                 payload:response.data
