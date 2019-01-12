@@ -3,9 +3,9 @@ import axios from 'axios';
 
 
 export const addManagerMessage = (message, history) => (dispatch) => {
-    axios.post('/api/manager/message', message)
+   return axios.post('/api/manager/message', message)
     .then(response => {
-        console.log(response, "this is the response from axios in action")
+   //     console.log(response, "this is the response from axios in action")
         dispatch({
             type:ADD_MANAGER_MESSAGE,
             payload:response.data
@@ -23,7 +23,7 @@ export const addManagerMessage = (message, history) => (dispatch) => {
 
 export const deleteMessage = (id, url) => (dispatch) => {
 
-    axios.post('/api/manager/deletemessage', id)
+     axios.post('/api/manager/deletemessage', id)
          .then((response) => {
                 dispatch(getManagerMessages())
          })
@@ -41,7 +41,7 @@ export const deleteMessage = (id, url) => (dispatch) => {
    }
 
 export const getManagerMessages = () => (dispatch) => {
-    axios.get('/api/manager/messages')
+  return axios.get('/api/manager/messages')
        
         .then(response => {
             console.log(response, "is this all the messages???")

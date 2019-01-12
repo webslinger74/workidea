@@ -2,9 +2,9 @@ import { GET_ERRORS, ADD_GUIDANCE, GET_GUIDANCE } from '../types/types';
 import axios from 'axios';
 
 export const addGuidance = (guidance, history) => (dispatch) => {
-    console.log(guidance, "the score before axios request fires")
-    console.log(typeof(guidance), "the score before axios request fires")
-    axios.post('/api/guidance/addguidance', guidance)
+   // console.log(guidance, "the score before axios request fires")
+  //  console.log(typeof(guidance), "the score before axios request fires")
+  return axios.post('/api/guidance/addguidance', guidance)
         .then(response => {
             console.log(response, "this is the response from axios in action")
             dispatch({
@@ -24,8 +24,8 @@ export const addGuidance = (guidance, history) => (dispatch) => {
 export const deleteGuidance = (id, history, url) => (dispatch) => {
 
 
-    console.log(id, "this is the id of the message???")
-    console.log(url, "the image url prior to deletion from cloudinary");
+//    console.log(id, "this is the id of the message???")
+//    console.log(url, "the image url prior to deletion from cloudinary");
     axios.post('/api/guidance/deleteguidance', id)
     .then(response => {
         dispatch(getGuidance());
@@ -48,7 +48,7 @@ export const deleteGuidance = (id, history, url) => (dispatch) => {
 
 
 export const getGuidance = () => (dispatch) => {
-    axios.get('/api/guidance/getguidance')
+  return axios.get('/api/guidance/getguidance')
         .then(response => {
             console.log(response, "is this all ")
             dispatch({

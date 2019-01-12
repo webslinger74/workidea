@@ -11,7 +11,7 @@
     "client-install": "npm install --prefix client",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "test": "mocha **/*.test.js"
+    "test": "mocha testsBack/*/*.tests.js --watch"
   },
   "repository": {
     "type": "git",
@@ -28,8 +28,9 @@
     "body-parser": "^1.18.3",
     "cloudinary": "^1.13.2",
     "concurrently": "^4.0.0",
-    "dev-server": "0.0.2",
+    "dev-server": "^0.1.0",
     "dotenv": "^6.0.0",
+    "expect": "^23.6.0",
     "express": "^4.16.3",
     "express-formidable": "^1.0.0",
     "gravatar": "^1.6.0",

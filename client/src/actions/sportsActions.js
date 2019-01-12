@@ -11,7 +11,7 @@ import axios from 'axios';
 export const addBingoNumber = (number) => (dispatch) => {
     axios.post('/api/sports/bingo', number)
     .then(response => {
-        console.log(response, "this is the response from axios in action is it bingo number")
+     //   console.log(response, "this is the response from axios in action is it bingo number")
         dispatch({
             type:ADD_BINGO_NUMBERS,
             payload:response.data
@@ -31,7 +31,7 @@ export const addBingoNumber = (number) => (dispatch) => {
 export const getBingoNumbers = () => (dispatch) => {
     axios.get('/api/sports/bingo')
         .then(response => {
-            console.log(response, "the response from get bingo numbers");
+        //    console.log(response, "the response from get bingo numbers");
             dispatch({
                 type:GET_BINGO_NUMBERS,
                 payload:response.data
@@ -46,7 +46,7 @@ export const getBingoNumbers = () => (dispatch) => {
 }
 
 export const addSportsEvent = (event, history) => (dispatch) => {
-    axios.post('/api/sports/event', event)
+   return axios.post('/api/sports/event', event)
         .then(response => {
             dispatch({
                 type:ADD_SPORTS_EVENT,
@@ -137,7 +137,7 @@ export const getCelebrationDay = () => (dispatch) => {
     axios.get('/api/sports/celebrationday')
        
         .then(response => {
-            console.log(response, "is this all the events???")
+      //      console.log(response, "is this all the events???")
             dispatch({
                 type:GET_CELEBRATION_DAY,
                 payload:response.data
@@ -154,7 +154,7 @@ export const getChristmasParty = () => (dispatch) => {
     axios.get('/api/sports/christmasparty')
        
         .then(response => {
-            console.log(response, "is this all the events???")
+       //     console.log(response, "is this all the events???")
             dispatch({
                 type:GET_CHRISTMAS_PARTY,
                 payload:response.data
@@ -171,8 +171,8 @@ export const getChristmasParty = () => (dispatch) => {
 
 export const deleteEvent = (id, history, url) => (dispatch) => {
 
-    console.log(history, "the history")
-    console.log(id, "this is the id of the message???")
+ //   console.log(history, "the history")
+ //   console.log(id, "this is the id of the message???")
     axios.post('/api/sports/deleteEvent', id)
     .then(response => {
         dispatch(getEvents());
@@ -181,7 +181,7 @@ export const deleteEvent = (id, history, url) => (dispatch) => {
     url.forEach(element => {
         axios.get(`/api/users/removeimage?public_id=${element.public_id}`)
         .then((response) => {
-            console.log("image deleted from cloudinary", url);
+          //  console.log("image deleted from cloudinary", url);
             })
             .catch(err => {
                 dispatch({
@@ -195,7 +195,7 @@ export const deleteEvent = (id, history, url) => (dispatch) => {
 
 
 export const getEvents = () => (dispatch) => {
-    axios.get('/api/sports/events')
+   return axios.get('/api/sports/events')
        
         .then(response => {
             dispatch({
@@ -214,7 +214,7 @@ export const getEvents = () => (dispatch) => {
 export const addCharity = (charityDets, history) => (dispatch) => {
         axios.post('/api/sports/charity', charityDets)
         .then(response => {
-            console.log(response, "is this all the events???")
+         //   console.log(response, "is this all the events???")
             dispatch({
                 type:ADD_CHARITY,
                 payload:response.data
