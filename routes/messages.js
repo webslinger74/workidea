@@ -26,7 +26,7 @@ router.post('/message', (req, res) => {
 
             insertMessage.save()
                 .then(message => {
-                    console.log(message, "message after model insert")
+                //    console.log(message, "message after model insert")
                    return res.json(message);
 
                 })
@@ -52,7 +52,7 @@ router.get('/messages', (req,res) => {
     .limit(20)
     .sort({ createdAt: -1 })
     .then(mess => {
-            console.log(mess)
+        //    console.log(mess)
             return res.json(mess);
         })
         .catch(err => res.json(err))

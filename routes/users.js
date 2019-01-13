@@ -16,11 +16,11 @@ const cloudinary = require('cloudinary');
 router.post('/register', (req, res) => {
         const { errors, isValid } = validateRegisterInput(req.body);
         if (!isValid) {
-            console.log(errors)
+        //    console.log(errors)
             return res.status(400).json(errors); 
         }
 
-        console.log(req, "this is the request before the db")
+   //     console.log(req, "this is the request before the db")
     User.findOne({staffnumber:req.body.name})
         .then((user) => {
             if(user) {
@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
                             res.json(user)
                         })
                         .catch((error) => {
-                            console.log(error);
+                        //    console.log(error);
                         })
                     })
                 })
@@ -54,7 +54,7 @@ router.post('/register', (req, res) => {
 //users/login - that returns the jwt token
 
 router.post('/login', (req, res) => {
-            console.log("inside", req.body)
+       //     console.log("inside", req.body)
     const { errors, isValid } = validateLoginInput(req.body);
      if (!isValid) {
         return res.status(400).json(errors);

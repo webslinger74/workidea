@@ -21,7 +21,7 @@ router.post('/message', (req, res) => {
 
             insertMessage.save()
                 .then(message => {
-                    console.log(message, "message after model insert")
+                 //   console.log(message, "message after model insert")
                    return res.json(message);
 
                 })

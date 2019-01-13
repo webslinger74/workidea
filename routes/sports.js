@@ -23,7 +23,7 @@ router.post('/bingo', (req, res) => {
 
             insertNumber.save()
                 .then(number => {
-                    console.log(number, "bingo number after model insert")
+                 //   console.log(number, "bingo number after model insert")
                    return res.json(number);
 
                 })
@@ -36,7 +36,7 @@ router.post('/bingo', (req, res) => {
 router.get('/bingo', (req,res) => {
                 Sports.find({})
                 .then(numbers => {
-                        console.log(numbers, "the numbers in routes")
+                  //      console.log(numbers, "the numbers in routes")
                         return res.json(numbers);
                     })
                     .catch(err => res.json(err))
@@ -54,7 +54,7 @@ router.post('/event', (req,res) => {
 
 insertEvent.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+    //    console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -77,7 +77,7 @@ router.post('/christmasparty', (req,res) => {
 
 insertEvent.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+     //   console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -97,7 +97,7 @@ router.post('/celebrationday', (req,res) => {
 
 insertEvent.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+    //    console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -111,7 +111,7 @@ router.get('/celebrationday', (req,res) => {
     .limit(1)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+       //     console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))
@@ -122,7 +122,7 @@ router.get('/christmasparty', (req,res) => {
     .limit(1)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+       //     console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))
@@ -156,7 +156,7 @@ router.get('/events', (req,res) => {
     .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+     //       console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))
@@ -186,7 +186,7 @@ router.post('/deleteEvent', (req, res) => {
     
     insertCharity.save()
         .then(event => {
-            console.log(event, "event details after model insert")
+       //     console.log(event, "event details after model insert")
            return res.json(event);
     
         })
@@ -200,7 +200,7 @@ router.post('/deleteEvent', (req, res) => {
         .limit(20)
         .sort({ createdAt: -1 })
         .then(event => {
-                console.log(event)
+           //     console.log(event)
                 return res.json(event);
             })
             .catch(err => res.json(err))
@@ -228,7 +228,7 @@ router.post('/deleteEvent', (req, res) => {
         
         insertEmail.save()
             .then(event => {
-                console.log(event, "site email details after model insert")
+            //    console.log(event, "site email details after model insert")
                return res.json(event);
         
             })
@@ -255,7 +255,7 @@ router.post('/deleteEvent', (req, res) => {
             .limit(1)
             .sort({ createdAt: -1 })
             .then(event => {
-                    console.log(event)
+             //       console.log(event)
                     return res.json(event);
                 })
                 .catch(err => res.json(err))
@@ -272,7 +272,7 @@ router.post('/deleteEvent', (req, res) => {
         
         insertContact.save()
             .then(event => {
-                console.log(event, "site email details after model insert")
+          //      console.log(event, "site email details after model insert")
                return res.json(event);
         
             })
@@ -301,7 +301,7 @@ router.post('/deleteEvent', (req, res) => {
             .limit(20)
             .sort({ createdAt: -1 })
             .then(event => {
-                    console.log(event)
+               //     console.log(event)
                     return res.json(event);
                 })
                 .catch(err => res.json(err))

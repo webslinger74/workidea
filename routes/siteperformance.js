@@ -15,7 +15,7 @@ const cloudinary = require('cloudinary');
 router.post('/engage', (req, res) => {
 
     //will need to put some validation in here and link in errors, and passport 
-                console.log(req.body, "request at backend");
+            //    console.log(req.body, "request at backend");
             const cat = new Engagement({
                     category:req.body.category,
                     score:req.body.score,
@@ -26,7 +26,7 @@ router.post('/engage', (req, res) => {
 
                 cat.save()
                 .then(response => {
-                    console.log(response, "message after model insert")
+                 //   console.log(response, "message after model insert")
                    return res.json(response);
 
                 })
@@ -51,7 +51,7 @@ router.get('/engage', (req,res) => {
     .limit(12)
     .sort({ createdAt: -1 })
     .then(response => {
-            console.log(response)
+       //     console.log(response)
             return res.json(response);
         })
         .catch(err => res.json(err))

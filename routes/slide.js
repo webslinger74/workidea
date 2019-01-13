@@ -13,7 +13,7 @@ const validateLoginInput = require('../validation/login');
 const cloudinary = require('cloudinary');
 
 router.post('/addslide', (req, res) => {
-        console.log(req.body, "reqbody for messages")
+    //    console.log(req.body, "reqbody for messages")
     //will need to put some validation in here and link in errors, and passport 
 
             const addSlide = new Slide({
@@ -28,7 +28,7 @@ router.post('/addslide', (req, res) => {
 
             addSlide.save()
                 .then(message => {
-                    console.log(message, "message after model insert")
+                //    console.log(message, "message after model insert")
                    return res.json(message);
 
                 })
@@ -54,7 +54,7 @@ router.get('/getSlides', (req,res) => {
     .limit(20)
     .sort({ createdAt: -1 })
     .then(mess => {
-            console.log(mess)
+        //    console.log(mess)
             return res.json(mess);
         })
         .catch(err => res.json(err))

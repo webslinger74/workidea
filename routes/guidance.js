@@ -13,7 +13,7 @@ const cloudinary = require('cloudinary');
            
 
 router.post('/addguidance', (req,res) => {
-    console.log(req.body, "request")
+ //   console.log(req.body, "request")
     const insertGuidance = new Guidance({
         title:req.body.title,
         message:req.body.message,
@@ -24,7 +24,7 @@ router.post('/addguidance', (req,res) => {
 
 insertGuidance.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+    ////    console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -34,12 +34,12 @@ insertGuidance.save()
 })
 
 router.get('/getguidance', (req,res) => {
-    console.log(req.body, "request")
+ //   console.log(req.body, "request")
     Guidance.find({})
     .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+          //  console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))

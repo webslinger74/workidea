@@ -13,7 +13,7 @@ const cloudinary = require('cloudinary');
            
 
 router.post('/event', (req,res) => {
-    console.log(req.body, "request")
+//    console.log(req.body, "request")
     const insertEvent = new WellBeings({
         title:req.body.title,
         message:req.body.message,
@@ -24,7 +24,7 @@ router.post('/event', (req,res) => {
 
 insertEvent.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+    //    console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -33,12 +33,12 @@ insertEvent.save()
     })
 })
 router.get('/events', (req,res) => {
-    console.log(req.body, "request")
+ //   console.log(req.body, "request")
     WellBeings.find({})
     .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+        //    console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))

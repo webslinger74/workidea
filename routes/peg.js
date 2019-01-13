@@ -13,7 +13,7 @@ const cloudinary = require('cloudinary');
            
 
 router.post('/addPegEvent', (req,res) => {
-    console.log(req.body, "request")
+//    console.log(req.body, "request")
     const insertPegEvent = new PegEvent({
         title:req.body.title,
         message:req.body.message,
@@ -24,7 +24,7 @@ router.post('/addPegEvent', (req,res) => {
 
 insertPegEvent.save()
     .then(event => {
-        console.log(event, "event details after model insert")
+   //     console.log(event, "event details after model insert")
        return res.json(event);
 
     })
@@ -36,12 +36,12 @@ insertPegEvent.save()
 
 
 router.get('/getPeg', (req,res) => {
-    console.log(req.body, "request")
+//    console.log(req.body, "request")
     PegEvent.find({})
     .limit(10)
     .sort({ createdAt: -1 })
     .then(event => {
-            console.log(event)
+         //   console.log(event)
             return res.json(event);
         })
         .catch(err => res.json(err))
