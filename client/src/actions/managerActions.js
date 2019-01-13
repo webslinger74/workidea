@@ -41,7 +41,7 @@ export const deleteMessage = (id, url) => (dispatch) => {
    }
 
 export const getManagerMessages = () => (dispatch) => {
-  return axios.get('/api/manager/messages')
+   return axios.get('/api/manager/messages')
        
         .then(response => {
             console.log(response, "is this all the messages???")

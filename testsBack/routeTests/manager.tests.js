@@ -2,7 +2,6 @@ const request = require('supertest');
 var expect = require('expect');
 var app = require('../../server').app;
 
-
 it('should return the manager messages', (done) => {
     request(app)
         .get('/api/manager/messages')
@@ -20,3 +19,4 @@ it('should return the manager messages', (done) => {
         })
         .end(done);
 })
+

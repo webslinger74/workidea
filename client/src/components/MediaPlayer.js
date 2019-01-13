@@ -16,7 +16,7 @@ class App extends Component {
         
         <div className="outerVid">
          <div className="outertitle">
-            <div className="videoTitle">CHORLTON PERFORMANCE TAKE OFF!</div>
+            <div className="videoTitle">PERFORMANCE TAKE OFF!</div>
             </div>
           <div className="innerVid">
              <ReactPlayer url={song2} playing={true} controls={false} loop={true} height="100%" width="100%"/>

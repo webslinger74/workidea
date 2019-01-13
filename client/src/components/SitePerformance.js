@@ -54,12 +54,12 @@ class SitePerformance extends Component {
             "amount": 45}
         ],
             data3:false,
-            allData3:[{"name" : "Mental Illness", "amount" : 71,"desc": "Brain Tumour"},
+            allData3:[{"name" : "Mental Illness", "amount" : 71,"desc": "Dementia"},
             {"name": "Cough & Colds","amount" : 50,"desc": "Coughs"},
             {"name" : "Stomach bugs","amount": 33,"desc": "Stomach Bug"},
             {"name": "Physical", "amount": 92,"desc": "Break Foot"} ,
             {"name": "Bereavement", "amount": 65,"desc": "Death of Parent"},
-            {"name": "Cancer", "amount": 45,"desc": "Brain Cancer"} ]
+            {"name": "Cancer", "amount": 45,"desc": "Lung Cancer"} ]
        }
     }
 
@@ -67,7 +67,7 @@ class SitePerformance extends Component {
         this.setState({
             data1:!this.state.data1
         }, () => {
-            console.log(this.state.data1, "the state of data boolean")
+         //   console.log(this.state.data1, "the state of data boolean")
             this.changeData();
         })
         
@@ -78,7 +78,7 @@ class SitePerformance extends Component {
         this.setState({
             data2:!this.state.data2
         }, () => {
-            console.log(this.state.data2, "the state of data boolean")
+         //   console.log(this.state.data2, "the state of data boolean")
             this.changeData2();
         })
         
@@ -89,7 +89,7 @@ class SitePerformance extends Component {
         this.setState({
             data3:!this.state.data3
         }, () => {
-            console.log(this.state.data3, "the state of data boolean")
+          //  console.log(this.state.data3, "the state of data boolean")
             this.changeData3();
         })
         
@@ -197,15 +197,15 @@ changeData3 = () => {
         {"name" : "Stomach bugs","amount": 56,"desc": "Stomach Bugs"},
         {"name": "Physical", "amount": 76,"desc": "Broken Leg"},
         {"name": "Bereavement", "amount": 43,"desc":"Death" },
-        {"name": "Cancer", "amount": 28, "desc":  "Cancer of Lungs"} ]})
+        {"name": "Cancer", "amount": 28, "desc":  "Cancer"} ]})
 }
     else { 
-        this.setState({allData3: [{"name" : "Mental Illness", "amount" : 76, "desc": "Schizophrenia"},
+        this.setState({allData3: [{"name" : "Mental Illness", "amount" : 76, "desc": "OCD"},
         {"name": "Cough & Colds","amount" : 65,"desc": "Influenza"},
         {"name" : "Stomach bugs","amount": 45, "desc": "Food Poisoning"},
         {"name": "Physical", "amount": 87, "desc": "Broken Arm"},
         {"name": "Bereavement", "amount": 22, "desc": "Death of Family Member"},
-        {"name": "Cancer", "amount": 65, "desc": "Breast Cancer"} ]
+        {"name": "Cancer", "amount": 65, "desc": "Lung Cancer"} ]
 }, () => console.log(this.state.allData3))
 }}
 
@@ -225,14 +225,14 @@ changeData3 = () => {
          </div>
          <div className="flexPerformance">
          <div className="flexPerformanceInner">
-                        <div className="perfTitle">Average Sickness Days Lost {this.state.data1 ? 2017 : 2018}</div>
+                        <div className="perfTitle"> Sickness Levels {this.state.data1 ? 2017 : 2018}</div>
             <BarChart height={300} width={400} color={"red"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
            <div className="flexPerformanceInner">
 
-               <div className="perfTitle">Peg Results {this.state.data2 ? 2017 : 2018}</div>
+               <div className="perfTitle">Engagement Results {this.state.data2 ? 2017 : 2018}</div>
             <BarChart height={300} width={400} color={"green"} data={this.state.allData2} />
             <div className="perfViewBtn" onClick={() => this.changeState2()}>{this.state.data2 ? "View 2018" : "View 2017" }</div>
 
@@ -246,33 +246,24 @@ changeData3 = () => {
                  <div className="perfViewBtn" onClick={() => this.changeState3()}>{this.state.data3 ? "View 2018" : "View 2017" }</div>
        </div>
        <div className="flexPerformanceInner">
-                        <div className="perfTitle">New Claims Processed {this.state.data1 ? 2017 : 2018}</div>
+                        <div className="perfTitle">New Work {this.state.data1 ? 2017 : 2018}</div>
             <BarChart height={300} width={400} color={"purple"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
         <div className="flexPerformanceInner">
-                        <div className="perfTitle">Award Reviews Processed {this.state.data1 ? 2017 : 2018}</div>
+                        <div className="perfTitle">Reviews {this.state.data1 ? 2017 : 2018}</div>
             <BarChart height={300} width={400} color={"pink"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
         <div className="flexPerformanceInner">
-                        <div className="perfTitle">Tasks Cleared {this.state.data1 ? 2017 : 2018}</div>
+                        <div className="perfTitle">Tasks {this.state.data1 ? 2017 : 2018}</div>
             <BarChart height={300} width={400} color={"yellow"} data={this.state.allData1} />
 
             <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
         </div>
-        <div className="flexPerformanceInner">
-                        <div className="perfTitle">Tasks Outstanding {this.state.data1 ? 2017 : 2018}</div>
-            <BarChart height={300} width={400} color={"orange"} data={this.state.allData1} />
-
-            <div className="perfViewBtn" onClick={() => this.changeState()}>{this.state.data1 ? "View 2018" : "View 2017" }</div>
-        </div>
-        <div className="flexPerformanceInner">
-                        <div className="perfTitle">Pie Meter Example</div>
-            <PieMeter amount={80} />
-        </div>
+      
        </div>
      
     </div>

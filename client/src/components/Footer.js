@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="footer">
     
                 <div className="logo">
-                    CHORLTON
+                    SITE NAME
                 </div>
                 <div className="wrapper">
                     <div className="left">
@@ -49,14 +49,14 @@ const Footer = () => {
                                     icon={faCompass}
                                     className="icon"
                                 /></a>
-                                <article id="box1" data-popup>Graemes House,
-                                                         Wilbrahim Road,
-                                                         Chorlton,
-                                                         Manchester,
-                                                         M21 9BU</article>
+                                <article id="box1" data-popup>Goods House,
+                                                         Walters Road,
+                                                         Chiltern,
+                                                         UK,
+                                                         M1 5DD</article>
                                 <div className="nfo">
                                     <div>Address</div>
-                                    <div>GRAEMES HOUSE</div>
+                                    <div>GOODS HOUSE</div>
                                 </div>
                             </div>
                             <div className="tag">
@@ -64,11 +64,11 @@ const Footer = () => {
                                     icon={faPhone}
                                     className="icon"
                                 /></a>
-                                  <article id="box2" data-popup>Main: 0161 881 5454,
-                                                                    BST: 0161 881 3423</article>
+                                  <article id="box2" data-popup>Main: 0143 881 5454,
+                                                                    BST: 0143 881 3423</article>
                                 <div className="nfo">
                                     <div>Phone</div>
-                                    <div>0161 881 0000</div>
+                                    <div>0143 881 0000</div>
                                 </div>
                             </div>
                             <div className="tag">
@@ -88,7 +88,7 @@ const Footer = () => {
                                 />
                                 <div className="nfo">
                                     <div>Email</div>
-                                    <div>chorlton@info.uk</div>
+                                    <div>goods@info.uk</div>
                                 </div>
                             </div>
                         </div>
@@ -105,10 +105,10 @@ const Footer = () => {
                 
                     <div className="right_item">
         
-                        <h2>Copyright 2018</h2>
+                        <h2>Copyright 2019</h2>
                         <div>
                             <div>
-                            Full design rights by Steven Webster
+                            Full design rights by ***
                             </div>
                         </div>
                     </div> 

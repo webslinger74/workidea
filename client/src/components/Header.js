@@ -247,7 +247,7 @@ export class Header extends Component {
             
             <div className="left">
             <div className="logo">
-            CHORLTON
+             SITE NAME
             </div>
             </div>
             <div className="right">

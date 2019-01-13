@@ -35,8 +35,9 @@ export const deleteMessage = (id, url) => (dispatch) => {
             })
     });
 
-     axios.post('/api/messages/deletemessage', id)
+    return axios.post('/api/messages/deletemessage', id)
     .then(response => {
+    
         dispatch(getMessages());
     }) 
     .catch(err => {

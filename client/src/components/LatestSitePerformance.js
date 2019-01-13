@@ -65,7 +65,7 @@ class LatestSitePerformance extends Component {
                 <div className="frontMessages">
                 <div id="what">
                     
-                      <div id="chorltonT">LIFE AT CHORLTON?</div>
+                      <div id="chorltonT">LIFE ON SITE?</div>
                     </div>
               
                
@@ -81,7 +81,7 @@ class LatestSitePerformance extends Component {
                      <div><PieMeter amount={cat.score} /> </div> : null }
                         <div className="engDesc">Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
                      <div className="engDesc">Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
-                     <div className="engDesc">Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
+                     <div className="engDesc">Difference from NAT: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
 
 
                      {this.props.auth ?
@@ -102,7 +102,7 @@ class LatestSitePerformance extends Component {
                               {this.state.showPieMeter ? <PieMeter amount={cat.score} /> : null }
                      <div className="engDesc">Difference from Previous Year: <span style={{fontSize:'20px'}}>{cat.diffprev}</span> </div>
                      <div className="engDesc">Difference from Parent: <span style={{fontSize:'20px'}}>{cat.diffparent} </span> </div>
-                     <div className="engDesc">Difference from DWW: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
+                     <div className="engDesc">Difference from NAT: <span style={{fontSize:'20px'}}>{cat.diffdwp} </span></div>
                      {this.props.auth ?
                      <div style={{paddingRight:"25px", width:"150px", fontSize:"20px", backgroundColor:"black", color:"white"}} onClick={()=> this.props.deleteCategory({id:cat._id})} className="delete">Delete Category</div>
                      : null }   </div>

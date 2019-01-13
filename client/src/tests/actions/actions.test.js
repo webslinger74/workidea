@@ -1,4 +1,4 @@
-import { getMessages, addMessage, getMessagesByDate, getMessagesBySearch } from '../../actions/messageActions';
+import { getMessages, addMessage, deleteMessage, getMessagesByDate, getMessagesBySearch } from '../../actions/messageActions';
 import { getPeg, addPeg } from '../../actions/pegActions';
 import { addGuidance, getGuidance } from '../../actions/guidanceActions';
 import { getEvents, addSportsEvent } from '../../actions/sportsActions';
@@ -8,8 +8,8 @@ import { GET_ERRORS, ADD_MESSAGE, GET_MESSAGES, GET_PEG,ADD_PEG, ADD_MANAGER_MES
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-
-
+import axios from 'axios';
+import * as helper from '../../actions/messageActions';
 
 
 describe('axios mocks', ()=> {
@@ -84,6 +84,53 @@ describe('axios mocks', ()=> {
     })
 
     ///// message action tests //////////////////////////////////////////////
+
+/*
+test('it should delete a message', () => {
+    const getPostsMock14 = {
+        message:14,
+        from:"Naynay",
+        content:"deleteMessage"
+    };
+
+    
+    moxios.wait(() => {
+        const request = moxios.requests.mostRecent();
+        request.respondWith({
+          status: 200,
+          response: getPostsMock14,
+        });
+
+
+    })
+
+    
+    const id = 123;
+    const url = [];
+    const middlewares = [thunk];
+      const mockStore = configureStore(middlewares);
+      const initialState = {} 
+      const store = mockStore(initialState);
+      console.log(store, "the store");
+
+   
+    
+    
+      const spy = jest.spyOn(helper, 'getMessages');
+   //   spy.mockImplementationOnce(ste);
+      console.log(spy, "spy");
+    return store.dispatch(deleteMessage(id, url)).then(() =>{
+         const actions =  store.getActions();
+        console.log(actions, "the actions in test")
+    ///    console.log(store, "store");
+         expect(spy).toHaveBeenCalledTimes(1);
+         jest.clearAllMocks()
+         
+});
+
+});
+
+*/
 
 test('should get messages', () => {
 
@@ -347,6 +394,12 @@ test('it should add a manager message',() => {
          expect(actions[0]).toEqual({type:ADD_MANAGER_MESSAGE, payload:getPostsMock12})
      })
 })
+
+
+
+
+
+
 test('it should get the manager messages', () => {
     const getPostsMock13 = {
         message:13,
@@ -374,5 +427,23 @@ test('it should get the manager messages', () => {
 })
 
 })
+
+///////////attempting mock module of axios rather than moxios!!!///////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////end of tests//////////////////////////
 
 
