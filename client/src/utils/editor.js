@@ -24,6 +24,7 @@ class MyComponent extends React.Component {
       <div>
        
         <div className="label_inputs">Message</div>
+        <div>{this.props.error ? this.props.error : null }</div>
       <ReactQuill value={this.state.text}
                   onChange={this.handleChange}
                   theme="snow"
@@ -44,9 +45,7 @@ MyComponent.modules = {
     ['bold', 'italic', 'underline', 'strike', 'blockquote',],
     [{ 'color': [] }, { 'background': [] }],
     [{'list': 'ordered'}, {'list': 'bullet'}, 
-     {'indent': '-1'}, {'indent': '+1'}],
-    ['link', 'image', 'video'],
-    ['clean']
+     {'indent': '-1'}, {'indent': '+1'}]
   ]
 }
 /* 

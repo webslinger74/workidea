@@ -38,7 +38,7 @@ class Messages extends Component {
             // for the text-editor to pass in the message
             getStateValue = (editorState) => {
                 this.setState({message:editorState})
-                console.log(this.state);
+            //    console.log(this.state);
             }
 
             onChange = (e) => {
@@ -66,11 +66,14 @@ class Messages extends Component {
                     if( key === "author" ){
                         this.state[key] = this.state[key].toString();
                     }
+                    if( key === "publish" ){
+                        this.state[key] = this.state[key].toString();
+                    }
 
                  
                     newState[key] = this.state[key];
           }
-          console.log(newState, "state just before adding product");
+      //    console.log(newState, "state just before adding product");
         this.props.addMessage(newState, this.props.history);
 
         }
@@ -114,7 +117,7 @@ class Messages extends Component {
                ...this.state.images,
                images:allImages
            },()=> {
-            console.log(this.state, "the state in add product after set state call back!") 
+      //      console.log(this.state, "the state in add product after set state call back!") 
            })
     }
 
@@ -147,25 +150,13 @@ class Messages extends Component {
 
                  <MyComponent 
                  getStateValue={this.getStateValue}
-
+                 error={errors.message}
                  />
               
                               
 
                 <div className="form_devider"></div>
-                               {this.props.woods ?
-                            <SelectListGroup 
-                                             name="wood"
-                                             value={this.state.wood}
-                                             error={errors.wood}
-                                             onChange={this.onChange}
-                                             options={this.props.woods}
-                                             placeholder="Type of Wood"
-                                             style={{marginBottom:'10px'}}
-                                        
-                                        />: null}  
-
-                             <TextFieldGroup 
+                                <TextFieldGroup 
                                  type="text"
                                  placeholder="Author"
                                  name="author"
@@ -190,7 +181,7 @@ class Messages extends Component {
                                  
                             {this.state.formSuccess === true ? 
                                 (<div className="form_success">
-                                    You have succesfully added your Guitar
+                                    You have succesfully created your message
                                 </div>): null}
 
 
@@ -217,7 +208,7 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-
+    errors:state.errors
 })
  
 export default connect(mapStateToProps, actions)(withRouter(Messages));

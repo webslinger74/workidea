@@ -9,12 +9,17 @@ const admin = require('../config/admin');
 const formidable = require('express-formidable');
 const mongoose = require('mongoose');
 //load input validation
-const validateLoginInput = require('../validation/login');
+const validateMessageInput = require('../validation/messages');
 const cloudinary = require('cloudinary');
 
 router.post('/message', (req, res) => {
-        console.log(req.body, "reqbody for messages")
+     //   console.log(req.body, "reqbody for messages")
     //will need to put some validation in here and link in errors, and passport 
+    const { errors, isValid } = validateMessageInput(req.body);
+    if (!isValid) {
+       return res.status(400).json(errors);
+      
+   }
 
             const insertMessage = new Message({
                     title:req.body.title,

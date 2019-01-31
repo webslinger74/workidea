@@ -15,7 +15,7 @@ export const addMessage = (message, history) => (dispatch) => {
         .catch(err => {
             dispatch({
                 type:GET_ERRORS,
-                payload:err
+                payload:err.response.data
             })
         })
 }

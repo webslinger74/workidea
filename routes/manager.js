@@ -7,10 +7,17 @@ const admin = require('../config/admin');
 const formidable = require('express-formidable');
 const mongoose = require('mongoose');
 //load input validation
-const validateLoginInput = require('../validation/login');
+const validateMessageInput = require('../validation/messages');
 const cloudinary = require('cloudinary');
 
 router.post('/message', (req, res) => {
+
+    const { errors, isValid } = validateMessageInput(req.body);
+    if (!isValid) {
+       return res.status(400).json(errors);
+      
+   }
+
             const insertMessage = new Manager({
                     title:req.body.title,
                     message:req.body.message,

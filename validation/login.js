@@ -4,8 +4,8 @@ const isEmpty = require('./is-Empty');
 const ValidateLoginInput = (data) => {
     let errors = {};
 
-            console.log(data.staffnumber, "staffnumber in val");
-            console.log(data.password, "password in val");
+       //     console.log(data.staffnumber, "staffnumber in val");
+       //     console.log(data.password, "password in val");
     data.staffnumber = !isEmpty(data.staffnumber) ? data.staffnumber : "";
     data.password = !isEmpty(data.password) ? data.password : "";
 
@@ -20,7 +20,7 @@ const ValidateLoginInput = (data) => {
         errors.password = "Password must be between 6 and 35 characters";
     }
 
-    console.log(errors, "errors", isEmpty(errors), "isvalid");
+//    console.log(errors, "errors", isEmpty(errors), "isvalid");
             return {
                 errors,
                 isValid: isEmpty(errors)

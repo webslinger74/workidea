@@ -65,6 +65,9 @@ class Manager extends Component {
                     if( key === "author" ){
                         this.state[key] = this.state[key].toString();
                     }
+                    if( key === "publish" ){
+                        this.state[key] = this.state[key].toString();
+                    }
 
                   
                     newState[key] = this.state[key];
@@ -146,6 +149,7 @@ class Manager extends Component {
 
                  <MyComponent 
                  getStateValue={this.getStateValue}
+                 error={errors.message}
 
                  />
               
@@ -205,7 +209,7 @@ const actions = {
 }
 
 const mapStateToProps = (state) => ({
-
+        errors:state.errors
 })
  
 export default connect(mapStateToProps, actions)(withRouter(Manager));
